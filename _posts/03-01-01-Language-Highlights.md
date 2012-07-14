@@ -1,1 +1,1 @@
-# Language Highlights
+# 言語仕様のポイント

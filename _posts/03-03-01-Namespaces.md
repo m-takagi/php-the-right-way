@@ -2,18 +2,28 @@
 isChild: true
 ---
 
-## Namespaces
+## 名前空間
 
-As mentioned above, the PHP community has a lot of developers creating lots of code. This means that one library's PHP code may use the same class name as another library. When both libraries are used in the same namespace, they collide and cause trouble.
+さっきも言ったとおり、PHP のコミュニティでは多くの人たちがいろんなコードを書いている。
+ってことは、誰かが書いたライブラリと別の人が書いたライブラリでクラス名がダブってしまう可能性があるということだ。
+両者が同じ名前空間を使っていたら、衝突して問題の原因となってしまう。
 
-_Namespaces_ solve this problem. As described in the PHP reference manual, namespaces may be compared to operating system directories that _namespace_ files; two files with the same name may co-exist in separate directories. Likewise, two PHP classes with the same name may co-exist in separate PHP namespaces. It's as simple as that.
+そんな問題を解決するのが _名前空間_ だ。
+マニュアルにあるとおり、名前空間っていうのは OS のファイルシステムのディレクトリと似てる。
+同じ名前のふたつのファイルを同一ディレクトリに置くことはできないけど、
+別々のディレクトリに分ければ共存できるというわけだ。
+同様に、別々の名前空間に分ければ同じ名前のクラスがふたつあっても共存できる。簡単に言うと、そういうこと。
 
-It is important for you to namespace your code so that it may be used by other developers without fear of colliding with other libraries.
+自分の書くコードにも、名前空間を指定することが大切だ。
+そうすれば、誰か他の人があなたのコードを使うときに「これ、他のライブラリと競合しないかな」
+と悩まずに済む。
 
-One recommended way to use namespaces is outlined in [PSR-0][psr0], which aims to provide a standard file, class and namespace convention to allow plug-and-play code.
+名前空間のおすすめの使い方が [PSR-0][psr0] にまとまっている。
+この文書の狙いは、ファイルやクラスそして名前空間の命名規則を標準化して
+お互いに再利用しやすくすることだ。
 
-* [Read about Namespaces][namespaces]
-* [Read about PSR-0][psr0]
+* [名前空間][namespaces]
+* [PSR-0][psr0]
 
-[namespaces]: http://php.net/manual/en/language.namespaces.php
+[namespaces]: http://php.net/manual/ja/language.namespaces.php
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md

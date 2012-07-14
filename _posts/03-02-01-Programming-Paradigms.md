@@ -2,20 +2,21 @@
 isChild: true
 ---
 
-## Programming Paradigms
+## プログラミングのパラダイム
 
-PHP is a flexible, dynamic language that supports a variety of programming techniques. It has evolved dramatically over the years, 
-notably adding a solid object-oriented model in PHP 5.0 (2004), anonymous functions and namespaces in PHP 5.3 (2009), and traits in 
-PHP 5.4 (2012). 
+PHP は柔軟性のある動的言語で、いろんなプログラミングテクニックに対応している。
+長年の間に劇的に成長してきた。PHP 5.0 でのオブジェクト指向モデルの追加 (2004 年)、
+PHP 5.3 での無名関数や名前空間の追加 (2009 年)、そして
+PHP 5.4 でのトレイトの追加 (2012 年) などが特筆すべきところだろう。
 
-### Object-oriented Programming
+### オブジェクト指向プログラミング
 
-* [Read about Object-oriented PHP][oop]
-* [Read about Traits][traits]
+* [PHP のオブジェクト指向][oop]
+* [トレイト][traits]
 
-### Functional Programming
+### 関数プログラミング
 
-PHP has had anonymous functions since PHP 5.3:
+PHP 5.3 からは無名関数が使えるようになった。
 
 {% highlight php %}
 <?php
@@ -27,22 +28,23 @@ $greet = function($name)
 $greet('World');
 {% endhighlight %}
 
-* [Read about Anonymous functions][anonymous-functions]
-* [Read about dynamically invoking functions with `call_user_func_array`][call-user-func-array]
+* [無名関数][anonymous-functions]
+* [`call_user_func_array`による動的な関数実行][call-user-func-array]
 
-### Meta Programming
+### メタプログラミング
 
-Ruby developers often say that PHP is lacking `method_missing`, but it is available as `__call()`. There are many Magic Methods available 
-like `__get()`, `__set()`, `__clone()`, `__toString()`, etc.
+Ruby の人がよく「PHP には `method_missing` ってないよね」とか言うんだけど、
+違うよ。`__call()` があるよ。それ以外にもいろんなマジックメソッドがある。
+`__get()` とか `__set()` とか `__clone()` とか `__toString()` とかね。
 
-* [Read about Magic Methods][magic-methods]
-* [Read about Reflection][reflection]
+* [マジックメソッド][magic-methods]
+* [リフレクション][reflection]
 
-[namespaces]: http://php.net/manual/en/language.namespaces.php
-[overloading]: http://uk.php.net/manual/en/language.oop5.overloading.php
-[oop]: http://www.php.net/manual/en/language.oop5.php
-[anonymous-functions]: http://www.php.net/manual/en/functions.anonymous.php
-[magic-methods]: http://php.net/manual/en/language.oop5.magic.php
-[reflection]: http://www.php.net/manual/en/intro.reflection.php
+[namespaces]: http://php.net/manual/ja/language.namespaces.php
+[overloading]: http://php.net/manual/ja/language.oop5.overloading.php
+[oop]: http://www.php.net/manual/ja/language.oop5.php
+[anonymous-functions]: http://www.php.net/manual/ja/functions.anonymous.php
+[magic-methods]: http://php.net/manual/ja/language.oop5.magic.php
+[reflection]: http://www.php.net/manual/ja/intro.reflection.php
 [traits]: http://www.php.net/traits
-[call-user-func-array]: http://php.net/manual/en/function.call-user-func-array.php
+[call-user-func-array]: http://php.net/manual/ja/function.call-user-func-array.php

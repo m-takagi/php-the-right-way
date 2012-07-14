@@ -2,23 +2,30 @@
 isChild: true
 ---
 
-## Command Line Interface
+## コマンドラインインターフェイス
 
-PHP was created primarily to write web applications, but it's also useful for scripting command line interface (CLI) programs, too. Command line PHP programs can help you automate common tasks like testing, deployment, and application administrativia.
+PHP はもともとウェブアプリケーションを書くために作られたものだが、
+コマンドラインインターフェイス (CLI) のプログラムを書くのにも便利だ。
+コマンドラインのプログラムを書けば、テストやデプロイといった
+よくある作業を自動化する助けとなる。
 
-CLI PHP programs are powerful because you can use your app's code directly without having to create and secure a web GUI for it. Just be sure not to put your CLI PHP scripts in your public web root!
+CLI の PHP プログラムが便利なのは、アプリケーションのコードを使うときに
+わざわざウェブの UI を用意せずに済むところだ。
+ただ、CLI の PHP スクリプトをウェブサーバーの公開ディレクトリに置くことは絶対禁止！
 
-Try running PHP from your command line:
+PHP をコマンドラインで実行してみよう。
 
 {% highlight bash %}
 > php -i
 {% endhighlight %}
 
-The `-i` option will print your PHP configuration just like the [`phpinfo`][phpinfo] function. 
+`-i` は、PHP の設定情報を [`phpinfo`][phpinfo] 関数みたいに表示するオプションだ。
 
-The `-a` option provides an interactive shell, similar to ruby's IRB or python's interactive shell. There are a number of other useful [command line options][cli-options], too.
+`-a` オプションで対話シェルを使えるようになる。ruby の IRB とか、Python の対話シェルと同じようなものだ。
+それ以外にも、いろんな [コマンドラインオプション][cli-options] がある。
 
-Let's write a simple "Hello, $name" CLI program. To try it out, create a file named `hello.php`, as below.
+じゃあ、シンプルな "Hello, $name" プログラムを書いてみよう。`hello.php` というファイルを作って、
+こんな内容にする。
 
 {% highlight php %}
 <?php
@@ -29,9 +36,12 @@ $name = $argv[1];
 echo "Hello, $name\n";
 {% endhighlight %}
 
-PHP sets up two special variables based on the arguments your script is run with. [`$argc`][argc] is an integer variable containing the argument *count* and [`$argv`][argv] is an array variable containing each argument's *value*. The first argument is always the name of your PHP script file, in this case `hello.php`.
+PHP のスクリプトを実行すると、コマンドラインの引数に関する変数がふたつ設定される。
+[`$argc`][argc] は整数値で、引数の *数* を表し、
+[`$argv`][argv] は配列で、各引数の *値* を含む。
+最初の引数は、常に PHP スクリプトのファイル名となる。今回の場合なら `hello.php` だ。
 
-To run our script, above, from the command line:
+このスクリプトをコマンドラインから実行すると、次のようになる。
 
 {% highlight bash %}
 > php hello.php
@@ -41,12 +51,12 @@ Hello, world
 {% endhighlight %}
 
 
- * [Learn about running PHP from the command line][php-cli]
- * [Learn about setting up Windows to run PHP from the command line][php-cli-windows]
+ * [PHP をコマンドラインから実行する方法][php-cli]
+ * [Windows でもコマンドラインから PHP を実行したい！][php-cli-windows]
 
-[phpinfo]: http://php.net/manual/en/function.phpinfo.php
-[cli-options]: http://www.php.net/manual/en/features.commandline.options.php
-[argc]: http://php.net/manual/en/reserved.variables.argc.php
-[argv]: http://php.net/manual/en/reserved.variables.argv.php
-[php-cli]: http://php.net/manual/en/features.commandline.php
-[php-cli-windows]: http://www.php.net/manual/en/install.windows.commandline.php
+[phpinfo]: http://php.net/manual/ja/function.phpinfo.php
+[cli-options]: http://www.php.net/manual/ja/features.commandline.options.php
+[argc]: http://php.net/manual/ja/reserved.variables.argc.php
+[argv]: http://php.net/manual/ja/reserved.variables.argv.php
+[php-cli]: http://php.net/manual/ja/features.commandline.php
+[php-cli-windows]: http://www.php.net/manual/ja/install.windows.commandline.php
