@@ -33,12 +33,17 @@ APC を使うロジックの例を示す。
 
 {% highlight php %}
 <?php
+// 'expensive_data' がキャッシュに保存されているかどうかを調べる
 $data = apc_fetch('expensive_data');
 if (!$data)
 {
-	$data = get_expensive_data();
-	apc_store('expensive_data', $data);
+    // データがキャッシュにないときは、コストのかかる操作をして取得する。
+    // そして、その結果を保存してあとで使えるようにする。
+    $data = get_expensive_data();
+    apc_store('expensive_data', $data);
 }
+
+print_r($data);
 {% endhighlight %}
 
 オブジェクトキャッシュシステムについて詳しく知りたい場合は、これらが参考になる。
