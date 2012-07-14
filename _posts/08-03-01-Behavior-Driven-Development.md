@@ -2,21 +2,25 @@
 isChild: true
 ---
 
-## Behavior Driven Development
+## 振る舞い駆動開発
 
-There are two different types of Behavior-Driven Development (BDD): SpecBDD and StoryBDD. SpecBDD focuses on technical behavior or code, while StoryBDD focuses on business or feature behaviors or interactions. PHP has frameworks for both types of BDD.
+振る舞い駆動開発 (BDD) には二種類ある。SpecBDD と StoryBDD だ。
+SpecBDD はコードの技術的な振る舞いを重視し、StoryBDD は業務的あるいは機能的な振る舞いを重視する。
+PHP には、これら二種類の BDD 用のフレームワークが存在する。
 
-With StoryBDD, you write human-readable stories that describe the behavior of your application. These stories 
-can then be run as actual tests against your application. The framework used in PHP applications for StoryBDD
-is Behat, which is inspired by Ruby's [Cucumber](http://cukes.info/) project and implements the Gherkin DSL
-for describing feature behavior.
+StoryBDD では、人間が読める形式のストーリーを書いてアプリケーションの振る舞いを表す。
+そしてそのストーリーを、アプリケーションのテストとして実行する。
+PHP アプリケーションで StoryBDD をするために使えるフレームワークが
+Behat で、これは Ruby の [Cucumber](http://cukes.info/) の影響を受けたフレームワークである。
+Gherkin DSL を使ってフィーチャを記述できる。
 
-With SpecBDD, you write specifications that describe how your actual code should behave. Instead of testing
-a function or method, you are describing how that function or method should behave. PHP offers the PHPSpec framework for this purpose. This framework is inspired
-by the [RSpec project](http://rspec.info/) for Ruby.
+SpecBDD では、実際のコードのあるべき振る舞いをスペックとして書く。
+関数やメソッドを単独でテストするのではなく、その関数やメソッドがどのように振る舞うのかを記述するのだ。
+PHP で StoryBDD をするときに使えるフレームワークが PHPSpec で、これは
+Ruby の [RSpec project](http://rspec.info/) の影響を受けている。
 
-### BDD Links    
+### BDD に関するリンク
 
-* [Behat](http://behat.org/) is inspired by Ruby's [Cucumber](http://cukes.info/) project 
-* [PHPSpec](http://www.phpspec.net/) the SpecBDD framework for PHP
-* [Codeception](http://www.codeception.com) is a full-stack testing framework that uses BDD principles
+* [Behat](http://behat.org/) は、Ruby の [Cucumber](http://cukes.info/) の影響を受けている。
+* [PHPSpec](http://www.phpspec.net/) は、PHP 用の SpecBDD フレームワークだ。
+* [Codeception](http://www.codeception.com) はフルスタックのテストフレームワークで BDD の原則に従っている。

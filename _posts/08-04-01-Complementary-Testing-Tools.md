@@ -2,11 +2,12 @@
 isChild: true
 ---
 
-## Complementary Testing Tools
+## その他のテスト用ツール
 
-Besides individual testing and behavior driven frameworks, there are also a number of generic frameworks and helper libraries useful for any preferred approach taken.
+これまでに取り上げたテストツールや振る舞い駆動開発フレームワーク以外にも、
+いろいろなフレームワークやヘルパーライブラリがある。これらも有用に使える。
 
-### Tool Links
+### ツールへのリンク
 
-* [Selenium](http://seleniumhq.org/) is a browser automation tool which can be [integrated with PHPUnit](http://www.phpunit.de/manual/3.1/en/selenium.html)
-* [Mockery](https://github.com/padraic/mockery) is a Mock Object Framework which can be integrated with [PHPUnit](http://phpunit.de/) or [PHPSpec](http://www.phpspec.net/)
+* [Selenium](http://seleniumhq.org/) はブラウザ自動化ツールで、[PHPUnit と組み合わせて使える](http://www.phpunit.de/manual/current/ja/selenium.html)。
+* [Mockery](https://github.com/padraic/mockery) はモックオブジェクトフレームワークで、[PHPUnit](http://phpunit.de/) や [PHPSpec](http://www.phpspec.net/) と組み合わせて使える。
