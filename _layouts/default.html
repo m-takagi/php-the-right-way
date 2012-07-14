@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
     <head>
         <meta charset="utf-8"/>
         <title>{% if page.title %}{{ page.title }} - {% endif %}PHP: The Right Way</title>
@@ -29,9 +29,9 @@
     </head>
     <body>
         <nav class="site-navigation">
-            <div class="build-date">Last Updated: {{ site.time }}</div>
+            <div class="build-date">最終更新日時: {{ site.time }}</div>
             <ul>
-                <li><a href="/#site-header">Welcome</a></li>
+                <li><a href="/#site-header">ようこそ</a></li>
                 {% assign lastIsChild = false %}
                 {% for post in site.posts reversed %}
                     {% if post.isChild and lastIsChild != true %}<ul>{% endif %}
@@ -39,12 +39,12 @@
                     <li><a href="/#{{ post.title | downcase | replace:' ','_' | replace:'(','' | replace:')','' | replace:'.','' | replace:'-','' }}">{{ post.title }}</a>
                     {% assign lastIsChild = post.isChild %}
                 {% endfor %}
-                <li><a href="/#site-footer">Credits</a></li>
+                <li><a href="/#site-footer">クレジット</a></li>
             </ul>
         </nav>
         <div class="site-content">
 
-            <a class="fork-me" href="https://github.com/codeguy/php-the-right-way">
+            <a class="fork-me" href="https://github.com/m-takagi/php-the-right-way">
                 <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
             </a>
 
