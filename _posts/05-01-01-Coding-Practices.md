@@ -1,1 +1,1 @@
-# Coding Practices
+# コーディングに関する慣習

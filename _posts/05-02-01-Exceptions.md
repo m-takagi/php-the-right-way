@@ -2,29 +2,34 @@
 isChild: true
 ---
 
-## Exceptions
+## 例外処理
 
-Exceptions are a standard part of most popular programming languages, but they are often overlooked by PHP programmers. 
-Languages like Ruby are extremely Exception heavy, so whenever something goes wrong such as a HTTP request failing, or 
-a DB query goes wrong, or even if an image asset could not be found, Ruby (or the gems being used) will throw an 
-exception to the screen meaning you instantly know there is a mistake. 
+最近はやりのプログラミング言語には、たいてい例外処理の仕組みがある。でも PHP の人は見落としがちだ。
+たとえば Ruby なんかは例外処理を使いまくっている。
+HTTP リクエストに失敗したときもデータベースへのクエリが失敗したときも、画像ファイルが見つからなかったときでさえも、
+Ruby のプログラム (あるいはその中で使っている gem) は例外を投げる。
+なので、画面を見ればすぐに「ああ、何か間違えたんだな」とわかる。
 
-PHP itself is fairly lax with this, and a call to `file_get_contents()` will usually just get you a `FALSE` and a warning.
-Many older PHP frameworks like CodeIgniter will just return a false, log a message to their proprietary logs and maybe 
-let you use a method like `$this->upload->get_error()` to see what went wrong. The problem here is that you have to go 
-looking for a mistake and check the docs to see what the error method is for this class, instead of having it made extremely 
-obvious.
+PHP はそのあたりが極めて緩くて、たとえば `file_get_contents()` が失敗しても単に
+`FALSE` を返して警告を出すだけだ。古いフレームワークの多くもそんな感じだ。
+たとえば CodeIgniter の場合は、単に false を返してログファイルにメッセージを書き出すだけ。
+原因を知りたければ `$this->upload->get_error()` みたいなメソッドを実行することになる。
+何が問題かというと、まずエラーが発生したのかどうかを自分で調べないといけないこと。
+そして次に、エラー情報を取得する方法をドキュメントで調べないといけないこと。
+もっとはっきりわかるようにしてくれたらいいのに。
 
-Another problem is when classes automatically throw an error to the screen and exit the process. When you do this you 
-stop another developer from being able to dynamically handle that error. Exceptions should be throw to make a developer aware 
-of an error, then they can choose how to handle this. E.g:
+別の問題もある。何かのクラスがエラーを画面に投げっぱなしにしてそのまま終わるような場合だ。
+そんなことをすれば、エラーがあったときにプログラム中で動的に対応することができなくなってしまう。
+そんな場合は、エラーではなく例外を発生させないといけない。
+例外にしておけば開発者がエラーに気づけるし、プログラムの中で対応できるようになる。
+たとえばこんな感じだ。
 
 {% highlight php %}
 <?php
 $email = new Fuel\Email;
-$email->subject('My Subject');
-$email->body('How the heck are you?');
-$email->to('guy@example.com', 'Some Guy');
+$email->subject('タイトル');
+$email->body('ごきげんいかが？');
+$email->to('guy@example.com', '誰かさん');
 
 try
 {
@@ -32,37 +37,38 @@ try
 }
 catch(Fuel\Email\ValidationFailedException $e)
 {
-    // The validation failed
+    // 検証に失敗した
 }
 catch(Fuel\Email\SendingFailedException $e)
 {
-    // The driver could not send the email
+    // ドライバがメールを送れなかった
 }
 {% endhighlight %}
 
-### SPL Exceptions
+### SPL の例外
 
-An Exception by default has no meaning and the most common to give it meaning is by setting its name:
+例外自体にはデフォルトでは何の意味もなく、たいていはその名前で例外に意味を与える。
 
 {% highlight php %}
 <?php
 class ValidationException extends Exception {}
 {% endhighlight %}
 
-This means you can add multiple catch blocks and handle different Exceptions differently. This can lead to 
-the creation of a <em>lot</em> of custom Exceptions, some of which could have been avoided using the SPL Exceptions 
-provided in the [SPL extension][splext]. 
+こんなふうにすれば、catch ブロックを複数用意してそれぞれの例外で別の処理をできるようになる。
+その結果、自作の例外クラスが <em>大量に</em> できあがってしまうかもしれないが、
+[SPL 拡張モジュール][splext] が用意する例外クラスを使えば少しはましになるだろう。
 
-If for example you use the `__call()` Magic Method and an invalid method is requested then instead of throwing a standard 
-Exception which is vague, or creating a custom Exception just for that, you could just `throw new BadFunctionCallException;`.
+たとえば、マジックメソッド `__call()` を使っているときに、無効なメソッドを要求されたとしよう。
+標準の Exception クラスを使うのは曖昧すぎるし、そのためだけに専用の例外クラスを作るのも何だし、
+という場合には単に `throw new BadFunctionCallException;` とすればよい。
 
-* [Read about Exceptions][exceptions]
-* [Read about SPL Exceptions][splexe]
-* [Nesting Exceptions In PHP][nesting-exceptions-in-php]
-* [Exception Best Practices in PHP 5.3][exception-best-practices53]
+* [例外について][exceptions]
+* [SPL 拡張モジュール][splexe]
+* [PHP での例外のネスト][nesting-exceptions-in-php]
+* [PHP 5.3での例外処理のベストプラクティス][exception-best-practices53]
 
-[exceptions]: http://php.net/manual/en/language.exceptions.php
-[splexe]: http://php.net/manual/en/spl.exceptions.php
+[exceptions]: http://php.net/manual/ja/language.exceptions.php
+[splexe]: http://php.net/manual/ja/spl.exceptions.php
 [splext]: /#standard_php_library
 [exception-best-practices53]: http://ralphschindler.com/2010/09/15/exception-best-practices-in-php-5-3
 [nesting-exceptions-in-php]: http://www.brandonsavage.net/exceptional-php-nesting-exceptions-in-php/
