@@ -1,23 +1,23 @@
-# Welcome
+# ようこそ
 
-There's a lot of outdated information on the Web that leads new PHP users astray, propagating bad practices and bad code. This must stop. _PHP: The Right Way_ is an easy-to-read, quick reference for PHP best practices, accepted coding standards, and links to authoritative tutorials around the Web.
+時代遅れの情報がウェブ上にあふれている。そんな情報を見たPHP初心者は戸惑ってしまうだろう。そして、まずい手法やまずいコードが広まってしまう。そんなのはもうやめよう。_PHP: The Right Way_ は気軽に読めるクイックリファレンスだ。PHPのベストプラクティスやコーディング規約、そしてウェブ上のよくできたチュートリアルへのリンクをまとめた。
 
-It is important to understand _there is no canonical way to use PHP_. That's the beauty of it. This website introduces new PHP developers to best practices, available options, and good information.
+大事なのは、_PHPを使うための正式なお作法など存在しない_ってこと。それがPHPのいいところなんだ。このサイトでは、これからPHPを勉強しようという人たちのために、よりよいやり方だとかいろんな選択肢、そして良質な情報源を紹介する。
 
-## Disclaimer
+## おことわり
 
-This is a living document and will continue to be updated with more helpful information and examples as they become available.
+このサイトは今も成長中なので、有用な情報やサンプルなどが見つかればどんどん更新していくつもりだ。
 
-## How to Contribute
+## 協力するには
 
-Help make this website the best resource for new PHP programmers! [Contribute on GitHub][1]
+みんなでこのサイトをもっとよいものにしよう。PHPを勉強したい人たちのために良質な情報を集めるんだ! [GitHubでね。][1]
 
-## Spread the Word!
+## 拡散希望
 
-_PHP: The Right Way_ has web banner images you can use on your website. Show your support, and let new PHP
-developers know where to find good information!
+_PHP: The Right Way_ のバナー画像を用意したので、みんなのサイトで使ってほしい。
+PHPを勉強したい人たちに「いい情報がここにあるよ！」ってぜひ伝えよう。
 
-[See Banner Images][2]
+[バナー画像][2]
 
 [1]: https://github.com/codeguy/php-the-right-way/tree/gh-pages
 [2]: /banners.html
