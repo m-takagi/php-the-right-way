@@ -2,27 +2,43 @@
 isChild: true
 ---
 
-## Virtual or Dedicated Servers
+## 仮想サーバーあるいは専用サーバー
 
-If you are comfortable with systems administration, or are interested in learning it, virtual or dedicated servers give you complete control of your application's production environment.
+サーバー管理が苦にならない人、あるいはサーバー管理を勉強してみたい人は、仮想サーバーあるいは専用サーバーを選ぶといい。
+そうすれば、アプリケーションの運用環境を完全に制御できる。
 
-### nginx and PHP-FPM
+### nginx と PHP-FPM
 
-PHP, via PHP's built-in FastCGI Process Manager (FPM), pairs really nicely with [nginx](http://nginx.org), which is a lightweight, high-performance web server. It uses less memory than Apache and can better handle more concurrent requests. This is especially important on virtual servers that don't have much memory to spare.
+PHP に組み込まれた FastCGI Process Manager (FPM) は [nginx](http://nginx.org)
+と組み合わせるのに最適だ。nginx は、軽量でパフォーマンスに優れたウェブサーバーである。
+Apache よりも少ないメモリで動き、同時にさばけるリクエストの数も多い。
+これは特に、共有メモリの少ない仮想サーバーでは重要だ。
 
-* [Read more on nginx](http://nginx.org)
-* [Read more on PHP-FPM](http://php.net/manual/en/install.fpm.php)
-* [Read more on setting up nginx and PHP-FPM securely](https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/)
+* [nginx](http://nginx.org)
+* [PHP-FPM](http://php.net/manual/ja/install.fpm.php)
+* [nginx と PHP-FPM で安全な環境を作る](https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/)
 
-### Apache and PHP
+### Apache と PHP
 
-PHP and Apache have a long history together. Apache is wildly configurable and has many available [modules](http://httpd.apache.org/docs/2.4/mod/) to extend functionality. It is a popular choice for shared servers and an easy setup for PHP frameworks and open source apps like WordPress. Unfortunately, Apache uses more resources than nginx by default and cannot handle as many visitors at the same time.
+PHP と Apache は長い付き合いだ。
+Apache はいろんな設定が可能で、さまざまな [モジュール](http://httpd.apache.org/docs/2.4/mod/)
+で機能を拡張できる。共有サーバーで PHP のフレームワークを動かしたり、WordPress
+みたいなアプリケーションを動かしたりするときにはよく使われる選択肢だ。
+残念ながら Apache は、デフォルトでは nginx よりもメモリを食うし、
+同時にさばけるユーザー数も nginx より少ない。
 
-Apache has several possible configurations for running PHP. The most common and easiest to setup is the [prefork MPM](http://httpd.apache.org/docs/2.4/mod/prefork.html) with mod_php5. While it isn't the most memory efficient, it is the simplest to get working and to use. This is probably the best choice if you don't want to dig too deeply into the server administration aspects.  Note that if you use mod_php5 you MUST use the prefork MPM.
+Apache で PHP を動かすにはいくつかの選択肢がある。
+一番よく使われていて簡単に設定できるのが、[prefork MPM](http://httpd.apache.org/docs/2.4/mod/prefork.html) と mod_php5 の組み合わせだ。
+メモリの使用効率はそれほどよくないが、とりあえず動かして使うには一番シンプルだ。
+サーバー管理方面にあまり足を突っ込みたくない場合は、この方法がいいだろう。
+注意すべき点は、mod_php5 を使う場合は必ず prefork MPM を使わないといけないということだ。
 
-Alternatively, if you want to squeeze more performance and stability out of Apache then you can take advantage of the same FPM system as nginx and run the [worker MPM](http://httpd.apache.org/docs/2.4/mod/worker.html) or [event MPM](http://httpd.apache.org/docs/2.4/mod/event.html) with mod_fastcgi or mod_fcgid. This configuration will be significantly more memory efficient and much faster but it is more work to set up.
+Apache 本来のパフォーマンスや安定性をもっと絞り出したいという場合は、nginx と同じように FPM を使うこともできる。
+この場合は、[worker MPM](http://httpd.apache.org/docs/2.4/mod/worker.html) あるいは
+[event MPM](http://httpd.apache.org/docs/2.4/mod/event.html) に mod_fastcgi あるいは mod_fcgid
+を組み合わせる。この設定はメモリの利用効率がよくて高速に動作するが、設定に手間がかかる。
 
-* [Read more on Apache](http://httpd.apache.org/)
-* [Read more on Multi-Processing Modules](http://httpd.apache.org/docs/2.4/mod/mpm_common.html)
-* [Read more on mod_fastcgi](http://www.fastcgi.com/mod_fastcgi/docs/mod_fastcgi.html)
-* [Read more on mod_fcgid](http://httpd.apache.org/mod_fcgid/)
+* [Apache](http://httpd.apache.org/)
+* [Multi-Processing Modules](http://httpd.apache.org/docs/2.4/mod/mpm_common.html)
+* [mod_fastcgi](http://www.fastcgi.com/mod_fastcgi/docs/mod_fastcgi.html)
+* [mod_fcgid](http://httpd.apache.org/mod_fcgid/)

@@ -1,3 +1,3 @@
-# Servers and Deployment
+# 各種サーバーへのデプロイ
 
-PHP applications can be deployed and run on production web servers in a number of ways.
+PHP のアプリケーションをデプロイして本番サーバーで運用するための方法を紹介する。

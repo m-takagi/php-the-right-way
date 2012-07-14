@@ -3,10 +3,11 @@ title: Platform as a Service (PaaS)
 isChild: true
 ---
 
-## Platform as a Service (PaaS) 
+## Platform as a Service (PaaS)
 
-PaaS provides the system and network architecture necessary to run PHP applications on the web. This means little to no 
-configuration for launching PHP applications or PHP frameworks. 
+PaaS を使えば、PHP アプリケーションをウェブ上で動かすために必要なシステムやネットワーク環境を用意してくれる。
+ほとんど何も設定せずに、PHP のアプリケーションやフレームワークを実行できるということだ。
 
-Recently PaaS has become a popular method for deploying, hosting, and scaling PHP applications of all sizes. You can 
-find a list of [PHP PaaS "Platform as a Service" providers](#php_paas_providers) in our [resources section](#resources). 
+最近は、PHP アプリケーションのデプロイ先として PaaS を使うことが多くなった。あらゆる規模のアプリケーションを扱える。
+[PHP 用の PaaS "Platform as a Service" プロバイダ](#php_paas_providers) を、[情報源](#resources)
+にまとめた。

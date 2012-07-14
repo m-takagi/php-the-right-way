@@ -2,6 +2,13 @@
 isChild: true
 ---
 
-## Shared Servers
+## 共有サーバー
 
-PHP has shared servers to thank for its popularity. It is hard to find a host without PHP installed, but be sure it's the latest version. Shared servers allow you and other developers to deploy websites to a single machine. The upside to this is that it has become a cheap commodity. The downside is that you never know what kind of a ruckus your neighboring tenants are going to create; loading down the server or opening up security holes are the main concerns. If your project's budget can afford to avoid shared servers you should.
+PHP の人気のおかげで、いろんな共有サーバーで PHP が使える。
+むしろ PHP が使えない共有サーバーを見つけるほうが難しいだろう。
+ただし、最新バージョンが使えるかどうかは要注意だ。
+共有サーバーでは、あなただけでなく他の開発者も同じマシンにウェブサイトをデプロイする。
+その利点は、安上がりに使えるということだ。
+ただ欠点もあって、同じサーバーに同居しているお隣さんが何をしでかすかがわからない。
+めちゃめちゃ負荷のかかることをしてしまったり、セキュリティホールを作り込んでしまったりといった恐れがある。
+もし充分な予算があるのなら、できるだけ共有サーバーは避けよう。
