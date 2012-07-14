@@ -3,8 +3,8 @@ title: Use the Current Stable Version (5.4)
 isChild: true
 ---
 
-## Use the Current Stable Version (5.4)
+## 最新の安定版 (5.4) を使う
 
-If you are just getting started with PHP make sure to start with the current stable release of [PHP 5.4][php-release]. PHP has made great strides adding powerful [new features](#language_highlights) over the last few years. Don't let the minor version number difference between 5.2 and 5.4 fool you, it represents _major_ improvements.
+とりあえず PHP を試したいっていうのなら、最新の安定版である [PHP 5.4][php-release] を使おう。PHP はここ数年で大きく成長して、強力な[新機能](#language_highlights)が追加された。5.2 から 5.4 って、マイナーバージョンが変わっただけに見えるかもしれない。でも実際は _大幅に_ 改良されているんだ。
 
 [php-release]: http://www.php.net/downloads.php

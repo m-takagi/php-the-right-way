@@ -2,19 +2,20 @@
 isChild: true
 ---
 
-## Mac Setup
+## Mac の人は
 
-OSX comes prepackaged with PHP but it is normally a little behind the latest stable. Lion comes with PHP 5.3.6 and
-Mountain Lion has 5.3.10.
+OS X には PHP が最初からインストールされているけど、最新の安定版からは微妙に遅れている。
+Lion についてくるのは PHP 5.3.6 だし、Mountain Lion でも 5.3.10 だ。
 
-To update PHP on OSX you can get it installed through a number of Mac [package managers][mac-package-managers], with
-[php-osx by Liip][php-osx-downloads] being recommended.
+OS X の PHP をアップデートするには、Mac 用の [パッケージ管理ツール][mac-package-managers]を使えばいい。
+あと、[php-osx by Liip][php-osx-downloads]もおすすめだ。
 
-The other option is to [compile it yourself][mac-compile], in that case be sure to have installed either Xcode or
-Apple's substitute ["Command Line Tools for Xcode"][apple-developer] downloadable from Apple's Mac Developer Center.
+あるいは、[自分でコンパイル][mac-compile]してもいい。ただその場合は、
+Xcode あるいは ["Command Line Tools for Xcode"][apple-developer] をインストールしないといけない。
+これは Apple の Mac Developer Center でダウンロードできる。
 
-For a complete "all-in-one" package including PHP, Apache web server and MySQL database, all this with a nice control
-GUI, try [MAMP][mamp-downloads].
+PHP だけじゃなくて Apache や MySQL とかも入っていて、さらに GUI
+の管理ツールもついてる「全部入り」のパッケージもある。それが [MAMP][mamp-downloads] だ。
 
 [mac-package-managers]: http://www.php.net/manual/en/install.macosx.packages.php
 [mac-compile]: http://www.php.net/manual/en/install.macosx.compile.php

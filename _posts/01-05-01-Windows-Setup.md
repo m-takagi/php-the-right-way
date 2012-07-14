@@ -2,24 +2,30 @@
 isChild: true
 ---
 
-## Windows Setup
+## Windows の人は
 
-PHP is available in several ways for Windows. You can [download the binaries](php-downloads) and until recently you could use a '.msi' 
-installer. The installer is no longer supported and stops at PHP 5.3.0.
+Windows で PHP を使うには、いくつかの方法がある。[バイナリをダウンロード](php-downloads)することもできるし、
+つい最近までは'.msi'形式のインストーラも使えた。でも PHP 5.3.0 からは、インストーラ形式をサポートしなくなった。
 
-For learning and local development you can use the built in webserver with PHP 5.4 so you don't need to worry about configuring it. If you 
-would like an "all-in-one" which includes a full-blown webserver and MySQL too then tools such as the [Web Platform Installer][wpi], 
-[XAMPP][xampp] and [WAMP][wamp] will help get a Windows development environment up and running fast. That said, these tools will be 
-a little different from production so be careful of environment differences if you are working on Windows and deploying to Linux.
+学習用にローカルで開発する場合は PHP 5.4 のビルトインウェブサーバーを使えばよいので、細かい設定を気にする必要はない。
+もしウェブサーバーとかMySQLとかも含めた「全部入り」を使いたければ、[Web Platform Installer][wpi]や
+[XAMPP][xampp]、そして[WAMP][wamp]などがお勧めだ。これらを使えば Windows 用の開発環境を手早く構築できる。
+とはいうものの、これらのツールは実際の運用環境と微妙に異なる。なので、たとえば「Windows で開発して Linux にデプロイ」
+とかいう場合は環境の違いに気をつける必要がある。
 
-If you need to run your production system on Windows then IIS7 will give you the most stable and best performance. You can use 
-[phpmanager][phpmanager] (a GUI plugin for IIS7) to make configuring and managing PHP simple. IIS7 comes with FastCGI built in and ready 
-to go, you just need to configure PHP as a handler. For support and additional resources there is a [dedicated area on iis.net][php-iis] for 
-PHP.
+Windows 上でシステムを実運用する場合は、IIS 7 を使うとよい。これが一番安定しており、かつパフォーマンスも優れている。
+[phpmanager][phpmanager] (IIS 7 用の GUI プラグイン) を使えば PHP の設定は管理をシンプルにできる。
+IIS 7 には FastCGI が組み込まれており、すぐに使える。
+単に PHP をハンドラとして設定するだけでよい。
+その値の詳しい情報は、[dedicated area on iis.net][php-iis]に PHP 専用のエリアがある。
 
-Generally running your application on different environment in development and production can lead to strange bugs popping up when you go 
-live. If you are developing on Windows and deploying to Linux (or anything non-Windows) then you should consider using a Virtual Machine. This 
-sounds tricky, but using [Vagrant][vagrant] you can set up simple wrappers, then using [Puppet][puppet] or [Chef][chef] you can provision these boxes and share them with your colleagues to ensure you're all working on the same stack. More on this soon.
+一般に、開発環境と運用環境が違っていると、謎のバグが出ることが多い。
+Windows で開発して Linux (など、Windows 以外の環境) にデプロイするというのなら、
+仮想マシンを導入すべきだろう。なんか難しいことを言ってるように聞こえるかもしれない。
+けど、[Vagrant][vagrant]を使えばシンプルなラッパーを用意できるし、
+あとは[Puppet][puppet]とか[Chef][chef]を使えば仮想環境を配布できる。
+これで、チームのみんなが同じ環境で作業できるようになるんだ。
+近いうちに、もう少し詳しく説明するよ。
 
 [php-downloads]: http://windows.php.net
 [phpmanager]: http://phpmanager.codeplex.com/

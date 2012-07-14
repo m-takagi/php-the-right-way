@@ -3,12 +3,12 @@ title: Built-in Web Server
 isChild: true
 ---
 
-## Built-in web server
+## ビルトインウェブサーバー
 
-You can start learning PHP without the hassle of installing and configuring a full-fledged web server (PHP 5.4 required). To start the server, run the following from your terminal in your project's web root:
+PHPの勉強を始めるときに、わざわざ本格的なウェブサーバーをインストールする必要はない。そう、PHP 5.4ならね。サーバーを立ち上げたかったら、ターミナルでプロジェクトのルートディレクトリに行って、こんなコマンドを実行するだけでいいんだ。
 
     > php -S localhost:8000
 
-* [Learn about the built-in, command line web server][cli-server]
+* [コマンドラインで使えるビルトインウェブサーバーについて、もっと調べる][cli-server]
 
 [cli-server]: http://www.php.net/manual/en/features.commandline.webserver.php
