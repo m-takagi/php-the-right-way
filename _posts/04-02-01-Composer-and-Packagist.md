@@ -2,44 +2,60 @@
 isChild: true
 ---
 
-## Composer and Packagist
+## Composer と Packagist
 
-Composer is a **brilliant** dependency manager for PHP. List your project's dependencies in a `composer.json` file and, with a few simple commands, Composer will automatically download your project's dependencies and setup autoloading for you.
+Composerは、PHP用の **すばらしい** 依存管理ツールだ。プロジェクト内の依存関係を
+`composer.json` ファイルに書いてシンプルなコマンドを打ち込めば、
+Composer が自動的にそれをダウンロードしてくれるだけでなく、オートロードの設定までしてくれるんだ。
 
-There are already a lot of PHP libraries that are compatible with Composer, ready to be used in your project. These "packages" are listed on [Packagist][1], the official repository for Composer-compatible PHP libraries.
+Composer に対応したライブラリは既にいろいろ出回っていて、自分のプロジェクトですぐに使える。
+そんなパッケージをまとめたのが [Packagist][1]。これは、Composer 対応の PHP ライブラリをまとめた公式リポジトリである。
 
-### How to Install Composer
+### Composer のインストール
 
-You can install Composer locally (in your current working directory; though this is no longer recommended) or globally (e.g. /usr/local/bin). Let's assume you want to install Composer locally. From your project's root directory:
+Composer はローカル (作業ディレクトリ) にインストールしてもよいし、グローバルに (/usr/local/bin などに)
+インストールしてもよい。ただし、ローカルにインストールする方法は今は非推奨となっている。
+ローカルにインストールするには、プロジェクトのルートディレクトリに移動して次のコマンドを実行する。
 
     curl -s http://getcomposer.org/installer | php
 
-This will download `composer.phar` (a PHP binary archive). You can run this with `php` to manage your project dependencies. <strong>Please Note:</strong> If you pipe downloaded code directly into an interpreter, please read the code online first to confirm it is safe.
+このコマンドは、 `composer.phar` (PHP バイナリアーカイブ)
+をダウンロードする。これを `php` コマンドで実行すれば、そのプロジェクトの依存関係を管理できる。
+<strong>注意:</strong> ダウンロードしたコードを直接パイプで実行する前に、
+まずはオンラインでコードを確認して安全であることを確かめておこう。
 
-### How to Install Composer (manually)
+### Composer の手動インストール
 
-Manually installing composer is an advanced technique; however, there are various reasons why a developer might prefer this method vs. using the interactive installation routine. The interactive installation checks your PHP installation to ensure that:
+手動で composer をインストールするのは初心者にはおすすめできない。
+でもなぜか、さっきのインストール方法よりも手作業でのインストールをしたがる人もいるらしい。
+さっきの対話的なインストールでは何をしていたのかというと、こんなことを確かめていたんだ。
 
-- a sufficient version of PHP is being used
-- `.phar` files can be executed correctly
-- certain directory permissions are sufficient
-- certain problematic extensions are not loaded
-- certain `php.ini` settings are set
+- 適切なバージョンの PHP が入っている
+- `.phar` ファイルを正しく実行できる
+- ディレクトリのパーミッションが適切に設定されている
+- 問題のある特定の拡張モジュールがロードされていない
+- `php.ini` の設定が適切にされている
 
-Since a manual installation performs none of these checks, you have to decide whether the trade-off is worth it for you. As such, below is how to obtain Composer manually:
+手作業でのインストールではこういったチェックは一切行わない。
+それでもいいの？
+
+それでもいいという人向けに、手動での Composer のインストール方法を示す。
 
     curl -s http://getcomposer.org/composer.phar -o $HOME/local/bin/composer
     chmod +x $HOME/local/bin/composer
 
-The path `$HOME/local/bin` (or a directory of your choice) should be in your `$PATH` environment variable. This will result in a `composer` command being available.
+`$HOME/local/bin` (あるいは、その他あなたが指定した場所) にパスを通しておく必要がある。
+これで、`composer` コマンドが使えるようになるだろう。
 
-When you come across documentation that states to run Composer as `php composer.phar install`, you can substitute that with:
+何かのドキュメントに「`php composer.phar install` で Composer を実行します」と書いてあれば、
+その部分を次のように読み替えればいい。
 
     composer install
 
-### How to Define and Install Dependencies
+### 依存関係の定義とインストール
 
-First, create a `composer.json` file in the same directory as `composer.phar`. Here's an example that lists [Twig][2] as a project dependency.
+まず、`composer.phar` と同じディレクトリに `composer.json` というファイルを作ろう。
+ここに示す例は、あるプロジェクトで [Twig][2] を使うという依存関係を示したものだ。
 
 	{
 	    "require": {
@@ -47,20 +63,23 @@ First, create a `composer.json` file in the same directory as `composer.phar`. H
 	    }
 	}
 
-Next, run this command from your project root directory.
+次に、プロジェクトのルートディレクトリでこのコマンドを実行する。
 
     php composer.phar install
 
-This will download and install the project dependencies into a `vendors/` directory. Next, add this line to your application's primary PHP file; this will tell PHP to use Composer's autoloader for your project dependencies.
+このコマンドは、依存するプロジェクトをダウンロードして `vendors/` ディレクトリにインストールする。
+次に、自分のアプリケーションで最初に実行する PHP ファイルにこんな行を追加する。
+これは、「Composer のオートローダーを使って依存ライブラリを読み込む」
+という指示である。
 
 {% highlight php %}
 <?php
 require 'vendor/autoload.php';
 {% endhighlight %}
 
-Now you can use your project dependencies, and they'll be autoloaded on demand.
+これで、依存ライブラリが使えるようになった。実際に使う場面で、必要に応じて読み込まれる。
 
-* [Learn about Composer][3]
+* [Composerとは][3]
 
 [1]: http://packagist.org/
 [2]: http://twig.sensiolabs.org
