@@ -1,14 +1,28 @@
-# Code Style Guide
+# コーディングスタイル
 
-The PHP community is large and diverse, composed of innumerable libraries, frameworks, and components. It is common for PHP developers to choose several of these and combine them into a single project. It is important that PHP code adhere (as close as possible) to a common code style to make it easy for developers to mix and match various libraries for their projects.
+PHP のコミュニティはとてもでっかくて、いろんな人たちがいる。
+そして、数え切れないほどのライブラリやフレームワークそしてコンポーネントが存在する。
+そんな中からいくつか選んで、それを組み合わせてひとつのプロジェクトで使うっていうのもよくあることだ。
+大切なのは、PHP のコードを書くときに、(できるだけ) 標準的なスタイルに従うことだ。
+そうすれば、いろんなライブラリを組み合わせて使うのも簡単になる。
 
-The [Framework Interop Group][fig] (formerly known as the 'PHP Standards Group') has proposed and approved a series of style recommendations, known as [PSR-0][psr0], [PSR-1][psr1] and [PSR-2][psr2]. Don't let the funny names confuse you, these recommendations are merely a set of rules that some projects like Drupal, Zend, CakePHP, phpBB, AWS SDK, FuelPHP, Lithium, etc are starting to adopt. You can use them for your own projects, or continue to use your own personal style.
+[Framework Interop Group][fig] っていうところ (元は 'PHP Standards Group' という名前だった)
+が、おすすめのスタイルを提案している。
+[PSR-0][psr0]や[PSR-1][psr1]、そして[PSR-2][psr2]がそれだ。
+変な名前のせいでちょっと戸惑うかもしれないけど、これって単に
+Drupal や Zend、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
+などのプロジェクトの規約をまとめただけのものなんだ。
+自分のプロジェクトでこれを使ってもいいし、今までの自分のスタイルを使い続けてもいい。
 
-Ideally you should write PHP code that adheres to one or more of these standards so that other developers can easily read and work with your code. They all add on to the recommendation before, so using PSR-1 requires PSR-0, but does not require PSR-2.
+理想を言えば、PHP のコードを書くときにはこれらの標準規約に従っておいたほうが無難だ。
+そうすれば、他の人にもコードを読んでもらいやすくなるし、手助けも得やすくなるだろう。
+この一連のスタイルは、すべて以前のものに対する付け足しの形式になっている。
+なので、たとえば PSR-1 を使うなら PSR-0 に従うのが必須となるが、
+PSR-2 には従う必要がない。
 
-* [Read about PSR-0][psr0]
-* [Read about PSR-1][psr1]
-* [Read about PSR-2][psr2]
+* [PSR-0 とは][psr0]
+* [PSR-1 とは][psr1]
+* [PSR-2 とは][psr2]
 
 [fig]: http://www.php-fig.org/
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
