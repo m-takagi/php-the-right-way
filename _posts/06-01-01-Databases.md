@@ -2,42 +2,59 @@
 title: Databases
 ---
 
-# Databases
+# データベース
 
-Many times your PHP code will use a database to persist information. You have a few options to connect and interact
-with your database. The recommended option _until PHP 5.1.0_ was to use native drivers such as [mysql][mysql], [mysqli][mysqli], [pgsql][pgsql], etc.
+PHP のコードを書いていると、情報を保存するためにデータベースを使うことが多くなる。
+データベースを操作するには、いくつかの方法がある。
+_PHP 5.1.0 の時代までは_ 、おすすめの方法は [mysql][mysql]、[mysqli][mysqli]、[pgsql][pgsql]
+などのネイティブドライバを使うことだった。
 
-Native drivers are great if you are only using ONE database in your application, but if, for example, you are using MySQL and a little bit of MSSQL,
-or you need to connect to an Oracle database, then you will not be able to use the same drivers. You'll need to learn a brand new API for each
-database &mdash; and that can get silly.
+このデータベースしか使わないよ！っていうのならネイティブドライバもいい。
+でもたとえば、MySQL を使っているけど一部は MSSQL であるとか、
+Oracle にもつなぐことがあるとか、そんな場合は同じドライバでは対応できない。
+そして、データベースが変わるたびに新しい API を覚えないといけないことになる。
+ばかげた話だ。
 
-As an extra note on native drivers, the mysql extension for PHP is no longer in active development, and the official status since PHP 5.4.0 is
-"Long term deprecation". This means it will be removed within the next few releases, so by PHP 5.6 (or whatever comes after 5.5) it may well be gone. If you are using `mysql_connect()` and `mysql_query()` in your applications then you will be faced with a rewrite at osme point down the 
-line, so the best option is to replace mysql usage with mysqli or PDO in your applications within your own development shedules so you won't 
-be rushed later on. _If you are starting from scratch then absolutely do not use the mysql extension: use the [MySQLi extension][mysqli], or use PDO._
+ネイティブドライバについては、もうひとつ注意すべきことがある。
+PHP 用の mysql 拡張モジュールの開発はすでに終了しており、PHP 5.4.0 の時点での公式発表によると
+「長期的には廃止予定」だ。つまり、近い将来に削除されるということであり、
+PHP 5.6 (になるかどうかわからないけど、5.5 の次にくるやつ) の頃には使えなくなるだろう。
+もし未だに `mysql_connect()` とか `mysql_query()` を使っているなら、
+いずれ書き直さざるを得なくなる。mysql を使っているプログラムがあれば、
+今のうちに mysqli か PDO を使うように書き直しておこう。
+そうすれば、後になって焦らずに済む。
+_今から新しく書き始めるっていうのなら、mysql 拡張モジュールを使うっていう選択肢はナシだ。
+[MySQLi 拡張モジュール][mysqli] か PDO を使うこと。_
 
-* [PHP: Choosing an API for MySQL](http://php.net/manual/en/mysqlinfo.api.choosing.php)
+* [PHP: MySQL 用の API の選択肢](http://php.net/manual/ja/mysqlinfo.api.choosing.php)
 
 ## PDO
 
-PDO is a database connection abstraction library &mdash;  built into PHP since 5.1.0 &mdash; that provides a common interface to talk with
-many different databases. PDO will not translate your SQL queries or emulate missing features; it is purely for connecting to multiple types
-of database with the same API.
+PDO はデータベースとの接続を抽象化するライブラリだ。PHP 5.1.0 以降に組み込まれていて、
+いろんなデータベースを同じインターフェイスで扱える。
+PDO は、SQL のクエリをデータベースにあわせて変換するものではないし、
+もともと存在しない機能をエミュレートするものでもない。
+純粋に、いろんなデータベースに同じ API で接続するためのものだ。
 
-More importantly, `PDO` allows you to safely inject foreign input (e.g. IDs) into your SQL queries without worrying about database SQL injection attacks.
-This is possible using PDO statements and bound parameters.
+もっと大切なことは、`PDO` を使えば、外部からの入力 (ID など)
+を安全に SQL クエリに埋め込めるということだ。データベースへの
+SQL インジェクション攻撃を心配しなくてもよくなる。
+そのためには、PDO ステートメントとバインド変数を使えばよい。
 
-Let's assume a PHP script receives a numeric ID as a query parameter. This ID should be used to fetch a user record from a database. This is the `wrong`
-way to do this:
+数値の ID をクエリ文字列として受け取る PHP スクリプトを考えてみよう。
+渡された ID を使って、データベースからユーザー情報を取り出す。
+最初に示すのは `悪い方法` だ。
 
 {% highlight php %}
 <?php
 $pdo = new PDO('sqlite:users.db');
-$pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- NO!
+$pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- ダメ、ゼッタイ！
 {% endhighlight %}
 
-This is terrible code. You are inserting a raw query parameter into a SQL query. This will get you hacked in a heartbeat. Instead,
-you should sanitize the ID input using PDO bound parameters.
+こんな恐ろしいコードを書いちゃいけない。
+これは、クエリ文字列のパラメータを SQL に直に埋め込んでいることになる。
+あっという間に攻撃を食らうだろう。
+こんな書き方ではなく、PDO のバインド変数で ID を受け取らないといけない。
 
 {% highlight php %}
 <?php
@@ -47,29 +64,35 @@ $stmt->bindParam(':id', filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT
 $stmt->execute();
 {% endhighlight %}
 
-This is correct code. It uses a bound parameter on a PDO statement. This escapes the foreign input ID before it is introduced to the
-database preventing potential SQL injection attacks.
+これが正しい方法だ。この例では、PDO ステートメントでバインド変数を使っている。
+外部からの入力である ID がエスケープされてからデータベースに渡るので、
+SQL インジェクション攻撃を受けることがなくなる。
 
-* [Learn about PDO][1]
+* [PDOについて調べる][1]
 
-## Abstraction Layers
+## 抽象化レイヤー
 
-Many frameworks provide their own abstraction layer which may or may not sit on top of PDO.  These will often emulate features for
-one database system that another is missing form another by wrapping your queries in PHP methods, giving you actual database abstraction.
-This will of course add a little overhead, but if you are building a portable application that needs to work with MySQL, PostgreSQL and
-SQLite then a little overhead will be worth it the sake of code cleanliness.
+多くのフレームワークが自前の抽象化レイヤーを用意している。
+PDO をベースとしたものもあれば、そうでないものもある。
+こういった抽象化レイヤーでは、あるデータベースには存在するけれども
+別のデータベースには存在しない機能を、PHP のメソッドでエミュレートして
+使えるようにしていることが多い。真の意味でのデータベースの抽象化をしているわけだ。
+そのぶんオーバーヘッドはある。
+ただ、MySQL でも PostgreSQL でも SQLite でも動かせるアプリケーションを作る必要があるという場合は、
+コードがぐちゃぐちゃになることを思えば多少のオーバーヘッドは我慢できる。
 
-Some abstraction layers have been built using the PSR-0 namespace standard so can be installed in any application you like:
+これらの抽象化レイヤーは PSR-0 の標準規格に従った名前空間を使って作られているので、
+いろんなアプリケーションに導入できる。
 
 * [Doctrine2 DBAL][2]
 * [ZF2 Db][4]
 * [ZF1 Db][3]
 
-[1]: http://www.php.net/manual/en/book.pdo.php
+[1]: http://www.php.net/manual/ja/book.pdo.php
 [2]: http://www.doctrine-project.org/projects/dbal.html
-[3]: http://framework.zend.com/manual/en/zend.db.html
-[4]: http://packages.zendframework.com/docs/latest/manual/en/zend.db.html
+[3]: http://framework.zend.com/manual/ja/zend.db.html
+[4]: http://packages.zendframework.com/docs/latest/manual/ja/zend.db.html
 
-[mysql]: http://uk.php.net/mysql
-[mysqli]: http://uk.php.net/mysqli
-[pgsql]: http://uk.php.net/pgsql
+[mysql]: http://php.net/mysql
+[mysqli]: http://php.net/mysqli
+[pgsql]: http://php.net/pgsql
