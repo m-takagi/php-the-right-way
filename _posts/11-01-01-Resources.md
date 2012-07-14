@@ -1,9 +1,9 @@
-# Resources
+# 情報源
 
-## From the Source
+## ソースから
 
-* [PHP Website](http://php.net/)
-* [PHP Documentation](http://php.net/docs.php)
+* [PHP のサイト](http://php.net/)
+* [PHP のドキュメント](http://php.net/docs.php)
 
 ## People to Follow
 
@@ -15,11 +15,11 @@
 * [Matthew Weier O'Phinney](http://twitter.com/weierophinney)
 * [Nikita Popov](http://twitter.com/nikita_ppv)
 
-## Mentoring
+## メンタリング
 
 * [phpmentoring.org](http://phpmentoring.org/) - Formal, peer to peer mentoring in the PHP community.
 
-## PHP PaaS Providers
+## PHP PaaS プロバイダ
 
 * [PagodaBox](https://pagodabox.com/)
 * [PHP Fog](https://phpfog.com/)

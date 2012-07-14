@@ -1,19 +1,29 @@
-# Frameworks
+# フレームワーク
 
-Rather than re-invent the wheel, many PHP developers use frameworks to build out web applications. Frameworks abstract away many of the low-level concerns and provide helpful, easy-to-use interfaces to complete common tasks.
+PHP 開発者の多くは、ウェブアプリケーションを作るときに車輪の再発明を避けてフレームワークを使っている。
+フレームワークを使えば低レベルの作業の多くを抽象化でき、
+便利で使いやすいインターフェイスでよくある作業をこなせる。
 
-You do not need to use a framework for every project. Sometimes plain PHP is the right way to go, but if you do need a framework then there are three main types available:
+別に、フレームワークを使わないといけないというわけじゃない。
+ふつうに PHP で書くべき場面だってある。
+もしフレームワークを使うのなら、フレームワークはこんな感じに分類できることを知っておこう。
 
-* Micro Frameworks
-* Full-Stack Frameworks
-* Component Frameworks
+* マイクロフレームワーク
+* フルスタックフレームワーク
+* コンポーネントフレームワーク
 
-Micro-frameworks are essentially a  wrapper to route a HTTP request to a callback, controller, method, etc as quickly as possible, and sometimes come with a few extra libraries to assist development such as basic database wrappers and the like. They are prominently used 
-to build remote HTTP services.
+マイクロフレームワークというのは本質的にはラッパーで、
+HTTP リクエストを手っ取り早くコールバックに振り分けるだけのものだ。
+場合によっては、開発を支援するためのちょっとした追加ライブラリが付属することもある。
+データベースの基本的なラッパーなどだ。マイクロフレームワークの主な使い道は、
+リモート HTTP サービスの構築である。
 
-Many frameworks add a considerable number of features on top of what is available in a micro-framework and these are known Full-Stack 
-Frameworks. These often come bundled with ORMs, Authentication packages, etc.
+多くのフレームワークは、マイクロフレームワークが持つ機能に加えて大量の機能を用意している。
+この種のフレームワークのことを、フルスタックフレームワークと呼ぶ。
+ORM や認証パッケージなどが含まれることが多い。
 
-Component-based frameworks are collections of specialized and single-purpose libraries. Disparate component-based frameworks can be used together to make a micro- or full-stack framework.
+コンポーネントフレームワークとは、特定の目的のための専用ライブラリをとりまとめたフレームワークである。
+この種のフレームワークのコンポーネントを各種組み合わせて、
+マイクロフレームワークやフルスタックフレームワークを作ることもできる。
 
-* [Popular PHP Frameworks](https://github.com/codeguy/php-the-right-way/wiki/Frameworks)
+* [PHP のフレームワーク一覧](https://github.com/codeguy/php-the-right-way/wiki/Frameworks)
