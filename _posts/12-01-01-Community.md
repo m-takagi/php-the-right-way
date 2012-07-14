@@ -1,20 +1,30 @@
-# Community
+# コミュニティ
 
-The PHP community is as diverse as it is large, and it's members are ready and willing to support new PHP programmers. You should consider joining your local PHP user group (PUG) or attending larger PHP conferences to learn more about the best practices shown here. You can also hang out on IRC in the #phpc channel on irc.freenode.com and follow the [@phpc][phpc-twitter] twitter account. Get out there, meet new developers, learn new topics and, above all, make new friends.
+PHP のコミュニティは、規模が大きくなるにつれて多様化しており、
+どこのコミュニティでも新たな仲間を歓迎している。
+近所のユーザーグループに参加したり、ちょっと大きめのカンファレンスに参加したりすれば、
+このページで紹介したことよりもずっと多くを学べるだろう。
+IRC なら irc.freenode.com に #phpc というチャンネルがあるし、
+twitter なら [@phpc][phpc-twitter] をフォローするといい。
+いろんなところに飛び込んで、新しい人と出会って、いろんなことを学んで、友達になるんだ。
 
-[Read the Official PHP Events Calendar][php-calendar]
+[PHP 公式サイトのイベントカレンダー][php-calendar]
 
-## PHP User Groups
+## PHP ユーザーグループ
 
-If you live in a larger city, odds are there's a PHP user group nearby. Although there's not yet an official list of PUGs, you can easily find your local PUG by searching on [Google][google] or [Meetup.com][meetup]. If you live in a smaller town, there may not be a local PUG; if that's the case, start one!
+大都市に住んでいるなら、きっと近場に PHP ユーザーグループがあるはずだ。
+公式ページの一覧に載ってなかったとしても、[Google][google] とか [Meetup.com][meetup]
+で探せばすぐ見つかる。小さな町なら、もしかしたらユーザーグループがないかもしれない。
+だったら、作ればいい！
 
-[Read about User Groups on the PHP Wiki][php-wiki]
+[PHP Wiki のユーザーグループ情報][php-wiki]
 
-## PHP Conferences
+## PHP カンファレンス
 
-The PHP community also hosts larger regional and national conferences in many countries around the world. Well-known members of the PHP community usually speak at these larger events, so it's a great opportunity to learn directly from industry leaders.
+世界各国で、地域レベルあるいは国レベルの大規模なカンファレンスが開かれている。
+PHP界の有名人が登壇することも多いので、彼らから直接学ぶチャンスだ。
 
-[Find a PHP Conference][php-conf]
+[PHP のカンファレンスを探す][php-conf]
 
 [php-calendar]: http://www.php.net/cal.php
 [google]: https://www.google.com/search?q=php+user+group+near+me
