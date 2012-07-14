@@ -4,11 +4,12 @@ title: Website Banners
 description: "Spread the word! Use these banner to let new PHP programmers know about PHP: The Right Way"
 ---
 
-# Web Banners
+# ウェブ用のバナー
 
-Spread the word with _PHP: The Right Way_ banner images! Show new PHP developers where to find good information.
+このバナー画像を使って _PHP: The Right Way_ を広めよう！
+PHPを勉強したい人たちに「いい情報がここにあるよ！」ってぜひ伝えるんだ。
 
-## Button 1 (120x90)
+## ボタン 1 (120x90)
 
 <p><img src="/images/banners/btn1-120x90.png" alt="PHP: The Right Way"/></p>
 
@@ -16,7 +17,7 @@ Spread the word with _PHP: The Right Way_ banner images! Show new PHP developers
         <img src="http://www.phptherightway.com/images/banners/btn1-120x90.png" alt="PHP: The Right Way"/>
     </a>
 
-## Button 2 (120x60)
+## ボタン 2 (120x60)
 
 <p><img src="/images/banners/btn2-120x60.png" alt="PHP: The Right Way"/></p>
 
@@ -24,7 +25,7 @@ Spread the word with _PHP: The Right Way_ banner images! Show new PHP developers
         <img src="http://www.phptherightway.com/images/banners/btn2-120x60.png" alt="PHP: The Right Way"/>
     </a>
 
-## Leaderboard (728x90)
+## ビッグバナー (728x90)
 
 <p><img src="/images/banners/leaderboard-728x90.png" alt="PHP: The Right Way"/></p>
 
@@ -32,7 +33,7 @@ Spread the word with _PHP: The Right Way_ banner images! Show new PHP developers
         <img src="http://www.phptherightway.com/images/banners/leaderboard-728x90.png" alt="PHP: The Right Way"/>
     </a>
 
-## Large Rectangle (386x280)
+## 大型長方形 (386x280)
 
 <p><img src="/images/banners/lg-rect-386x280.png" alt="PHP: The Right Way"/></p>
 
@@ -40,7 +41,7 @@ Spread the word with _PHP: The Right Way_ banner images! Show new PHP developers
         <img src="http://www.phptherightway.com/images/banners/lg-rect-386x280.png" alt="PHP: The Right Way"/>
     </a>
 
-## Medium Rectangle (300x250)
+## 中型長方形 (300x250)
 
 <p><img src="/images/banners/med-rect-300x250.png" alt="PHP: The Right Way"/></p>
 
@@ -48,7 +49,7 @@ Spread the word with _PHP: The Right Way_ banner images! Show new PHP developers
         <img src="http://www.phptherightway.com/images/banners/med-rect-300x250.png" alt="PHP: The Right Way"/>
     </a>
 
-## Rectangle (180x150)
+## 長方形 (180x150)
 
 <p><img src="/images/banners/rect-180x150.png" alt="PHP: The Right Way"/></p>
 
@@ -56,7 +57,7 @@ Spread the word with _PHP: The Right Way_ banner images! Show new PHP developers
         <img src="http://www.phptherightway.com/images/banners/rect-180x150.png" alt="PHP: The Right Way"/>
     </a>
 
-## Square Button (125x125)
+## 正方形 (125x125)
 
 <p><img src="/images/banners/sq-btn-125x125.png" alt="PHP: The Right Way"/></p>
 
@@ -64,7 +65,7 @@ Spread the word with _PHP: The Right Way_ banner images! Show new PHP developers
         <img src="http://www.phptherightway.com/images/banners/sq-btn-125x125.png" alt="PHP: The Right Way"/>
     </a>
 
-## Vertical Rectangle (240x400)
+## 縦長長方形 (240x400)
 
 <p><img src="/images/banners/vert-rect-240x400.png" alt="PHP: The Right Way"/></p>
 
