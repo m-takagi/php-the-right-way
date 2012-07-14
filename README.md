@@ -1,5 +1,14 @@
 # PHP: The Right Way
 
+## Notes for Japanese translation
+
+それなりに話題になってみたいで、やたらブックマークされてるけれど、内容に関するコメントをこの週末までほとんど見かけなかった。
+ので、とりあえずざっと読んで訳してみました。
+
+翻訳に関するツッコミは大歓迎。
+
+そもそも原文の時点でどうなのよ、というところがあればぜひ原文のほうにフィードバックを :-)
+
 ## Overview
 
 This is the GitHub Pages repository for the _PHP: The Right Way_ project.
