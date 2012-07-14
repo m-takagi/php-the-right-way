@@ -2,18 +2,25 @@
 isChild: true
 ---
 
-## Password Hashing with Bcrypt
+## Bcrypt を使ったパスワードのハッシュ処理
 
-Eventually everyone builds a PHP application that relies on user login. Usernames and (hashed) passwords are stored in a database and later used to authenticate users upon login.
+誰もがいつかは、ログイン機能を持つ PHP アプリケーションを書くことになる。
+ユーザー名とパスワード (のハッシュ) をデータベースに保存して、
+ユーザーのログイン時にそれを使って認証するというやつだ。
 
-It is important that you properly _hash_ passwords that are stored in a database. If passwords are not hashed, and your database is hacked or accessed by an unauthorized third-party, all user accounts are now compromised.
+データベースにパスワードを保存するときは、適切に _ハッシュ_ することが大切だ。
+そうしないと、仮にデータベースが乗っ取られたり、
+本来見えてはいけない人に中身を見られてしまったときに
+すべてのユーザーアカウントを危険にさらしてしまうことになる。
 
-**Hash passwords with Bcrypt**. It's super simple, and (for all intents and purposes) Bcrypt makes it impossible for someone to reverse-engineer the plain-text version of a password should the database be compromised.
+**パスワードは Bcrypt でハッシュする**。ただそれだけのこと。
+とてもシンプルだし、(あらゆる意味において) Bcrypt によるハッシュから
+平文のパスワードを復元することは不可能になる。
 
-There are several Bcrypt libraries for PHP that you may use.
+PHP で使える Bcrypt ライブラリは、いくつか存在する。
 
-* [Read "How to Safely Store a Password" by Coda Hale][3]
-* [Use Bcrypt with PHPass][4]
+* [Coda Hale による記事 "How to Safely Store a Password"][3]
+* [Bcrypt を PHPass と組み合わせて使う][4]
 
 [3]: http://codahale.com/how-to-safely-store-a-password/
 [4]: http://www.openwall.com/phpass/
