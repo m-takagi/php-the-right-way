@@ -24,7 +24,16 @@ PSR-2 には従う必要がない。
 * [PSR-1 とは][psr1]
 * [PSR-2 とは][psr2]
 
+[PHP_CodeSniffer][phpcs]用の[phpcs-psr][phpcs-psr]を使えば、
+自分のコードがこれらの標準に準拠しているかどうかを確認できる。
+Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]を使えば、
+これらの標準に準拠するようにコードを自動的に修正してくれる。
+いちいち手作業で修正する手間を省けるってわけだ。
+
 [fig]: http://www.php-fig.org/
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
 [psr1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
 [psr2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
+[phpcs]: http://pear.php.net/package/PHP_CodeSniffer/
+[phpcs-psr]: https://github.com/klaussilveira/phpcs-psr
+[phpcsfixer]: http://cs.sensiolabs.org/
