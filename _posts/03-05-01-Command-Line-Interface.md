@@ -30,7 +30,8 @@ PHP をコマンドラインで実行してみよう。
 {% highlight php %}
 <?php
 if($argc != 2) {
-    die("Usage: php hello.php [name].\n");
+    echo "Usage: php hello.php [name].\n";
+    exit(1);
 }
 $name = $argv[1];
 echo "Hello, $name\n";
@@ -40,6 +41,9 @@ PHP のスクリプトを実行すると、コマンドラインの引数に関�
 [`$argc`][argc] は整数値で、引数の *数* を表し、
 [`$argv`][argv] は配列で、各引数の *値* を含む。
 最初の引数は、常に PHP スクリプトのファイル名となる。今回の場合なら `hello.php` だ。
+
+`exit()` でゼロ以外の数値を返すと、コマンドが失敗したことをシェルに伝えることができる。
+よく使われる終了コードは [ここ][exit-codes] で調べよう。
 
 このスクリプトをコマンドラインから実行すると、次のようになる。
 
@@ -60,3 +64,4 @@ Hello, world
 [argv]: http://php.net/manual/ja/reserved.variables.argv.php
 [php-cli]: http://php.net/manual/ja/features.commandline.php
 [php-cli-windows]: http://www.php.net/manual/ja/install.windows.commandline.php
+[exit-codes]: http://www.gsp.com/cgi-bin/man.cgi?section=3&topic=sysexits
