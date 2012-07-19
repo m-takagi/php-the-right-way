@@ -2,9 +2,11 @@
 isChild: true
 ---
 
-## Working with date and time
+## 日付や時刻の扱いかた
 
-Working with dates and time is very easy. PHP has a class named DateTime for this. Taking a sting and converting it to a DateTime is possible with the createFromFormat factory method. This method also has a non OO counterpart, named date_create_from_format().
+日付や時刻を扱うのはとても簡単で、PHP には DateTime クラスっていうのが用意されている。
+文字列から DateTime への変換には、ファクトリーメソッド createFromFormat を使えばいい。
+このメソッドにはオブジェクト指向スタイルじゃない関数もあって、それが date_create_from_format() だ。
 
 {% highlight php %}
 <?php
@@ -13,30 +15,32 @@ $date = \DateTime::createFromFormat('d/m/Y', $rawDate);
 
 {% endhighlight %}
 
-Calculating with DateTime is possible with the DateInterval class. DateTime has functions like add() and sub() that take a DateInterval as an argument. For example, if one would want to add a month to the date we created above:
+DateTime を使った計算をするときに使えるのが the DateInterval クラスだ。
+DateTime には add() や sub() といった関数があって、その引数に指定するのがこの DateInterval となる。
+たとえば、さっき作った日付の一ヶ月後を計算したければ、このようにする。
 
 {% highlight php %}
-$date->add(new \DateInterval('P1M')); // add a Period of one Month
+$date->add(new \DateInterval('P1M')); // 一ヶ月という期間を加える
 {% endhighlight %}
 
-The DateTime class has a function to format a date.
+DateTime クラスには、日付の書式を指定する関数もある。
 
 {% highlight php %}
 echo $date->format('d/m/Y h:i:s');
 {% endhighlight %}
 
-One last example that demonstrates converting a Unix timestamp to DateTime and back to Unix timestamp:
+最後に示す例は、Unix タイムスタンプを DateTime に変換してからもう一度 Unix タイムスタンプに戻すものだ。
 
 {% highlight php %}
 $unixtime = '1239363000';
-$date = DateTime::createFromFormat('U', $unixtime); // date is now 2009-04-10 11:30:00
-echo $date->format('U'); // outputs 1239363000
+$date = DateTime::createFromFormat('U', $unixtime); // date は 2009-04-10 11:30:00 となる
+echo $date->format('U'); // 1239363000 と出力する
 {% endhighlight %}
 
-* [Read about DateTime][datetime]
-* [Read about DateInterval][dateinterval]
-* [Read about formatting date][dateformat]
+* [DateTime][datetime]
+* [DateInterval][dateinterval]
+* [日付の書式][dateformat]
 
-[datetime]: http://php.net/manual/en/language.exceptions.php 
-[dateinterval]: http://www.php.net/manual/en/class.dateinterval.php
-[dateformat]: http://www.php.net/manual/en/function.date.php
+[datetime]: http://php.net/manual/ja/language.exceptions.php 
+[dateinterval]: http://www.php.net/manual/ja/class.dateinterval.php
+[dateformat]: http://www.php.net/manual/ja/function.date.php
