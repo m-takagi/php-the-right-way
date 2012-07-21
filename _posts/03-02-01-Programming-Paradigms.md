@@ -20,23 +20,22 @@ PHP には完全なオブジェクト指向プログラミングの機能が搭�
 
 ### 関数プログラミング
 
-PHP 5.3 からは無名関数やクロージャが使えるようになった。
+PHP supports first-class function, meaning that a function can be assigned to a variable. Both user defined and built-in 
+functions can be referenced by a variable and invoked dynamically. Functions can be passed as arguments to other
+functions (feature called Higher-order functions) and function can return other functions.
 
-{% highlight php %}
-<?php
-$greet = function($name)
-{
-    print("Hello {$name}");
-};
+Recursion, a feature that allows a function to call itself is supported by the language, but most of the PHP code focus
+on iteration.
 
-$greet('World');
-{% endhighlight %}
+New anonymous functions (with support for closures) are present since PHP 5.3 (2009).
 
 PHP 5.4 からは、クロージャをオブジェクトのスコープにバインドできるようになった。
 また callable のサポートも強化され、ほとんどの場合で無名関数と互換性を持つようになった。
 
+* 詳しくは [PHP における関数型プログラミング](/pages/Functional-Programming.html) で
 * [無名関数][anonymous-functions]
 * [Closure クラス][closure-class]
+* [クロージャの詳細を知りたければ、RFCを読めばいいよ][closures-rfc]
 * [Callable][callables]
 * [`call_user_func_array`による動的な関数実行][call-user-func-array]
 
@@ -61,3 +60,4 @@ Ruby の人がよく「PHP には `method_missing` がなくてさあ」とか�
 [reflection]: http://www.php.net/manual/ja/intro.reflection.php
 [traits]: http://www.php.net/traits
 [call-user-func-array]: http://php.net/manual/ja/function.call-user-func-array.php
+[closures-rfc]: https://wiki.php.net/rfc/closures
