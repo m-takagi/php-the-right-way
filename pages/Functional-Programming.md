@@ -3,37 +3,41 @@ layout: page
 title: Functional Programming in PHP
 ---
 
-# Functional Programming in PHP
+# PHP における関数型プログラミング
 
-PHP supports first-class function, meaning that a function can be assigned to a variable. Both user defined and built-in 
-functions can be referenced by a variable and invoked dynamically. Functions can be passed as arguments to other
-functions (feature called Higher-order functions) and function can return other functions.
+PHP は、ファーストクラスの関数をサポートしている。
+つまり、関数を変数に代入できるってことだ。
+自分で定義した関数だろうがもともと組み込まれている関数だろうが、
+変数で参照したり動的に実行したりできる。
+何かの関数を別の関数の引数として渡すこと (高階関数っていう機能)
+もできるし、関数の返り値を別の関数にすることもできる。
 
-Recursion, a feature that allows a function to call itself is supported by the language, but most of the PHP code focus
-on iteration.
+再帰 (ある関数の中から自分自身を呼ぶこと) も PHP の機能としてサポートしている。
+しかし、たいていの PHP コードはそれよりも逐次処理を重視している。
 
-New anonymous functions (with support for closures) are present since PHP 5.3 (2009).
+新型の無名関数 (クロージャにも対応したもの) が使えるようになったのは、PHP 5.3 (2009 年) 以降だ。
 
-PHP 5.4 added the ability to bind closures to an object's scope and also improved support for callables such that they
-can be used interchangeably with anonymous functions in almost all cases.
+PHP 5.4 からは、クロージャをオブジェクトのスコープにバインドできるようになった。
+また callable のサポートも強化され、ほとんどの場合で無名関数と互換性を持つようになった。
 
-The most common usage of higher-order functions is when implementing a strategy pattern. Built-in `array_filter`
-function asks both for the input array (data) and a function (a strategy or a callback) used as a filter function on
-each array item.
+高階関数の最もよくある使いかたは、ストラテジーパターンの実装だ。
+組み込みの `array_filter` 関数は、入力の配列 (データ)
+と関数 (ストラテジーあるいはコールバック) を受け取って、
+配列の各要素に対してその関数をフィルターとして適用する。
 
 {% highlight php %}
 <?php
 $input = array(1, 2, 3, 4, 5, 6);
 
-// Creates a new anonymous function and assigns it to a variable
+// 新たな無名関数を作って、変数に代入する
 $filter_even = function($item) {
     return ($item % 2) == 0;
 };
 
-// Built-in array_filter accepts both the data and the function
+// array_filter は、データと関数を受け取る
 $output = array_filter($input, $filter_even);
 
-// The function doesn't need to be assigned to a variable. This is valid too:
+// 関数をいったん変数に代入せずに、直接このように書いてもかまわない
 $output = array_filter($input, function($item) {
     return ($item % 2) == 0;
 });
@@ -41,19 +45,19 @@ $output = array_filter($input, function($item) {
 print_r($output);
 {% endhighlight %}
 
-Closure is an anonymous function that can access variables imported from the outside scope without using any global
-variables. Theoretically, a closure is a function with some arguments closed (e.g. fixed) by the environment when it is 
-defined. Closures can work around variable scope restrictions in a clean way.
+クロージャは無名関数の一種で、外部のスコープからインポートした変数に対してグローバル変数を介さずにアクセスできる。
+理論的には、クロージャというのは関数の一種であり、定義時に一部の引数を環境に閉じた (固定した) ものである。
+クロージャを使えば、変数のスコープの制約をすっきりとした方法で回避できる。
 
-In the next example we use closures to define a function returning a single filter function for `array_filter`, out of
-a family of filter functions.
+次の例では、クロージャを使って関数を定義する。この関数はフィルター関数群の中から
+`array_filter` 用のフィルター関数を一つ返すものだ。
 
 {% highlight php %}
 <?php
 /**
- * Creates an anonymous filter function accepting items > $min
+ * フィルター用の無名関数 (items > $min を通すもの) を作る
  *
- * Returns a single filter out of a family of "greater than n" filters
+ * 「n より大きい」フィルター群の中からひとつのフィルターを返す
  */
 function criteria_greater_than($min)
 {
@@ -64,24 +68,27 @@ function criteria_greater_than($min)
 
 $input = array(1, 2, 3, 4, 5, 6);
 
-// Use array_filter on a input with a selected filter function
+// array_filter を使い、入力値とフィルター関数を指定する
 $output = array_filter($input, criteria_greater_than(3));
 
 print_r($output); // items > 3
 {% endhighlight %}
 
-Each filter function in the family accepts only elements greater than some minimum value. Single filter returned by 
-`criteria_greater_than` is a closure whith `$min` argument closed by the value in the scope (given as an argument when 
-`criteria_greater_than` is called).
+フィルター関数群の各関数は、何らかの最小値を上回る要素だけを通過させる。
+`criteria_greater_than` が返すフィルターはクロージャであり、
+`$min` 引数の値 (`criteria_greater_than` の呼び出し時に引数として渡したもの)
+がスコープ内で束縛されている。
 
-Early binding is used by default for importing `$min` variable into the created function. For true closures with late
-binding one should use a reference when importing. Imagine a templating or input validation libraries, where closure is 
-defined to capture variables in scope and access them later when the anonymous function is evaluated.
+デフォルトでは、`$min` 変数の値を関数にインポートするときに早期束縛を使う。
+遅延束縛を使った真のクロージャを使いたい場合は、インポートの際に参照を使わないといけない。
+テンプレート、あるいは入力バリデーションライブラリを考えてみよう。
+こんな場合、クロージャを定義してスコープ内の変数を捕捉しておいて、
+あとで無名関数が評価されたときにそれにアクセスすることになる。
 
-* [Read about Anonymous functions][anonymous-functions]
-* [More details in the Closures RFC][closures-rfc]
-* [Read about dynamically invoking functions with `call_user_func_array`][call-user-func-array]
+* [無名関数][anonymous-functions]
+* [クロージャの詳細を知りたければ、RFCを読めばいいよ][closures-rfc]
+* [`call_user_func_array`による動的な関数実行][call-user-func-array]
 
-[anonymous-functions]: http://www.php.net/manual/en/functions.anonymous.php
-[call-user-func-array]: http://php.net/manual/en/function.call-user-func-array.php
+[anonymous-functions]: http://www.php.net/manual/ja/functions.anonymous.php
+[call-user-func-array]: http://php.net/manual/ja/function.call-user-func-array.php
 [closures-rfc]: https://wiki.php.net/rfc/closures
