@@ -20,14 +20,17 @@ PHP には完全なオブジェクト指向プログラミングの機能が搭�
 
 ### 関数プログラミング
 
-PHP supports first-class function, meaning that a function can be assigned to a variable. Both user defined and built-in 
-functions can be referenced by a variable and invoked dynamically. Functions can be passed as arguments to other
-functions (feature called Higher-order functions) and function can return other functions.
+PHP は、ファーストクラスの関数をサポートしている。
+つまり、関数を変数に代入できるってことだ。
+自分で定義した関数だろうがもともと組み込まれている関数だろうが、
+変数で参照したり動的に実行したりできる。
+何かの関数を別の関数の引数として渡すこと (高階関数っていう機能)
+もできるし、関数の返り値を別の関数にすることもできる。
 
-Recursion, a feature that allows a function to call itself is supported by the language, but most of the PHP code focus
-on iteration.
+再帰 (ある関数の中から自分自身を呼ぶこと) も PHP の機能としてサポートしている。
+しかし、たいていの PHP コードはそれよりも逐次処理を重視している。
 
-New anonymous functions (with support for closures) are present since PHP 5.3 (2009).
+新型の無名関数 (クロージャにも対応したもの) が使えるようになったのは、PHP 5.3 (2009 年) 以降だ。
 
 PHP 5.4 からは、クロージャをオブジェクトのスコープにバインドできるようになった。
 また callable のサポートも強化され、ほとんどの場合で無名関数と互換性を持つようになった。
