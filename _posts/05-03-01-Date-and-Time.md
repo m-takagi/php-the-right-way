@@ -2,15 +2,17 @@
 isChild: true
 ---
 
-## Date and Time
+## 日付や時刻の扱いかた
 
-PHP has a class named DateTime to help you when reading, writing, comparing or calculating with date and time. There are
-many date and time related functions in PHP besides DateTime, but it provides nice object-oriented interface to most
-common uses. It can handle time zones, but that is outside this short introduction.
+PHP の DateTime クラスを使えば、日付や時刻の読み書き、比較、そして計算ができる。
+PHP には DateTime クラス以外にも日付や時刻がらみの関数が大量にあるけど、
+DateTime クラスにはちゃんとしたオブジェクト指向のインターフェイスがあるので
+たいていの場合はこのクラスを使ったほうがいい。
+タイムゾーンだって扱えるけど、ここではそこまでは深追いしない。
 
-To start working with DateTime, convert raw date and time string to an object with `createFromFormat()` factory method
-or do `new \DateTime` to get the current date and time. Use `format()` method to convert DateTime back to a string for
-output.
+DateTime を使って何かの操作をするためには、日付や時刻を表す文字列をファクトリーメソッド
+`createFromFormat()` でオブジェクトに変換するか、あるいは `new \DateTime`
+で現在の日時を取得する。`format()` メソッドを使えば、DateTime を文字列に戻して出力できる。
 {% highlight php %}
 <?php
 $raw = '22. 11. 1968';
@@ -19,13 +21,15 @@ $start = \DateTime::createFromFormat('d. m. Y', $raw);
 echo "Start date: " . $start->format('m/d/Y') . "\n";
 {% endhighlight %}
 
-Calculating with DateTime is possible with the DateInterval class. DateTime has methods like `add()` and `sub()` that
-take a DateInterval as an argument. Do not write code that expect same number of seconds in every day, both daylight
-saving and timezone alterations will break that assumption. Use date intervals instead. To calculate date difference use
-the `diff()` method. It will return new DateInterval, which is super easy to display.
+DateTime を使った計算をするときに使えるのが the DateInterval クラスだ。
+DateTime には `add()` や `sub()` といった関数があって、その引数に指定するのがこの DateInterval となる。
+1日が86400秒であることを前提としたコードを書いてはいけない。
+サマータイムとかタイムゾーンの移動がからむと、この前提はあっさり崩れてしまうからだ。
+そんなときには DateInterval を使う。二つの日付の差を計算するときには
+`diff()` メソッドを使う。このメソッドは DateInterval を返し、結果を表示するのも簡単だ。
 {% highlight php %}
 <?php
-// create a copy of $start and add one month and 6 days
+// $start をコピーして、1か月と6日を足す
 $end = clone $start;
 $end->add(new \DateInterval('P1M6D'));
 
@@ -34,7 +38,7 @@ echo "Difference: " . $diff->format('%m month, %d days (total: %a days)') . "\n"
 // Difference: 1 month, 6 days (total: 37 days)
 {% endhighlight %}
 
-On DateTime objects you can use standard comparison:
+DateTime オブジェクトどうしでごく普通に比較することもできる。
 {% highlight php %}
 <?php
 if($start < $end) {
@@ -42,24 +46,24 @@ if($start < $end) {
 }
 {% endhighlight %}
     
-One last example to demonstrate the DatePeriod class. It is used to iterate over recurring events. It can take two
-DateTime objects, start and end, and the interval for which it will return all events in between.
+最後にもうひとつ DatePeriod クラスの例を示そう。繰り返し発生するイベントを順に処理するときに使える。
+開始日時と終了日時を表す二つの DateTime 、そしてイベントの間隔を受け取って、すべてのイベントを返すものだ。
 {% highlight php %}
 <?php
-// output all thursdays between $start and $end
+// $start から $end までの間のすべての木曜日を返す
 $periodInterval = \DateInterval::createFromDateString('first thursday');
 $periodIterator = new \DatePeriod($start, $periodInterval, $end, \DatePeriod::EXCLUDE_START_DATE);
 foreach($periodIterator as $date)
 {
-    // output each date in the period
+    // 毎木曜日を表示する
     echo $date->format('m/d/Y') . " ";
 }
 {% endhighlight %}
 
-* [Read about DateTime][datetime]
-* [Read about DateInterval][dateinterval]
-* [Read about DatePeriod][dateperiod]
-* [Read about date formatting][dateformat] (accepted date format string options)
+* [DateTime][datetime]
+* [DateInterval][dateinterval]
+* [DatePeriod][dateperiod]
+* [日付の書式][dateformat] (日付の書式指定文字列に使えるオプション)
 
 [datetime]: http://www.php.net/manual/language.exceptions.php 
 [dateinterval]: http://www.php.net/manual/class.dateinterval.php
