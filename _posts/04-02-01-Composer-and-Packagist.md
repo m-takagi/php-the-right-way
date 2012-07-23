@@ -1,4 +1,5 @@
 ---
+title: Composer と Packagist
 isChild: true
 ---
 

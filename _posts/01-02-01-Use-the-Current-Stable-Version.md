@@ -1,5 +1,5 @@
 ---
-title: Use the Current Stable Version (5.4)
+title: 最新の安定版 (5.4) を使う
 isChild: true
 ---
 

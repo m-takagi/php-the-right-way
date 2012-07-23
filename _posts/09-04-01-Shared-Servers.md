@@ -1,4 +1,5 @@
 ---
+title: 共有サーバー
 isChild: true
 ---
 

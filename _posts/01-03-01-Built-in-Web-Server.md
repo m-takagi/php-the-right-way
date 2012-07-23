@@ -1,5 +1,5 @@
 ---
-title: Built-in Web Server
+title: ビルトインウェブサーバー
 isChild: true
 ---
 

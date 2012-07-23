@@ -1,4 +1,5 @@
 ---
+title: デザインパターン
 isChild: true
 ---
 

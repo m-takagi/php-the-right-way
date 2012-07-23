@@ -1,4 +1,5 @@
 ---
+title: Mac の人は
 isChild: true
 ---
 

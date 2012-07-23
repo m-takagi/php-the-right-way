@@ -1,4 +1,5 @@
 ---
+title: 日付や時刻の扱いかた
 isChild: true
 ---
 
