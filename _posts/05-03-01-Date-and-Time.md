@@ -61,11 +61,7 @@ foreach($periodIterator as $date)
 {% endhighlight %}
 
 * [DateTime][datetime]
-* [DateInterval][dateinterval]
-* [DatePeriod][dateperiod]
 * [日付の書式][dateformat] (日付の書式指定文字列に使えるオプション)
 
-[datetime]: http://www.php.net/manual/language.exceptions.php 
-[dateinterval]: http://www.php.net/manual/class.dateinterval.php
-[dateperiod]: http://www.php.net/manual/class.dateperiod.php
+[datetime]: http://www.php.net/manual/book.datetime.php
 [dateformat]: http://www.php.net/manual/function.date.php

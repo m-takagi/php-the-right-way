@@ -4,6 +4,16 @@
 そんなのはもうやめよう。_PHP: The Right Way_ は気軽に読めるクイックリファレンスだ。PHPのベストプラクティスやコーディング規約、
 そしてウェブ上のよくできたチュートリアルへのリンクをまとめた。
 
+## 翻訳
+
+_PHP: The Right Way_ は、他の言語にも翻訳されつつある。
+
+* [English](http://www.phptherightway.com)
+* [Chinese](http://wulijun.github.com/php-the-right-way)
+* Japanese (Coming Soon)
+* Russian (Coming Soon)
+* Spanish (Coming Soon)
+
 ## おことわり
 
 大事なのは、_PHPを使うための正式なお作法など存在しない_ってこと。それがPHPのいいところなんだ。
