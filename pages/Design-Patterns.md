@@ -3,19 +3,21 @@ layout: page
 title: Design Patterns
 ---
 
-# Design Patterns
+# デザインパターン
 
-There are numerous ways to structure the code and project for you web application, and you can put as much or as little
-thought as you like into architecting. But it is usually a good idea to follow to common patterns because it will make
-your code easier to manage and easier for others to understand.
+ウェブアプリケーションのコードやプロジェクトを作っていくにはいろんなやりかたがあって、
+どんなふうに作るか考え抜くのもありだし適当に作るのもありだ。
+でも普通は、一般的なパターンに従うほうがいい。そのほうがコードを管理しやすいし、
+他の人にもそのコードを理解してもらいやすくなるからである。
 
-* [Architectural pattern on Wikipedia](https://en.wikipedia.org/wiki/Architectural_pattern)
-* [Software design pattern on Wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
+* [Architectural pattern (Wikipedia)](https://en.wikipedia.org/wiki/Architectural_pattern)
+* [デザインパターン (Wikipedia)](https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3_(%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2))
 
-## Factory
+## ファクトリー
 
-One of the most commonly used design patterns is the factory pattern. This is a pattern is simply a class that creates
-the object you want to use. Consider the following example of the factory pattern:
+最も多用されているデザインパターンのひとつが、ファクトリーパターンだ。これは単純に、
+使いたいオブジェクトを生成するクラスである。ファクトリーパターンの例として、
+こんなコードを考えてみよう。
 
 {% highlight php %}
 <?php
@@ -44,45 +46,54 @@ class AutomobileFactory
     }
 }
 
-// have the factory create the Automobile object
-$veyron = AutomobileFactory::create('Bugatti', 'Veyron');
+// ファクトリーを使って Automobile オブジェクトを作る
+$veyron = AutomobileFactory::create('ブガッティ', 'ヴェイロン');
 
-print_r($veyron->get_make_and_model()); // outputs "Bugatti Veyron"
+print_r($veyron->get_make_and_model()); // 出力は "ブガッティ ヴェイロン"
 {% endhighlight %}
 
-This code uses a factory to create the Automobile object. There are two possible benefits to building your code this
-way, the first is that if you need to change, rename, or replace the Automobile class later on you can do so and you
-will only have to modify the code in the factory, instead of every place in your project that uses the Automobile
-class. The second possible benefit is that if creating the object is a complicated job you can do all of the work in
-the factory, instead of repeating it every time you want to create a new instance.
+このコードは、ファクトリーパターンを使って Automobile オブジェクトを作る。
+こんなふうにするメリットは二つある。
+まず、もし後で Automobile クラスに手を入れたり名前を変更したり別のものに入れ替えたりすることになっても簡単にできるということ。
+単にファクトリーの中のコードを変更すれば済むわけで、
+コードの中で Automobile クラスを使っているところをひとつひとつ修正するとかいうことはしなくてもよい。
+二番目のメリットは、仮にオブジェクトの生成が複雑な作業になってしまっても、
+そのすべてのファクトリーに閉じ込めてしまえること。
+新しいインスタンスを作るたびに毎回同じようなことを繰り返さずに済む。
 
-Using the factory pattern isn't always necessary (or wise). The example code used here is so simple that a factory
-would simply be adding unneeded complexity. However if you are making a fairly large or complex project you may save
-yourself a lot of trouble down the road by using factories.
+なにがなんでもファクトリーパターンを使えばいいってわけではない。
+この例のコードはとてもシンプルだし、この程度だとファクトリーパターンのおかげで
+無駄に複雑になったように見えるかもしれない。
+でも、それなりに大規模で込み入ったプロジェクトにかかわる場合は、
+変なトラブルに巻き込まれないためにもファクトリーを使っておいたほうがいいだろう。
 
-* [Factory pattern on Wikipedia](https://en.wikipedia.org/wiki/Factory_pattern)
+* [ファクトリーパターン (Wikipedia)](https://ja.wikipedia.org/wiki/Factory_Method_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)
 
-## Front Controller
+## フロントコントローラ
 
-The front controller pattern is where you have a single entrance point for you web application (e.g. index.php) that
-handles all of the requests. This code is responsible for loading all of the dependencies, processing the request and
-sending the response to the browser. The front controller pattern can be beneficial because it encourages modular code
-and gives you a central place to hook in code that should be run for every request (such as input sanitization).
+フロントコントローラパターンは、ウェブアプリケーションのエントリポイントをひとつだけ (例: index.php) にして
+そこですべてのリクエストを処理するというパターンだ。このエントリポイントが、
+依存情報を読み込んだりリクエストを処理したりレスポンスをブラウザに返したりといった責務を負う。
+フロントコントローラを利用すると、コードのモジュール化が進めやすくなる。
+また、すべてのリクエストに対して実行したいコード
+(入力のチェックなど) をフックとして組み込みやすくなる。
 
-* [Front Controller pattern on Wikipedia](https://en.wikipedia.org/wiki/Front_Controller_pattern)
+* [フロントコントローラパターン (Wikipedia)](https://en.wikipedia.org/wiki/Front_Controller_pattern)
 
 ## Model-View-Controller
 
-The model-view-controller (MVC) pattern and its relatives HMVC and MVVM let you break up code into logical objects that
-serve very specific purposes. Models serve as a data access layer where data it fetched and returned in formats usable
-throughout your application. Controllers handle the request, process the data returned from models and load views to
-send in the response. And views are display templates (markup, xml, etc) that are sent in the response to the web
-browser.
+モデル=ビュー=コントローラ (MVC) パターン、そしてその関連パターンである HMVC や MVVM
+を使うと、コードを論理的に分解してそれぞれ特定の役割を担わせることができる。
+モデルはデータアクセス層を扱い、データを取得してそれをアプリケーションで使いやすい形式で返す。
+コントローラはリクエストを扱い、モデルから受け取ったデータを処理してビューを読み込み、
+それをレスポンスとして返す。
+ビューはテンプレート (マークアップや xml など) を扱い、これをレスポンスとしてウェブブラウザに返す。
 
-MVC is the most common architectural pattern used in the popular [PHP frameworks](https://github.com/codeguy/php-the-right-way/wiki/Frameworks).
+MVC は最も一般的なアーキテクチャパターンで、主要な [PHP フレームワーク](https://github.com/codeguy/php-the-right-way/wiki/Frameworks)
+でも採用されている。
 
-Learn more about MVC and its relatives:
+MVC やその関連パターンについてさらに知りたければ、これらを参考にしよう。
 
-* [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93View%E2%80%93Controller)
+* [MVC](https://ja.wikipedia.org/wiki/Model_View_Controller)
 * [HMVC](https://en.wikipedia.org/wiki/Hierarchical_model%E2%80%93view%E2%80%93controller)
-* [MVVM](https://en.wikipedia.org/wiki/Model_View_ViewModel)
+* [MVVM](https://ja.wikipedia.org/wiki/Model_View_ViewModel)

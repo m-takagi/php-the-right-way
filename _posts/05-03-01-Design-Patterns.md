@@ -2,15 +2,17 @@
 isChild: true
 ---
 
-## Design Patterns
+## デザインパターン
 
-When you are building your application it is helpful to use common patterns in your code and common patterns for the
-overall structure of your project. Using common patterns is helpful because it makes it much easier to manage your code
-and lets other developers quickly understand how everything fits together.
+アプリケーションをつくるときには、一般的なパターンに従ってコードを書くとよい。
+同じくプロジェクトの全体構造についても、一般的なパターンに従おう。
+なぜそうするといいかというと、自分のコードを管理しやすくなるし、
+何がどうなっているのかを他の開発者にもわかってもらいやすくなるからだ。
 
-If you use a framework then most of the higher level code and project structure will be based on that framework, so a
-lot of the pattern decisions are made for you. But it is still up to you to pick out the best patterns to follow in the
-code you build on top of the framework. If, on the other hand, you are not using a framework to build your application
-then you have to find the patterns that best suit the type and size of application that you're building.
+フレームワークを使ってコードを書くと、上位レベルのコードやプロジェクトの構造のほとんどはそのフレームワークの流儀に従うことになる。
+すでにそこには、いろんなパターンが適用されているだろう。
+ただ、そのフレームワークの上で書く自分のコードの中でどんなパターンを適用するかは、自分次第だ。
+一方、フレームワークを使わずにコードを書く場合はどうだろう。
+自分が火口としているアプリケーションのタイプや規模に応じて、最適なパターンをみつける必要がある。
 
-* Continue reading on [Design Patterns](/pages/Design-Patterns.html)
+* 詳しくは [デザインパターン](/pages/Design-Patterns.html) で
