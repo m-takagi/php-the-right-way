@@ -1,16 +1,13 @@
 ---
-title: Configuration Files
+title: 設定ファイル
 isChild: true
 ---
 
-## Configuration Files
+## 設定ファイル
 
-When creating configuration files for your applications, best practices recommend that one of the following methods 
-be followed:
+自作のアプリケーションで設定ファイルを使うときには、これらの指針に従うのがお勧めだ。
 
-- It is recommended that you store your configuration information where it cannot be accessed directly and pulled in 
-via the file system.
-- If you must store your configuration files in the document root, name the files with a `.php` extension. This 
-ensures that, even if the script is accessed directly, it will not be outputed as plain text.
-- Information in configuration files should be protected accordingly, either through encryption or group/user file 
-system permissions
+- 設定情報に直接アクセスしたり、ファイルシステム経由で取り込んだりできないようにする。
+- どうしてもドキュメントルートに設定ファイルを置かざるを得ないのなら、そのファイルの拡張子を`.php`にする。
+そうすれば、仮にそのファイルへ直接アクセスされたとしても、中身がそのまま見えてしまうことはない。
+- 設定ファイル内の情報は適切に保護すること。暗号化するなり、ファイルシステム上のパーミッションをきちんと設定するなりしておく。
