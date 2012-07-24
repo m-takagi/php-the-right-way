@@ -1,34 +1,35 @@
 ---
-title: Error Reporting
+title: エラーレポート
 isChild: true
 ---
 
-## Error Reporting
+## エラーレポート
 
-Error logging can be useful in finding the problem spots in your application, but it can also expose infromation about 
-the structure of your application to the outside world. To effectively protect your application from issues that could 
-be caused by the output of these messages, you need to configure your server differently in development versus 
-production (live).
+エラーを記録しておくと、アプリケーションに何か問題があったときにその原因を見つけやすくなる。
+しかしその一方で、アプリケーションの構造に関する情報を外部に公開してしまうことにもなる。
+エラーメッセージを出すことで起こる問題からアプリケーションを守るには、
+開発環境と本番環境でサーバーの設定を切り替える必要がある。
 
-### Development
+### 開発環境
 
-To show errors in your <strong>development</strong> environment, configure the following settings in your `php.ini`:
+<strong>開発</strong>環境でエラーを表示するときには、`php.ini`で次のように設定する。
 
 - display_errors: On
 - error_reporting: E_ALL
 - log_errors: On
 
-### Production
+### 本番環境
 
-To hide the errors on your <strong>production</strong> environment, configure your `php.ini` as:
+<strong>本番</strong>環境でエラーの情報を見せないようにするには、`php.ini`で次のように設定する。
 
 - display_errors: Off
 - error_reporting: E_ALL
 - log_errors: On
 
-With these settings in production, errors will still be logged to the error logs for the web server, but will not be 
-shown to the user. For more information on these settings, see the PHP manual:
+この本番環境用の設定をしても、ウェブサーバーのエラーログにはエラーの内容がきちんと残る。
+しかし、ユーザーにはエラーが見えなくなる。これらの設定項目についてもっと詳しく知りたければ、
+PHP のマニュアルを読もう。
 
-* [Error_reporting](http://www.php.net/manual/en/errorfunc.configuration.php#ini.error-reporting)
-* [Display_errors](http://www.php.net/manual/en/errorfunc.configuration.php#ini.display-errors)
-* [Log_errors](http://www.php.net/manual/en/errorfunc.configuration.php#ini.log-errors)
+* [error_reporting](http://www.php.net/manual/ja/errorfunc.configuration.php#ini.error-reporting)
+* [display_errors](http://www.php.net/manual/ja/errorfunc.configuration.php#ini.display-errors)
+* [log_errors](http://www.php.net/manual/ja/errorfunc.configuration.php#ini.log-errors)
