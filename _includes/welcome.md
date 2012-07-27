@@ -10,10 +10,11 @@ _PHP: The Right Way_ は、他の言語にも翻訳されつつある。
 
 * [English](http://www.phptherightway.com)
 * [Chinese](http://wulijun.github.com/php-the-right-way)
-* Japanese (Coming Soon)
+* [Japanese](http://ja.phptherightway.com)
 * Portuguese (Coming Soon)
 * Russian (Coming Soon)
-* Spanish (Coming Soon)
+* [Spanish](http://es.phptherightway.com)
+* Ukrainian (Coming Soon)
 
 ## おことわり
 

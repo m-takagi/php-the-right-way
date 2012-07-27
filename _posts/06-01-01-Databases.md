@@ -91,7 +91,7 @@ PDO をベースとしたものもあれば、そうでないものもある。
 [1]: http://www.php.net/manual/ja/book.pdo.php
 [2]: http://www.doctrine-project.org/projects/dbal.html
 [3]: http://framework.zend.com/manual/ja/zend.db.html
-[4]: http://packages.zendframework.com/docs/latest/manual/ja/zend.db.html
+[4]: http://packages.zendframework.com/docs/latest/manual/ja/index.html#zend-db
 
 [mysql]: http://php.net/mysql
 [mysqli]: http://php.net/mysqli
