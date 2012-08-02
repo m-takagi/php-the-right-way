@@ -5,7 +5,7 @@ isChild: true
 
 ## Register Globals
 
-<strong>注意:</strong>
+**注意:**
 PHP 5.4.0 からは `register_globals`
 という設定項目がなくなったので、この設定は使えない。
 このページは単に、大昔のアプリケーションをアップグレードしている人たち向けの警告として用意したものでしかない。
