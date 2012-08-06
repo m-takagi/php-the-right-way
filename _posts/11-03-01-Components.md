@@ -18,7 +18,7 @@ isChild: true
 
 コンポーネントベースのフレームワークっていうのもあって、
 そのコンポーネントだけをごくわずかな要件のもとで使える。
-たとえば[FuelPHP Validation package][fuelval]を使うときには、
+たとえば[FuelPHPのValidationパッケージ][fuelval]を使うときには、
 別にFuelPHPフレームワークを使う必要はない。
 再利用可能なコンポーネントとして、基本的に独立したリポジトリで管理されているんだ。
 
@@ -26,5 +26,5 @@ isChild: true
   [fuelval]: https://github.com/fuelphp/validation
 
 * [Aura](http://auraphp.github.com/)
-* [FuelPHP (2.0 only)](https://github.com/fuelphp)
+* [FuelPHP (2.0 限定)](https://github.com/fuelphp)
 * [Symfony Components](http://symfony.com/doc/current/components/index.html)
