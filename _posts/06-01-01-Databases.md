@@ -73,6 +73,16 @@ SQL インジェクション攻撃を受けることがなくなる。
 
 * [PDOについて調べる][1]
 
+あと、データベースのコネクションはリソースを使うということにも気をつけよう。
+コネクションを明示的に閉じることを忘れたせいでリソースを食いつぶしてしまうなんて話は珍しくない。
+とはいえ、これは別にPHPに限った話でもないけどね。
+PDOを使っている場合は、オブジェクトへの参照をすべて削除して(Nullを代入するなどして)
+オブジェクトを破棄してしまえば、暗黙のうちにコネクションを閉じることが保証される。
+オブジェクトを明示的に破棄しない場合は、スクリプトの実行が終わった時点でPHPが自動的に接続を閉じる。
+もちろん、持続的接続を使っている場合は別だ。
+
+* [PDOの接続について調べる][5]
+
 ## 抽象化レイヤー
 
 多くのフレームワークが自前の抽象化レイヤーを用意している。
@@ -95,6 +105,7 @@ PDO をベースとしたものもあれば、そうでないものもある。
 [2]: http://www.doctrine-project.org/projects/dbal.html
 [3]: http://framework.zend.com/manual/ja/zend.db.html
 [4]: http://packages.zendframework.com/docs/latest/manual/ja/index.html#zend-db
+[5]: http://php.net/manual/ja/pdo.connections.php
 
 [mysql]: http://php.net/mysql
 [mysqli]: http://php.net/mysqli

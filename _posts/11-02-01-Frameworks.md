@@ -1,5 +1,6 @@
 ---
 title: フレームワーク
+isChild: true
 ---
 
 # フレームワーク
