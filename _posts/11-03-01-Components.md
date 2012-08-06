@@ -1,23 +1,28 @@
 ---
+title: コンポーネント
 isChild: true
 ---
 
-## Components
+## コンポーネント
 
-As mentioned above "Components" are another approach to the common goal of creating, distributing and implementing shared code. Various 
-component repositories exist, the main two of which are:
+先ほど説明したように、「コンポーネント」っていうのは
+共有するコードを作ったりそれを配布したりするための手段のひとつだ。
+コンポーネントを登録するリポジトリにもいろいろあるけど、中でも有名なのがこのふたつだ。
 
-* [Packagist](/#composer_and_packagist)
+* [Packagist](/##composer_と_packagist)
 * [PEAR](/#pear)
 
-Both of these repositories have command line tools associated with them to help the installaiton and upgrade processes, and have been 
-explained in more detail in the [Dependency Management][dm] section.
+どちらのリポジトリについてもコマンドラインのツールが存在し、
+コンポーネントのインストールやアップグレードを簡単にできる。
+詳細は[依存関係の管理][dm]を参照すること。
 
-There are also component-based frameworks, which allow you to use their components with minimal (or no) requirements. For example, you 
-can use the [FuelPHP Validation package][fuelval], without needing to use the FuelPHP framework itself. These projects are essentially 
-just another repository for reusable components:
+コンポーネントベースのフレームワークっていうのもあって、
+そのコンポーネントだけをごくわずかな要件のもとで使える。
+たとえば[FuelPHP Validation package][fuelval]を使うときには、
+別にFuelPHPフレームワークを使う必要はない。
+再利用可能なコンポーネントとして、基本的に独立したリポジトリで管理されているんだ。
 
-  [dm]: /#dependency_management
+  [dm]: /#依存関係の管理
   [fuelval]: https://github.com/fuelphp/validation
 
 * [Aura](http://auraphp.github.com/)
