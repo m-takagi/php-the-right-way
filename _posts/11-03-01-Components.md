@@ -9,7 +9,7 @@ isChild: true
 共有するコードを作ったりそれを配布したりするための手段のひとつだ。
 コンポーネントを登録するリポジトリにもいろいろあるけど、中でも有名なのがこのふたつだ。
 
-* [Packagist](/##composer_と_packagist)
+* [Packagist](/#composer_と_packagist)
 * [PEAR](/#pear)
 
 どちらのリポジトリについてもコマンドラインのツールが存在し、
