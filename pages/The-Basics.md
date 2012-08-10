@@ -3,46 +3,47 @@ layout: page
 title: The Basics
 ---
 
-# The Basics
+# 基本
 
-## Comparison operators
+## 比較演算子
 
-Comparison operators are an often overlooked aspect of PHP, which can lead to many unexpected outcomes. One such
-problem stems from strict comparisons (the comparison of booleans as integers).
+比較演算子はPHPの中でも見過ごされがちなところで、そのせいで予期せぬ結果になってしまうことが多い。
+そんな問題の原因のひとつが、緩い比較と厳格な比較の違いだ。
 
 {% highlight php %}
 <?php
-$a = 5;   // 5 as an integer
+$a = 5;   // 5はinteger型
 
-var_dump($a == 5);       // compares value; return true
-var_dump($a == '5');     // compares value (ignore type); return true
-var_dump($a === 5);      // compares type/value (integer vs. integer); return true
-var_dump($a === '5');    // compares type/value (integer vs. string); return false
+var_dump($a == 5);       // 値の比較。trueを返す
+var_dump($a == '5');     // 値の比較(型は無視)。trueを返す
+var_dump($a === 5);      // 型と値の比較(integer vs. integer)。trueを返す
+var_dump($a === '5');    // 型と値の比較(integer vs. string)。falseを返す
 
 /**
- * Strict comparisons
+ * 厳格な比較
  */
-if (strpos('testing', 'test')) {    // 'test' is found at position 0, which is interpreted as the boolean 'false'
-    // code...
+if (strpos('testing', 'test')) {    // 'test' は 0 番目の位置にあり、これはboolean型の'false'と見なされる
+    // コード...
 }
 
 vs.
 
-if (strpos('testing', 'test') !== false) {    // true, as strict comparison was made (0 !== false)
-    // code...
+if (strpos('testing', 'test') !== false) {    // 厳格な比較が行われるので、これは成立する(0 !== false)
+    // コード...
 }
 {% endhighlight %}
 
-* [Comparison operators](http://php.net/manual/en/language.operators.comparison.php)
-* [Comparison table](http://php.net/manual/en/types.comparisons.php)
+* [比較演算子](http://php.net/manual/ja/language.operators.comparison.php)
+* [比較の表](http://php.net/manual/ja/types.comparisons.php)
 
-## Conditional arguments
+## 条件分岐
 
-### If statements
+### If 文
 
-While using 'if/else' statements within a function or class, there is a common misconception that 'else' must be used
-in conjunction to declare potential outcomes. However if the outcome is to define the return value, 'else' is not
-necessary as 'return' will end the function, causing 'else' to become moot.
+'if/else'文を関数やクラスの中で使うときにありがちな誤解がある。
+そうじゃなかったときにどんな結果になるのかを示すために'else'が必須だと考えることだ。
+でも、もしその結果を戻り値に使うのなら'else'は必須じゃない。
+だって'return'の時点で関数は終了するんだから、'else'は無意味だ。
 
 {% highlight php %}
 <?php
@@ -62,50 +63,51 @@ function test($a)
     if ($a) {
         return true;
     }
-    return false;    // else is not necessary
+    return false;    // 別にelseがなくたっていいよね
 }
 {% endhighlight %}
 
-* [If statements](http://php.net/manual/en/control-structures.if.php)
+* [If 文](http://php.net/manual/ja/control-structures.if.php)
 
-### Switch statements
+### Switch 文
 
-Switch statements are a great way to avoid typing endless if's and elseif's, but there are a few things to be aware of:
+Switch文を使えば、ifとelseifを延々と書き連ねる必要がなくなる。
+でも、気をつけないといけないこともある。
 
-- Switch statements only compare values, and not the type (equivalent to '==')
-- They Iterate case by case until a match is found. If no match is found, then the default is used (if defined)
-- Without a 'break', they will continue to implement each case until reaching a break/return
-- Within a function, using 'return' alleviates the need for 'break' as it ends the function
+- Switch文は値を比較するだけで、型は比較しない(つまり、'=='で比較してるってこと)
+- マッチする条件が見つかるまで、すべてのcaseを順に評価する。マッチするものがない場合、もしdefaultが定義されていればそれを使う
+- 'break'がなければそのまま次のcaseに進み、breakかreturnに達するまで止まらない
+- 関数の中で'return'を使うときは'break'は不要だ。その時点で関数を終了する
 
 {% highlight php %}
 <?php
-$answer = test(2);    // the code from both 'case 2' and 'case 3' will be implemented
+$answer = test(2);    // 'case 2'のコードと'case 3'のコードを両方実行する
 
 function test($a)
 {
     switch ($a) {
         case 1:
-            // code...
-            break;             // break is used to end the switch statement
+            // コード...
+            break;             // breakでswitch文を抜ける
         case 2:
-            // code...         // with no break, comparison will continue to 'case 3'
+            // コード...        // breakしてないので'case 3'の評価に進む
         case 3:
-            // code...
-            return $result;    // within a function, 'return' will end the function
+            // コード...
+            return $result;    // 関数の中で'return'すると、ここで関数を抜ける
         default:
-            // code...
+            // コード...
             return $error;
     }
 }
 {% endhighlight %}
 
-* [Switch statements](http://php.net/manual/en/control-structures.switch.php)
+* [Switch 文](http://php.net/manual/ja/control-structures.switch.php)
 * [PHP switch](http://phpswitch.com/)
 
-## Global namespace
+## グローバル名前空間
 
-While using namespaces, you may find your code being executed in the wrong scope for internal methods. To fix this,
-define the method globally by using a backslash before the method.
+名前空間を使っていると、組み込みのメソッドを実行するつもりが間違って違うスコープのメソッドを実行してしまうことがある。
+これを修正するには、メソッド名の先頭にバックスラッシュをつけてグローバル名前空間を指定する。
 
 {% highlight php %}
 <?php
@@ -113,131 +115,132 @@ namespace phptherightway;
 
 function fopen()
 {
-    $file = \fopen();    // our function name is the same as an internal function.
-                         // execute globally by adding "\".
+    $file = \fopen();    // ここで定義している関数が組み込みの関数名と重複しているので、
+                         // グローバルなほうを実行するには"\"を追加する
 }
 
 function array()
 {
-    $iterator = new \ArrayIterator();    // ArrayIterator is an internal class. Using it without a backslash
-                                         // will execute it within the namespace scope.
+    $iterator = new \ArrayIterator();    // ArrayIteratorは組み込みのクラスである。バックスラッシュをつけずに使うと、
+                                         // この名前空間のスコープでクラスを探してしまう。
 }
 {% endhighlight %}
 
-* [Global space](http://php.net/manual/en/language.namespaces.global.php)
-* [Global rules](http://php.net/manual/en/userlandnaming.rules.php)
+* [グローバル空間](http://php.net/manual/ja/language.namespaces.global.php)
+* [グローバルに関するルール](http://php.net/manual/ja/userlandnaming.rules.php)
 
-## Strings
+## 文字列
 
-### Concatenation
+### 連結
 
-- If your line extends beyond the recommended line length (120 characters), consider concatenating your line
-- For readability it's best to use concatenation operators over concatenating assignment operators
-- While within the original scope of the variable, indent when concatenation uses a new line
+- 一行がある一定の長さ (目安は120文字) を超える場合は複数行に分けて連結する
+- 可読性を考えると、代入演算子でつなげるよりも連結演算子を使ったほうがよい
+- 同じ変数のスコープ内ではあるが、連結演算子で次の行に移るときはインデントする
 
 
 {% highlight php %}
 <?php
-$a  = 'Multi-line example';    // concatenating assignment operator (.=)
+$a  = 'Multi-line example';    // 連結代入演算子 (.=)
 $a .= "\n";
 $a .= 'of what not to do';
 
 vs.
 
-$a = 'Multi-line example'      // concatenation operator (.)
-    . "\n"                     // indenting new lines
+$a = 'Multi-line example'      // 連結演算子 (.)
+    . "\n"                     // 改行してインデント
     . 'of what to do';
 {% endhighlight %}
 
-* [String Operators](http://php.net/manual/en/language.operators.string.php)
+* [文字列演算子](http://php.net/manual/ja/language.operators.string.php)
 
-### String types
+### 文字列型
 
-String types are a constant feature within the PHP community, but hopefully this section will explain the
-differences between the string types and their benefits/uses.
+文字列型は、PHPの中ではあまりばらつきがないものだ。
+このセクションでは、文字列型のちょっとした違いやその利点そして利用法を紹介しよう。
 
-#### Single quotes
+#### シングルクォート
 
-Single quotes are the simplest way to define a string and are often the quickest. Their quickness stems from PHP not
-parsing the string (doesn't parse for variables). They're best suited for:
+シングルクォートは文字列を表す一番シンプルな方法で、たいていの場合は一番高速だ。
+高速になる理由は、PHPが文字列をパースしない(つまり、変数の展開をしない)ことだ。
+シングルクォートを使うのに適しているのは、こんな場面だ。
 
-- Strings that do not need to be parsed
-- Writing of a variable into plain text
+- パースする必要がない文字列
+- 変数の内容をプレーンなテキストで表す
 
 {% highlight php %}
 <?php
-echo 'This is my string, look at how pretty it is.';    // no need to parse a simple string
+echo 'This is my string, look at how pretty it is.';    // 単純な文字列で、パースする必要がない
 
 /**
- * Output:
+ * 出力は、
  *
  * This is my string, look at how pretty it is.
  */
 {% endhighlight %}
 
-* [Single quote](http://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.single)
+* [シングルクォート](http://www.php.net/manual/ja/language.types.string.php#language.types.string.syntax.single)
 
-#### Double quotes
+#### ダブルクォート
 
-Double quotes are the Swiss army knife of strings, but are slower due to the string being parsed. They're best
-suited for:
+ダブルクォートは、文字列界におけるスイスアーミーナイフだ。
+でも、文字列をパースするぶんだけ速度が落ちる。ダブルクォートを使うのに適しているのは、こんな場面だ。
 
-- Escaped strings
-- Strings with multiple variables and plain text
-- Condensing multi-line concatenation, and improving readability
+- エスケープした文字列
+- プレーンなテキストの中に変数が埋め込まれた文字列
+- 複数行をひとまとめにして可読性を上げたい場合
 
 {% highlight php %}
 <?php
-echo 'phptherightway\'s is ' . $adjective . '.'     // a single quotes example that uses multiple concatenating for
-    . "\n"                                          // variables and escaped string
+echo 'phptherightway\'s is ' . $adjective . '.'     // シングルクォートを使った例。複数の要素を連結し、
+    . "\n"                                          // 変数の埋め込みやエスケープを使っている
     . 'I love learning' . $code . '!';
 
 vs.
 
-echo "phptherightway's is $adjective.\n I love learning $code!"  // Instead of multiple concatenating, double quotes
-                                                                 // enables us to use a parsable string
+echo "phptherightway's is $adjective.\n I love learning $code!"  // ダブルクォートを使えば、別々の要素に分けずに
+                                                                 // ひとまとめにできる
 {% endhighlight %}
 
-While using double quotes that contain variables, it's often the case that the variable will be touching another
-character. This will result in PHP not parsing the variable due to the variable being camouflaged. To fix this problem,
-wrap the variable within a pair of curly brackets.
+ダブルクォートで囲んだ文字列に変数を含むとき、変数とそれ以外の文字がつながってしまうこともよくある。
+そうなってしまえばPHPが変数をパースできなくなる。どこまでが変数でどこからが普通の文字列かがわからなくなるからだ。
+この問題を解決するには、変数の部分を波括弧で囲めばよい。
 
 {% highlight php %}
 <?php
 $juice = 'plum';
-echo "I drank some juice made of $juices";    // $juice cannot be parsed
+echo "I drank some juice made of $juices";    // $juiceがパースできない
 
 vs.
 
 $juice = 'plum';
-echo "I drank some juice made of {$juice}s";    // $juice will be parsed
+echo "I drank some juice made of {$juice}s";    // これで、変数は$juiceだとわかる
 
 /**
- * Complex variables will also be parsed within curly brackets
+ * 配列などの場合も波括弧で囲む
  */
 
 $juice = array('apple', 'orange', 'juice');
-echo "I drank some juice made of {$juice[1]}s";   // $juice[1] will be parsed
+echo "I drank some juice made of {$juice[1]}s";   // これで、$juice[1]がパースできる
 {% endhighlight %}
 
-* [Double quotes](http://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.double)
+* [ダブルクォート](http://www.php.net/manual/ja/language.types.string.php#language.types.string.syntax.double)
 
-#### Nowdoc syntax
+#### Nowdoc 構文
 
-Nowdoc syntax was introduced in 5.3 and internally behaves the same way as single quotes except it's suited toward the
-use of multi-line strings without the need for concatenating.
+NowdocはPHP 5.3で導入された構文で、内部的にはシングルクォートと同じような動きをする。
+複数行にまたがる文字列を、連結演算子なしで表すのに適している。
 
 {% highlight php %}
 <?php
-$str = <<<'EOD'             // initialized by <<<
+$str = <<<'EOD'             // 最初は <<<
 Example of string
 spanning multiple lines
 using nowdoc syntax.
 $a does not parse.
-EOD;                        // closing 'EOD' must be on it's own line, and to the left most point
+EOD;                        // 終了文字列はそれ単体でひとつの行に書く。また行頭に書かないといけない
 
 /**
- * Output:
+ * 出力は、
  *
  * Example of string
  * spanning multiple lines
@@ -246,26 +249,26 @@ EOD;                        // closing 'EOD' must be on it's own line, and to th
  */
 {% endhighlight %}
 
-* [Nowdoc syntax](http://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.nowdoc)
+* [Nowdoc](http://www.php.net/manual/ja/language.types.string.php#language.types.string.syntax.nowdoc)
 
-#### Heredoc syntax
+#### ヒアドキュメント構文
 
-Heredoc syntax internally behaves the same way as double quotes except it's suited toward the use of multi-line
-strings without the need for concatenating.
+ヒアドキュメントは、内部的にはダブルクォートと同じような動きをする。
+複数行にまたがる文字列を、連結演算子なしで表すのに適している。
 
 {% highlight php %}
 <?php
 $a = 'Variables';
 
-$str = <<<'EOD'             // initialized by <<<
+$str = <<<'EOD'             // 最初は <<<
 Example of string
 spanning multiple lines
 using nowdoc syntax.
 $a are parsed.
-EOD;                        // closing 'EOD' must be on it's own line, and to the left most point
+EOD;                        // 終了文字列はそれ単体でひとつの行に書く。また行頭に書かないといけない
 
 /**
- * Output:
+ * 出力は、
  *
  * Example of string
  * spanning multiple lines
@@ -274,12 +277,12 @@ EOD;                        // closing 'EOD' must be on it's own line, and to th
  */
 {% endhighlight %}
 
-*[Heredoc syntax](http://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc)
+*[ヒアドキュメント](http://www.php.net/manual/ja/language.types.string.php#language.types.string.syntax.heredoc)
 
-## Ternary operators
+## 三項演算子
 
-Ternary operators are a great way to condense code, but are often used in excess. While ternary operators can be
-stacked/nested, it is advised to use one per line for readability.
+三項演算子を使えばコードを短くできるが、必要以上に使いすぎていることが多い。
+三項演算子をネストさせることもできるけれど、それぞれ別の行にしたほうが読みやすくなる。
 
 {% highlight php %}
 <?php
@@ -288,35 +291,36 @@ echo ($a == 5) ? 'yay' : 'nay';
 
 vs.
 
-// nested ternary
+// 三項演算子をネストしてみた
 $b = 10;
-echo ($a) ? ($a == 5) ? 'yay' : 'nay' : ($b == 10) ? 'excessive' : ':(';    // excess nesting, sacrificing readability
+echo ($a) ? ($a == 5) ? 'yay' : 'nay' : ($b == 10) ? 'excessive' : ':(';    // やりすぎ。もはや読めない :-(
 {% endhighlight %}
 
-Ternary operators also have their limitations and cannot be used to 'return' a value.
+三項演算子には制約もあって、値を 'return' することができない。
 
 {% highlight php %}
 <?php
 $a = 5;
-echo ($a == 5) ? return true : return false;    // this example will output an error
+echo ($a == 5) ? return true : return false;    // この例はエラーになる
 {% endhighlight %}
 
-* [Ternary operators](http://php.net/manual/en/language.operators.comparison.php)
+* [三項演算子](http://php.net/manual/en/language.operators.comparison.php)
 
-## Variable declarations
+## 変数の宣言
 
-At times, coders attempt to make their code "cleaner" by declaring predefined variables with a different name. What
-this does in reality is to double the memory consumption of said script. For the example below, let's say
-an example string of text contains 1MB worth of data, by copying the variable you've increased the scripts execution to 2MB.
+コードをより「きれい」にするために、変数を宣言してよりわかりやすい名前をつけたくなることがよくある。
+実際のところこれは、スクリプト内でメモリを二倍消費していることになる。
+次の例で考えてみよう。仮にこの文字列が1MBぶんのデータを含んでいたとすると、
+変数をコピーすれば実行時のメモリ消費量が2MBになってしまう。
 
 {% highlight php %}
 <?php
-$about = 'A very long string of text';    // uses 2MB memory
+$about = 'A very long string of text';    // メモリを2MB消費する
 echo $about;
 
 vs.
 
-echo 'A very long string of text';        // uses 1MB memory
+echo 'A very long string of text';        // メモリの消費は1MBだけ
 {% endhighlight %}
 
-* [Performace tips](https://developers.google.com/speed/articles/optimizing-php)
+* [パフォーマンス改善のヒント](https://developers.google.com/speed/articles/optimizing-php)
