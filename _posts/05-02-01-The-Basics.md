@@ -1,12 +1,13 @@
 ---
+title: 基本
 isChild: true
 ---
 
-## The Basics
+## 基本
 
-PHP is a vast language that allows coders of all levels the ability to produce code not only quickly, but efficiently. 
-However while advancing through the language, we often forget the basics that we first learnt (or overlooked) in favor 
-of short cuts and/or bad habits. To help combat this common issue, this section is aimed at reminding coders of the 
-basic coding practices within PHP.
+PHP はとても懐が深い言語で、いろんなレベルの技術者が使えるし、手早く効率的にコードを書くことができる。
+しかし実際に使っているうちに、初めて身につけたときの基本を忘れてしまい、
+横着する方法とかあまりよろしくない習慣とかばかり身につけてしまう。
+そんな風潮に一石を投じるために書いたのがこのセクションだ。PHPでコードを書くときの基本を忘れないようにしよう。
 
-* Continue reading on [The Basics](/pages/The-Basics.html)
+* 詳しくは [基本](/pages/The-Basics.html) で
