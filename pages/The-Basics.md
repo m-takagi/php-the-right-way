@@ -260,7 +260,7 @@ EOD;                        // 終了文字列はそれ単体でひとつの行�
 <?php
 $a = 'Variables';
 
-$str = <<<'EOD'             // 最初は <<<
+$str = <<<EOD               // 最初は <<<
 Example of string
 spanning multiple lines
 using nowdoc syntax.
