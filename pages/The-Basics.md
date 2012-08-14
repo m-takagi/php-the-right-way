@@ -191,14 +191,14 @@ echo 'This is my string, look at how pretty it is.';    // 単純な文字列で
 
 {% highlight php %}
 <?php
-echo 'phptherightway\'s is ' . $adjective . '.'     // シングルクォートを使った例。複数の要素を連結し、
-    . "\n"                                          // 変数の埋め込みやエスケープを使っている
+echo 'phptherightway is ' . $adjective . '.'     // シングルクォートを使った例。複数の要素を連結し、
+    . "\n"                                       // 変数の埋め込みやエスケープを使っている
     . 'I love learning' . $code . '!';
 
 vs.
 
-echo "phptherightway's is $adjective.\n I love learning $code!"  // ダブルクォートを使えば、別々の要素に分けずに
-                                                                 // ひとまとめにできる
+echo "phptherightway is $adjective.\n I love learning $code!"  // ダブルクォートを使えば、別々の要素に分けずに
+                                                               // ひとまとめにできる
 {% endhighlight %}
 
 ダブルクォートで囲んだ文字列に変数を含むとき、変数とそれ以外の文字がつながってしまうこともよくある。
@@ -219,7 +219,7 @@ echo "I drank some juice made of {$juice}s";    // これで、変数は$juice�
  * 配列などの場合も波括弧で囲む
  */
 
-$juice = array('apple', 'orange', 'juice');
+$juice = array('apple', 'orange', 'plum');
 echo "I drank some juice made of {$juice[1]}s";   // これで、$juice[1]がパースできる
 {% endhighlight %}
 
@@ -263,7 +263,7 @@ $a = 'Variables';
 $str = <<<EOD               // 最初は <<<
 Example of string
 spanning multiple lines
-using nowdoc syntax.
+using heredoc syntax.
 $a are parsed.
 EOD;                        // 終了文字列はそれ単体でひとつの行に書く。また行頭に書かないといけない
 
@@ -272,7 +272,7 @@ EOD;                        // 終了文字列はそれ単体でひとつの行�
  *
  * Example of string
  * spanning multiple lines
- * using nowdoc syntax.
+ * using heredoc syntax.
  * Variables are parsed.
  */
 {% endhighlight %}
