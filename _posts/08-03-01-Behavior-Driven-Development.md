@@ -22,6 +22,6 @@ Ruby の [RSpec project](http://rspec.info/) の影響を受けている。
 
 ### BDD に関するリンク
 
-* [Behat](http://behat.org/) は、Ruby の [Cucumber](http://cukes.info/) の影響を受けている。
-* [PHPSpec](http://www.phpspec.net/) は、PHP 用の SpecBDD フレームワークだ。
-* [Codeception](http://www.codeception.com) はフルスタックのテストフレームワークで BDD の原則に従っている。
+* [Behat](http://behat.org/) は PHP 用の StoryBDD フレームワークで、Ruby の [Cucumber](http://cukes.info/) プロジェクトの影響を受けている。
+* [PHPSpec](http://www.phpspec.net/) は PHP 用の SpecBDD フレームワークで、Ruby の [RSpec](http://rspec.info/) プロジェクトの影響を受けている。
+* [Codeception](http://www.codeception.com) はフルスタックのテストフレームワークで、BDD の原則に従っている。
