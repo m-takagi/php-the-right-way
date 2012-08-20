@@ -3,7 +3,7 @@ title: Composer と Packagist
 isChild: true
 ---
 
-## Composer と Packagist
+## Composer と Packagist {#composer_and_packagist_title}
 
 Composerは、PHP用の **すばらしい** 依存管理ツールだ。プロジェクト内の依存関係を
 `composer.json` ファイルに書いてシンプルなコマンドを打ち込めば、

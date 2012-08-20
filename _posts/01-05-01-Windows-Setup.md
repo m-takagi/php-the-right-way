@@ -3,7 +3,7 @@ title: Windows の人は
 isChild: true
 ---
 
-## Windows の人は
+## Windows の人は {#windows_setup_title}
 
 Windows で PHP を使うには、いくつかの方法がある。[バイナリをダウンロード](php-downloads)することもできるし、
 つい最近までは'.msi'形式のインストーラも使えた。でも PHP 5.3.0 からは、インストーラ形式をサポートしなくなった。

@@ -3,7 +3,7 @@ title: 振る舞い駆動開発
 isChild: true
 ---
 
-## 振る舞い駆動開発
+## 振る舞い駆動開発 {#behavior_driven_development_title}
 
 振る舞い駆動開発 (BDD) には二種類ある。SpecBDD と StoryBDD だ。
 SpecBDD はコードの技術的な振る舞いを重視し、StoryBDD は業務的あるいは機能的な振る舞いを重視する。

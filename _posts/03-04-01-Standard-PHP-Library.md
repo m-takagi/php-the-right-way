@@ -3,7 +3,7 @@ title:   Standard PHP Library
 isChild: true
 ---
 
-## Standard PHP Library
+## Standard PHP Library {#standard_php_library_title}
 
 Standard PHP Library (SPL) とは PHP に組み込まれた標準ライブラリで、
 さまざまなクラスやインターフェイスを提供する。

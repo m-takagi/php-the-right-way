@@ -3,7 +3,7 @@ title: Register Globals
 isChild: true
 ---
 
-## Register Globals
+## Register Globals {#register_globals_title}
 
 **注意:**
 PHP 5.4.0 からは `register_globals`

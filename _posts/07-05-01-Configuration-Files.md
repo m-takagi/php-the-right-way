@@ -3,7 +3,7 @@ title: 設定ファイル
 isChild: true
 ---
 
-## 設定ファイル
+## 設定ファイル {#configuration_files_title}
 
 自作のアプリケーションで設定ファイルを使うときには、これらの指針に従うのがお勧めだ。
 

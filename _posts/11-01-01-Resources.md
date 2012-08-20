@@ -2,7 +2,7 @@
 title: 情報源
 ---
 
-# 情報源
+# 情報源 {#resources_title}
 
 ## ソースから
 

@@ -3,7 +3,7 @@ title: Mac の人は
 isChild: true
 ---
 
-## Mac の人は
+## Mac の人は  {#mac_setup_title}
 
 OS X には PHP が最初からインストールされているけど、最新の安定版からは微妙に遅れている。
 Lion についてくるのは PHP 5.3.6 だし、Mountain Lion でも 5.3.10 だ。

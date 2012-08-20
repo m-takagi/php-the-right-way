@@ -3,7 +3,7 @@ title: 日付や時刻の扱いかた
 isChild: true
 ---
 
-## 日付や時刻の扱いかた
+## 日付や時刻の扱いかた {#date_and_time_title}
 
 PHP の DateTime クラスを使えば、日付や時刻の読み書き、比較、そして計算ができる。
 PHP には DateTime クラス以外にも日付や時刻がらみの関数が大量にあるけど、
