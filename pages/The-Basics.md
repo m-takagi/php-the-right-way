@@ -277,7 +277,7 @@ EOD;                        // 終了文字列はそれ単体でひとつの行�
  */
 {% endhighlight %}
 
-*[ヒアドキュメント](http://www.php.net/manual/ja/language.types.string.php#language.types.string.syntax.heredoc)
+* [ヒアドキュメント](http://www.php.net/manual/ja/language.types.string.php#language.types.string.syntax.heredoc)
 
 ## 三項演算子
 
