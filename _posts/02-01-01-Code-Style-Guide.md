@@ -34,6 +34,8 @@ Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]を使えば
 これらの標準に準拠するようにコードを自動的に修正してくれる。
 いちいち手作業で修正する手間を省けるってわけだ。
 
+English is preferred for all symbol names and code infrastructure. Comments may be written in any language easily readable by all current and future parties who may be working on the codebase.
+
 [fig]: http://www.php-fig.org/
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
 [psr1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
@@ -41,3 +43,4 @@ Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]を使えば
 [phpcs]: http://pear.php.net/package/PHP_CodeSniffer/
 [phpcs-psr]: https://github.com/klaussilveira/phpcs-psr
 [phpcsfixer]: http://cs.sensiolabs.org/
+
