@@ -25,9 +25,11 @@ APC の制約のひとつは、インストールしたサーバーと密接に�
 中央で管理している超高速なストレージにオブジェクトを格納して、
 いろんなシステムからそれを取り出せるということだ。
 
-Note that when running PHP as a (Fast-)CGI application inside your webserver, every PHP processes will have its own
-cache, i.e. APC data is not shared between your worker processes. In these cases, you might want to consider using
-memcached instead, as it's not tied to the PHP processes.
+PHPを(Fast-)CGIアプリケーションとしてウェブサーバーで実行するときには、
+すべてのPHPプロセスが自身のキャッシュを持つことになる。つまり
+APCのデータもワーカープロセス間では共有されないということだ。
+こんなときには、かわりにmemcachedを検討すればいい。
+こっちはPHPのプロセスには結びついていない。
 
 ネットワーク環境において、アクセス速度の面では APC のほうが memcached より優れている。
 しかし、memcached のほうが、より手軽にスケールアップできる。

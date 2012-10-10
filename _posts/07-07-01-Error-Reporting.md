@@ -18,16 +18,17 @@ isChild: true
 - error_reporting: -1
 - log_errors: On
 
-From [php.net](http://php.net/manual/function.error-reporting.php):
+[php.net](http://php.net/manual/function.error-reporting.php)より引用。
 
-> Passing in the value -1 will show every possible error, even when new levels and constants are added in future PHP versions. The E_ALL constant also behaves this way as of PHP 5.4.
+> 値に-1を指定すると、仮に将来のバージョンのPHPで新しいレベルと定数が追加されたとしてもすべてのエラーを表示するようになります。E_ALL 定数も、PHP 5.4以降これと同じ挙動になります。
 
-The `E_STRICT` error level constant was introduced in 5.3.0 and is not 
-part of `E_ALL`, however it became part of `E_ALL` in 5.4.0. What does this mean? 
-In terms of reporting every possible error in version 5.3 it means you must 
-use either `-1` or `E_ALL | E_STRICT`. 
+`E_STRICT`エラーレベル定数は5.3.0で導入されたもので、当時は
+`E_ALL`には含まれていなかった。でも5.4.0からは`E_ALL`に含まれるようになった。
+だからどうなんだって？
+あらゆるエラーを表示させたいときには、5.3の場合は
+`-1`あるいは`E_ALL | E_STRICT`を使わないといけないってことだ。
 
-**Reporting Every Possibly Error by PHP Version**
+**PHPのバージョン別の、すべてのエラーを表示させるための設定**
 
 * < 5.3 `-1` or `E_ALL`
 *   5.3 `-1` or `E_ALL | E_STRICT`
