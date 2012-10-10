@@ -40,6 +40,7 @@ test.php で var_dump() とかいうやり方もあるけど、
 * [SimpleTest](http://simpletest.org)
 * [Enhance PHP](http://www.enhance-php.com/)
 * [PUnit](http://punit.smf.me.uk/)
+* [atoum](https://github.com/mageekguy/atoum)
 
 ### インテグレーションテスト
 

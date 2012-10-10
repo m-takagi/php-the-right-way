@@ -28,7 +28,7 @@ PSR-2 には従う必要がない。
 * [PSR-1 とは][psr1]
 * [PSR-2 とは][psr2]
 
-[PHP_CodeSniffer][phpcs]用の[phpcs-psr][phpcs-psr]を使えば、
+[PHP_CodeSniffer][phpcs]を使えば、
 自分のコードがこれらの標準に準拠しているかどうかを確認できる。
 Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]を使えば、
 これらの標準に準拠するようにコードを自動的に修正してくれる。
