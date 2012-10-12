@@ -309,7 +309,7 @@ $a = 5;
 return ($a == 5) ? 'yay' : 'nope';    // この書きかたなら 'yay' を返す
 {% endhighlight %}
 
-* [三項演算子](http://php.net/manual/en/language.operators.comparison.php)
+* [三項演算子](http://php.net/manual/ja/language.operators.comparison.php)
 
 ## 変数の宣言
 
