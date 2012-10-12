@@ -296,12 +296,17 @@ $b = 10;
 echo ($a) ? ($a == 5) ? 'yay' : 'nay' : ($b == 10) ? 'excessive' : ':(';    // やりすぎ。もはや読めない :-(
 {% endhighlight %}
 
-三項演算子には制約もあって、値を 'return' することができない。
+三項演算子で値を 'return' するには、書きかたに気をつけないといけない。
 
 {% highlight php %}
 <?php
 $a = 5;
-echo ($a == 5) ? return true : return false;    // この例はエラーになる
+echo ($a == 5) ? return true : return false;    // この書きかただとエラーになる
+
+vs.
+
+$a = 5;
+return ($a == 5) ? 'yay' : 'nope';    // この書きかたなら 'yay' を返す
 {% endhighlight %}
 
 * [三項演算子](http://php.net/manual/en/language.operators.comparison.php)
