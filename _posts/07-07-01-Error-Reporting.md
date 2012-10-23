@@ -30,9 +30,9 @@ isChild: true
 
 **PHPのバージョン別の、すべてのエラーを表示させるための設定**
 
-* < 5.3 `-1` or `E_ALL`
-*   5.3 `-1` or `E_ALL | E_STRICT`
-* > 5.3 `-1` or `E_ALL`
+* &lt; 5.3 `-1` or `E_ALL`
+* &nbsp; 5.3 `-1` or `E_ALL | E_STRICT`
+* &gt; 5.3 `-1` or `E_ALL`
 
 ### 本番環境
 
