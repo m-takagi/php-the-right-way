@@ -12,7 +12,7 @@ _PHP: The Right Way_ は、他の言語にも翻訳されつつある。
 * [Chinese](http://wulijun.github.com/php-the-right-way)
 * [Japanese](http://ja.phptherightway.com)
 * Polish (Coming Soon)
-* Portuguese (Coming Soon)
+* [Portuguese](http://br.phptherightway.com/)
 * Russian (Coming Soon)
 * [Spanish](http://es.phptherightway.com)
 * [Ukrainian](http://iflista.github.com/php-the-right-way/)

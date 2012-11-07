@@ -18,7 +18,7 @@ Composer はローカル (作業ディレクトリ) にインストールして�
 インストールしてもよい。ただし、ローカルにインストールする方法は今は非推奨となっている。
 ローカルにインストールするには、プロジェクトのルートディレクトリに移動して次のコマンドを実行する。
 
-    curl -s http://getcomposer.org/installer | php
+    curl -s https://getcomposer.org/installer | php
 
 このコマンドは、 `composer.phar` (PHP バイナリアーカイブ)
 をダウンロードする。これを `php` コマンドで実行すれば、そのプロジェクトの依存関係を管理できる。
@@ -42,7 +42,7 @@ Composer はローカル (作業ディレクトリ) にインストールして�
 
 それでもいいという人向けに、手動での Composer のインストール方法を示す。
 
-    curl -s http://getcomposer.org/composer.phar -o $HOME/local/bin/composer
+    curl -s https://getcomposer.org/composer.phar -o $HOME/local/bin/composer
     chmod +x $HOME/local/bin/composer
 
 `$HOME/local/bin` (あるいは、その他あなたが指定した場所) にパスを通しておく必要がある。
