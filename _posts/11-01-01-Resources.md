@@ -17,6 +17,8 @@ title: 情報源
 * [Chris Shiflett](http://twitter.com/shiflett)
 * [Sebastian Bergmann](http://twitter.com/s_bergmann)
 * [Matthew Weier O'Phinney](http://twitter.com/weierophinney)
+* [Pádraic Brady](http://twitter.com/padraicb)
+* [Anthony Ferrara](http://twitter.com/ircmaxell)
 * [Nikita Popov](http://twitter.com/nikita_ppv)
 
 ## メンタリング
