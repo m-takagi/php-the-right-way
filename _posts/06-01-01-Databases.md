@@ -97,6 +97,7 @@ PDO をベースとしたものもあれば、そうでないものもある。
 これらの抽象化レイヤーは PSR-0 の標準規格に従った名前空間を使って作られているので、
 いろんなアプリケーションに導入できる。
 
+* [Aura SQL][6]
 * [Doctrine2 DBAL][2]
 * [ZF2 Db][4]
 * [ZF1 Db][3]
@@ -106,6 +107,7 @@ PDO をベースとしたものもあれば、そうでないものもある。
 [3]: http://framework.zend.com/manual/ja/zend.db.html
 [4]: http://packages.zendframework.com/docs/latest/manual/ja/index.html#zend-db
 [5]: http://php.net/manual/ja/pdo.connections.php
+[6]: https://github.com/auraphp/Aura.Sql
 
 [mysql]: http://php.net/mysql
 [mysqli]: http://php.net/mysqli
