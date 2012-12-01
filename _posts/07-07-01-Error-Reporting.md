@@ -46,6 +46,6 @@ isChild: true
 しかし、ユーザーにはエラーが見えなくなる。これらの設定項目についてもっと詳しく知りたければ、
 PHP のマニュアルを読もう。
 
-* [error_reporting](http://www.php.net/manual/ja/errorfunc.configuration.php#ini.error-reporting)
-* [display_errors](http://www.php.net/manual/ja/errorfunc.configuration.php#ini.display-errors)
-* [log_errors](http://www.php.net/manual/ja/errorfunc.configuration.php#ini.log-errors)
+* [error_reporting](http://php.net/manual/errorfunc.configuration.php#ini.error-reporting)
+* [display_errors](http://php.net/manual/errorfunc.configuration.php#ini.display-errors)
+* [log_errors](http://php.net/manual/errorfunc.configuration.php#ini.log-errors)
