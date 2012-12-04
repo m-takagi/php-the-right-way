@@ -1,72 +1,81 @@
 ---
+title: アプリケーションのビルドとデプロイ
 isChild: true
 ---
 
-## Building and Deploying your Application {#build_title}
+## アプリケーションのビルドとデプロイ {#build_title}
 
-If you find yourself doing manual database schema changes or running your tests manually before updating your files 
-(manually), think twice! With every additional manual task needed to deploy a new version of your app, the chances for 
-potentially fatal mistakes increase. Whether you're dealing with a simple update, a comprehensive build process or even 
-a continuous integration strategy, [build automation](http://en.wikipedia.org/wiki/Build_automation) is your friend.
+まさか、データベースのスキーマを変更したりテストを実行したりとかいったことを手作業でやってるなんてことはないよね？
+ちょっと待った！新しいバージョンのアプリケーションをデプロイするときに手作業がひとつでも増えると、
+致命的な間違いを犯してしまう可能性もそのぶん増えてしまうんだ。たとえ単純な更新作業だとしても、
+きちんとしたビルド手順にしたがうこと。継続的インテグレーションの戦略にしたがって、
+[ビルドの自動化](http://ja.wikipedia.org/wiki/ビルド_(ソフトウェア)) をしておくといい。
 
-Among the tasks you might want to automate are:
+自動化できるタスクには、こんなものがある。
 
-* Dependency management
-* Compilation, minification of your assets
-* Running tests
-* Creation of documentation
-* Packaging
-* Deployment
+* 依存関係の管理
+* 必要な資産のコンパイル
+* テストの実行
+* ドキュメントの生成
+* パッケージング
+* デプロイ
 
 
-### Build Automation Tools
+### ビルド自動化ツール
 
-Build tools can be described as a collection of scripts that handle common tasks of software deployment. The build tool 
-is not a part of your software, it acts on your software from 'outside'.
+ビルドツールとは、ソフトウェアのデプロイにからむありがちな作業を処理するスクリプトをまとめたものだと言える。
+ビルドツール自体は君が作るソフトウェアの一部ではない。ソフトウェアを「外部から」支援するものだ。
 
-There are many open source tools available to help you with build automation, some are written in PHP others aren't. 
-This shouldn't hold you back from using them, if they're better suited for the specific job. Here are a few examples:
+ビルド自動化の助けとなるオープンソースのツールがたくさん公開されている。PHPで書かれているものもあれば、
+そうじゃないものもある。PHP製じゃないからといって、それを使わない理由はない。
+もし自分のやりたいことに適したツールがあるのなら、使うべきだ。いくつか例をあげよう。
 
-[Phing](http://www.phing.info/) is the easiest way to get started with automated deployment in the PHP world. 
-With Phing you can control your packaging, deployment or testing process from within a simple XML build file. 
-Phing (which is based on [Apache Ant](http://ant.apache.org/)) provides a rich set of tasks usually needed to install or 
-update a web app and can be extended with additional custom tasks, written in PHP.
+[Phing](http://www.phing.info/) は、PHPな人がデプロイを自動化しようとするときに、いちばん取っつきやすいツールだ。
+Phingを使えば、パッケージングやデプロイそしてテストといった処理をシンプルなXMLビルドファイルで設定できる。
+Phingは[Apache Ant](http://ant.apache.org/) をベースに作られたもので、
+Webアプリのインストールやアップデートに必要となるタスク群を提供する。
+カスタムタスクで機能を追加することもでき、カスタムタスクはPHPで書ける。
 
-[Capistrano](https://github.com/capistrano/capistrano/wiki) is a system for *intermediate-to-advanced programmers* 
-to execute commands in a structured, repeatable way on one or more remote machines.
-It is pre-configured for deploying Ruby on Rails applications, however people are **successfully deploying PHP systems** 
-with it. Successful use of Capistrano depends on a working knowledge of Ruby and Rake.
+[Capistrano](https://github.com/capistrano/capistrano/wiki) は
+*中級から上級のプログラマー* 向けのシステムだ。構造化された、繰り返し可能な形式で、
+複数のリモートマシン上でコマンドを実行できる。
+Ruby on Railsのアプリをデプロイするように設定されているが、
+これを使って **PHP のアプリをデプロイすることもできる**。
+Capistranoを使いこなすには、RubyとRakeに関するそれなりの知識が必要だ。
 
-Dave Gardner's blog post [PHP Deployment with Capistrano](http://www.davegardner.me.uk/blog/2012/02/13/php-deployment-with-capistrano/) 
-is a good starting point for PHP developers interested in Capistrano.
+Dave Gardnerのblog記事[PHP Deployment with Capistrano](http://www.davegardner.me.uk/blog/2012/02/13/php-deployment-with-capistrano/) 
+は、Capistranoに興味のあるPHP開発者への入門記事としておすすめだ。
 
-[Chef](http://www.opscode.com/chef/) is more than a deployment framework, it is a very powerful Ruby based system 
-integration framework that doesn't just deploy your app but can build your whole server environment or virtual boxes.
+[Chef](http://www.opscode.com/chef/) は単なるデプロイフレームワークではない。
+Rubyで書かれた強力なシステムインテグレーションフレームワークで、
+単にアプリをデプロイするだけじゃなくサーバー環境全体を構築したり
+仮想環境を構築したりもできる。
 
-Chef resources for PHP developers:
+Chefの資料として、PHP開発者向けにおすすめものは、これらだ。
 
-* [Three part blog series about deploying a LAMP application with Chef, Vagrant, and EC2](http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/)
-* [Chef Cookbook which installs and configures PHP 5.3 and the PEAR package management system](https://github.com/opscode-cookbooks/php)
+* [LAMPアプリケーションのデプロイにChefやVagrantそしてEC2を使うというお題で書かれた全3回のシリーズ](http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/)
+* [Chefのクックブック。PHP 5.3のインストールと設定やPEARについて扱っている](https://github.com/opscode-cookbooks/php)
 
-Further reading:
+あわせて読みたい:
 
-* [Automate your project with Apache Ant](http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/)
-* [Maven](http://maven.apache.org/), a build framework based on Ant and [how to use it with PHP](http://www.php-maven.org/)
+* [Apache Antによるプロジェクトの自動化](http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/)
+* [Maven](http://maven.apache.org/)、そしてそれを[PHPで使う方法](http://www.php-maven.org/)
 
-### Continuous Integration
+### 継続的インテグレーション
 
-> Continuous Integration is a software development practice where members of a team integrate their work frequently, 
-usually each person integrates at least daily — leading to multiple integrations per day. Many teams find that this 
-approach leads to significantly reduced integration problems and allows a team to develop cohesive software more rapidly.
+> 継続的インテグレーションはソフトウェア開発のプラクティスのひとつで、チームのメンバーが自分たちの作業を頻繁に統合するというものだ。
+通常は、各自が少なくとも一日に一度は統合する。一日に何度も統合することもある。多くのチームが、
+この方針のおかげで統合時の問題が少なくなるし、きちんとしたソフトウェアをより素早く開発できるようになると実感している。
 
-*Martin Fowler*
+*マーティン・ファウラー*
 
-There are different ways to implement continuous integration for PHP. Recently [Travis CI](https://travis-ci.org/) has 
-done a great job of making continuous integration a reality even for small projects. Travis CI is a hosted continuous 
-integration service for the open source community. It is integrated with GitHub and offers first class support for many 
-languages including PHP. 
+PHPで継続的インテグレーションを実践する方法はいろいろある。
+最近人気の[Travis CI](https://travis-ci.org/) のおかげで、
+ちょっとしたプロジェクトにも簡単に継続的インテグレーションを組み込めるようになった。
+Travis CIは継続的インテグレーションのホスティング環境で、オープンソースコミュニティに開放されている。
+GitHubと統合されており、PHPを含むさまざまな言語に対応している。
 
-Further reading:
+あわせて読みたい:
 
-* [Continuous Integration with Jenkins](http://jenkins-ci.org/)
-* [Continuous Integration with Teamcity](http://www.jetbrains.com/teamcity/)
+* [Jenkinsによる継続的インテグレーション](http://jenkins-ci.org/)
+* [Teamcityによる継続的インテグレーション](http://www.jetbrains.com/teamcity/)
