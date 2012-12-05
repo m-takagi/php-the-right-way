@@ -16,6 +16,7 @@ _PHP: The Right Way_ は、他の言語にも翻訳されつつある。
 * Russian (Coming Soon)
 * [Spanish](http://es.phptherightway.com)
 * [Ukrainian](http://iflista.github.com/php-the-right-way/)
+* [Bulgarian](http://bg.phptherightway.com/)
 
 ## おことわり
 
