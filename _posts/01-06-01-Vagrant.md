@@ -1,23 +1,26 @@
 ---
+title: Vagrant
 isChild: true
 ---
 
 ## Vagrant {#vagrant_title}
 
-Running your application on different environments in development and production can lead to strange bugs 
-popping up when you go live. It's also tricky to keep different development environments up to date with the same 
-version for all libraries used when working with a team of developers. 
+開発環境と違う環境でアプリケーションを動かすと、謎のバグが出ることがある。
+あと、チームで開発しているときとかに、各自の開発環境で使ってるライブラリのバージョンをきちんとそろえておくっていうのも
+けっこう大変。
 
-If you are developing on Windows and deploying to Linux (or anything non-Windows) or are developing in a team, you 
-should consider using a virtual machine. This sounds tricky, but using [Vagrant][vagrant] you can set up a simple 
-virtual machine with only a few steps. These base boxes can then be set up manually, or you can use "provisioning" 
-software such as [Puppet][puppet] or [Chef][chef] to do this for you. Provisioning the base box is a great way to 
-ensure that multiple boxes are set up in an identical fashion and removes the need for you to maintain complicated 
-"set up" command lists. You can also "destroy" your base box and recreate it without many manual steps, making it
-easy to create a "fresh" installation.
+Windows で開発して Linux (など、Windows 以外の環境) にデプロイするとか、
+あるいはチームで開発しているとかいうのなら、
+仮想マシンを導入すべきだろう。なんか難しいことを言ってるように聞こえるかもしれない。
+けど、[Vagrant][vagrant]を使えばちょっとした手順でシンプルなラッパーを用意できるし、
+あとは[Puppet][puppet]とか[Chef][chef]を使えば仮想環境を配布できる。
+ベースとなる環境を配布できるようにしておけば、複数の開発環境をまったく同じ状態に構築できる。
+複雑怪奇なコマンドを羅列した「環境構築手順書」だとかいうのもいらなくなるってこと。
+ベース環境を「破棄」したり作りなおしたりするのもそんなに手間がかからないので、
+まっさらな環境を用意するのもお手軽にできる。
 
-Vagrant creates shared folders used to share your code between your host and your virtual machine, meaning you can 
-create and edit your files on your host machine and then run the code inside your virtual machine.
+Vagrantは、共有フォルダを使ってホストと仮想マシンの間でコードを共有する。
+つまり、ホストマシンで作ったり編集したりしたファイルをそのまま仮想マシンで実行できるっていうことだ。
 
 [vagrant]: http://vagrantup.com/
 [puppet]: http://www.puppetlabs.com/
