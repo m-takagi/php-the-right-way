@@ -34,9 +34,9 @@ PHP 5.5からは、新たに`password_hash`関数が使えるようになる。
 <?php                                                                                                                                                                                                            
 require 'password.php';
 
-$passwordhash = password_hash('secret-password', PASSWORD_DEFAULT);
+$passwordHash = password_hash('secret-password', PASSWORD_DEFAULT);
 
-if (password_verify('bad-password', $password-hash)) {
+if (password_verify('bad-password', $passwordHash)) {
     // パスワードが一致した
 } else {
     // パスワードが一致しなかった

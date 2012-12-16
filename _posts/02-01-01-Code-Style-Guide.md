@@ -34,7 +34,9 @@ Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]を使えば
 これらの標準に準拠するようにコードを自動的に修正してくれる。
 いちいち手作業で修正する手間を省けるってわけだ。
 
-English is preferred for all symbol names and code infrastructure. Comments may be written in any language easily readable by all current and future parties who may be working on the codebase.
+変数名や関数名、そしてディレクトリ名なんかは、英語にしておくことをおすすめする。
+コードのコメントに関しては、別に英語にこだわらなくてもかまわない。
+そのコードを扱う(将来扱う可能性がある)すべての人が読みやすいものであれば、何語でもかまわない。
 
 [fig]: http://www.php-fig.org/
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
