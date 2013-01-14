@@ -11,6 +11,9 @@ PHP のコミュニティは、規模が大きくなるにつれて多様化し�
 IRC なら irc.freenode.com に #phpc というチャンネルがあるし、
 twitter なら [@phpc][phpc-twitter] をフォローするといい。
 いろんなところに飛び込んで、新しい人と出会って、いろんなことを学んで、友達になるんだ。
+PHPプログラマー向けのGoogle+コミュニティもある。9000人以上のPHPプログラマーが参加していて、
+問題の解決方法についてお互いに話し合ったりしている。
+ぜひ[PHP Programmer][php-programmers-gplus]コミュニティに参加してみよう。
 
 [PHP 公式サイトのイベントカレンダー][php-calendar]
 
@@ -36,3 +39,4 @@ PHP界の有名人が登壇することも多いので、彼らから直接学�
 [php-wiki]: https://wiki.php.net/usergroups
 [php-conf]: http://php.net/conferences/index.php
 [phpc-twitter]: https://twitter.com/phpc
+[php-programmers-gplus]: https://plus.google.com/u/0/communities/104245651975268426012
