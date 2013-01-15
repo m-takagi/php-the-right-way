@@ -69,10 +69,11 @@ print_r($veyron->get_make_and_model()); // 出力は "ブガッティ ヴェイ�
 
 * [ファクトリーパターン (Wikipedia)](https://ja.wikipedia.org/wiki/Factory_Method_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3)
 
-## Singleton
+## シングルトン
 
-When designing web applications, it often makes sense conceptually and architecturally to allow access to one and 
-only one instance of a particular class. The singleton pattern enables us to do this.
+ウェブアプリケーションを設計するときには、概念的そして構造的に、
+特定のクラスのたったひとつのインスタンスにだけアクセスさせるようにしたいということがよくある。
+そんなときに使えるのがシングルトンパターンだ。
 
 {% highlight php %}
 <?php 
@@ -97,22 +98,25 @@ class Singleton
 $instance1 = Singleton::getInstance();
 $instance2 = Singleton::getInstance();
 
-echo $instance1 === $instance2; // outputs 1
+echo $instance1 === $instance2; // 出力は 1
 {% endhighlight %}
 
-The code above implements the singleton pattern using a statically scoped variable and the `getInstance()` method. 
-Note that the constructor is declared as private to prevent instantiation outside of the class via `new` keyword.
+このコードは、静的スコープの変数と`getInstance()`メソッドを使ってシングルトンパターンを実装している。
+コンストラクタがprivate宣言されていることに注目。つまり、外部から`new`でインスタンスを作ることはできないってことだ。
 
-The singleton pattern is useful when we need to make sure we only have a single instance of a class for the entire 
-request lifecycle in a web application. This typically occurs when we have global objects (such as a Configuration 
-class) or a shared resource (such as an event queue).
+シングルトンパターンが有用なのは、たとえばウェブアプリケーションのリクエスト全体で、
+たったひとつのインスタンスだけしかないことを保証しないといけない場合だ。
+Configurationクラスみたいなグローバルオブジェクトを使っていたり、
+イベントキューみたいな共有リソースを使っていたりする場合に活用できる。
 
-You should be wary when using the singleton pattern, as by its very nature it introduces global state into your 
-application, reducing testability. In most cases, dependency injection can (and should) be used in place of a 
-singleton class. Using dependency injection means that we do not introduce unnecessary coupling into the design of our 
-application, as the object using the shared or global resource requires no knowledge of a concretely defined class.
+ただ、シングルトンを使うときには注意が必要だ。その性質上、シングルトンパターンを使うと
+アプリケーションにグローバルな状態を導入することになってしまい、テストがしにくくなる。
+シングルトンを使いたいという場面では、たいていの場合は依存性の注入が代わりに使える
+(し、むしろそっちを使うべきだ)。依存性の注入を使えば、不要な結合を
+アプリケーションの設計から取り除ける。というのも、共有リソースやグローバルリソースを使う
+オブジェクトが具象クラスについて知らなくてもよくなるからだ。
 
-* [Singleton pattern on Wikipedia](https://en.wikipedia.org/wiki/Singleton_pattern)
+* [シングルトンパターン (Wikipedia)](https://en.wikipedia.org/wiki/Singleton_pattern)
 
 ## フロントコントローラ
 
