@@ -27,4 +27,5 @@ isChild: true
 
 * [Aura](http://auraphp.github.com/)
 * [FuelPHP (2.0 限定)](https://github.com/fuelphp)
+* [Laravelの"Illuminate Components"](https://github.com/illuminate)
 * [Symfony Components](http://symfony.com/doc/current/components/index.html)
