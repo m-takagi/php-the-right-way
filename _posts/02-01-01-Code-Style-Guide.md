@@ -12,7 +12,7 @@ PHP のコミュニティはとてもでっかくて、いろんな人たちが�
 
 [Framework Interop Group][fig] っていうところ (元は 'PHP Standards Group' という名前だった)
 が、おすすめのスタイルを提案している。
-[PSR-0][psr0]や[PSR-1][psr1]、そして[PSR-2][psr2]がそれだ。
+[PSR-0][psr0]や[PSR-1][psr1]、[PSR-2][psr2]、そして[PSR-3][psr3]がそれだ。
 変な名前のせいでちょっと戸惑うかもしれないけど、これって単に
 Drupal や Zend、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 などのプロジェクトの規約をまとめただけのものなんだ。
@@ -27,6 +27,7 @@ PSR-2 には従う必要がない。
 * [PSR-0 とは][psr0]
 * [PSR-1 とは][psr1]
 * [PSR-2 とは][psr2]
+* [PSR-3 とは][psr3]
 
 [PHP_CodeSniffer][phpcs]を使えば、
 自分のコードがこれらの標準に準拠しているかどうかを確認できる。
@@ -42,6 +43,7 @@ Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]を使えば
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
 [psr1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
 [psr2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
+[psr3]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md
 [phpcs]: http://pear.php.net/package/PHP_CodeSniffer/
 [phpcs-psr]: https://github.com/klaussilveira/phpcs-psr
 [phpcsfixer]: http://cs.sensiolabs.org/
