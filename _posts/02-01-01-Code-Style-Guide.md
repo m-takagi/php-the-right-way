@@ -14,7 +14,7 @@ PHP のコミュニティはとてもでっかくて、いろんな人たちが�
 が、おすすめのスタイルを提案している。
 [PSR-0][psr0]や[PSR-1][psr1]、[PSR-2][psr2]、そして[PSR-3][psr3]がそれだ。
 変な名前のせいでちょっと戸惑うかもしれないけど、これって単に
-Drupal や Zend、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
+Drupal や Zend、Symfony、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 などのプロジェクトの規約をまとめただけのものなんだ。
 自分のプロジェクトでこれを使ってもいいし、今までの自分のスタイルを使い続けてもいい。
 
