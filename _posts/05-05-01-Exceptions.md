@@ -48,7 +48,8 @@ catch(Fuel\Email\SendingFailedException $e)
 
 ### SPL の例外
 
-例外自体にはデフォルトでは何の意味もなく、たいていはその名前で例外に意味を与える。
+汎用的な `Exception` クラスには、開発者がデバッグするためのコンテキスト情報がほとんど含まれていない。
+これを改善するには、特化型の `Exception` を作ればいい。つまり、`Exception` クラスのサブクラスを作るってことだ。
 
 {% highlight php %}
 <?php
