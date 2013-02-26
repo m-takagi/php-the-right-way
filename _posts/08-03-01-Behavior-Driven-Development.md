@@ -17,7 +17,7 @@ Gherkin DSL を使ってフィーチャを記述できる。
 
 SpecBDD では、実際のコードのあるべき振る舞いをスペックとして書く。
 関数やメソッドを単独でテストするのではなく、その関数やメソッドがどのように振る舞うのかを記述するのだ。
-PHP で StoryBDD をするときに使えるフレームワークが PHPSpec で、これは
+PHP で SpecBDD をするときに使えるフレームワークが PHPSpec で、これは
 Ruby の [RSpec project](http://rspec.info/) の影響を受けている。
 
 ### BDD に関するリンク
