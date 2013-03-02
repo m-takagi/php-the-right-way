@@ -10,27 +10,30 @@ PHP のコミュニティはとてもでっかくて、いろんな人たちが�
 大切なのは、PHP のコードを書くときに、(できるだけ) 標準的なスタイルに従うことだ。
 そうすれば、いろんなライブラリを組み合わせて使うのも簡単になる。
 
-[Framework Interop Group][fig] っていうところ (元は 'PHP Standards Group' という名前だった)
+[Framework Interop Group][fig] っていうところ
 が、おすすめのスタイルを提案している。
-[PSR-0][psr0]や[PSR-1][psr1]、[PSR-2][psr2]、そして[PSR-3][psr3]がそれだ。
+[PSR-0][psr0]や[PSR-1][psr1]、、そして[PSR-2][psr2]がそれだ。
 変な名前のせいでちょっと戸惑うかもしれないけど、これって単に
 Drupal や Zend、Symfony、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 などのプロジェクトの規約をまとめただけのものなんだ。
 自分のプロジェクトでこれを使ってもいいし、今までの自分のスタイルを使い続けてもいい。
 
-理想を言えば、PHP のコードを書くときにはこれらの標準規約に従っておいたほうが無難だ。
+理想を言えば、PHP のコードを書くときには、よく知られた何らかの標準規約に従うべきだ。
+さっき説明したPSRの組み合わせでもいいし、PEARとかZendのやつでもかまわない。
 そうすれば、他の人にもコードを読んでもらいやすくなるし、手助けも得やすくなるだろう。
-この一連のスタイルは、すべて以前のものに対する付け足しの形式になっている。
-なので、たとえば PSR-1 を使うなら PSR-0 に従うのが必須となるが、
-PSR-2 には従う必要がない。
+また、コンポーネントを実装するアプリケーションがいろんなサードパーティのコードを組み合わせても、一貫性を保てる。
 
 * [PSR-0 とは][psr0]
 * [PSR-1 とは][psr1]
 * [PSR-2 とは][psr2]
-* [PSR-3 とは][psr3]
+* [Read about PEAR Coding Standards][pear-cs]
+* [Read about Zend Coding Standards][zend-cs]
 
 [PHP_CodeSniffer][phpcs]を使えば、
-自分のコードがこれらの標準に準拠しているかどうかを確認できる。
+自分のコードがこれらの標準のどれかひとつに準拠しているかどうかを確認できる。
+あと、[Sublime Text 2][st-cs]みたいなテキストエディタのプラグインを使えば、
+書いているその場でリアルタイムのフィードバックが得られる。
+
 Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]を使えば、
 これらの標準に準拠するようにコードを自動的に修正してくれる。
 いちいち手作業で修正する手間を省けるってわけだ。
@@ -44,7 +47,8 @@ Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]を使えば
 [psr1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
 [psr2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
 [psr3]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md
+[pear-cs]: http://pear.php.net/manual/ja/standards.php
+[zend-cs]: http://framework.zend.com/wiki/display/ZFDEV2/Coding+Standards
 [phpcs]: http://pear.php.net/package/PHP_CodeSniffer/
-[phpcs-psr]: https://github.com/klaussilveira/phpcs-psr
+[st-cs]: https://github.com/benmatselby/sublime-phpcs
 [phpcsfixer]: http://cs.sensiolabs.org/
-
