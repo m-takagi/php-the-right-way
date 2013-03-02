@@ -26,8 +26,8 @@ Drupal や Zend、Symfony、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 * [PSR-0 とは][psr0]
 * [PSR-1 とは][psr1]
 * [PSR-2 とは][psr2]
-* [Read about PEAR Coding Standards][pear-cs]
-* [Read about Zend Coding Standards][zend-cs]
+* [PEARのコーディング規約][pear-cs]
+* [Zendのコーディング規約][zend-cs]
 
 [PHP_CodeSniffer][phpcs]を使えば、
 自分のコードがこれらの標準のどれかひとつに準拠しているかどうかを確認できる。
