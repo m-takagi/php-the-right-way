@@ -55,15 +55,25 @@ Composer はローカル (作業ディレクトリ) にインストールして�
 
 ### 依存関係の定義とインストール
 
-Composer keeps track of your project's dependencies in a file called `composer.json`. You can manage it by hand if you like, or use Composer itself. The `php composer.phar require` command adds a project dependency and if you don't have a `composer.json` file, one will be created. Here's an example that adds [Twig][2] as a dependency of your project. Run it in your project's root directory where you've downloaded `composer.phar`:
+Composer は、プロジェクトの依存関係を `composer.json` というファイルで管理する。
+このファイルを手で書き換えてもいいし、Composer を使って編集してもいい。
+`php composer.phar require` を実行すると、プロジェクトの依存関係を追加する。
+もしまだ `composer.json` がなければ、新しいファイルを作る。
+この例は、プロジェクトの依存関係に [Twig][2] を追加するものだ。
+プロジェクトのルートディレクトリに `composer.phar` をダウンロードして、このコマンドを実行しよう。
 
 	php composer.phar require twig/twig:~1.8
 
-Alternatively the `php composer.phar init` command will guide you through creating a full `composer.json` file for your project. Either way, once you've created your `composer.json` file you can tell Composer to download and install your dependencies into the `vendors/` directory. This also applies to projects you've downloaded that already provide a `composer.json` file:
+あるいは、 `php composer.phar init` コマンドを実行して、
+自分のプロジェクト用の完全な `composer.json` ファイルを作ることもできる。
+どちらの方法にせよ、一度 `composer.json` ファイルを作ってしまえば、
+あとは Composer がすべての依存ライブラリをダウンロードして `vendors/` にインストールしてくれる。
+次のコマンドは、すでに `composer.json` ファイルを含むプロジェクトをダウンロードした場合にも使える。
 
     php composer.phar install
 
-Next, add this line to your application's primary PHP file; this will tell PHP to use Composer's autoloader for your project dependencies.
+次に、アプリケーションで最初に呼ばれる PHP ファイルにこんな行を追加する。
+これは、Composer のオートローダーを使ってプロジェクトの依存ライブラリを読むよう指示している。
 
 {% highlight php %}
 <?php
@@ -72,15 +82,25 @@ require 'vendor/autoload.php';
 
 これで、依存ライブラリが使えるようになった。実際に使う場面で、必要に応じて読み込まれる。
 
-### Updating your dependencies
+### 依存関係の更新
 
-Composer creates a file called `composer.lock` which stores the exact version of each package it downloaded when you first ran `php composer.phar install`. If you share your project with other coders and the `composer.lock` file is part of your distribution, when they run `php composer.phar install` they'll get the same versions as you. To update your dependencies, run `php composer.phar update`.
+Composer は `composer.lock` というファイルを作る。
+これは、最初に `php composer.phar install`
+を実行したときにダウンロードした、各パッケージの正確なバージョンを記録しておくものだ。
+他の開発者とプロジェクトを共有するときに `composer.lock` も一緒に配布しておくと、
+他の人が `php composer.phar install` を実行したときにもまったく同じバージョンがインストールされるようになる。
+依存関係を更新するには、 `php composer.phar update` を実行しよう。
 
-This is most useful when you define your version requirements flexibly. For instance a version requirement of ~1.8  means "anything newer than 1.8.0, but less than 2.0.x-dev". You can also use the `*` wildcard as in `1.8.*`. Now Composer's `php composer.phar update` command will upgrade all your dependencies to the newest version that fits the restrictions you define.
+これは、バージョンの要件を柔軟に定義できるので便利だ。
+たとえば、バージョンに ~1.8 と書いた場合は「1.8.0 以降のバージョン。ただし 2.0.x-dev は含まない」と指定したことになる。
+ワイルドカード `*` を使って `1.8.*` にように指定してもいい。
+これで、Composer で `php composer.phar update` を実行したときに、
+定義した制約の範囲での最新版に依存ライブラリを更新してくれる。
 
-### Checking your dependencies for security issues
+### 依存ライブラリのセキュリティ問題のチェック
 
-The [Security Advisories Checker][3] is a web service and a command-line tool, both will examine your `composer.lock` file and tell you if you need to update any of your dependencies.
+[Security Advisories Checker][3] は、Webサービスとコマンドラインツールとして提供されている。
+`composer.lock` ファイルを調べて、もし依存関係に更新が必要なら教えてくれるものだ。
 
 * [Composerとは][4]
 
