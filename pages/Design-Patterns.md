@@ -76,33 +76,76 @@ print_r($veyron->get_make_and_model()); // 出力は "ブガッティ ヴェイ�
 そんなときに使えるのがシングルトンパターンだ。
 
 {% highlight php %}
-<?php 
+<?php
 class Singleton
 {
-    static $instance;
+    /**
+     * Returns the *Singleton* instance of this class.
+     *
+     * @staticvar Singleton $instance The *Singleton* instances of this class.
+     *
+     * @return Singleton The *Singleton* instance.
+     */
+    public static function getInstance()
+    {
+        static $instance = null;
+        if (null === $instance) {
+            $instance = new static;
+        }
 
-    private function __construct()
+        return $instance;
+    }
+
+    /**
+     * Protected constructor to prevent creating a new instance of the
+     * *Singleton* via the `new` operator from outside of this class.
+     */
+    protected function __construct()
     {
     }
 
-    public static function getInstance()
+    /**
+     * Private clone method to prevent cloning of the instance of the
+     * *Singleton* instance.
+     *
+     * @return void
+     */
+    private function __clone()
     {
-        if (!isset(self::$instance)) {
-            self::$instance = new self();
-        }
+    }
 
-        return self::$instance;
+    /**
+     * Private unserialize method to prevent unserializing of the *Singleton*
+     * instance.
+     *
+     * @return void
+     */
+    private function __wakeup()
+    {
     }
 }
 
-$instance1 = Singleton::getInstance();
-$instance2 = Singleton::getInstance();
+class SingletonChild extends Singleton
+{
+}
 
-echo $instance1 === $instance2; // 出力は 1
+$obj = Singleton::getInstance();
+\var_dump($obj === Singleton::getInstance());             // bool(true)
+
+$anotherObj = SingletonChild::getInstance();
+\var_dump($anotherObj === Singleton::getInstance());      // bool(false)
+
+\var_dump($anotherObj === SingletonChild::getInstance()); // bool(true)
 {% endhighlight %}
 
-このコードは、静的スコープの変数と`getInstance()`メソッドを使ってシングルトンパターンを実装している。
-コンストラクタがprivate宣言されていることに注目。つまり、外部から`new`でインスタンスを作ることはできないってことだ。
+このコードは、[*静的* な変数](http://php.net/language.variables.scope#language.variables.scope.static)
+と`getInstance()`メソッドを使ってシングルトンパターンを実装している。
+これらのことに注目しよう。
+
+* The constructor [`__construct`](http://php.net/language.oop5.decon#object.construct) is declared as protected to prevent creating a new instance outside of the class via the `new` operator.
+* The magic method [`__clone`](http://php.net/language.oop5.cloning#object.clone) is declared as private to prevent cloning of an instance of the class via the [`clone`](http://php.net/language.oop5.cloning) operator.
+* The magic method [`__wakeup`](http://php.net/language.oop5.magic#object.wakeup) is declared as private to prevent unserializing of an instance of the class via the global function [`\unserialize()`](http://php.net/function.unserialize).
+* A new instance is created via [late static binding](http://php.net/language.oop5.late-static-bindings) in the static creation method `getInstance()` with the keyword `static`. This allows the subclassing of the class `Singleton` in the example.
 
 シングルトンパターンが有用なのは、たとえばウェブアプリケーションのリクエスト全体で、
 たったひとつのインスタンスだけしかないことを保証しないといけない場合だ。
