@@ -36,7 +36,7 @@ if (strpos('testing', 'test') !== false) {    // 厳格な比較が行われる�
 * [比較演算子](http://php.net/manual/ja/language.operators.comparison.php)
 * [比較の表](http://php.net/manual/ja/types.comparisons.php)
 
-## 条件分岐
+## 条件式
 
 ### If 文
 
