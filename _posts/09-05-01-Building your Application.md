@@ -80,4 +80,5 @@ GitHubと統合されており、PHPを含むさまざまな言語に対応し�
 あわせて読みたい:
 
 * [Jenkinsによる継続的インテグレーション](http://jenkins-ci.org/)
+* [PHPCIによる継続的インテグレーション](http://www.phptesting.org/)
 * [Teamcityによる継続的インテグレーション](http://www.jetbrains.com/teamcity/)
