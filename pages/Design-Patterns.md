@@ -90,7 +90,7 @@ class Singleton
     {
         static $instance = null;
         if (null === $instance) {
-            $instance = new static;
+            $instance = new static();
         }
 
         return $instance;
@@ -130,12 +130,12 @@ class SingletonChild extends Singleton
 }
 
 $obj = Singleton::getInstance();
-\var_dump($obj === Singleton::getInstance());             // bool(true)
+var_dump($obj === Singleton::getInstance());             // bool(true)
 
 $anotherObj = SingletonChild::getInstance();
-\var_dump($anotherObj === Singleton::getInstance());      // bool(false)
+var_dump($anotherObj === Singleton::getInstance());      // bool(false)
 
-\var_dump($anotherObj === SingletonChild::getInstance()); // bool(true)
+var_dump($anotherObj === SingletonChild::getInstance()); // bool(true)
 {% endhighlight %}
 
 このコードは、[*静的* な変数](http://php.net/language.variables.scope#language.variables.scope.static)
@@ -144,7 +144,7 @@ $anotherObj = SingletonChild::getInstance();
 
 * コンストラクタ [`__construct`](http://php.net/language.oop5.decon#object.construct) が protected 宣言されている。これで、このクラスの外部からは `new` 演算子で新しいインスタンスを作れなくなる。
 * マジックメソッド [`__clone`](http://php.net/language.oop5.cloning#object.clone) が private 宣言されている。これで、[`clone`](http://php.net/language.oop5.cloning) 演算子でインスタンスをクローンしようとしてもできなくなる。
-* マジックメソッド [`__wakeup`](http://php.net/language.oop5.magic#object.wakeup) が private 宣言されている。これで、グローバル関数 [`\unserialize()`](http://php.net/function.unserialize) でのインスタンスのアンシリアライズができなくなる。
+* マジックメソッド [`__wakeup`](http://php.net/language.oop5.magic#object.wakeup) が private 宣言されている。これで、グローバル関数 [`unserialize()`](http://php.net/function.unserialize) でのインスタンスのアンシリアライズができなくなる。
 * 新しいインスタンスを作るには、静的な作成用メソッド `getInstance()` による [遅延静的束縛](http://php.net/language.oop5.late-static-bindings) を使う。このメソッドの中ではキーワード `static` が使われていて、サンプルのように `Singleton` のサブクラスを作れるようになる。
 
 シングルトンパターンが有用なのは、たとえばウェブアプリケーションのリクエスト全体で、
