@@ -1,6 +1,6 @@
 ---
-title: Errors and Exceptions
+title: エラーと例外処理
 ---
 
-# Errors and Exceptions {#errors_and_exceptions_title}
+# エラーと例外処理 {#errors_and_exceptions_title}
 
