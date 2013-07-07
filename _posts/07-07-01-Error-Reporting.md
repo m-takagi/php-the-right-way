@@ -12,7 +12,7 @@ isChild: true
 
 ### 開発環境
 
-<strong>開発</strong>環境で、起こりうるエラーをすべて表示するときには、`php.ini`で次のように設定する。
+　<strong>開発</strong>環境で、起こりうるエラーをすべて表示するときには、`php.ini`で次のように設定する。
 
     display_errors = On
     display_startup_errors = On
@@ -35,7 +35,7 @@ isChild: true
 
 ### 本番環境
 
-<strong>本番</strong>環境でエラーの情報を見せないようにするには、`php.ini`で次のように設定する。
+　<strong>本番</strong>環境でエラーの情報を見せないようにするには、`php.ini`で次のように設定する。
 
     display_errors = Off
     display_startup_errors = Off
