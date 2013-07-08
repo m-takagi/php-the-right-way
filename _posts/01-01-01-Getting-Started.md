@@ -1,6 +1,6 @@
 ---
-title: まずはじめに
+title: はじめに
 ---
 
-# まずはじめに {#getting_started_title}
+# はじめに {#getting_started_title}
 
