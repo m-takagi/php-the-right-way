@@ -161,14 +161,15 @@ Configurationクラスみたいなグローバルオブジェクトを使って�
 
 * [シングルトンパターン (Wikipedia)](https://en.wikipedia.org/wiki/Singleton_pattern)
 
-## Strategy
+## ストラテジー
 
-With the strategy pattern you encapsulate specific families of algorithms allowing the client class responsible for 
-instantiating a particular algorithm to have no knowledge of the actual implementation.
-There are several variations on the strategy pattern, the simplest of which is outlined below:
+ストラテジーパターンを使うと、一連のアルゴリズム群をカプセル化して、
+クライアントクラス側から特定のアルゴリズムのインスタンスを作れるようになる。
+このときに、実際の実装に関する知識はなくてもかまわない。
+このパターンにはいくつかのバリエーションがあるけれど、ここでは一番シンプルなものを解説する。
 
-This first code snippet outlines a family of algorithms; you may want a serialized array, some JSON or maybe 
-just an array of data:
+最初に示すのは、アルゴリズム群を表すコード片だ。
+シリアライズした配列、JSON、あるいは単なるデータの配列が欲しいとしよう。
 {% highlight php %}
 <?php
 
@@ -202,16 +203,18 @@ class ArrayOutput implements OutputInterface
 }
 {% endhighlight %}
 
-By encapsulating the above algorithms you are making it nice and clear in your code that other developers can easily 
-add new output types without affecting the client code.
+このようにアルゴリズム群をカプセル化しておけば、使う側のコードからもうまい具合に使えるようになる。
+また、他の開発者が新たな出力形式を追加したとしても、使う側のコードは変更する必要がない。
 
-You will see how each concrete 'output' class implements an OutputInterface - this serves two purposes, primarily it
-provides a simple contract which must be obeyed by any new concrete implementations. Secondly by implementing a common
-interface you will see in the next section that you can now utilise [Type Hinting](http://php.net/manual/en/language.oop5.typehinting.php) to ensure that the client which is utilising these behaviours is of the correct type in
-this case 'OutputInterface'.
+個々の具象「出力」クラスがOutputInterfaceを実装していることに気づくだろう。
+その目的は二つ。まずは、具象実装が従うべきシンプルな規約をあてはめること。
+そしてもう一つは、このように共通のインターフェイスを実装することで、
+次のセクションで説明する
+[タイプヒンティング](http://php.net/manual/ja/language.oop5.typehinting.php)
+が使え、正しい型（この場合は'OutputInterface'）を使っていることを保証できるということだ。
 
-The next snippet of code outlines how a calling client class might use one of these algorithms and even better set the
-behaviour required at runtime:
+次のコードは、呼び出し側のクライアントクラスが実際に特定のアルゴリズムを使ったり、
+必要な振る舞いを実行時に設定したりするものだ。
 {% highlight php %}
 <?php
 
@@ -231,25 +234,26 @@ class SomeClient
 }
 {% endhighlight %}
 
-The calling client class above has a private property which must be set at runtime and be of type 'OutputInterface'
-once this property is set a call to loadOutput() will call the load() method in the concrete class of the output type
-that has been set.
+このクライアントクラスにはprivateなプロパティが用意されている。
+実行時には、必ず'OutputInterface'型を設定しておく必要がある。
+このプロパティを設定すれば、loadOutput()を呼んだときに、
+指定した型の具象クラスのload()メソッドが呼ばれることになる。
 {% highlight php %}
 <?php
 
 $client = new SomeClient();
 
-// Want an array?
+// 配列が使いたければ
 $client->setOutput(new ArrayOutput());
 $data = $client->loadOutput();
 
-// Want some JSON?
+// JSONが使いたければ
 $client->setOutput(new JsonStringOutput());
 $data = $client->loadOutput();
 
 {% endhighlight %}
 
-* [Strategy pattern on Wikipedia](http://en.wikipedia.org/wiki/Strategy_pattern)
+* [ストラテジーパターン (Wikipedia)](http://en.wikipedia.org/wiki/Strategy_pattern)
 
 ## フロントコントローラ
 
