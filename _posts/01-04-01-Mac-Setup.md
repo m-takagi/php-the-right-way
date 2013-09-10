@@ -15,8 +15,9 @@ OS X の PHP をアップデートするには、Mac 用の [パッケージ管�
 Xcode あるいは ["Command Line Tools for Xcode"][apple-developer] をインストールしないといけない。
 これは Apple の Mac Developer Center でダウンロードできる。
 
+<<<<<<< HEAD
 PHP だけじゃなくて Apache や MySQL とかも入っていて、さらに GUI
-の管理ツールもついてる「全部入り」のパッケージもある。それが [MAMP][mamp-downloads] だ。
+の管理ツールもついてる「全部入り」のパッケージもある。それが [MAMP][mamp-downloads] や [XAMPP][xampp] だ。
 
 [mac-package-managers]: http://www.php.net/manual/en/install.macosx.packages.php
 [mac-compile]: http://www.php.net/manual/en/install.macosx.compile.php
@@ -24,3 +25,4 @@ PHP だけじゃなくて Apache や MySQL とかも入っていて、さらに 
 [apple-developer]: https://developer.apple.com/downloads
 [mamp-downloads]: http://www.mamp.info/en/downloads/index.html
 [php-osx-downloads]: http://php-osx.liip.ch/
+[xampp]: http://www.apachefriends.org/jp/xampp.html
