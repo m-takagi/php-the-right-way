@@ -22,6 +22,17 @@ Windows で開発して Linux (など、Windows 以外の環境) にデプロイ
 Vagrantは、共有フォルダを使ってホストと仮想マシンの間でコードを共有する。
 つまり、ホストマシンで作ったり編集したりしたファイルをそのまま仮想マシンで実行できるっていうことだ。
 
+### A little help
+
+If you need a little help to start using Vagrant there are two services that might be useful:
+
+- [Rove][rove]: service that allows you to pregenerate typical Vagrant builds, PHP among the options. The
+  provisioning is made with Chef.
+- [Puphpet][puphpet]: simple GUI to set up virtual machines for PHP development. **Heavily focused in PHP**. Besides
+  local VMs, can be used to deploy to cloud services as well. The provisioning is made with Puppet.
+
 [vagrant]: http://vagrantup.com/
 [puppet]: http://www.puppetlabs.com/
 [chef]: http://www.opscode.com/
+[rove]: http://rove.io/
+[puphpet]: https://puphpet.com/
