@@ -61,4 +61,5 @@ test.php で var_dump() とかいうやり方もあるけど、
 
 * [Selenium](http://seleniumhq.com)
 * [Mink](http://mink.behat.org)
-* [Codeception](http://codeception.com) これはフルスタックのフレームワークで、受け入れテスト用のツール群も含んでいる
+* [Codeception](http://codeception.com) これはフルスタックのテスティングフレームワークで、受け入れテスト用のツール群も含んでいる
+* [Storyplayer](http://datasift.github.io/storyplayer) これはフルスタックのテスティングフレームワークで、テスト環境をオンデマンドで作ったり破棄したりする機能も含んでいる

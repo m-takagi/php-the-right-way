@@ -19,7 +19,7 @@ Google+にもPHPプログラマー向けの [コミュニティ][php-programmers
 ## PHP ユーザーグループ
 
 大都市に住んでいるなら、きっと近場に PHP ユーザーグループがあるはずだ。
-公式ページの一覧に載ってなかったとしても、[Google][google] とか [Meetup.com][meetup]
+公式ページの一覧に載ってなかったとしても、[Google][google] とか [Meetup.com][meetup] あるいは [PHP.ug][php-ug]
 で探せばすぐ見つかる。小さな町なら、もしかしたらユーザーグループがないかもしれない。
 だったら、作ればいい！
 
@@ -35,6 +35,7 @@ PHP界の有名人が登壇することも多いので、彼らから直接学�
 [php-calendar]: http://www.php.net/cal.php
 [google]: https://www.google.com/search?q=php+user+group+near+me
 [meetup]: http://www.meetup.com/find/
+[php-ug]: http://php.ug
 [php-wiki]: https://wiki.php.net/usergroups
 [php-conf]: http://php.net/conferences/index.php
 [phpc-twitter]: https://twitter.com/phpc

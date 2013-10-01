@@ -30,8 +30,9 @@ PHP 5.5からは、新たに`password_hash`関数が使えるようになった�
 この例では、文字列をハッシュした後でそのハッシュを新たな文字列と比較している。
 二つの文字列は違っている('secret-password'と'bad-password')ので、このログインは失敗する。
 
-{% highlight php %}                                                                                                                                                                                              
-<?php                                                                                                                                                                                                            
+{% highlight php %}
+<?php
+                      
 require 'password.php';
 
 $passwordHash = password_hash('secret-password', PASSWORD_DEFAULT);
