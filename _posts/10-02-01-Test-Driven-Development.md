@@ -37,10 +37,11 @@ test.php で var_dump() とかいうやり方もあるけど、
 [PHPUnit](http://phpunit.de)は、PHPアプリケーションでユニットテストを書くための
 デファクトスタンダードのフレームワークだ。しかしそれ以外にも選択肢がある。
 
-* [SimpleTest](http://simpletest.org)
-* [Enhance PHP](http://www.enhance-php.com/)
-* [PUnit](http://punit.smf.me.uk/)
 * [atoum](https://github.com/atoum/atoum)
+* [Enhance PHP](https://github.com/Enhance-PHP/Enhance-PHP)
+* [PUnit](http://punit.smf.me.uk/)
+* [SimpleTest](http://simpletest.org)
+
 
 ### インテグレーションテスト
 
