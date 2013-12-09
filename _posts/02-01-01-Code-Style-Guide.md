@@ -28,6 +28,7 @@ Drupal や Zend、Symfony、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 * [PSR-2 とは][psr2]
 * [PEARのコーディング規約][pear-cs]
 * [Zendのコーディング規約][zend-cs]
+* [Symfonyのコーディング規約][symfony-cs]
 
 [PHP_CodeSniffer][phpcs]を使えば、
 自分のコードがこれらの標準のどれかひとつに準拠しているかどうかを確認できる。
@@ -48,6 +49,7 @@ Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]を使えば
 [psr2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
 [pear-cs]: http://pear.php.net/manual/ja/standards.php
 [zend-cs]: http://framework.zend.com/wiki/display/ZFDEV2/Coding+Standards
+[symfony-cs]: http://symfony.com/doc/current/contributing/code/standards.html
 [phpcs]: http://pear.php.net/package/PHP_CodeSniffer/
 [st-cs]: https://github.com/benmatselby/sublime-phpcs
 [phpcsfixer]: http://cs.sensiolabs.org/
