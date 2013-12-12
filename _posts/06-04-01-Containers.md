@@ -1,14 +1,16 @@
 ---
+title: コンテナ
 isChild: true
 ---
 
-## Containers {#containers_title}
+## コンテナ {#containers_title}
 
-The first thing you should understand about Dependency Injection Containers is that they are not the same thing as Dependency
-Injection. A container is a convenience utility that helps us implement Dependency Injection, however, they can be and often
-are misused to implement an anti-pattern, Service Location. Injecting a DI container as a Service Locator in to your classes arguably
-creates a harder dependency on the container than the dependency you are replacing. It also makes your code much less transparent
-and ultimately harder to test.
+DIコンテナについてまず知っておくべきなのは、DIコンテナを使ってさえいれば「依存性の注入」ができるわけではないってことだ。
+DIコンテナは、依存性の注入を実現するための便利な道具として使える。
+でも、使い方をミスって、サービスロケーションというアンチパターンを作ってしまっていることも多い。
+DIコンテナをサービスロケーターとしてクラスに組み込んでしまうと、
+依存関係を別の場所に移そうとしていたはずなのに、よりきつい依存関係を作り込むことになる。
+おまけにそのコードはわかりにくくなってしまうし、テストもしづらくなる。
 
-Most modern frameworks have their own Dependency Injection Container that allows you to wire your dependencies together through configuration.
-What this means in practice is that you can write application code that is as clean and de-coupled as the framework it is built on.
+いまどきのフレームワークにはたいていDIコンテナが用意されていて、依存関係をコード以外のところで設定できる。
+要するに、アプリケーションのコードがすっきりと書けて、フレームワーク本体とあまり密接につながりすぎないようにできるということ。
