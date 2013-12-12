@@ -1,30 +1,33 @@
 ---
+title: 複雑な問題
 isChild: true
 ---
 
-## Complex Problem {#complex_problem_title}
+## 複雑な問題 {#complex_problem_title}
 
-If you have ever read about Dependency Injection then you have probably seen the terms *"Inversion of Control"* or *"Dependency Inversion Principle"*.
-These are the complex problems that Dependency Injection solves.
+これまでに依存性の注入について調べたことがある人なら、
+*"制御の反転（IoC：Inversion of Control）"* や *"依存関係逆転の原則（DIP：Dependency Inversion Principle）"*
+といった言葉に見覚えがあるだろう。これらは複雑な問題で、依存性の注入によって解決できるものだ。
 
-### Inversion of Control
+### 制御の反転
 
-Inversion of Control is as it says, "inverting the control" of a system by keeping organisational control entirely separate from our objects.
-In terms of Dependency Injection, this means loosening our dependencies by controlling and instantiating them elsewhere in the system.
+制御の反転とは、文字通り、システムの「制御を反転」することだ。システム全体の制御を、オブジェクトから切り離したままで行う。
+依存性の注入の文脈では、依存関係の制御や作成を、システム内のどこか別の場所でやるってことを意味する。
 
-For years, PHP frameworks have been achieving Inversion of Control, however, the question became, which part of control
-are you inverting, and where to? For example, MVC frameworks would generally provide a super object or base controller that other
-controllers must extend to gain access to its dependencies. This **is** Inversion of Control, however, instead of loosening
-dependencies, this method simply moved them.
+PHPのフレームワークでも、制御の反転は実現されてきた。でも、実際のところ、何の制御を反転しているのだろう。そして、反転した結果、制御はどこに行ってしまったのだろう。
+たとえば、たいていのMVCフレームワークには、あらゆるコントローラの親になる基底コントローラが用意されている。
+そして、それを継承しなければ依存関係のアクセスできない。
+これはこれで制御の反転だが、でも、依存関係を緩くしたというよりは、単純に依存関係を別の場所に移しただけのことだ。
 
-Dependency Injection allows us to more elegantly solve this problem by only injecting the dependencies we need, when we need them,
-without the need for any hard coded dependencies at all.
+依存性の注入を使えば、これをもっとすっきりと解決できる。依存関係が必要になったときに、必要なものだけを注入すればいい。
+ハードコーディングする必要はない。
 
-### Dependency Inversion Principle
+### 依存関係逆転の原則
 
-Dependency Inversion Principle is the "D" in the S.O.L.I.D set of object oriented design principles that states one should
-*"Depend on Abstractions. Do not depend on concretions."*. Put simply, this means our dependencies should be interfaces/contracts or abstract
-classes rather than concrete implementations. We can easily refactor the above example to follow this principle.
+依存関係逆転の原則は、オブジェクト指向設計の原則である S.O.L.I.D の "D" にあたるもので、
+*「抽象に依存しろ。具象に依存するな」* という原則だ。
+簡単に言うと、依存関係はインターフェイスや抽象クラスに対して設定すべきものであり、それを実装したクラスに対して設定してはいけないってこと。
+先ほどの例をこの原則に沿って書き直すと、こんなふうになる。
 
 {% highlight php %}
 <?php
@@ -45,12 +48,15 @@ interface AdapterInterface {}
 class MysqlAdapter implements AdapterInterface {}
 {% endhighlight %}
 
-There are several benefits to the `Database` class now depending on an interface rather than a concretion.
+これで `Database` クラスは、具象クラスではなくインターフェイスに依存するように変わった。で、いったい何がうれしいんだろう。
 
-Consider that you are working in a team and the adapter is being worked on by a colleague. In our first example, we would have
-to wait for said colleague to finish the adapter before we could properly mock it for our unit tests. Now that the dependency
-is an interface/contract we can happily mock that interface knowing that our colleague will build the adapter based on that contract.
+こんな場面を考えてみよう。君は今、とあるチームの一員として作業をしている。アダプターを作っているのは別のメンバーだ。
+最初の例だと、その人がアダプターを完成させるまでは、自分のコードのユニットテストのモックを作れない。
+インターフェイスに依存するようにした新しいバージョンだと、そのインターフェイスを使ってモックを作ることができる。
+同僚が作るアダプターもそのインターフェイスに沿っているとわかっているからだ。
 
-An even bigger benefit to this method is that our code is now much more scalable. If a year down the line we decide that we
-want to migrate to a different type of database, we can write an adapter that implements the original interface and inject that instead,
-no more refactoring would be required as we can ensure that the adapter follows the contract set by the interface.
+そんなことより、もっとすばらしいメリットもある。こっちの方式のほうが、コードがずっとスケーラブルになるんだ。
+仮に将来、別のデータベースに移行することになったとしよう。
+そんな場合でも、このインターフェイスを実装した新しいアダプターを書いたらそれでおしまいだ。
+それ以外は何もいじる必要がない。
+新しいアダプターがきちんと決まりごとに従っているということを、インターフェイスが保証してくれるからだ。
