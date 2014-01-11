@@ -52,25 +52,27 @@ Composer はローカル (作業ディレクトリ) にインストールして�
 その部分を次のように読み替えればいい。
 
     composer install
+    
+このセクションでは、composer をグローバルにインストールしたものとして説明する。
 
 ### 依存関係の定義とインストール
 
 Composer は、プロジェクトの依存関係を `composer.json` というファイルで管理する。
 このファイルを手で書き換えてもいいし、Composer を使って編集してもいい。
-`php composer.phar require` を実行すると、プロジェクトの依存関係を追加する。
+
+`composer require` を実行すると、プロジェクトの依存関係を追加する。
 もしまだ `composer.json` がなければ、新しいファイルを作る。
 この例は、プロジェクトの依存関係に [Twig][2] を追加するものだ。
-プロジェクトのルートディレクトリに `composer.phar` をダウンロードして、このコマンドを実行しよう。
 
-	php composer.phar require twig/twig:~1.8
+	composer require twig/twig:~1.8
 
-あるいは、 `php composer.phar init` コマンドを実行して、
+あるいは、 `composer init` コマンドを実行して、
 自分のプロジェクト用の完全な `composer.json` ファイルを作ることもできる。
 どちらの方法にせよ、一度 `composer.json` ファイルを作ってしまえば、
 あとは Composer がすべての依存ライブラリをダウンロードして `vendors/` にインストールしてくれる。
 次のコマンドは、すでに `composer.json` ファイルを含むプロジェクトをダウンロードした場合にも使える。
 
-    php composer.phar install
+    composer install
 
 次に、アプリケーションで最初に呼ばれる PHP ファイルにこんな行を追加する。
 これは、Composer のオートローダーを使ってプロジェクトの依存ライブラリを読むよう指示している。
@@ -97,15 +99,22 @@ Composer は `composer.lock` というファイルを作る。
 これで、Composer で `php composer.phar update` を実行したときに、
 定義した制約の範囲での最新版に依存ライブラリを更新してくれる。
 
+### 更新通知
+
+新バージョンのリリースの通知を受け取りたければ [VersionEye][3] にサインアップするといい。
+このサービスは、自分の GitHub アカウントや BitBucket アカウントにある
+`composer.json` の内容を監視して、パッケージの新しいリリースがあればメールで教えてくれるものだ。
+
 ### 依存ライブラリのセキュリティ問題のチェック
 
-[Security Advisories Checker][3] は、Webサービスとコマンドラインツールとして提供されている。
+[Security Advisories Checker][4] は、Webサービスとコマンドラインツールとして提供されている。
 `composer.lock` ファイルを調べて、もし依存関係に更新が必要なら教えてくれるものだ。
 
-* [Composerとは][4]
+* [Composerとは][5]
 
 [1]: http://packagist.org/
 [2]: http://twig.sensiolabs.org
-[3]: https://security.sensiolabs.org/
-[4]: http://getcomposer.org/doc/00-intro.md
+[3]: https://www.versioneye.com/
+[4]: https://security.sensiolabs.org/
+[5]: http://getcomposer.org/doc/00-intro.md
 
