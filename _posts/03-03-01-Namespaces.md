@@ -23,10 +23,10 @@ isChild: true
 この文書の狙いは、ファイルやクラスそして名前空間の命名規則を標準化して
 お互いに再利用しやすくすることだ。
 
-In December 2013 the PHP-FIG created a new autoloading standard: [PSR-4][psr4], which one day will 
-probably replace PSR-0. Currently both are still usable, as PSR-4 requires PHP 5.3 and many PHP 5.2-only 
-projects currently implement PSR-0. If you're going to use an autoloader standard for a new application or 
-package then you almost certainly want to look into PSR-4.
+2013年12月、PHP-FIG はオートローディングに関する新しい標準を定めた。
+それが [PSR-4][psr4] で、ゆくゆくは PSR-0 に取って代わることになるだろう。
+現時点ではどちらも使える。というのも PSR-4 は PHP 5.3 以降が必須だけれど、今でも PHP 5.2 のプロジェクトはたくさんあって、それらが PSR-0 に従っているからだ。
+これから新しくアプリケーションやパッケージを作るときにオートローダーの使いかたの参考にするのなら、まず間違いなく PSR-4 だ。
 
 * [名前空間][namespaces]
 * [PSR-0][psr0]
