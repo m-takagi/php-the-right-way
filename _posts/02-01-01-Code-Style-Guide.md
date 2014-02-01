@@ -12,10 +12,10 @@ PHP のコミュニティはとてもでっかくて、いろんな人たちが�
 
 [Framework Interop Group][fig] っていうところ
 が、おすすめのスタイルを提案している。
-[PSR-0][psr0]や[PSR-1][psr1]、、そして[PSR-2][psr2]がそれだ。
-変な名前のせいでちょっと戸惑うかもしれないけど、これって単に
+コーディングスタイルに関する提案は、[PSR-0][psr0]と[PSR-1][psr1]、[PSR-2][psr2]、そして[PSR-4][psr4]だ。
+これって要するに、
 Drupal や Zend、Symfony、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
-などのプロジェクトの規約をまとめただけのものなんだ。
+などのプロジェクトが採用しつつある規約をまとめただけのものなんだ。
 自分のプロジェクトでこれを使ってもいいし、今までの自分のスタイルを使い続けてもいい。
 
 理想を言えば、PHP のコードを書くときには、よく知られた何らかの標準規約に従うべきだ。
@@ -26,6 +26,7 @@ Drupal や Zend、Symfony、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 * [PSR-0 とは][psr0]
 * [PSR-1 とは][psr1]
 * [PSR-2 とは][psr2]
+* [PSR-4 とは][psr4]
 * [PEARのコーディング規約][pear-cs]
 * [Zendのコーディング規約][zend-cs]
 * [Symfonyのコーディング規約][symfony-cs]
@@ -47,6 +48,7 @@ Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]を使えば
 [psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
 [psr1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
 [psr2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
+[psr4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
 [pear-cs]: http://pear.php.net/manual/ja/standards.php
 [zend-cs]: http://framework.zend.com/wiki/display/ZFDEV2/Coding+Standards
 [symfony-cs]: http://symfony.com/doc/current/contributing/code/standards.html

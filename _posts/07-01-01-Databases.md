@@ -94,11 +94,12 @@ PDO をベースとしたものもあれば、そうでないものもある。
 ただ、MySQL でも PostgreSQL でも SQLite でも動かせるアプリケーションを作る必要があるという場合は、
 コードがぐちゃぐちゃになることを思えば多少のオーバーヘッドは我慢できる。
 
-これらの抽象化レイヤーは PSR-0 の標準規格に従った名前空間を使って作られているので、
+これらの抽象化レイヤーは [PSR-0][psr0] または [PSR-4][psr4] の標準規格に従った名前空間を使って作られているので、
 いろんなアプリケーションに導入できる。
 
 * [Aura SQL][6]
 * [Doctrine2 DBAL][2]
+* [Propel][7]
 * [ZF2 Db][4]
 * [ZF1 Db][3]
 
@@ -108,7 +109,10 @@ PDO をベースとしたものもあれば、そうでないものもある。
 [4]: http://packages.zendframework.com/docs/latest/manual/ja/index.html#zend-db
 [5]: http://php.net/manual/ja/pdo.connections.php
 [6]: https://github.com/auraphp/Aura.Sql
+[7]: http://propelorm.org/Propel/
 
 [mysql]: http://php.net/mysql
 [mysqli]: http://php.net/mysqli
 [pgsql]: http://php.net/pgsql
+[psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
+[psr4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
