@@ -31,7 +31,8 @@ Vagrantを使い始めるときの手助けになるのが、これらのサー�
   **PHPに特化している。**
   ローカルVM以外に、クラウドサービスにデプロイすることもできる。
   プロビジョニングにはPuppetを使う。
-- [Protobox][protobox]: is a layer on top of vagrant and a web GUI to setup virtual machines for web development. A single YAML document controls everything that is installed on the virtual machine.
+- [Protobox][protobox]: vagrant をラップしたウェブ GUI で、ウェブ開発向けの仮想マシンを用意してくれる。
+  シンプルな YAML ドキュメントを使って、仮想マシン上にインストールするすべてものを制御できる。
 
 [vagrant]: http://vagrantup.com/
 [puppet]: http://www.puppetlabs.com/
