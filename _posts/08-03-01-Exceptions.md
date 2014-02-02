@@ -46,7 +46,7 @@ catch(Fuel\Email\SendingFailedException $e)
 }
 finally
 {
-    // Executed regardless of whether an exception has been thrown, and before normal execution resumes
+    // 例外が発生してもしなくても、ここは必ず実行される
 }
 {% endhighlight %}
 
