@@ -26,6 +26,6 @@ isChild: true
   [fuelval]: https://github.com/fuelphp/validation
 
 * [Aura](http://auraphp.github.com/)
-* [FuelPHP (2.0 限定)](https://github.com/fuelphp)
-* [Laravelの"Illuminate Components"](https://github.com/illuminate)
+* [FuelPHP](https://github.com/fuelphp)
 * [Symfony Components](http://symfony.com/doc/current/components/index.html)
+* [The League of Extraordinary Packages](http://thephpleague.com/)
