@@ -29,7 +29,7 @@ isChild: true
 * [FuelPHP](https://github.com/fuelphp)
 * [Symfony Components](http://symfony.com/doc/current/components/index.html)
 * [The League of Extraordinary Packages](http://thephpleague.com/)
-* [Laravel's Eloquent ORM](https://github.com/illuminate/database)
+* [LaravelのEloquent ORM](https://github.com/illuminate/database)
 
-_Laravel's [Illuminate components](https://github.com/illuminate) will eventually become better decoupled from the Laravel framework.
-For now, only the Laravel Eloquent ORM component is listed._
+_Laravelの [Illuminate コンポーネント](https://github.com/illuminate) も、将来的には Laravel フレームワークからきちんと切り離されるようになるだろう。
+しかし現段階では、Laravel Eloquent ORM コンポーネントだけをリストにあげておいた。 _
