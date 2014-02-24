@@ -16,17 +16,18 @@ isChild: true
 コンポーネントのインストールやアップグレードを簡単にできる。
 詳細は[依存関係の管理][dm]を参照すること。
 
-コンポーネントベースのフレームワークっていうのもあって、
-そのコンポーネントだけをごくわずかな要件のもとで使える。
+コンポーネントベースのフレームワークもあれば、フレームワークを持たずにコンポーネントだけを提供するベンダーもある。
+こういったプロジェクトが提供するパッケージは、他のパッケージや特定のフレームワークへの依存がほとんどない。
+
 たとえば[FuelPHPのValidationパッケージ][fuelval]を使うときには、
 別にFuelPHPフレームワークを使う必要はない。
-再利用可能なコンポーネントとして、基本的に独立したリポジトリで管理されているんだ。
 
   [dm]: /#依存関係の管理
-  [fuelval]: https://github.com/fuelphp/validation
+  [fueleval]: https://github.com/fuelphp/validation
 
 * [Aura](http://auraphp.github.com/)
 * [FuelPHP](https://github.com/fuelphp)
+* [Hoa Project](https://github.com/hoaproject)
 * [Symfony Components](http://symfony.com/doc/current/components/index.html)
 * [The League of Extraordinary Packages](http://thephpleague.com/)
 * LaravelのIlluminateコンポーネント
