@@ -30,6 +30,7 @@ _PHP: The Right Way_ は、他の言語にも翻訳されつつある。
 * [Bulgarian](http://bg.phptherightway.com/)
 * [German](http://rwetzlmayr.github.io/php-the-right-way/)
 * [Turkish](http://hkulekci.github.io/php-the-right-way/)
+* [Slovenian](http://sl.phptherightway.com)
 
 ## 協力するには
 
