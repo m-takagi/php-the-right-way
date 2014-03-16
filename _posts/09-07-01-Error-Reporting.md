@@ -1,6 +1,7 @@
 ---
 title: エラーレポート
 isChild: true
+anchor: error_reporting
 ---
 
 ## エラーレポート {#error_reporting_title}

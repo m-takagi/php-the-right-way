@@ -1,6 +1,7 @@
 ---
 title: 基本的な概念
 isChild: true
+anchor: basic_concept
 ---
 
 ## 基本的な概念 Concept {#basic_concept_title}

@@ -1,6 +1,7 @@
 ---
 title: Vagrant
 isChild: true
+anchor: vagrant
 ---
 
 ## Vagrant {#vagrant_title}

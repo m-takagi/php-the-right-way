@@ -1,6 +1,7 @@
 ---
 title: Windows の人は
 isChild: true
+anchor: windows_setup
 ---
 
 ## Windows の人は {#windows_setup_title}

@@ -1,6 +1,7 @@
 ---
 title: 日付や時刻の扱いかた
 isChild: true
+anchor: date_and_time
 ---
 
 ## 日付や時刻の扱いかた {#date_and_time_title}

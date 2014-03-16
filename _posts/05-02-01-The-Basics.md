@@ -1,6 +1,7 @@
 ---
 title: 基本
 isChild: true
+anchor: the_basics
 ---
 
 ## 基本 {#the_basics_title}

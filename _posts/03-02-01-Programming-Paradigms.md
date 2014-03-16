@@ -1,6 +1,7 @@
 ---
 title: プログラミングのパラダイム
 isChild: true
+anchor: programming_paradigms
 ---
 
 ## プログラミングのパラダイム {#programming_paradigms_title}

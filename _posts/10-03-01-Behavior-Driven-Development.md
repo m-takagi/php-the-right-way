@@ -1,6 +1,7 @@
 ---
 title: 振る舞い駆動開発
 isChild: true
+anchor: behavior_driven_development
 ---
 
 ## 振る舞い駆動開発 {#behavior_driven_development_title}

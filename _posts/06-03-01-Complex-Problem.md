@@ -1,6 +1,7 @@
 ---
 title: 複雑な問題
 isChild: true
+anchor: complex_problem
 ---
 
 ## 複雑な問題 {#complex_problem_title}

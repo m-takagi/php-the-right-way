@@ -1,5 +1,6 @@
 ---
 title: 依存関係の管理
+anchor: dependency_management
 ---
 
 # 依存関係の管理 {#dependency_management_title}

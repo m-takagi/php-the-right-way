@@ -1,6 +1,7 @@
 ---
 title: Composer と Packagist
 isChild: true
+anchor: composer_and_packagist
 ---
 
 ## Composer と Packagist {#composer_and_packagist_title}

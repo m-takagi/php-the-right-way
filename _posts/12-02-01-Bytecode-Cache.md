@@ -1,6 +1,7 @@
 ---
 title: バイトコードキャッシュ
 isChild: true
+anchor: bytecode_cache
 ---
 
 ## バイトコードキャッシュ {#bytecode_cache_title}

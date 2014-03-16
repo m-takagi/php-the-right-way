@@ -1,6 +1,7 @@
 ---
 title: オブジェクトキャッシュ
 isChild: true
+anchor: object_caching
 ---
 
 ## オブジェクトキャッシュ {#object_caching_title}

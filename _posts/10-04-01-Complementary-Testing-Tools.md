@@ -1,6 +1,7 @@
 ---
 title: その他のテスト用ツール
 isChild: true
+anchor: complementary_testing_tools
 ---
 
 ## その他のテスト用ツール {#complementary_testing_tools_title}

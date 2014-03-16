@@ -1,5 +1,6 @@
 ---
 title: コーディングスタイル
+anchor: code_style_guide
 ---
 
 # コーディングスタイル  {#code_style_guide_title}

@@ -1,5 +1,6 @@
 ---
 title: テスト
+anchor: testing
 ---
 
 # テスト {#testing_title}

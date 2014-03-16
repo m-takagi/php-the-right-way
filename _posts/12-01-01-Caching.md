@@ -1,5 +1,6 @@
 ---
 title: キャッシュ
+anchor: caching
 ---
 
 # キャッシュ {#caching_title}

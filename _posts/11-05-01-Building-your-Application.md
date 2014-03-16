@@ -1,9 +1,10 @@
 ---
 title: アプリケーションのビルドとデプロイ
 isChild: true
+anchor: building_and_deploying_your_application
 ---
 
-## アプリケーションのビルドとデプロイ {#build_title}
+## アプリケーションのビルドとデプロイ {#building_and_deploying_your_application_title}
 
 まさか、データベースのスキーマを変更したりテストを実行したりとかいったことを手作業でやってるなんてことはないよね？
 ちょっと待った！新しいバージョンのアプリケーションをデプロイするときに手作業がひとつでも増えると、

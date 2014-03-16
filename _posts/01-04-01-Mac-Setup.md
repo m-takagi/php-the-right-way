@@ -1,6 +1,7 @@
 ---
 title: Mac の人は
 isChild: true
+anchor: mac_setup
 ---
 
 ## Mac の人は  {#mac_setup_title}

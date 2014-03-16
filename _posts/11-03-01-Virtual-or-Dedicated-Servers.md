@@ -1,6 +1,7 @@
 ---
 title: 仮想サーバーあるいは専用サーバー
 isChild: true
+anchor: virtual_or_dedicated_servers
 ---
 
 ## 仮想サーバーあるいは専用サーバー {#virtual_or_dedicated_servers_title}

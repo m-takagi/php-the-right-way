@@ -1,5 +1,6 @@
 ---
 title: 依存性の注入
+anchor: dependency_injection
 ---
 
 # 依存性の注入 {#dependency_injection_title}

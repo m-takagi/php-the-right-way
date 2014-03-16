@@ -1,6 +1,7 @@
 ---
 title: コマンドラインインターフェイス
 isChild: true
+anchor: command_line_interface
 ---
 
 ## コマンドラインインターフェイス {#command_line_interface_title}

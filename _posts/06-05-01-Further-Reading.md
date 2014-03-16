@@ -1,6 +1,7 @@
 ---
 title: あわせて読みたい
 isChild: true
+anchor: further_reading
 ---
 
 ## あわせて読みたい {#further_reading_title}

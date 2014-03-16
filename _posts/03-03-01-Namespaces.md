@@ -1,6 +1,7 @@
 ---
 title: 名前空間
 isChild: true
+anchor: namespaces
 ---
 
 ## 名前空間 {#namespaces_title}

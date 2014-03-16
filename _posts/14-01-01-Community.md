@@ -1,5 +1,6 @@
 ---
 title: コミュニティ
+anchor: community
 ---
 
 # コミュニティ {#community_title}

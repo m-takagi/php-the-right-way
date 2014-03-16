@@ -1,6 +1,7 @@
 ---
 title: フレームワーク
 isChild: true
+anchor: frameworks
 ---
 
 # フレームワーク {#frameworks_title}
