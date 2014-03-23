@@ -67,7 +67,7 @@ class ValidationException extends Exception {}
 
 たとえば、マジックメソッド `__call()` を使っているときに、無効なメソッドを要求されたとしよう。
 標準の Exception クラスを使うのは曖昧すぎるし、そのためだけに専用の例外クラスを作るのも何だし、
-という場合には単に `throw new BadFunctionCallException;` とすればよい。
+という場合には単に `throw new BadMethodCallException;` とすればよい。
 
 * [例外について][exceptions]
 * [SPL 拡張モジュール][splexe]
