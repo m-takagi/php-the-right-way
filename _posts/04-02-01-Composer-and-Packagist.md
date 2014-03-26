@@ -26,6 +26,11 @@ Composer はローカル (作業ディレクトリ) にインストールして�
 <strong>注意:</strong> ダウンロードしたコードを直接パイプで実行する前に、
 まずはオンラインでコードを確認して安全であることを確かめておこう。
 
+#### Windows でのインストール
+Windowsの場合、一番簡単なのは [ComposerSetup][6] インストーラーを使う方法だ。
+これは、すべてのユーザーで使えるようにインストールしたうえで `$PATH` も設定してくれるので、
+あとはコマンドラインから `composer` を呼ぶだけで使えるようになる。
+
 ### Composer の手動インストール
 
 手動で Composer をインストールするのは初心者にはおすすめできない。
@@ -118,4 +123,5 @@ Composer は `composer.lock` というファイルを作る。
 [3]: https://www.versioneye.com/
 [4]: https://security.sensiolabs.org/
 [5]: http://getcomposer.org/doc/00-intro.md
+[6]: https://getcomposer.org/Composer-Setup.exe
 
