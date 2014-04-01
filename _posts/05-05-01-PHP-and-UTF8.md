@@ -6,46 +6,49 @@ anchor: php_and_utf8
 
 ## PHPとUTF-8 {#php_and_utf8_title}
 
-_This section was originally written by [Alex Cabal](https://alexcabal.com/) over at 
-[PHP Best Practices](https://phpbestpractices.org/#utf-8) and has now been shared here_.
+_このセクションは、もともと[Alex Cabal](https://alexcabal.com/)が
+[PHP Best Practices](https://phpbestpractices.org/#utf-8)向けに書いたものだ。ここでも共有する。_
 
-### There's no one-liner. Be careful, detailed, and consistent.
+### 一発で済ませる方法はない。注意して、きちんと一貫性を保つこと。
 
-Right now PHP does not support Unicode at a low level. There are ways to ensure that UTF-8 strings are processed OK, 
-but it's not easy, and it requires digging in to almost all levels of the web app, from HTML to SQL to PHP. We'll aim 
-for a brief, practical summary.
+今のところPHPは、低レベルではUnicodeをサポートしていない。
+PHPでUTF-8文字列をきちんと処理する方法もあるにはあるが、簡単ではない。さらに、ウェブアプリケーションのあらゆるレベル
+（つまり、HTMLやSQLからPHPまで）に手を入れる必要がある。
+ここでは、それらについて、現実的な範囲で手短にまとめた。
 
-### UTF-8 at the PHP level
+### PHPレベルでのUTF-8
 
-The basic string operations, like concatenating two strings and assigning strings to variables, don't need anything 
-special for UTF-8. However most string functions, like `strpos()` and `strlen()`, do need special consideration. These 
-functions often have an `mb_*` counterpart: for example, `mb_strpos()` and `mb_strlen()`. Together, these counterpart 
-functions are called the Multibyte String Functions. The multibyte string functions are specifically designed to 
-operate on Unicode strings.
+文字列の連結や変数への代入などの基本操作については、UTF-8だからといって何か特別なことをする必要はない。
+しかし、大半の文字列関数（`strpos()` や `strlen()` など）については、そういうわけにはいかない。
+これらの関数には、対応する関数として `mb_*` が用意されていることが多い。
+たとえば `mb_strpos()` や `mb_strlen()` だ。
+これらの関数をひとまとめにして、マルチバイト文字列関数と呼ぶ。
+マルチバイト文字列関数は、Unicode文字列を扱えるように設計されている。
 
-You must use the `mb_*` functions whenever you operate on a Unicode string. For example, if you use `substr()` on a 
-UTF-8 string, there's a good chance the result will include some garbled half-characters. The correct function to use 
-would be the multibyte counterpart, `mb_substr()`.
+Unicode文字列を扱う場合は、常に `mb_*` 関数を使う必要がある。
+たとえば、UTF-8文字列に対して `substr()` を使うと、その結果の中に文字化けした半角文字が含まれてしまう可能性がある。
+この場合、マルチバイト文字列のときに使うべき関数は `mb_substr()` だ。
 
-The hard part is remembering to use the `mb_*` functions at all times. If you forget even just once, your Unicode 
-string has a chance of being garbled during further processing.
+常に `mb_*` 関数を使うように覚えておくのが大変なところだ。
+たとえ一か所でもそれを忘れてしまうと、それ以降の Unicode 文字列は壊れてしまう可能性がある。
 
-Not all string functions have an `mb_*` counterpart. If there isn't one for what you want to do, then you might be out 
-of luck.
+そして、すべての文字列関数に `mb_*` 版があるわけではない。
+自分が使いたい関数にマルチバイト版がないだって？
+ご愁傷様。
 
-Additionally, you should use the `mb_internal_encoding()` function at the top of every PHP script you write (or at the 
-top of your global include script), and the `mb_http_output()` function right after it if your script is outputting to 
-a browser. Explicitly defining the encoding of your strings in every script will save you a lot of headaches down the 
-road.
+さらに、すべてのPUPスクリプトの先頭（あるいは、グローバルにインクルードするファイルの先頭）で `mb_internal_encoding()`
+関数を使わないといけないし、スクリプトの中でブラウザに出力するつもりなら、それだけではなく
+`mb_http_output()` 関数も使わなければいけない。
+すべてのスクリプトでエンコーディングを明示しておけば、後で悩まされることもなくなるだろう。
 
-Finally, many PHP functions that operate on strings have an optional parameter letting you specify the character 
-encoding. You should always explicitly indicate UTF-8 when given the option. For example, `htmlentities()` has an 
-option for character encoding, and you should always specify UTF-8 if dealing with such strings.
+最後に、文字列を操作する関数の多くには、文字エンコーディングを指定するためのオプション引数が用意されている。
+このオプションがある場合は、常に UTF-8 を明示しておくべきだ。
+たとえば `htmlentities()` には文字エンコーディングを設定する引数があるので、
+UTF-8 文字列を扱うなら常にそう指定しておかないといけない。
 
-Note that as of PHP 5.4.0, UTF-8 is the default encoding for `htmlentities()` and `htmlspecialchars()`.
+PHP 5.4.0 以降では、 `htmlentities()` や `htmlspecialchars()` のデフォルトエンコーディングが UTF-8 に変わった。
 
-
-### UTF-8 at the Database level
+### データベースレベルでのUTF-8
 
 If your PHP script accesses MySQL, there's a chance your strings could be stored as non-UTF-8 strings in the database 
 even if you follow all of the precautions above.
@@ -57,7 +60,7 @@ example code below. This is _critically important_.
 Note that you must use the `utf8mb4` character set for complete UTF-8 support, not the `utf8` character set! See 
 Further Reading for why.
 
-### UTF-8 at the browser level
+### ブラウザレベルでのUTF-8
 
 Use the `mb_http_output()` function to ensure that your PHP script outputs UTF-8 strings to your browser. In your HTML, 
 include the [charset `<meta>` tag](http://htmlpurifier.org/docs/enduser-utf8.html) in your page's `<head>` tag. 
@@ -120,7 +123,7 @@ $result = $handle->fetchAll(\PDO::FETCH_OBJ);
 </html>
 {% endhighlight %}
 
-### Further reading
+### あわせて読みたい
 
 * [PHP Manual: String Operations](http://php.net/manual/en/language.operators.string.php)
 * [PHP Manual: String Functions](http://php.net/manual/en/ref.strings.php)
