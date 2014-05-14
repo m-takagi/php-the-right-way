@@ -7,7 +7,7 @@ anchor: databases
 
 PHP のコードを書いていると、情報を保存するためにデータベースを使うことが多くなる。
 データベースを操作するには、いくつかの方法がある。
-_PHP 5.1.0 の時代までは_ 、おすすめの方法は [mysql][mysql]、[mysqli][mysqli]、[pgsql][pgsql]
+**PHP 5.1.0 の時代までは** 、おすすめの方法は [mysqli]、[pgsql]、[mssql]
 などのネイティブドライバを使うことだった。
 
 このデータベースしか使わないよ！っていうのならネイティブドライバもいい。
@@ -16,22 +16,41 @@ Oracle にもつなぐことがあるとか、そんな場合は同じドライ�
 そして、データベースが変わるたびに新しい API を覚えないといけないことになる。
 ばかげた話だ。
 
-ネイティブドライバについては、もうひとつ注意すべきことがある。
-PHP 用の mysql 拡張モジュールの開発はすでに終了しており、PHP 5.5 で正式に
-「廃止予定」となった。つまり、近い将来に削除されるということだ。
-もし未だに `mysql_connect()` とか `mysql_query()` を使っているなら、
+## MySQL 用の拡張モジュール
+
+PHP 用の [mysql] 拡張モジュールの開発はすでに終了しており、 [PHP 5.5.0で正式に「廃止予定」となった]。
+つまり、近い将来に削除されるということだ。
+もし未だに `mysql_connect()` とか `mysql_query()` のような `mysql_*` 系の関数を使っているなら、
 いずれ書き直さざるを得なくなる。mysql を使っているプログラムがあれば、
-今のうちに mysqli か PDO を使うように書き直しておこう。
+今のうちに [mysqli] か [PDO] を使うように書き直しておこう。
 そうすれば、後になって焦らずに済む。
-_今から新しく書き始めるっていうのなら、mysql 拡張モジュールを使うっていう選択肢はナシだ。
-[MySQLi 拡張モジュール][mysqli] か PDO を使うこと。_
+
+**今から新しく書き始めるっていうのなら、[mysql] 拡張モジュールを使うっていう選択肢はナシだ。
+[MySQLi 拡張モジュール][mysqli] か PDO を使うこと。**
 
 * [PHP: MySQL 用の API の選択肢](http://php.net/manual/ja/mysqlinfo.api.choosing.php)
+* [MySQL開発者用のPDOチュートリアル](http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers)
 
-## PDO
+## PDO 拡張モジュール
 
 PDO はデータベースとの接続を抽象化するライブラリだ。PHP 5.1.0 以降に組み込まれていて、
 いろんなデータベースを同じインターフェイスで扱える。
+MySQLを使うコードもSQLiteを使うコードも、基本的には同じようになるってことだ。
+
+{% highlight php %}
+// PDO + MySQL
+$pdo = new PDO('mysql:host=example.com;dbname=database', 'user', 'password');
+$statement = $pdo->query("SELECT some\_field FROM some\_table");
+$row = $statement->fetch(PDO::FETCH_ASSOC);
+echo htmlentities($row['some_field']);
+
+// PDO + MySQL
+$pdo = new PDO('sqlite:/path/db/foo.sqlite');
+$statement = $pdo->query("SELECT some\_field FROM some\_table");
+$row = $statement->fetch(PDO::FETCH_ASSOC);
+echo htmlentities($row['some_field']);
+{% endhighlight %}
+
 PDO は、SQL のクエリをデータベースにあわせて変換するものではないし、
 もともと存在しない機能をエミュレートするものでもない。
 純粋に、いろんなデータベースに同じ API で接続するためのものだ。
@@ -47,13 +66,14 @@ SQL インジェクション攻撃を心配しなくてもよくなる。
 
 {% highlight php %}
 <?php
-$pdo = new PDO('sqlite:users.db');
+<<<<<<< HEAD
+$pdo = new PDO('sqlite:/path/db/users.db');
 $pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- ダメ、ゼッタイ！
 {% endhighlight %}
 
 こんな恐ろしいコードを書いちゃいけない。
 これは、クエリ文字列のパラメータを SQL に直に埋め込んでいることになる。
-あっという間に攻撃を食らうだろう。
+あっという間に [SQLインジェクション] 攻撃を食らうだろう。
 どこかのずるがしこい攻撃者が `id` に渡す内容をひと工夫して
 `http://domain.com/?id=1%3BDELETE+FROM+users` みたいな URL を呼んだとしよう。
 このとき変数 `$_GET['id']` の内容は `1;DELETE FROM users` となり、全ユーザーが消えてしまうことになる！
@@ -61,7 +81,7 @@ $pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- ダメ�
 
 {% highlight php %}
 <?php
-$pdo = new PDO('sqlite:users.db');
+$pdo = new PDO('sqlite:/path/db/users.db');
 $stmt = $pdo->prepare('SELECT name FROM users WHERE id = :id');
 $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT); // <-- PDOが自動的にエスケープ処理をする
 $stmt->execute();
@@ -71,7 +91,7 @@ $stmt->execute();
 外部からの入力である ID がエスケープされてからデータベースに渡るので、
 SQL インジェクション攻撃を受けることがなくなる。
 
-* [PDOについて調べる][1]
+* [PDOについて調べる]
 
 あと、データベースのコネクションはリソースを使うということにも気をつけよう。
 コネクションを明示的に閉じることを忘れたせいでリソースを食いつぶしてしまうなんて話は珍しくない。
@@ -81,38 +101,15 @@ PDOを使っている場合は、オブジェクトへの参照をすべて削�
 オブジェクトを明示的に破棄しない場合は、スクリプトの実行が終わった時点でPHPが自動的に接続を閉じる。
 もちろん、持続的接続を使っている場合は別だ。
 
-* [PDOの接続について調べる][5]
+* [PDOの接続について調べる]
 
-## 抽象化レイヤー
+[PDOについて調べる]: http://www.php.net/manual/ja/book.pdo.php
+[PDOの接続について調べる]: http://php.net/manual/ja/pdo.connections.php
+[PHP 5.5.0で正式に「廃止予定」となった]: http://php.net/manual/ja/migration55.deprecated.php
+[SQLインジェクション]: http://wiki.hashphp.org/Validation
 
-多くのフレームワークが自前の抽象化レイヤーを用意している。
-PDO をベースとしたものもあれば、そうでないものもある。
-こういった抽象化レイヤーでは、あるデータベースには存在するけれども
-別のデータベースには存在しない機能を、PHP のメソッドでエミュレートして
-使えるようにしていることが多い。真の意味でのデータベースの抽象化をしているわけだ。
-そのぶんオーバーヘッドはある。
-ただ、MySQL でも PostgreSQL でも SQLite でも動かせるアプリケーションを作る必要があるという場合は、
-コードがぐちゃぐちゃになることを思えば多少のオーバーヘッドは我慢できる。
-
-これらの抽象化レイヤーは [PSR-0][psr0] または [PSR-4][psr4] の標準規格に従った名前空間を使って作られているので、
-いろんなアプリケーションに導入できる。
-
-* [Aura SQL][6]
-* [Doctrine2 DBAL][2]
-* [Propel][7]
-* [ZF2 Db][4]
-* [ZF1 Db][3]
-
-[1]: http://www.php.net/manual/ja/book.pdo.php
-[2]: http://www.doctrine-project.org/projects/dbal.html
-[3]: http://framework.zend.com/manual/ja/zend.db.html
-[4]: http://packages.zendframework.com/docs/latest/manual/ja/index.html#zend-db
-[5]: http://php.net/manual/ja/pdo.connections.php
-[6]: https://github.com/auraphp/Aura.Sql
-[7]: http://propelorm.org/Propel/
-
+[pdo]: http://php.net/pdo
 [mysql]: http://php.net/mysql
 [mysqli]: http://php.net/mysqli
 [pgsql]: http://php.net/pgsql
-[psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
-[psr4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
+[mssql]: http://php.net/mssql
