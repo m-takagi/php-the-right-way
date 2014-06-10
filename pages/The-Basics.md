@@ -26,7 +26,7 @@ if (strpos('testing', 'test')) {    // 'test' は 0 番目の位置にあり、�
     // コード...
 }
 
-vs.
+// vs
 
 if (strpos('testing', 'test') !== false) {    // 厳格な比較が行われるので、これは成立する(0 !== false)
     // コード...
@@ -56,7 +56,7 @@ function test($a)
     }
 }
 
-vs.
+// vs
 
 function test($a)
 {
@@ -144,7 +144,7 @@ $a  = 'Multi-line example';    // 連結代入演算子 (.=)
 $a .= "\n";
 $a .= 'of what not to do';
 
-vs.
+// vs
 
 $a = 'Multi-line example'      // 連結演算子 (.)
     . "\n"                     // 改行してインデント
@@ -195,7 +195,7 @@ echo 'phptherightway is ' . $adjective . '.'     // シングルクォートを�
     . "\n"                                       // 変数の埋め込みやエスケープを使っている
     . 'I love learning' . $code . '!';
 
-vs.
+// vs
 
 echo "phptherightway is $adjective.\n I love learning $code!"  // ダブルクォートを使えば、別々の要素に分けずに
                                                                // ひとまとめにできる
@@ -210,7 +210,7 @@ echo "phptherightway is $adjective.\n I love learning $code!"  // ダブルク�
 $juice = 'plum';
 echo "I drank some juice made of $juices";    // $juiceがパースできない
 
-vs.
+// vs
 
 $juice = 'plum';
 echo "I drank some juice made of {$juice}s";    // これで、変数は$juiceだとわかる
@@ -288,11 +288,12 @@ EOD;                        // 終了文字列はそれ単体でひとつの行�
 <?php
 $a = 5;
 echo ($a == 5) ? 'yay' : 'nay';
+{% endhighlight %}
 
-vs.
+読みやすさを無視して、とにかく行数を減らそうとだけ考えてしまうと、こんな羽目になる。
 
-// 三項演算子をネストしてみた
-$b = 10;
+{% highlight php %}
+<?php
 echo ($a) ? ($a == 5) ? 'yay' : 'nay' : ($b == 10) ? 'excessive' : ':(';    // やりすぎ。もはや読めない :-(
 {% endhighlight %}
 
@@ -303,10 +304,59 @@ echo ($a) ? ($a == 5) ? 'yay' : 'nay' : ($b == 10) ? 'excessive' : ':(';    // �
 $a = 5;
 echo ($a == 5) ? return true : return false;    // この書きかただとエラーになる
 
-vs.
+// vs
 
 $a = 5;
 return ($a == 5) ? 'yay' : 'nope';    // この書きかたなら 'yay' を返す
+
+{% endhighlight %}
+
+注意しておきたいのは、boolean値を返したいというだけなら、別に三項演算子じゃなくてもかまわないってこと。
+
+{% highlight php %}
+<?php
+$a = 3;
+return ($a == 3) ? true : false; // $a == 3 なら true、そうでなければ false を返す
+
+// vs
+
+$a = 3;
+return $a == 3; // これでも同じこと。$a == 3 なら true、そうでなければ false を返す
+
+{% endhighlight %}
+
+=== や !==、!=、== など、どの演算子であっても同じことだ。
+
+#### Utilising brackets with ternary operators for form and function
+
+三項演算子を使うときには、括弧を活用すればコードの可読性を挙げられるし、文の中に結合を含めることもできる。
+括弧を使っても使わなくても変わらないのは、こんな例だ。
+
+{% highlight php %}
+<?php
+$a = 3;
+return ($a == 3) ? "yay" : "nope"; // $a == 3 なら yay、そうでなければ nope を返す
+
+// vs
+
+<?php
+$a = 3;
+return $a == 3 ? "yay" : "nope"; // $a == 3 なら yay、そうでなければ nope を返す
+{% endhighlight %}
+
+括弧を使えば、文のかたまり全体をチェックするときに、その中に結合を含めることもできる。
+次の例は「$a == 3 かつ $b == 4」がtrueで、かつ$c == 5もtrueのときに、trueを返す。
+
+{% highlight php %}
+<?php
+return ($a == 3 && $b == 4) && $c == 5;
+{% endhighlight %}
+
+もうひとつ、別の例を示そう。これは「$a != 3 かつ $b != 4」がtrue、あるいは$c == 5がtrueのときに、trueを返す。
+
+{% highlight php %}
+<?php
+return ($a != 3 && $b != 4) || $c == 5;
 {% endhighlight %}
 
 * [三項演算子](http://php.net/manual/ja/language.operators.comparison.php)
@@ -323,7 +373,7 @@ return ($a == 5) ? 'yay' : 'nope';    // この書きかたなら 'yay' を返�
 $about = 'A very long string of text';    // メモリを2MB消費する
 echo $about;
 
-vs.
+// vs
 
 echo 'A very long string of text';        // メモリの消費は1MBだけ
 {% endhighlight %}
