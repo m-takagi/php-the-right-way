@@ -24,7 +24,7 @@ anchor: components
 別にFuelPHPフレームワークを使う必要はない。
 
   [dm]: /#依存関係の管理
-  [fueleval]: https://github.com/fuelphp/validation
+  [fuelval]: https://github.com/fuelphp/validation
 
 * [Aura](http://auraphp.github.com/)
 * [FuelPHP](https://github.com/fuelphp)
