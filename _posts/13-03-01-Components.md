@@ -37,4 +37,4 @@ anchor: components
     * [Queue](https://github.com/illuminate/queue)
 
 _Laravelの [Illuminate コンポーネント](https://github.com/illuminate) も、将来的には Laravel フレームワークからきちんと切り離されるようになるだろう。
-現段階では、Laravel フレームワークからうまく切り離せているコンポーネントだけをリストにあげておいた。 _
+現段階では、Laravel フレームワークからうまく切り離せているコンポーネントだけをリストにあげておいた。_
