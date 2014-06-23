@@ -66,7 +66,6 @@ SQL インジェクション攻撃を心配しなくてもよくなる。
 
 {% highlight php %}
 <?php
-<<<<<<< HEAD
 $pdo = new PDO('sqlite:/path/db/users.db');
 $pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- ダメ、ゼッタイ！
 {% endhighlight %}
