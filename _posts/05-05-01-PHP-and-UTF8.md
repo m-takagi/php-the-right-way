@@ -1,13 +1,13 @@
 ---
-title: PHPとUTF-8
+title: UTF-8の扱い
 isChild: true
 anchor: php_and_utf8
 ---
 
-## PHPとUTF-8 {#php_and_utf8_title}
+## UTF-8の扱い {#php_and_utf8_title}
 
 _このセクションは、もともと[Alex Cabal](https://alexcabal.com/)が
-[PHP Best Practices](https://phpbestpractices.org/#utf-8)向けに書いたものだ。ここでも共有する。_
+[PHP Best Practices](https://phpbestpractices.org/#utf-8)向けに書いたものだ。この記事をもとに、UTF-8について説明する。_
 
 ### 一発で済ませる方法はない。注意して、きちんと一貫性を保つこと。
 
@@ -22,8 +22,8 @@ PHPでUTF-8文字列をきちんと処理する方法もあるにはあるが、
 しかし、大半の文字列関数（`strpos()` や `strlen()` など）については、そういうわけにはいかない。
 これらの関数には、対応する関数として `mb_*` が用意されていることが多い。
 たとえば `mb_strpos()` や `mb_strlen()` だ。
-これらの関数をひとまとめにして、マルチバイト文字列関数と呼ぶ。
-マルチバイト文字列関数は、Unicode文字列を扱えるように設計されている。
+これらの `mb_*` 関数は [マルチバイト文字列拡張モジュール] が提供するもので、
+Unicode文字列を扱えるように設計されている。
 
 Unicode文字列を扱う場合は、常に `mb_*` 関数を使う必要がある。
 たとえば、UTF-8文字列に対して `substr()` を使うと、その結果の中に文字化けした半角文字が含まれてしまう可能性がある。
@@ -36,17 +36,23 @@ Unicode文字列を扱う場合は、常に `mb_*` 関数を使う必要があ�
 自分が使いたい関数にマルチバイト版がないだって？
 ご愁傷様。
 
-さらに、すべてのPHPスクリプトの先頭（あるいは、グローバルにインクルードするファイルの先頭）で `mb_internal_encoding()`
+すべてのPHPスクリプトの先頭（あるいは、グローバルにインクルードするファイルの先頭）で `mb_internal_encoding()`
 関数を使わないといけないし、スクリプトの中でブラウザに出力するつもりなら、それだけではなく
 `mb_http_output()` 関数も使わなければいけない。
 すべてのスクリプトでエンコーディングを明示しておけば、後で悩まされることもなくなるだろう。
 
-最後に、文字列を操作する関数の多くには、文字エンコーディングを指定するためのオプション引数が用意されている。
+さらに、文字列を操作する関数の多くには、文字エンコーディングを指定するためのオプション引数が用意されている。
 このオプションがある場合は、常に UTF-8 を明示しておくべきだ。
 たとえば `htmlentities()` には文字エンコーディングを設定する引数があるので、
 UTF-8 文字列を扱うなら常にそう指定しておかないといけない。
-
 PHP 5.4.0 以降では、 `htmlentities()` や `htmlspecialchars()` のデフォルトエンコーディングが UTF-8 に変わった。
+
+最後に、他の人たち向けに配布するつもりのアプリケーションなど、その実行環境で `mbstring` が使えるかどうか定かではない場合は、
+Composer の [patchwork/utf8] パッケージを使うことも検討しよう。
+これは、もし `mbstring` があればそれを使い、なければ非 UTF-8 関数にフォールバックするというものだ。
+
+[マルチバイト文字列拡張モジュール]: http://php.net/manual/ja/book.mbstring.php
+[patchwork/utf8]: https://packagist.org/packages/patchwork/utf8
 
 ### データベースレベルでのUTF-8
 
@@ -64,7 +70,11 @@ Further Reading for why.
 ### ブラウザレベルでのUTF-8
 
 `mb_http_output()` 関数を使えば、PHP スクリプトからブラウザへの出力が UTF-8 文字列になることを保証できる。
-HTML の中では、 `<head>` タグに [charset の `<meta>` タグ](http://htmlpurifier.org/docs/enduser-utf8.html) を指定すればいい。
+
+あとは、HTTPレスポンスの中で、そのページをUTF-8として扱うようブラウザに指示する必要がある。
+昔ながらのやりかたは、そのページの `<head>` タグの中で [charset の `<meta>` タグ](http://htmlpurifier.org/docs/enduser-utf8.html) を指定することだった。
+この方法でも間違いではないが、 `Content-Type` ヘッダーの中で文字セットを指定したほうが、
+[ずっと高速になる](https://developers.google.com/speed/docs/best-practices/rendering#SpecifyCharsetEarly)。
 
 {% highlight php %}
 <?php
@@ -108,10 +118,11 @@ $handle->execute();
  
 // 結果をオブジェクトに代入して、後でHTMLの中で使う
 $result = $handle->fetchAll(\PDO::FETCH_OBJ);
+
+header('Content-Type: text/html; charset=utf-8');
 ?><!doctype html>
 <html>
     <head>
-        <meta charset="UTF-8" />
         <title>UTF-8 テストページ</title>
     </head>
     <body>
