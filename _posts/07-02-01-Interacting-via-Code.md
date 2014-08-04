@@ -1,13 +1,13 @@
 ---
 isChild: true
-title: Interacting with Databases
+title: データベースとのやりとり
 anchor: databases_interacting
 ---
 
-## Interacting with Databases {#databases_interacting_title}
+## データベースとのやりとり {#databases_interacting_title}
 
-When developers first start to learn PHP, they often end up mixing their database interaction up with their 
-presentation logic, using code that might look like this:
+PHPを勉強し始めたばかりの開発者がやってしまいがちなのが、データベースとのやりとりと画面表示のロジックをごちゃまぜにしてしまうことだ。
+たとえば、こんなコードになる。
 
 {% highlight php %}
 <ul>
@@ -18,11 +18,15 @@ foreach ($db->query('SELECT * FROM table') as $row) {
 </ul>
 {% endhighlight %}
 
-This is bad practice for all sorts of reasons, mainly that its hard to debug, hard to test, hard to read and it is going to output a lot of fields if you don't put a limit on there.
+これは、あらゆる意味でよろしくない。
+まず何と言っても、デバッグしづらいし、テストもしづらいし、読みづらい。
+あと、何も制限をかけていないので、大量のフィールドを出力してしまうことになる。
 
-While there are many other solutions to doing this - depending on if you prefer [OOP](/#object-oriented-programming) or [functional programming](/#functional-programming) - there must be some element of separation. 
+同じことをもっとすっきり行う方法はいろいろある。[OOP](/#object-oriented-programming)が好きな人向けのやりかたもあれば
+[関数型プログラミング](/#functional-programming)が好きな人向けのやりかたもある。
+が、まずは、分離することからはじめよう。
 
-Consider the most basic step:
+これが第一歩だ。
 
 {% highlight php %}
 <?php
@@ -35,9 +39,11 @@ foreach (getAllFoos() as $row) {
 }
 {% endhighlight %}
 
-That is a good start. Put those two items in two different files and you've got some clean separation.
+少しはマシになった。この二つを別々のファイルに分けてしまえば、きれいに分離できるだろう。
 
-Create a class to place that method in and you have a "Model". Create a simple `.php` file to put the presentation logic in and you have a "View", which is very nearly [MVC] - a common OOP architecture for most [frameworks](/#frameworks_title).
+次に、このメソッドを保持するクラスを用意する。「モデル」だ。
+そして、シンプルな `.php` ファイルをもうひとつ作って、そこに画面表示ロジックを入れる。「ビュー」だ。
+これで、何となく [MVC] っぽくなった。これは、多くの [フレームワーク](/#frameworks_title) で使われている、OOPのアーキテクチャだ。
 
 **foo.php**
 
@@ -46,13 +52,13 @@ Create a class to place that method in and you have a "Model". Create a simple `
 
 $db = new PDO('mysql:host=localhost;dbname=testdb;charset=utf8', 'username', 'password');
 
-// Make your model available
+// モデルを読み込む
 include 'models/FooModel.php';
 
-// Create an instance
+// インスタンスを作る
 $fooList = new FooModel($db);
 
-// Show the view
+// ビューを表示する
 include 'views/foo-list.php';
 {% endhighlight %}
 
@@ -84,11 +90,12 @@ class Foo()
 <? endforeach ?>
 {% endhighlight %}
 
-This is essentially the same as what most modern frameworks are doing, all be it a little more manual. You might 
-not need to do all of that every time, but mixing together too much presentation logic and database interaction can be a real problem if you ever want to [unit-test](/#unit-testing) your application.
+本質的にこれは、今どきのフレームワークがやっていることと、ほぼ同じだ。それを手作業でやってみた。
+毎回こんなことをする必要はないかもしれないが、画面表示とデータベース操作を混在させすぎると、
+[ユニットテスト](/#unit-testing) をしたくなったときにやっかいな問題が発生してしまう。
 
-[PHPBridge] have a great resource called [Creating a Data Class] which covers a very similar topic, and is great 
-for developers just getting used to the concept of interacting with databases.
+[PHPBridge] に、 [Creating a Data Class] という記事が公開されている。
+ここで扱ったのと同じ話題をとりあげていて、データベース操作に慣れた人にとって最適の記事だ。
 
 [MVC]: http://code.tutsplus.com/tutorials/mvc-for-noobs--net-10488
 [PHPBridge]: http://phpbridge.org/
