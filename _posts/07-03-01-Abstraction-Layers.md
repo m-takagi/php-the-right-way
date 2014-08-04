@@ -1,24 +1,28 @@
 ---
 isChild: true
-title: Abstraction Layers
+title: 抽象化レイヤー
 anchor: databases_abstraction_layers
 ---
 
-## Abstraction Layers {#databases_abstraction_layers_title}
+## 抽象化レイヤー {#databases_abstraction_layers_title}
 
-Many frameworks provide their own abstraction layer which may or may not sit on top of PDO.  These will often emulate features for
-one database system that is missing from another by wrapping your queries in PHP methods, giving you actual database abstraction instead of just the connection abstraction that PDO provides.
-This will of course add a little overhead, but if you are building a portable application that needs to work with MySQL, PostgreSQL and
-SQLite then a little overhead will be worth it the sake of code cleanliness.
+多くのフレームワークは、データベースの抽象化レイヤーを用意している。PDOを利用しているものもあれば、そうでないものもある。
+あるデータベースには存在するけれども別のデータベースには存在しない機能などをエミュレートするために、
+クエリーをPHPのメソッドでラップしたりするものだ。
+PDOではデータベースへの接続の抽象化しかしないが、フレームワークの抽象化レイヤーは、それ以上のことをしてくれる。
+もちろんそれなりのオーバーヘッドが発生するだろう。
+でも、MySQLでもPostgreSQLでもSQLiteでも動くようなアプリケーションを書いているのなら、
+多少のオーバーヘッドを割り引いてでも、すっきりしたコードを書けるほうがうれしいだろう。
 
-Some abstraction layers have been built using the [PSR-0][psr0] or [PSR-4][psr4] namespace standards so can be installed in any application you like:
+以下の抽象化レイヤーは、 [PSR-0][psr0] や [PSR-4][psr4] で定められた標準名前空間に従っている。
+これらはアプリケーションを問わずに利用できる。
 
 * [Aura SQL][6]
 * [Doctrine2 DBAL][2]
 * [Propel][7]
 * [ZF2 Db][4]
 
-[1]: http://www.php.net/manual/en/book.pdo.php
+[1]: http://www.php.net/manual/ja/book.pdo.php
 [2]: http://www.doctrine-project.org/projects/dbal.html
 [4]: http://packages.zendframework.com/docs/latest/manual/en/index.html#zend-db
 [6]: https://github.com/auraphp/Aura.Sql
