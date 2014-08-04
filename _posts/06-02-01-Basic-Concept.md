@@ -4,7 +4,7 @@ isChild: true
 anchor: basic_concept
 ---
 
-## 基本的な概念 Concept {#basic_concept_title}
+## 基本的な概念 {#basic_concept_title}
 
 考えかたを説明するために、シンプルな例を示そう。細かいところは手を抜いているけどね。
 
