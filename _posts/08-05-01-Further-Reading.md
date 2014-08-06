@@ -1,5 +1,6 @@
 ---
 isChild: true
+title: あわせて読みたい
 anchor: templating_further_reading
 ---
 

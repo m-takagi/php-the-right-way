@@ -1,5 +1,6 @@
 ---
 isChild: true
+title: プレーンなPHPによるテンプレート
 anchor: plain_php_templates
 ---
 

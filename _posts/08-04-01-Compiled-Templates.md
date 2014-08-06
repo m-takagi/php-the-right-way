@@ -1,5 +1,6 @@
 ---
 isChild: true
+title: コンパイル形式のテンプレート
 anchor: compiled_templates
 ---
 
