@@ -1,12 +1,12 @@
 ---
-title: Templating
+title: テンプレート
 anchor: templating
 ---
 
-# Templating {#templating_title}
+# テンプレート {#templating_title}
 
-Templates provide a convenient way of separating your controller and domain logic from your presentation logic.
-Templates typically contain the HTML of your application, but may also be used for other formats, such as XML.
-Templates are often referred to as "views", the second component of the
+テンプレートは、コントローラーやドメインロジックを、プレゼンテーションロジックから切り離すための便利な手段だ。
+テンプレ—トには、アプリケーションで使うHTMLを含めることが多いが、それ以外のフォーマット（XMLなど）を含めることもある。
+テンプレートのことを「ビュー」と呼ぶこともある。いわゆる
 [model–view–controller](http://www.phptherightway.com/pages/Design-Patterns.html#model-view-controller) (MVC)
-software architecture pattern.
+パターンの、二番目の要素だ。

@@ -3,19 +3,20 @@ isChild: true
 anchor: templating_benefits
 ---
 
-## Benefits {#templating_benefits_title}
+## メリット {#templating_benefits_title}
 
-The main benefit to using templates is the clear separation they create between the presentation logic and the rest of
-your application. Templates have the sole responsibility of displaying formatted content. They are not responsible for
-data lookup, persistence or other more complex tasks. This leads to cleaner, more readable code which is especially
-helpful in a team environment where developers work on the server-side code (controllers, models) and designers work on
-the client-side code (markup).
+テンプレートを使う主なメリットは、画面に表示する内容をアプリケーションから切り離せることだ。
+テンプレートは、フォーマット済みのコンテンツを表示するという責務だけを負う。
+データを検索したり、データベースに保存したりなどといった、雑多なタスクは気にしない。
+このおかげで、すっきりしたリーダブルなコードが書けるようになる。チームで開発する際などには、これが特に有用だ。
+開発者はサーバー側のコード（コントローラやモデル）、そしてデザイナーはクライアント側のコード（マークアップ）
+などという作業分担をしやすくなる。
 
-Templates also improve the organization of presentation code. Templates are typically placed in a "views" folder, each
-defined within a single file. This approach encourages code reuse where larger blocks of code are broken into smaller,
-reusable pieces. For example, your site header and footer can each be defined as templates, which are then included
-before and after each page template.
+テンプレートには、プレゼンテーションのコードの構造を改善するという効果もある。
+テンプレートは一般的に「views」などのフォルダにまとめられて、それぞれ個別のファイルになっていることが多い。
+こうしておけばコードの再利用がしやすくなる。大規模なコードブロックを、小さめの再利用しやすいパーツに分割できるからだ。
+たとえば、サイトのヘッダやフッタをテンプレートにしておけば、各ページのテンプレートにそれをインクルードできるようになる。
 
-Finally, depending on the library you use, templates can offer more security by automatically escaping user-generated
-content. Some libraries even offer sand-boxing, where template designers are only given access to white-listed
-variables and functions.
+利用するライブラリによっては、テンプレートを使うことで、よりセキュリティを確保できるようにもなる。
+ユーザーが作るコンテンツを自動的にエスケープしてくれたりする機能を持つようなテンプレートが、それにあたる。
+さらに、サンドボックス機能を提供するライブラリもある。これは、デザイナーが、あらかじめ許可された変数と関数しか利用できないようにする仕組みだ。

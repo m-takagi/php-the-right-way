@@ -3,20 +3,22 @@ isChild: true
 anchor: plain_php_templates
 ---
 
-## Plain PHP Templates {#plain_php_templates_title}
+## プレーンなPHPによるテンプレート {#plain_php_templates_title}
 
-Plain PHP templates are simply templates that use native PHP code. They are a natural choice since PHP is actually a
-template language itself. That simply means that you can combine PHP code within other code, like HTML. This is
-beneficial to PHP developers as there is no new syntax to learn, they know the functions available to them, and their
-code editors already have PHP syntax highlighting and auto-completion built-in. Further, plain PHP templates tend to be
-very fast as no compiling stage is required.
+プレーンなPHPによるテンプレートとは、単にPHPのコードを使ったテンプレートという意味だ。
+ごく自然な選択肢だとも言える。そもそもPHP自体がテンプレート言語だし。
+あ、これって単に、PHPのコードをHTMLとかにも埋め込めるよねっていう以上の深い意味はないからね。
+PHPの開発者にとっては、新しい構文を覚えずに済むというメリットがある。
+どんな関数が使えるのかもわかっているし、ふだんPHPを書いているエディタのシンタックスハイライトや
+自動補完機能も、そのまま使える。
+その上、プレーンなPHPのテンプレートは高速であることが多い。コンパイルが不要だからだ。
 
-Every modern PHP framework employs some kind of template system, most of which use plain PHP by default. Outside of
-frameworks, libraries like [Plates](http://platesphp.com/) or [Aura.View](https://github.com/auraphp/Aura.View) make
-working with plain PHP templates easier by offering modern template functionality such as inheritance, layouts and
-extensions.
+いまどきのPHPフレームワークは、たいてい何らかの仕組みのテンプレートシステムを持っている。
+その多くでデフォルトになっているのが、プレーンPHPによるテンプレートだ。
+フレームワーク以外では、[Plates](http://platesphp.com/)や[Aura.View](https://github.com/auraphp/Aura.View)
+といったライブラリがプレーンPHPテンプレートを使いやすくしてくれる。継承やレイアウト、拡張などの便利なテンプレート機能を用意してくれるんだ。
 
-Example of a plain PHP template (using the [Plates](http://platesphp.com/) library):
+プレーンPHPテンプレートは、たとえばこのようになる（[Plates](http://platesphp.com/) ライブラリを使った）。
 
 {% highlight php %}
 <?php $this->insert('header', ['title' => 'User Profile']) ?>
