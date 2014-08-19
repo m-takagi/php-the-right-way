@@ -30,8 +30,7 @@ anchor: resources
 
 * [PagodaBox](https://pagodabox.com/)
 * [AppFog](https://appfog.com/)
-* [Heroku](https://heroku.com)
-  (PHPのサポートは明記されていないが、Facebookとしっかりした協力関係がある [link](http://net.tutsplus.com/tutorials/php/quick-tip-deploy-php-to-heroku-in-seconds/))
+* [Heroku](https://devcenter.heroku.com/categories/php)
 * [fortrabbit](http://fortrabbit.com/)
 * [Engine Yard Cloud](https://www.engineyard.com/products/cloud)
 * [Red Hat OpenShift Platform](http://openshift.com)
