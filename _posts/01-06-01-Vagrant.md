@@ -34,6 +34,7 @@ Vagrantを使い始めるときの手助けになるのが、これらのサー�
   プロビジョニングにはPuppetを使う。
 - [Protobox][protobox]: vagrant をラップしたウェブ GUI で、ウェブ開発向けの仮想マシンを用意してくれる。
   シンプルな YAML ドキュメントを使って、仮想マシン上にインストールするすべてものを制御できる。
+- [Phansible][phansible]: 使いやすいインターフェイスで、PHP プロジェクト用の Ansible Playbook を生成してくれる。
 
 [vagrant]: http://vagrantup.com/
 [puppet]: http://www.puppetlabs.com/
@@ -41,3 +42,4 @@ Vagrantを使い始めるときの手助けになるのが、これらのサー�
 [rove]: http://rove.io/
 [puphpet]: https://puphpet.com/
 [protobox]: http://getprotobox.com/
+[phansible]: http://phansible.com/

@@ -19,13 +19,47 @@ PHPの開発者にとっては、新しい構文を覚えずに済むという�
 フレームワーク以外では、[Plates](http://platesphp.com/)や[Aura.View](https://github.com/auraphp/Aura.View)
 といったライブラリがプレーンPHPテンプレートを使いやすくしてくれる。継承やレイアウト、拡張などの便利なテンプレート機能を用意してくれるんだ。
 
-プレーンPHPテンプレートは、たとえばこのようになる（[Plates](http://platesphp.com/) ライブラリを使った）。
+### プレーンPHPテンプレートのシンプルな例
+
+[Plates](http://platesphp.com/) ライブラリを使った。
 
 {% highlight php %}
+<?php // user_profile.php ?>
+
 <?php $this->insert('header', ['title' => 'User Profile']) ?>
 
 <h1>User Profile</h1>
 <p>Hello, <?=$this->escape($name)?></p>
 
 <?php $this->insert('footer') ?>
+{% endhighlight %}
+
+### プレーンPHPテンプレートで継承を使う例
+
+[Plates](http://platesphp.com/) ライブラリを使った。
+
+{% highlight php %}
+<?php // template.php ?>
+
+<html>
+<head>
+    <title><?=$title?></title>
+</head>
+<body>
+
+<main>
+    <?=$this->section('content')?>
+</main>
+
+</body>
+</html>
+{% endhighlight %}
+
+{% highlight php %}
+<?php // user_profile.php ?>
+
+<?php $this->layout('template', ['title' => 'User Profile']) ?>
+
+<h1>User Profile</h1>
+<p>Hello, <?=$this->escape($name)?></p>
 {% endhighlight %}
