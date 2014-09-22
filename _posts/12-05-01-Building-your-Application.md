@@ -56,7 +56,7 @@ Chefの資料として、PHP開発者向けにおすすめものは、これら�
 
 * [LAMPアプリケーションのデプロイにChefやVagrantそしてEC2を使うというお題で書かれた全3回のシリーズ](http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/)
 * [Chefのクックブック。PHP 5.3のインストールと設定やPEARについて扱っている](https://github.com/opscode-cookbooks/php)
-
+* [Chefのビデオチュートリアルシリーズ。開発元のOpscodeによるもの](https://www.youtube.com/playlist?list=PLrmstJpucjzWKt1eWLv88ZFY4R1jW8amR)
 あわせて読みたい:
 
 * [Apache Antによるプロジェクトの自動化](http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/)
