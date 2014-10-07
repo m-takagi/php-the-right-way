@@ -155,17 +155,18 @@ $a = 'Multi-line example'      // 連結演算子 (.)
 
 ### 文字列型
 
-文字列型は、PHPの中ではあまりばらつきがないものだ。
-このセクションでは、文字列型のちょっとした違いやその利点そして利用法を紹介しよう。
+文字列型は文字をつなげたものだ。…と、それだけ聞けばきわめてシンプルに感じるはずだ。
+でも、文字列にはいくつかの種類があって、それぞれ微妙に構文が違っているし、挙動も違う。
 
 #### シングルクォート
 
-シングルクォートは文字列を表す一番シンプルな方法で、たいていの場合は一番高速だ。
-高速になる理由は、PHPが文字列をパースしない(つまり、変数の展開をしない)ことだ。
-シングルクォートを使うのに適しているのは、こんな場面だ。
+シングルクォートは、「リテラル文字列」を表すために使うものだ。
+リテラル文字列では、特殊文字をパースしたり変数を展開したりはしない。
 
-- パースする必要がない文字列
-- 変数の内容をプレーンなテキストで表す
+If using single quotes, you could enter a variable name into a string like so: `'some $thing'`, and you would 
+see the exact output of `some $thing`. If using double quotes, that would try to evaluate the `$thing` variable 
+name and show errors if no variable was found.
+
 
 {% highlight php %}
 <?php
@@ -183,11 +184,8 @@ echo 'This is my string, look at how pretty it is.';    // 単純な文字列で
 #### ダブルクォート
 
 ダブルクォートは、文字列界におけるスイスアーミーナイフだ。
-でも、文字列をパースするぶんだけ速度が落ちる。ダブルクォートを使うのに適しているのは、こんな場面だ。
-
-- エスケープした文字列
-- プレーンなテキストの中に変数が埋め込まれた文字列
-- 複数行をひとまとめにして可読性を上げたい場合
+変数を展開するだけではなく、あらゆる特殊文字もパースしてくれる。
+たとえば `\n` を改行に変換したり、 `\t` をタブに変換したりといったことだ。
 
 {% highlight php %}
 <?php
@@ -201,9 +199,18 @@ echo "phptherightway is $adjective.\n I love learning $code!"  // ダブルク�
                                                                // ひとまとめにできる
 {% endhighlight %}
 
-ダブルクォートで囲んだ文字列に変数を含むとき、変数とそれ以外の文字がつながってしまうこともよくある。
-そうなってしまえばPHPが変数をパースできなくなる。どこまでが変数でどこからが普通の文字列かがわからなくなるからだ。
-この問題を解決するには、変数の部分を波括弧で囲めばよい。
+Double quotes can contain variables; this is called "interpolation".
+
+{% highlight php %}
+<?php
+$juice = 'plum';
+echo "I like $juice juice";    // Output: I like plum juice
+{% endhighlight %}
+
+When using interpolation, it is often the case that the variable will be touching another character.
+This will result in some confusion as to what is the name of the variable, and what is a literal character.
+
+To fix this problem, wrap the variable within a pair of curly brackets.
 
 {% highlight php %}
 <?php
@@ -278,6 +285,25 @@ EOD;                        // 終了文字列はそれ単体でひとつの行�
 {% endhighlight %}
 
 * [ヒアドキュメント](http://www.php.net/manual/ja/language.types.string.php#language.types.string.syntax.heredoc)
+
+### Which is quicker? 
+
+There is a myth floating around that single quote strings are fractionally quicker than double quote strings. This 
+is fundamentally not true.
+
+If you are defining a single string and not trying to concatenate values or anything complicated, then either a single or 
+double quoted string will be entirely identical. Neither are quicker.
+
+If you are concatenating multiple strings of any type, or interpolate values into a double quoted string, then the results can
+vary. If you are working with a small number of values, concatenation is minutely fasture. With a lot of values, interpolating 
+is minutely faster.
+
+Regardless of what you are doing with strings, none of the types will ever have any noticable impact on your application.
+Trying to rewrite code to use one or the other is always an exercise in futility, so avoid this micro-optimization unless you really
+understand the meaning and impact of the differences.
+
+[Disproving the Single Quotes Performance Myth]: http://nikic.github.io/2012/01/09/Disproving-the-Single-Quotes-Performance-Myth.html
+
 
 ## 三項演算子
 
