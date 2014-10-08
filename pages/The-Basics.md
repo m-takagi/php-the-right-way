@@ -163,9 +163,10 @@ $a = 'Multi-line example'      // 連結演算子 (.)
 シングルクォートは、「リテラル文字列」を表すために使うものだ。
 リテラル文字列では、特殊文字をパースしたり変数を展開したりはしない。
 
-If using single quotes, you could enter a variable name into a string like so: `'some $thing'`, and you would 
-see the exact output of `some $thing`. If using double quotes, that would try to evaluate the `$thing` variable 
-name and show errors if no variable was found.
+シングルクォートを使っている場合に、 `'some $thing'` のように変数名を埋め込める。
+このときの出力は、そのまま `some $thing` になる。
+ダブルクォートを使った場合は、 `$thing` を変数名とみなして評価する。
+もし変数が見つからなければ、エラーになる。
 
 
 {% highlight php %}
@@ -199,18 +200,18 @@ echo "phptherightway is $adjective.\n I love learning $code!"  // ダブルク�
                                                                // ひとまとめにできる
 {% endhighlight %}
 
-Double quotes can contain variables; this is called "interpolation".
+ダブルクォートの中には、変数を含めることもできる。
 
 {% highlight php %}
 <?php
-$juice = 'plum';
-echo "I like $juice juice";    // Output: I like plum juice
+$juice = 'プラム';
+echo "$juice ジュース大好き";    // 出力：プラム ジュース大好き
 {% endhighlight %}
 
-When using interpolation, it is often the case that the variable will be touching another character.
-This will result in some confusion as to what is the name of the variable, and what is a literal character.
+この機能を使おうとしたときに、変数名と他の文字がつながってしまうことがよくある。
+その結果、どこまでが変数名でどこからがリテラル文字なのかがわからなくなってしまう。
 
-To fix this problem, wrap the variable within a pair of curly brackets.
+この問題に対応するためには、変数名を波括弧で囲めばいい。
 
 {% highlight php %}
 <?php
@@ -286,23 +287,25 @@ EOD;                        // 終了文字列はそれ単体でひとつの行�
 
 * [ヒアドキュメント](http://www.php.net/manual/ja/language.types.string.php#language.types.string.syntax.heredoc)
 
-### Which is quicker? 
+### どっちが速い？
 
-There is a myth floating around that single quote strings are fractionally quicker than double quote strings. This 
-is fundamentally not true.
+シングルクォートで囲んだほうが、ダブルクォートで囲むよりもちょっとだけ速くなるという迷信が、蔓延している。
+でもこれは、間違いだ。
 
-If you are defining a single string and not trying to concatenate values or anything complicated, then either a single or 
-double quoted string will be entirely identical. Neither are quicker.
+単一の文字列を定義するだけで、文字列の連結などの込み入った処理をしないのであれば、
+シングルクォートであろうがダブルクォートであろうが、まったく同じことだ。
+どちらが速いとか遅いとかいうことはない。
 
-If you are concatenating multiple strings of any type, or interpolate values into a double quoted string, then the results can
-vary. If you are working with a small number of values, concatenation is minutely fasture. With a lot of values, interpolating 
-is minutely faster.
+文字列と任意の型の値を連結したり、ダブルクォートで囲んだ文字列に変数を埋め込んだりしたときの結果は、場合によって異なる。
+値の数が少ないときには、埋め込みよりも連結のほうが少しだけ速くなるだろう。
+値の数が多くなると、逆に変数を埋め込んだほうが少しだけ速くなるだろう。
 
-Regardless of what you are doing with strings, none of the types will ever have any noticable impact on your application.
-Trying to rewrite code to use one or the other is always an exercise in futility, so avoid this micro-optimization unless you really
-understand the meaning and impact of the differences.
+文字列を使って何をするにせよ、この違いが目に見えてアプリケーションに影響を及ぼすことはない。
+そんなことのためにコードを書き換えるのは、まったくのムダ。
+それぞれの意味、そして変更することによる影響を本当に理解しているのでない限り、
+そんな些細な最適化は避けること。
 
-[Disproving the Single Quotes Performance Myth]: http://nikic.github.io/2012/01/09/Disproving-the-Single-Quotes-Performance-Myth.html
+[シングルクォートのほうが速いという神話への反証]: http://nikic.github.io/2012/01/09/Disproving-the-Single-Quotes-Performance-Myth.html
 
 
 ## 三項演算子
