@@ -119,10 +119,11 @@ $handle->execute();
 // 結果をオブジェクトに代入して、後でHTMLの中で使う
 $result = $handle->fetchAll(\PDO::FETCH_OBJ);
 
-header('Content-Type: text/html; charset=utf-8');
+header('Content-Type: text/html; charset=UTF-8');
 ?><!doctype html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>UTF-8 テストページ</title>
     </head>
     <body>
