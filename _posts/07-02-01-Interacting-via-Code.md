@@ -30,11 +30,11 @@ foreach ($db->query('SELECT * FROM table') as $row) {
 
 {% highlight php %}
 <?php
-function getAllSomethings($db) {
+function getAllFoos($db) {
     return $db->query('SELECT * FROM table');
 }
 
-foreach (getAllFoos() as $row) {
+foreach (getAllFoos($db) as $row) {
     echo "<li>".$row['field1']." - ".$row['field1']."</li>"; // BAD!!
 }
 {% endhighlight %}

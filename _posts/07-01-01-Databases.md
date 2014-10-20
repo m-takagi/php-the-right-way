@@ -26,14 +26,14 @@ PHP 用の [mysql] 拡張モジュールの開発はすでに終了しており�
 そうすれば、後になって焦らずに済む。
 
 **今から新しく書き始めるっていうのなら、[mysql] 拡張モジュールを使うっていう選択肢はナシだ。
-[MySQLi 拡張モジュール][mysqli] か PDO を使うこと。**
+[MySQLi 拡張モジュール][mysqli] か [PDO] を使うこと。**
 
 * [PHP: MySQL 用の API の選択肢](http://php.net/manual/ja/mysqlinfo.api.choosing.php)
 * [MySQL開発者用のPDOチュートリアル](http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers)
 
 ## PDO 拡張モジュール
 
-PDO はデータベースとの接続を抽象化するライブラリだ。PHP 5.1.0 以降に組み込まれていて、
+[PDO] はデータベースとの接続を抽象化するライブラリだ。PHP 5.1.0 以降に組み込まれていて、
 いろんなデータベースを同じインターフェイスで扱える。
 MySQLを使うコードもSQLiteを使うコードも、基本的には同じようになるってことだ。
 

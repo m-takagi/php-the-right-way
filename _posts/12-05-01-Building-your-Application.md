@@ -60,7 +60,6 @@ Chefの資料として、PHP開発者向けにおすすめものは、これら�
 あわせて読みたい:
 
 * [Apache Antによるプロジェクトの自動化](http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/)
-* [Maven](http://maven.apache.org/)、そしてそれを[PHPで使う方法](http://www.php-maven.org/)
 
 ### 継続的インテグレーション
 

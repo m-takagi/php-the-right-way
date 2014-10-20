@@ -12,6 +12,7 @@ title: Design Patterns
 
 * [Architectural pattern (Wikipedia)](https://en.wikipedia.org/wiki/Architectural_pattern)
 * [デザインパターン (Wikipedia)](https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3_(%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2))
+* [実装サンプル集](https://github.com/domnikl/DesignPatternsPHP)
 
 ## ファクトリー
 
@@ -23,18 +24,18 @@ title: Design Patterns
 <?php
 class Automobile
 {
-    private $vehicle_make;
-    private $vehicle_model;
+    private $vehicleMake;
+    private $vehicleModel;
 
     public function __construct($make, $model)
     {
-        $this->vehicle_make = $make;
-        $this->vehicle_model = $model;
+        $this->vehicleMake = $make;
+        $this->vehicleModel = $model;
     }
 
-    public function get_make_and_model()
+    public function getMakeAndModel()
     {
-        return $this->vehicle_make . ' ' . $this->vehicle_model;
+        return $this->vehicleMake . ' ' . $this->vehicleModel;
     }
 }
 
@@ -49,7 +50,7 @@ class AutomobileFactory
 // ファクトリーを使って Automobile オブジェクトを作る
 $veyron = AutomobileFactory::create('ブガッティ', 'ヴェイロン');
 
-print_r($veyron->get_make_and_model()); // 出力は "ブガッティ ヴェイロン"
+print_r($veyron->getMakeAndModel()); // 出力は "ブガッティ ヴェイロン"
 {% endhighlight %}
 
 このコードは、ファクトリーパターンを使って Automobile オブジェクトを作る。
