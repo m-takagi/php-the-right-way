@@ -16,13 +16,16 @@ PHP ファイルに変更がなければ、バイトコードも同じものに�
 冗長なコンパイルを回避する。バイトコードキャッシュを設定するのはほんの数分で済み、
 それだけでアプリケーションの速度が劇的に向上する。使わない理由はないね。
 
-PHP 5.5 からは、 [OPcache](http://php.net/manual/ja/book.opcache.php)
+PHP 5.5 からは、 [OPcache][opcache-book]
 というバイトコードキャッシュが標準で組み込まれるようになった。
 5.5 より前のバージョンでも使うことができる。
 
-その他、バイトコードキャッシュとしてはこれらが有名だ。
+バイトコードキャッシュについて詳しく知りたければ、以下を参照すること。
 
+* [OPcache][opcache-book] (PHP 5.5 以降に組み込まれている)
 * [APC](http://php.net/manual/ja/book.apc.php) (PHP 5.4 以前のバージョン)
 * [XCache](http://xcache.lighttpd.net/)
 * [Zend Optimizer+](http://www.zend.com/products/server/) (Zend Server パッケージに組み込まれている)
 * [WinCache](http://www.iis.net/download/wincacheforphp) (Microsoft Windows Server 用の拡張)
+
+[opcache-book]: http://php.net/manual/ja/book.opcache.php
