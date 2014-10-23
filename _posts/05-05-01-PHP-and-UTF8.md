@@ -95,14 +95,14 @@ $string = mb_substr($string, 0, 15);
 // このドキュメントにある PDO のサンプルを見れば、より詳しい情報がわかる。
 // ここでの肝は、 `set names utf8mb4` コマンドだ。
 $link = new \PDO(   
-                    'mysql:host=your-hostname;dbname=your-db;charset=utf8mb4',
-                    'your-username',
-                    'your-password',
-                    array(
-                        \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-                        \PDO::ATTR_PERSISTENT => false
-                    )
-                );
+    'mysql:host=your-hostname;dbname=your-db;charset=utf8mb4',
+    'your-username',
+    'your-password',
+    array(
+        \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+        \PDO::ATTR_PERSISTENT => false
+    )
+);
  
 // 変換した文字列を、UTF-8としてデータベースに格納する。
 // DBとテーブルの文字セットや照合順序が、ちゃんとutf8mb4になっているかな？
