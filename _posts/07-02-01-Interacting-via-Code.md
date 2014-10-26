@@ -15,6 +15,7 @@ PHPを勉強し始めたばかりの開発者がやってしまいがちなの�
 foreach ($db->query('SELECT * FROM table') as $row) {
     echo "<li>".$row['field1']." - ".$row['field1']."</li>";
 }
+?>
 </ul>
 {% endhighlight %}
 
