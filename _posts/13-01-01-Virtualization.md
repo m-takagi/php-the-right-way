@@ -1,14 +1,15 @@
 ---
+title: 仮想化
 anchor: virtualization
 ---
 
-# Virtualization
+# 仮想化 {#virtualization}
 
-Running your application on different environments in development and production can lead to strange bugs 
-popping up when you go live. It's also tricky to keep different development environments up to date with the same 
-version for all libraries used when working with a team of developers. 
+開発環境だの本番環境だの、いろいろ違う環境でアプリケーションを動かしていると、おかしなバグに出くわしてしまいかねない。
+「開発環境だと問題ないのに、本番環境だと動かない」みたいなやつだ。
+また、チームで開発しているときに、開発環境のいろんなライブラリのバージョンをきちんと統一しておくのも、面倒だ。
 
-If you are developing on Windows and deploying to Linux (or anything non-Windows) or are developing in a team, you 
-should consider using a virtual machine.  
-This sounds tricky, but besides the widely known virtualization environments like VMware or VirtualBox, there are
-additional tools that may help you setting up a virtual environment in a few easy steps.
+Windowsで開発してLinux（などWindows以外の環境）にデプロイしていたり、チームで開発していたりする場合は、
+仮想マシンを使うことを考えるべきだ。
+何も難しいことはない。VMwareやVirtualBoxみたいな有名どころだけでなく、
+仮想環境を簡単に準備するためのツールも用意されている。
