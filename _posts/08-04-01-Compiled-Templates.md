@@ -38,7 +38,7 @@ PHPはオブジェクト指向言語として成熟してきてはいるもの�
 
 {% highlight text %}
 {% raw %}
-// template.php
+// template.html
 
 <html>
 <head>
@@ -57,7 +57,7 @@ PHPはオブジェクト指向言語として成熟してきてはいるもの�
 
 {% highlight text %}
 {% raw %}
-// user_profile.php
+// user_profile.html
 
 {% extends "template.html" %}
 
