@@ -407,4 +407,4 @@ echo $about;
 echo 'A very long string of text';        // メモリの消費は1MBだけ
 {% endhighlight %}
 
-* [パフォーマンス改善のヒント](https://developers.google.com/speed/articles/optimizing-php)
+* [パフォーマンス改善のヒント](http://web.archive.org/web/20140625191431/https://developers.google.com/speed/articles/optimizing-php)

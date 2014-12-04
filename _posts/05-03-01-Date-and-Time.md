@@ -20,7 +20,7 @@ DateTime を使って何かの操作をするためには、日付や時刻を�
 $raw = '22. 11. 1968';
 $start = \DateTime::createFromFormat('d. m. Y', $raw);
 
-echo 'Start date: ' . $start->format('m/d/Y') . "\n";
+echo 'Start date: ' . $start->format('Y-m-d') . "\n";
 {% endhighlight %}
 
 DateTime を使った計算をするときに使えるのが the DateInterval クラスだ。
@@ -57,7 +57,7 @@ $periodInterval = \DateInterval::createFromDateString('first thursday');
 $periodIterator = new \DatePeriod($start, $periodInterval, $end, \DatePeriod::EXCLUDE_START_DATE);
 foreach ($periodIterator as $date) {
     // 毎木曜日を表示する
-    echo $date->format('m/d/Y') . ' ';
+    echo $date->format('Y-m-d') . ' ';
 }
 {% endhighlight %}
 
