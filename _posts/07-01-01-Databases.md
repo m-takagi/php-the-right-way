@@ -38,6 +38,7 @@ PHP 用の [mysql] 拡張モジュールの開発はすでに終了しており�
 MySQLを使うコードもSQLiteを使うコードも、基本的には同じようになるってことだ。
 
 {% highlight php %}
+<?php
 // PDO + MySQL
 $pdo = new PDO('mysql:host=example.com;dbname=database', 'user', 'password');
 $statement = $pdo->query("SELECT some\_field FROM some\_table");

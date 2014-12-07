@@ -37,9 +37,14 @@ Drupal や Zend、Symfony、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 あと、[Sublime Text 2][st-cs]みたいなテキストエディタのプラグインを使えば、
 書いているその場でリアルタイムのフィードバックが得られる。
 
-Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]を使えば、
-これらの標準に準拠するようにコードを自動的に修正してくれる。
-いちいち手作業で修正する手間を省けるってわけだ。
+コードのレイアウトを自動的に修正するツールとしては、二つの選択肢がある。
+Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]がそのひとつで、
+これはきちんとテストされているコードだ。
+規模が大きくて動作は少し遅めだけれど、安定している。
+そして、MagentoやSymfonyといった大規模プロジェクトでも採用されている。
+もうひとつの選択肢が[php.tools][phptools]だ。これは、
+[sublime-phpfmt][sublime-phpfmt]エディタ用のプラグインのおかげで有名になった。
+後発なだけあって、パフォーマンスは大きく改善されている。エディタ上でのリアルタイムの修正も、無理なくできる。
 
 変数名や関数名、そしてディレクトリ名なんかは、英語にしておくことをおすすめする。
 コードのコメントに関しては、別に英語にこだわらなくてもかまわない。
@@ -56,3 +61,5 @@ Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]を使えば
 [phpcs]: http://pear.php.net/package/PHP_CodeSniffer/
 [st-cs]: https://github.com/benmatselby/sublime-phpcs
 [phpcsfixer]: http://cs.sensiolabs.org/
+[phptools]: https://github.com/dericofilho/php.tools
+[sublime-phpfmt]: https://github.com/dericofilho/sublime-phpfmt
