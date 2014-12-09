@@ -1,7 +1,7 @@
 ---
 title: パスワードのハッシュ処理
 isChild: true
-anchor: password_hashing
+anchor:  password_hashing
 ---
 
 ## パスワードのハッシュ処理 {#password_hashing_title}
@@ -22,7 +22,7 @@ anchor: password_hashing
 
 **`password_hash`によるパスワードのハッシュ**
 
-PHP 5.5からは、新たに`password_hash`関数が使えるようになった。
+PHP 5.5からは、新たに`password_hash()`関数が使えるようになった。
 現時点では、この関数はBCryptを使っている。これは、現在のPHPがサポートしているアルゴリズムの中では最強のものだ。
 必要に応じて、将来はもっと強力なアルゴリズムをサポートするように更新されるだろう。
 この関数をPHP 5.5より前のバージョンでも使えるようにするため、`password_compat`ライブラリも作られた。
@@ -33,7 +33,6 @@ PHP 5.5からは、新たに`password_hash`関数が使えるようになった�
 
 {% highlight php %}
 <?php
-                      
 require 'password.php';
 
 $passwordHash = password_hash('secret-password', PASSWORD_DEFAULT);
@@ -46,13 +45,13 @@ if (password_verify('bad-password', $passwordHash)) {
 {% endhighlight %}  
 
 
-
 * [`password_hash` について調べる] [1]
 * [PHP >= 5.3.7 && < 5.5 で使える `password_compat`] [2]
 * [暗号学的なハッシュについて調べる] [3]
-* [PHP `password_hash` RFC] [4]
+* [PHP `password_hash()` RFC] [4]
 
-[1]: http://www.php.net/manual/ja/function.password-hash.php
+
+[1]: http://php.net/function.password-hash
 [2]: https://github.com/ircmaxell/password_compat
 [3]: http://ja.wikipedia.org/wiki/暗号学的ハッシュ関数
 [4]: https://wiki.php.net/rfc/password_hash

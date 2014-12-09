@@ -1,7 +1,7 @@
 ---
 title: オペコードキャッシュ
 isChild: true
-anchor: opcode_cache
+anchor:  opcode_cache
 ---
 
 ## オペコードキャッシュ {#opcode_cache_title}
@@ -23,10 +23,16 @@ PHP 5.5 からは、 [OPcache][opcache-book]
 オペコードキャッシュについて詳しく知りたければ、以下を参照すること。
 
 * [OPcache][opcache-book] (PHP 5.5 以降に組み込まれている)
-* [APC](http://php.net/manual/ja/book.apc.php) (PHP 5.4 以前のバージョン)
-* [XCache](http://xcache.lighttpd.net/)
-* [Zend Optimizer+](http://www.zend.com/products/server/) (Zend Server パッケージに組み込まれている)
-* [WinCache](http://www.iis.net/download/wincacheforphp) (Microsoft Windows Server 用の拡張)
-* [Wikipediaにおける、PHPアクセラレータの一覧](http://en.wikipedia.org/wiki/List_of_PHP_accelerators)
+* [APC] (PHP 5.4 以前のバージョン)
+* [XCache]
+* [Zend Optimizer+] (Zend Server パッケージに組み込まれている)
+* [WinCache] (Microsoft Windows Server 用の拡張)
+* [Wikipediaにおける、PHPアクセラレータの一覧][PHP_accelerators]
 
-[opcache-book]: http://php.net/manual/ja/book.opcache.php
+
+[opcache-book]: http://php.net/book.opcache
+[APC]: http://php.net/book.apc
+[XCache]: http://xcache.lighttpd.net/
+[Zend Optimizer+]: http://www.zend.com/products/server/
+[WinCache]: http://www.iis.net/download/wincacheforphp
+[PHP_accelerators]: http://en.wikipedia.org/wiki/List_of_PHP_accelerators

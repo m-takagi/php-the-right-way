@@ -24,6 +24,12 @@ Google+にもPHPプログラマー向けの [コミュニティ][php-programmers
 で探せばすぐ見つかる。小さな町なら、もしかしたらユーザーグループがないかもしれない。
 だったら、作ればいい！
 
+Special mention should be made of two global user groups: [NomadPHP] and [PHPWomen]. [NomadPHP] offers twice monthly
+online user group meetings with presentations by some of the top speakers in the PHP community.
+[PHPWomen] is a non-exclusive user group originally targeted towards the women in the PHP world. Membership is open to
+everyone who supports a more diverse community. PHPWomen provide a network for support, mentorship and education, and
+generally promote the creating of a "female friendly" and professional atmosphere.
+
 [PHP Wiki のユーザーグループ情報][php-wiki]
 
 ## PHP カンファレンス
@@ -33,10 +39,12 @@ PHP界の有名人が登壇することも多いので、彼らから直接学�
 
 [PHP のカンファレンスを探す][php-conf]
 
-[php-calendar]: http://www.php.net/cal.php
+[php-calendar]: http://php.net/cal.php
 [google]: https://www.google.com/search?q=php+user+group+near+me
 [meetup]: http://www.meetup.com/find/
-[php-ug]: http://php.ug
+[php-ug]: http://php.ug/
+[NomadPHP]: https://nomadphp.com/
+[PHPWomen]: http://phpwomen.org/
 [php-wiki]: https://wiki.php.net/usergroups
 [php-conf]: http://php.net/conferences/index.php
 [phpc-twitter]: https://twitter.com/phpc

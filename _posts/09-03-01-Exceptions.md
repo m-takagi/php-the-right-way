@@ -1,7 +1,7 @@
 ---
 title: 例外処理
 isChild: true
-anchor: exceptions
+anchor:  exceptions
 ---
 
 ## 例外処理 {#exceptions_title}
@@ -74,8 +74,9 @@ class ValidationException extends Exception {}
 * [PHP での例外のネスト][nesting-exceptions-in-php]
 * [PHP 5.3での例外処理のベストプラクティス][exception-best-practices53]
 
-[exceptions]: http://php.net/manual/ja/language.exceptions.php
-[splexe]: http://php.net/manual/ja/spl.exceptions.php
+
 [splext]: /#standard_php_library
-[exception-best-practices53]: http://ralphschindler.com/2010/09/15/exception-best-practices-in-php-5-3
+[exceptions]: http://php.net/language.exceptions
+[splexe]: http://php.net/spl.exceptions
 [nesting-exceptions-in-php]: http://www.brandonsavage.net/exceptional-php-nesting-exceptions-in-php/
+[exception-best-practices53]: http://ralphschindler.com/2010/09/15/exception-best-practices-in-php-5-3

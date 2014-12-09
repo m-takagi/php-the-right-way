@@ -1,7 +1,7 @@
 ---
 title: エラーレポート
 isChild: true
-anchor: error_reporting
+anchor:  error_reporting
 ---
 
 ## エラーレポート {#error_reporting_title}
@@ -15,10 +15,12 @@ anchor: error_reporting
 
 　<strong>開発</strong>環境で、起こりうるエラーをすべて表示するときには、`php.ini`で次のように設定する。
 
-    display_errors = On
-    display_startup_errors = On
-    error_reporting = -1
-    log_errors = On
+{% highlight ini %}
+display_errors = On
+display_startup_errors = On
+error_reporting = -1
+log_errors = On
+{% endhighlight %}
 
 > 値に`-1`を指定すると、仮に将来のバージョンのPHPで新しいレベルと定数が追加されたとしてもすべてのエラーを表示するようになります。E_ALL 定数も、PHP 5.4以降これと同じ挙動になります。 - [php.net](http://php.net/manual/function.error-reporting.php)
 
@@ -38,16 +40,18 @@ anchor: error_reporting
 
 　<strong>本番</strong>環境でエラーの情報を見せないようにするには、`php.ini`で次のように設定する。
 
-    display_errors = Off
-    display_startup_errors = Off
-    error_reporting = E_ALL
-    log_errors = On
+{% highlight ini %}
+display_errors = Off
+display_startup_errors = Off
+error_reporting = E_ALL
+log_errors = On
+{% endhighlight %}
 
 この本番環境用の設定をしても、ウェブサーバーのエラーログにはエラーの内容がきちんと残る。
 しかし、ユーザーにはエラーが見えなくなる。これらの設定項目についてもっと詳しく知りたければ、
 PHP のマニュアルを読もう。
 
-* [error_reporting](http://php.net/manual/errorfunc.configuration.php#ini.error-reporting)
-* [display_errors](http://php.net/manual/errorfunc.configuration.php#ini.display-errors)
-* [display_startup_errors](http://php.net/manual/errorfunc.configuration.php#ini.display-startup-errors)
-* [log_errors](http://php.net/manual/errorfunc.configuration.php#ini.log-errors)
+* [error_reporting](http://php.net/errorfunc.configuration#ini.error-reporting)
+* [display_errors](http://php.net/errorfunc.configuration#ini.display-errors)
+* [display_startup_errors](http://php.net/errorfunc.configuration#ini.display-startup-errors)
+* [log_errors](http://php.net/errorfunc.configuration#ini.log-errors)

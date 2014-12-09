@@ -1,7 +1,7 @@
 ---
 title: UTF-8の扱い
 isChild: true
-anchor: php_and_utf8
+anchor:  php_and_utf8
 ---
 
 ## UTF-8の扱い {#php_and_utf8_title}
@@ -51,7 +51,7 @@ PHP 5.4.0 以降では、 `htmlentities()` や `htmlspecialchars()` のデフォ
 Composer の [patchwork/utf8] パッケージを使うことも検討しよう。
 これは、もし `mbstring` があればそれを使い、なければ非 UTF-8 関数にフォールバックするというものだ。
 
-[マルチバイト文字列拡張モジュール]: http://php.net/manual/ja/book.mbstring.php
+[マルチバイト文字列拡張モジュール]: http://php.net/book.mbstring
 [patchwork/utf8]: https://packagist.org/packages/patchwork/utf8
 
 ### データベースレベルでのUTF-8
@@ -65,7 +65,6 @@ PHP から MySQL に渡す文字列を確実に UTF-8 として扱わせるに�
 
 UTF-8 を完全にサポートするには、文字セット `utf8mb4` を使わないといけない。 `utf8` はダメ！！！
 その理由が知りたければ「あわせて読みたい」を参照すること。
-Further Reading for why.
 
 ### ブラウザレベルでのUTF-8
 
@@ -94,13 +93,13 @@ $string = mb_substr($string, 0, 15);
 // データベースに接続し、この文字列を格納する。
 // このドキュメントにある PDO のサンプルを見れば、より詳しい情報がわかる。
 // ここでの肝は、 `set names utf8mb4` コマンドだ。
-$link = new \PDO(   
+$link = new PDO(   
     'mysql:host=your-hostname;dbname=your-db;charset=utf8mb4',
     'your-username',
     'your-password',
     array(
-        \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-        \PDO::ATTR_PERSISTENT => false
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_PERSISTENT => false
     )
 );
  
@@ -138,20 +137,21 @@ header('Content-Type: text/html; charset=UTF-8');
 
 ### あわせて読みたい
 
-* [PHPマニュアル: 文字列演算子](http://php.net/manual/ja/language.operators.string.php)
-* [PHPマニュアル: String関数](http://php.net/manual/ja/ref.strings.php)
-    * [`strpos()`](http://php.net/manual/ja/function.strpos.php)
-    * [`strlen()`](http://php.net/manual/ja/function.strlen.php)
-    * [`substr()`](http://php.net/manual/ja/function.substr.php)
-* [PHPマニュアル: マルチバイト文字列関数](http://php.net/manual/ja/ref.mbstring.php)
-    * [`mb_strpos()`](http://php.net/manual/ja/function.mb-strpos.php)
-    * [`mb_strlen()`](http://php.net/manual/ja/function.mb-strlen.php)
-    * [`mb_substr()`](http://php.net/manual/ja/function.mb-substr.php)
-    * [`mb_internal_encoding()`](http://php.net/manual/ja/function.mb-internal-encoding.php)
-    * [`mb_http_output()`](http://php.net/manual/ja/function.mb-http-output.php)
-    * [`htmlentities()`](http://php.net/manual/ja/function.htmlentities.php)
-    * [`htmlspecialchars()`](http://www.php.net/manual/ja/function.htmlspecialchars.php)
+* [PHPマニュアル: 文字列演算子](http://php.net/language.operators.string)
+* [PHPマニュアル: String関数](http://php.net/ref.strings)
+    * [`strpos()`](http://php.net/function.strpos)
+    * [`strlen()`](http://php.net/function.strlen)
+    * [`substr()`](http://php.net/function.substr)
+* [PHPマニュアル: マルチバイト文字列関数](http://php.net/ref.mbstring)
+    * [`mb_strpos()`](http://php.net/function.mb-strpos)
+    * [`mb_strlen()`](http://php.net/function.mb-strlen)
+    * [`mb_substr()`](http://php.net/function.mb-substr)
+    * [`mb_internal_encoding()`](http://php.net/function.mb-internal-encoding)
+    * [`mb_http_output()`](http://php.net/function.mb-http-output)
+    * [`htmlentities()`](http://php.net/function.htmlentities)
+    * [`htmlspecialchars()`](http://php.net/function.htmlspecialchars)
 * [PHP UTF-8 Cheatsheet](http://blog.loftdigital.com/blog/php-utf-8-cheatsheet)
+* [Handling UTF-8 with PHP](http://www.phpwact.org/php/i18n/utf-8)
 * [Stack Overflow: What factors make PHP Unicode-incompatible?](http://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
 * [Stack Overflow: Best practices in PHP and MySQL with international strings](http://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
 * [How to support full Unicode in MySQL databases](http://mathiasbynens.be/notes/mysql-utf8mb4)

@@ -1,7 +1,7 @@
 ---
 title: Windows の人は
 isChild: true
-anchor: windows_setup
+anchor:  windows_setup
 ---
 
 ## Windows の人は {#windows_setup_title}
@@ -22,10 +22,10 @@ IIS 7 には FastCGI が組み込まれており、すぐに使える。
 その値の詳しい情報は、[dedicated area on iis.net][php-iis]に PHP 専用のエリアがある。
 
 [php-downloads]: http://windows.php.net
-[phpmanager]: http://phpmanager.codeplex.com/
 [wpi]: http://www.microsoft.com/web/downloads/platform.aspx
 [zsce]: http://www.zend.com/en/products/server-ce/
 [xampp]: http://www.apachefriends.org/en/xampp.html
 [easyphp]: http://www.easyphp.org/
 [wamp]: http://www.wampserver.com/en/
+[phpmanager]: http://phpmanager.codeplex.com/
 [php-iis]: http://php.iis.net/

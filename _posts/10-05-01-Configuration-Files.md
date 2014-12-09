@@ -1,7 +1,7 @@
 ---
 title: 設定ファイル
 isChild: true
-anchor: configuration_files
+anchor:  configuration_files
 ---
 
 ## 設定ファイル {#configuration_files_title}

@@ -1,7 +1,7 @@
 ---
 title: プログラミングのパラダイム
 isChild: true
-anchor: programming_paradigms
+anchor:  programming_paradigms
 ---
 
 ## プログラミングのパラダイム {#programming_paradigms_title}
@@ -42,7 +42,7 @@ PHP 5.4 からは、クロージャをオブジェクトのスコープにバイ
 * [Closure クラス][closure-class]
 * [クロージャの詳細を知りたければ、RFCを読めばいいよ][closures-rfc]
 * [Callable][callables]
-* [`call_user_func_array`による動的な関数実行][call-user-func-array]
+* [`call_user_func_array()`による動的な関数実行][call-user-func-array]
 
 ### メタプログラミング
 
@@ -54,15 +54,17 @@ Ruby の人がよく「PHP には `method_missing` がなくてさあ」とか�
 
 * [マジックメソッド][magic-methods]
 * [リフレクション][reflection]
+* [オーバーロード][overloading]
 
-[namespaces]: http://php.net/manual/ja/language.namespaces.php
-[overloading]: http://php.net/manual/ja/language.oop5.overloading.php
-[oop]: http://www.php.net/manual/ja/language.oop5.php
-[anonymous-functions]: http://www.php.net/manual/ja/functions.anonymous.php
-[closure-class]: http://php.net/manual/ja/class.closure.php
-[callables]: http://php.net/manual/ja/language.types.callable.php
-[magic-methods]: http://php.net/manual/ja/language.oop5.magic.php
-[reflection]: http://www.php.net/manual/ja/intro.reflection.php
-[traits]: http://www.php.net/traits
-[call-user-func-array]: http://php.net/manual/ja/function.call-user-func-array.php
+
+[oop]: http://php.net/language.oop5
+[traits]: http://php.net/language.oop5.traits
+[anonymous-functions]: http://php.net/functions.anonymous
+[closure-class]: http://php.net/class.closure
 [closures-rfc]: https://wiki.php.net/rfc/closures
+[callables]: http://php.net/language.types.callable
+[call-user-func-array]: http://php.net/function.call-user-func-array
+[magic-methods]: http://php.net/language.oop5.magic
+[reflection]: http://php.net/intro.reflection
+[overloading]: http://php.net/language.oop5.overloading
+

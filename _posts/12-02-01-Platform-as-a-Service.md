@@ -1,10 +1,10 @@
 ---
-title: Platform as a Service (PaaS)
+title:   Platform as a Service (PaaS)
 isChild: true
-anchor: platform_as_a_service
+anchor:  platform_as_a_service
 ---
 
-## Platform as a Service (PaaS)  {#platform_as_a_service_title}
+## Platform as a Service (PaaS) {#platform_as_a_service_title}
 
 PaaS を使えば、PHP アプリケーションをウェブ上で動かすために必要なシステムやネットワーク環境を用意してくれる。
 ほとんど何も設定せずに、PHP のアプリケーションやフレームワークを実行できるということだ。

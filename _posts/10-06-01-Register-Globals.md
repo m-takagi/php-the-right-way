@@ -1,7 +1,7 @@
 ---
 title: Register Globals
 isChild: true
-anchor: register_globals
+anchor:  register_globals
 ---
 
 ## Register Globals {#register_globals_title}
@@ -21,4 +21,4 @@ PHP 5.4.0 からは `register_globals`
 PHP 5.4.0 より前のバージョンを使っている場合は、
 __確実に__ `register_globals` を __off__ にしておこう。
 
-* [register_globals に関する PHP マニュアルでの説明](http://www.php.net/manual/ja/security.globals.php)
+* [register_globals に関する PHP マニュアルでの説明](http://php.net/security.globals)

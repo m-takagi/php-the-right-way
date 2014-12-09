@@ -1,7 +1,7 @@
 ---
 title: オブジェクトキャッシュ
 isChild: true
-anchor: object_caching
+anchor:  object_caching
 ---
 
 ## オブジェクトキャッシュ {#object_caching_title}
@@ -56,11 +56,11 @@ PHP 5.5 より前のバージョンでは、APC がオブジェクトキャッ�
 APCu は、APC のオブジェクトキャッシュ機能を PHP 5.5 以降で使えるようにするものだ。
 というのも、PHP 5.5 以降ではバイトコードキャッシュ（OPcache）の機能が標準で組み込まれるようになったからだ。
 
-オブジェクトキャッシュシステムについて詳しく知りたい場合は、これらが参考になる。
+### オブジェクトキャッシュシステムについての参考資料
 
 * [APCu](https://github.com/krakjoe/apcu)
-* [APC 関数](http://php.net/manual/ja/ref.apc.php)
+* [APC 関数](http://php.net/ref.apc)
 * [Memcached](http://memcached.org/)
 * [Redis](http://redis.io/)
-* [XCache API](http://xcache.lighttpd.net/wiki/XcacheApi)
-* [WinCache 関数](http://www.php.net/manual/ja/ref.wincache.php)
+* [XCache APIs](http://xcache.lighttpd.net/wiki/XcacheApi)
+* [WinCache 関数](http://php.net/ref.wincache)

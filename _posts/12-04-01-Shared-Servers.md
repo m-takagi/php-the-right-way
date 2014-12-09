@@ -1,7 +1,7 @@
 ---
 title: 共有サーバー
 isChild: true
-anchor: shared_servers
+anchor:  shared_servers
 ---
 
 ## 共有サーバー {#shared_servers_title}

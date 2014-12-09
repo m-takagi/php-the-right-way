@@ -50,7 +50,6 @@ foreach (getAllFoos($db) as $row) {
 
 {% highlight php %}
 <?php
-
 $db = new PDO('mysql:host=localhost;dbname=testdb;charset=utf8', 'username', 'password');
 
 // モデルを読み込む

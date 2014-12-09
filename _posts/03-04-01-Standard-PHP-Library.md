@@ -1,7 +1,7 @@
 ---
 title:   Standard PHP Library
 isChild: true
-anchor: standard_php_library
+anchor:  standard_php_library
 ---
 
 ## Standard PHP Library {#standard_php_library_title}
@@ -14,4 +14,5 @@ Standard PHP Library (SPL) とは PHP に組み込まれた標準ライブラリ
 
 * [SPL][spl]
 
-[spl]: http://php.net/manual/ja/book.spl.php 
+
+[spl]: http://php.net/book.spl

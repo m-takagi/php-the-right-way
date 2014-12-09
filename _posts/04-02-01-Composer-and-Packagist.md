@@ -1,7 +1,7 @@
 ---
 title: Composer と Packagist
 isChild: true
-anchor: composer_and_packagist
+anchor:  composer_and_packagist
 ---
 
 ## Composer と Packagist {#composer_and_packagist_title}
@@ -19,7 +19,9 @@ Composer はローカル (作業ディレクトリ) にインストールして�
 インストールしてもよい。ただし、ローカルにインストールする方法は今は非推奨となっている。
 ローカルにインストールするには、プロジェクトのルートディレクトリに移動して次のコマンドを実行する。
 
-    curl -s https://getcomposer.org/installer | php
+{% highlight console %}
+curl -s https://getcomposer.org/installer | php
+{% endhighlight %}
 
 このコマンドは、 `composer.phar` (PHP バイナリアーカイブ)
 をダウンロードする。これを `php` コマンドで実行すれば、そのプロジェクトの依存関係を管理できる。
@@ -48,8 +50,10 @@ Windowsの場合、一番簡単なのは [ComposerSetup][6] インストーラ�
 
 それでもいいという人向けに、手動での Composer のインストール方法を示す。
 
-    curl -s https://getcomposer.org/composer.phar -o $HOME/local/bin/composer
-    chmod +x $HOME/local/bin/composer
+{% highlight console %}
+curl -s https://getcomposer.org/composer.phar -o $HOME/local/bin/composer
+chmod +x $HOME/local/bin/composer
+{% endhighlight %}
 
 `$HOME/local/bin` (あるいは、その他あなたが指定した場所) にパスを通しておく必要がある。
 これで、`composer` コマンドが使えるようになるだろう。
@@ -57,7 +61,9 @@ Windowsの場合、一番簡単なのは [ComposerSetup][6] インストーラ�
 何かのドキュメントに「`php composer.phar install` で Composer を実行します」と書いてあれば、
 その部分を次のように読み替えればいい。
 
-    composer install
+{% highlight console %}
+composer install
+{% endhighlight %}
     
 このセクションでは、composer をグローバルにインストールしたものとして説明する。
 
@@ -70,15 +76,19 @@ Composer は、プロジェクトの依存関係を `composer.json` というフ
 もしまだ `composer.json` がなければ、新しいファイルを作る。
 この例は、プロジェクトの依存関係に [Twig][2] を追加するものだ。
 
-	composer require twig/twig:~1.8
+{% highlight console %}
+composer require twig/twig:~1.8
+{% endhighlight %}
 
 あるいは、 `composer init` コマンドを実行して、
 自分のプロジェクト用の完全な `composer.json` ファイルを作ることもできる。
 どちらの方法にせよ、一度 `composer.json` ファイルを作ってしまえば、
-あとは Composer がすべての依存ライブラリをダウンロードして `vendors/` にインストールしてくれる。
+あとは Composer がすべての依存ライブラリをダウンロードして `vendor/` にインストールしてくれる。
 次のコマンドは、すでに `composer.json` ファイルを含むプロジェクトをダウンロードした場合にも使える。
 
-    composer install
+{% highlight console %}
+composer install
+{% endhighlight %}
 
 次に、アプリケーションで最初に呼ばれる PHP ファイルにこんな行を追加する。
 これは、Composer のオートローダーを使ってプロジェクトの依存ライブラリを読むよう指示している。
@@ -118,10 +128,10 @@ Composer は `composer.lock` というファイルを作る。
 
 * [Composerとは][5]
 
+
 [1]: http://packagist.org/
 [2]: http://twig.sensiolabs.org
 [3]: https://www.versioneye.com/
 [4]: https://security.sensiolabs.org/
 [5]: http://getcomposer.org/doc/00-intro.md
 [6]: https://getcomposer.org/Composer-Setup.exe
-

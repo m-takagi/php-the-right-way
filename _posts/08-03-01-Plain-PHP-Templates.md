@@ -16,12 +16,12 @@ PHPの開発者にとっては、新しい構文を覚えずに済むという�
 
 いまどきのPHPフレームワークは、たいてい何らかの仕組みのテンプレートシステムを持っている。
 その多くでデフォルトになっているのが、プレーンPHPによるテンプレートだ。
-フレームワーク以外では、[Plates](http://platesphp.com/)や[Aura.View](https://github.com/auraphp/Aura.View)
+フレームワーク以外では、[Plates][plates]や[Aura.View][aura]
 といったライブラリがプレーンPHPテンプレートを使いやすくしてくれる。継承やレイアウト、拡張などの便利なテンプレート機能を用意してくれるんだ。
 
 ### プレーンPHPテンプレートのシンプルな例
 
-[Plates](http://platesphp.com/) ライブラリを使った。
+[Plates][plates] ライブラリを使った。
 
 {% highlight php %}
 <?php // user_profile.php ?>
@@ -36,7 +36,7 @@ PHPの開発者にとっては、新しい構文を覚えずに済むという�
 
 ### プレーンPHPテンプレートで継承を使う例
 
-[Plates](http://platesphp.com/) ライブラリを使った。
+[Plates][plates] ライブラリを使った。
 
 {% highlight php %}
 <?php // template.php ?>
@@ -63,3 +63,7 @@ PHPの開発者にとっては、新しい構文を覚えずに済むという�
 <h1>User Profile</h1>
 <p>Hello, <?=$this->escape($name)?></p>
 {% endhighlight %}
+
+
+[plates]: http://platesphp.com/
+[aura]: https://github.com/auraphp/Aura.View

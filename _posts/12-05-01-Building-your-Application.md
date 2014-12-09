@@ -1,7 +1,7 @@
 ---
 title: アプリケーションのビルドとデプロイ
 isChild: true
-anchor: building_and_deploying_your_application
+anchor:  building_and_deploying_your_application
 ---
 
 ## アプリケーションのビルドとデプロイ {#building_and_deploying_your_application_title}
@@ -10,7 +10,7 @@ anchor: building_and_deploying_your_application
 ちょっと待った！新しいバージョンのアプリケーションをデプロイするときに手作業がひとつでも増えると、
 致命的な間違いを犯してしまう可能性もそのぶん増えてしまうんだ。たとえ単純な更新作業だとしても、
 きちんとしたビルド手順にしたがうこと。継続的インテグレーションの戦略にしたがって、
-[ビルドの自動化](http://ja.wikipedia.org/wiki/ビルド_(ソフトウェア)) をしておくといい。
+[ビルドの自動化][buildautomation] をしておくといい。
 
 自動化できるタスクには、こんなものがある。
 
@@ -31,35 +31,36 @@ anchor: building_and_deploying_your_application
 そうじゃないものもある。PHP製じゃないからといって、それを使わない理由はない。
 もし自分のやりたいことに適したツールがあるのなら、使うべきだ。いくつか例をあげよう。
 
-[Phing](http://www.phing.info/) は、PHPな人がデプロイを自動化しようとするときに、いちばん取っつきやすいツールだ。
+[Phing] は、PHPな人がデプロイを自動化しようとするときに、いちばん取っつきやすいツールだ。
 Phingを使えば、パッケージングやデプロイそしてテストといった処理をシンプルなXMLビルドファイルで設定できる。
-Phingは[Apache Ant](http://ant.apache.org/) をベースに作られたもので、
+Phingは[Apache Ant] をベースに作られたもので、
 Webアプリのインストールやアップデートに必要となるタスク群を提供する。
 カスタムタスクで機能を追加することもでき、カスタムタスクはPHPで書ける。
 
-[Capistrano](https://github.com/capistrano/capistrano/wiki) は
+[Capistrano] は
 *中級から上級のプログラマー* 向けのシステムだ。構造化された、繰り返し可能な形式で、
 複数のリモートマシン上でコマンドを実行できる。
 Ruby on Railsのアプリをデプロイするように設定されているが、
 これを使って **PHP のアプリをデプロイすることもできる**。
 Capistranoを使いこなすには、RubyとRakeに関するそれなりの知識が必要だ。
 
-Dave Gardnerのblog記事[PHP Deployment with Capistrano](http://www.davegardner.me.uk/blog/2012/02/13/php-deployment-with-capistrano/) 
+Dave Gardnerのblog記事[PHP Deployment with Capistrano][phpdeploy_capistrano]
 は、Capistranoに興味のあるPHP開発者への入門記事としておすすめだ。
 
-[Chef](http://www.opscode.com/chef/) は単なるデプロイフレームワークではない。
+[Chef] は単なるデプロイフレームワークではない。
 Rubyで書かれた強力なシステムインテグレーションフレームワークで、
 単にアプリをデプロイするだけじゃなくサーバー環境全体を構築したり
 仮想環境を構築したりもできる。
 
-Chefの資料として、PHP開発者向けにおすすめものは、これらだ。
+#### PHP開発者向けのChefの資料
 
-* [LAMPアプリケーションのデプロイにChefやVagrantそしてEC2を使うというお題で書かれた全3回のシリーズ](http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/)
-* [Chefのクックブック。PHP 5.3のインストールと設定やPEARについて扱っている](https://github.com/opscode-cookbooks/php)
-* [Chefのビデオチュートリアルシリーズ。開発元のOpscodeによるもの](https://www.youtube.com/playlist?list=PLrmstJpucjzWKt1eWLv88ZFY4R1jW8amR)
-あわせて読みたい:
+* [LAMPアプリケーションのデプロイにChefやVagrantそしてEC2を使うというお題で書かれた全3回のシリーズ][chef_vagrant_and_ec2]
+* [Chefのクックブック。PHP 5.3のインストールと設定やPEARについて扱っている][Chef_cookbook]
+* [Chefのビデオチュートリアルシリーズ。開発元のOpscodeによるもの][Chef_tutorial]
 
-* [Apache Antによるプロジェクトの自動化](http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/)
+#### あわせて読みたい:
+
+* [Apache Antによるプロジェクトの自動化][apache_ant_tutorial]
 
 ### 継続的インテグレーション
 
@@ -72,13 +73,29 @@ Chefの資料として、PHP開発者向けにおすすめものは、これら�
 *-- マーティン・ファウラー*
 
 PHPで継続的インテグレーションを実践する方法はいろいろある。
-最近人気の[Travis CI](https://travis-ci.org/) のおかげで、
+最近人気の[Travis CI] のおかげで、
 ちょっとしたプロジェクトにも簡単に継続的インテグレーションを組み込めるようになった。
 Travis CIは継続的インテグレーションのホスティング環境で、オープンソースコミュニティに開放されている。
 GitHubと統合されており、PHPを含むさまざまな言語に対応している。
 
-あわせて読みたい:
+#### あわせて読みたい
 
-* [Jenkinsによる継続的インテグレーション](http://jenkins-ci.org/)
-* [PHPCIによる継続的インテグレーション](http://www.phptesting.org/)
-* [Teamcityによる継続的インテグレーション](http://www.jetbrains.com/teamcity/)
+* [Jenkinsによる継続的インテグレーション][Jenkins]
+* [PHPCIによる継続的インテグレーション][PHPCI]
+* [Teamcityによる継続的インテグレーション][Teamcity]
+
+
+[buildautomation]: http://ja.wikipedia.org/wiki/ビルド_(ソフトウェア)
+[Phing]: http://www.phing.info/
+[Apache Ant]: http://ant.apache.org/
+[Capistrano]: https://github.com/capistrano/capistrano/wiki
+[phpdeploy_capistrano]: http://www.davegardner.me.uk/blog/2012/02/13/php-deployment-with-capistrano/
+[Chef]: http://www.opscode.com/chef/
+[chef_vagrant_and_ec2]: http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/
+[Chef_cookbook]: https://github.com/opscode-cookbooks/php
+[Chef_tutorial]: https://www.youtube.com/playlist?list=PLrmstJpucjzWKt1eWLv88ZFY4R1jW8amR
+[apache_ant_tutorial]: http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/
+[Travis CI]: https://travis-ci.org/
+[Jenkins]: http://jenkins-ci.org/
+[PHPCI]: http://www.phptesting.org/
+[Teamcity]: http://www.jetbrains.com/teamcity/

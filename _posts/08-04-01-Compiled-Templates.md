@@ -7,11 +7,11 @@ anchor: compiled_templates
 ## コンパイル形式のテンプレート {#compiled_templates}
 
 PHPはオブジェクト指向言語として成熟してきてはいるものの、テンプレート言語としては
-[いまいち](http://fabien.potencier.org/article/34/templating-engines-in-php) だ。
-コンパイル形式のテンプレート、たとえば [Twig](http://twig.sensiolabs.org/) や [Smarty](http://www.smarty.net/)*
+[いまいち][article_templating_engines] だ。
+コンパイル形式のテンプレート、たとえば [Twig] や [Smarty]*
 が、この穴を埋めてくれる。テンプレートに特化した、新しい構文を用意してくれるんだ。
 自動エスケープから継承や制御構文まで、コンパイル形式のテンプレートは、いかに読み書きしやすく、安心して使えるかを重視して作られている。
-さらに、コンパイル形式のテンプレートは、別の言語でさえも使うことができる。[Mustache](http://mustache.github.io/) がそのよい例だ。
+さらに、コンパイル形式のテンプレートは、別の言語でさえも使うことができる。[Mustache] がそのよい例だ。
 テンプレートをコンパイルする時間がかかるので、多少はパフォーマンスに影響する。
 しかし、適切にキャッシュをすれば、その影響は微々たるものだ。
 
@@ -19,7 +19,7 @@ PHPはオブジェクト指向言語として成熟してきてはいるもの�
 
 ### コンパイル形式のテンプレートのシンプルな例
 
-[Twig](http://twig.sensiolabs.org/) ライブラリを使った。
+[Twig] ライブラリを使った。
 
 {% highlight text %}
 {% raw %}
@@ -34,7 +34,7 @@ PHPはオブジェクト指向言語として成熟してきてはいるもの�
 
 ### コンパイル形式のテンプレートで継承を使う例
 
-[Twig](http://twig.sensiolabs.org/) ライブラリを使った。
+[Twig] ライブラリを使った。
 
 {% highlight text %}
 {% raw %}
@@ -68,3 +68,9 @@ PHPはオブジェクト指向言語として成熟してきてはいるもの�
 {% endblock %}
 {% endraw %}
 {% endhighlight %}
+
+
+[article_templating_engines]: http://fabien.potencier.org/article/34/templating-engines-in-php
+[Twig]: http://twig.sensiolabs.org/
+[Smarty]: http://www.smarty.net/
+[Mustache]: http://mustache.github.io/

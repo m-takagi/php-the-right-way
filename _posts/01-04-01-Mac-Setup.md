@@ -1,7 +1,7 @@
 ---
 title: Mac の人は
 isChild: true
-anchor: mac_setup
+anchor:  mac_setup
 ---
 
 ## Mac の人は  {#mac_setup_title}
@@ -14,7 +14,7 @@ PHP を OS X にインストールするには、いくつかの方法がある�
 
 ### Homebrew によるインストール
 
-[Homebrew](http://brew.sh/) は OS X 用の強力なパッケージ管理ツールで、
+[Homebrew] は OS X 用の強力なパッケージ管理ツールで、
 PHP やその拡張モジュールも簡単にインストールできる。
 [Homebrew PHP] が、Homebrew 用の PHP 関連の "Formula" をまとめたリポジトリだ。
 これを使えば PHP をインストールできる。
@@ -44,10 +44,9 @@ PHP やその拡張モジュールも簡単にインストールできる。
 
 [Homebrew]: http://brew.sh/
 [Homebrew PHP]: https://github.com/Homebrew/homebrew-php#installation
-[mac-compile]: http://www.php.net/manual/en/install.macosx.compile.php
+[phpbrew]: https://github.com/phpbrew/phpbrew
+[mac-compile]: http://php.net/install.macosx.compile
 [xcode-gcc-substitution]: https://github.com/kennethreitz/osx-gcc-installer
-
 ["Command Line Tools for XCode"]: https://developer.apple.com/downloads
 [mamp-downloads]: http://www.mamp.info/en/downloads/
-[phpbrew]: https://github.com/phpbrew/phpbrew
 [xampp]: http://www.apachefriends.org/jp/xampp.html

@@ -1,7 +1,7 @@
 ---
 title: その他のテスト用ツール
 isChild: true
-anchor: complementary_testing_tools
+anchor:  complementary_testing_tools
 ---
 
 ## その他のテスト用ツール {#complementary_testing_tools_title}
@@ -11,6 +11,14 @@ anchor: complementary_testing_tools
 
 ### ツールへのリンク
 
-* [Selenium](http://seleniumhq.org/) はブラウザ自動化ツールで、[PHPUnit と組み合わせて使える](http://phpunit.de/manual/current/ja/selenium.html)。
-* [Mockery](https://github.com/padraic/mockery) はモックオブジェクトフレームワークで、[PHPUnit](http://phpunit.de/) や [PHPSpec](http://www.phpspec.net/) と組み合わせて使える。
-* [Prophecy](https://github.com/phpspec/prophecy) は強力で柔軟な PHP 用モックオブジェクトフレームワークで、[PHPSpec](http://www.phpspec.net/) に組み込まれている。さらに [PHPUnit](http://phpunit.de/) と組み合わせても使える。
+* [Selenium] はブラウザ自動化ツールで、[PHPUnit と組み合わせて使える]。
+* [Mockery] はモックオブジェクトフレームワークで、[PHPUnit] や [PHPSpec] と組み合わせて使える。
+* [Prophecy] は強力で柔軟な PHP 用モックオブジェクトフレームワークで、[PHPSpec] に組み込まれている。さらに [PHPUnit] と組み合わせても使える。
+
+
+[Selenium]: http://seleniumhq.org/
+[PHPUnit と組み合わせて使える]: http://phpunit.de/manual/current/ja/selenium.html
+[Mockery]: https://github.com/padraic/mockery
+[PHPUnit]: http://phpunit.de/
+[PHPSpec]: http://www.phpspec.net/
+[Prophecy]: https://github.com/phpspec/prophecy

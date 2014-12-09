@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Functional Programming in PHP
+title:  Functional Programming in PHP
 ---
 
 # PHP における関数型プログラミング
@@ -49,7 +49,7 @@ print_r($output);
 クロージャを使えば、変数のスコープの制約をすっきりとした方法で回避できる。
 
 次の例では、クロージャを使って関数を定義する。この関数はフィルター関数群の中から
-`array_filter` 用のフィルター関数を一つ返すものだ。
+`array_filter()` 用のフィルター関数を一つ返すものだ。
 
 {% highlight php %}
 <?php
@@ -86,8 +86,9 @@ print_r($output); // items > 3
 
 * [無名関数][anonymous-functions]
 * [クロージャの詳細を知りたければ、RFCを読めばいいよ][closures-rfc]
-* [`call_user_func_array`による動的な関数実行][call-user-func-array]
+* [`call_user_func_array()`による動的な関数実行][call-user-func-array]
 
-[anonymous-functions]: http://www.php.net/manual/ja/functions.anonymous.php
-[call-user-func-array]: http://php.net/manual/ja/function.call-user-func-array.php
+
+[anonymous-functions]: http://php.net/functions.anonymous
 [closures-rfc]: https://wiki.php.net/rfc/closures
+[call-user-func-array]: http://php.net/function.call-user-func-array

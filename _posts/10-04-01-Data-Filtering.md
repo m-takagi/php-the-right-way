@@ -1,14 +1,14 @@
 ---
 title: データのフィルタリング
 isChild: true
-anchor: data_filtering
+anchor:  data_filtering
 ---
 
 ## データのフィルタリング {#data_filtering_title}
 
 PHP のコードに外部から渡される入力は、絶対に信用してはいけない。
 外部からの入力は、常に検証してから使うようにしよう。
-`filter_var` 関数や `filter_input` 関数で、入力の検証や書式の判定 (メールアドレスなど)
+`filter_var()` 関数や `filter_input()` 関数で、入力の検証や書式の判定 (メールアドレスなど)
 ができる。
 
 外部からの入力にはいろいろな種類がある。フォームから渡される `$_GET` や `$_POST` もあれば、
@@ -29,12 +29,12 @@ PHP のコードに外部から渡される入力は、絶対に信用しては�
 あなたのサイト上で任意の JavaScript が実行できてしまうことになる！
 これが、いわゆるクロスサイトスクリプティング (XSS) である。
 とても危険な攻撃だ。こんなときに XSS を回避する方法のひとつは、
-入力からすべての HTML タグを取り除くか、
-あるいはエスケープして HTML エンティティに変換することだ。
+`strip_tags()` で入力からすべての HTML タグを取り除くか、
+あるいは `htmlentities()` や `htmlspecialchars()` でエスケープして HTML エンティティに変換することだ。
 
 別の例として、外部の入力をコマンドラインのオプションとして渡すことを考えよう。
 これって非常に危険なことだし、ふつうはあまりやるべきではないことだ。
-でも、もしやるなら、組み込みの関数 `escapeshellarg`
+でも、もしやるなら、組み込みの関数 `escapeshellarg()`
 を使えばコマンドの引数を実行されてしまうことが防げる。
 
 最後の例は、外部の入力に基づいてファイルシステム上のファイルを読み込むというものだ。
@@ -71,10 +71,11 @@ PDO が入力をサニタイズする。
 
 [バリデーションフィルター][3]
 
-[1]: http://www.php.net/manual/ja/book.filter.php
-[2]: http://www.php.net/manual/ja/filter.filters.sanitize.php
-[3]: http://www.php.net/manual/ja/filter.filters.validate.php
-[4]: http://php.net/manual/ja/function.filter-var.php
-[5]: http://www.php.net/manual/ja/function.filter-input.php
-[6]: http://php.net/manual/ja/security.filesystem.nullbytes.php
+
+[1]: http://php.net/book.filter
+[2]: http://php.net/filter.filters.sanitize
+[3]: http://php.net/filter.filters.validate
+[4]: http://php.net/function.filter-var
+[5]: http://php.net/function.filter-input
+[6]: http://php.net/security.filesystem.nullbytes
 [html-purifier]: http://htmlpurifier.org/

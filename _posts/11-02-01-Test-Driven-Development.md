@@ -1,14 +1,18 @@
 ---
 title: テスト駆動開発
 isChild: true
-anchor: test_driven_development
+anchor:  test_driven_development
 ---
 
 ## テスト駆動開発 {#test_driven_development_title}
 
 [Wikipedia](http://en.wikipedia.org/wiki/Test-driven_development) によると、
 
-> Test-driven development (TDD) is a software development process that relies on the repetition of a very short development cycle: first the developer writes a failing automated test case that defines a desired improvement or new function, then produces code to pass that test and finally refactors the new code to acceptable standards. Kent Beck, who is credited with having developed or 'rediscovered' the technique, stated in 2003 that TDD encourages simple designs and inspires confidence
+> Test-driven development (TDD) is a software development process that relies on the repetition of a very short
+> development cycle: first the developer writes a failing automated test case that defines a desired improvement or new
+> function, then produces code to pass that test and finally refactors the new code to acceptable standards. Kent Beck,
+> who is credited with having developed or 'rediscovered' the technique, stated in 2003 that TDD encourages simple
+> designs and inspires confidence.
 
 アプリケーションのテストには、いくつかの種類がある。
 
@@ -26,7 +30,7 @@ anchor: test_driven_development
 正しい引数を渡したときに正常に動くことなどを確認しないといけない。
 こうしておけば、後にクラスや関数に手を加えたときにも
 今までの機能が期待通りに動くかどうかを確かめられるようになる。
-test.php で var_dump() とかいうやり方もあるけど、
+test.php で `var_dump()` とかいうやり方もあるけど、
 まともなアプリケーションを作るつもりならそれはあり得ない。
 
 それ以外にもユニットテストの使い道はある。オープンソースに貢献する手段として使えるのだ。
@@ -48,7 +52,11 @@ test.php で var_dump() とかいうやり方もあるけど、
 
 [Wikipedia](http://en.wikipedia.org/wiki/Integration_testing) によると、
 
-> Integration testing (sometimes called Integration and Testing, abbreviated "I&T") is the phase in software testing in which individual software modules are combined and tested as a group. It occurs after unit testing and before validation testing. Integration testing takes as its input modules that have been unit tested, groups them in larger aggregates, applies tests defined in an integration test plan to those aggregates, and delivers as its output the integrated system ready for system testing.
+> Integration testing (sometimes called Integration and Testing, abbreviated "I&T") is the phase in software testing in
+> which individual software modules are combined and tested as a group. It occurs after unit testing and before
+> validation testing. Integration testing takes as its input modules that have been unit tested, groups them in larger
+> aggregates, applies tests defined in an integration test plan to those aggregates, and delivers as its output the
+> integrated system ready for system testing.
 
 ユニットテスト用のツールの多くはインテグレーションテストにも使える。
 ほぼ同じような指針で行うものだからである。

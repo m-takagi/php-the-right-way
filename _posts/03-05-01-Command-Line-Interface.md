@@ -1,7 +1,7 @@
 ---
 title: コマンドラインインターフェイス
 isChild: true
-anchor: command_line_interface
+anchor:  command_line_interface
 ---
 
 ## コマンドラインインターフェイス {#command_line_interface_title}
@@ -17,7 +17,7 @@ CLI の PHP プログラムが便利なのは、アプリケーションのコ�
 
 PHP をコマンドラインで実行してみよう。
 
-{% highlight bash %}
+{% highlight console %}
 > php -i
 {% endhighlight %}
 
@@ -49,7 +49,7 @@ PHP のスクリプトを実行すると、コマンドラインの引数に関�
 
 このスクリプトをコマンドラインから実行すると、次のようになる。
 
-{% highlight bash %}
+{% highlight console %}
 > php hello.php
 Usage: php hello.php [name]
 > php hello.php world
@@ -60,10 +60,11 @@ Hello, world
  * [PHP をコマンドラインから実行する方法][php-cli]
  * [Windows でもコマンドラインから PHP を実行したい！][php-cli-windows]
 
-[phpinfo]: http://php.net/manual/ja/function.phpinfo.php
-[cli-options]: http://www.php.net/manual/ja/features.commandline.options.php
-[argc]: http://php.net/manual/ja/reserved.variables.argc.php
-[argv]: http://php.net/manual/ja/reserved.variables.argv.php
-[php-cli]: http://php.net/manual/ja/features.commandline.php
-[php-cli-windows]: http://www.php.net/manual/ja/install.windows.commandline.php
-[exit-codes]: http://www.gsp.com/cgi-bin/man.cgi?section=3&topic=sysexits
+
+[phpinfo]: http://php.net/function.phpinfo
+[cli-options]: http://php.net/features.commandline.options
+[argc]: http://php.net/reserved.variables.argc
+[argv]: http://php.net/reserved.variables.argv
+[exit-codes]: http://www.gsp.com/cgi-bin/man.cgi?section=3&amp;topic=sysexits
+[php-cli]: http://php.net/features.commandline
+[php-cli-windows]: http://php.net/install.windows.commandline

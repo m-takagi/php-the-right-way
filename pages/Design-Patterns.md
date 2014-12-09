@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Design Patterns
+title:  Design Patterns
 ---
 
 # デザインパターン
@@ -211,14 +211,12 @@ class ArrayOutput implements OutputInterface
 その目的は二つ。まずは、具象実装が従うべきシンプルな規約をあてはめること。
 そしてもう一つは、このように共通のインターフェイスを実装することで、
 次のセクションで説明する
-[タイプヒンティング](http://php.net/manual/ja/language.oop5.typehinting.php)
+[タイプヒンティング](http://php.net/language.oop5.typehinting)
 が使え、正しい型（この場合は'OutputInterface'）を使っていることを保証できるということだ。
 
 次のコードは、呼び出し側のクライアントクラスが実際に特定のアルゴリズムを使ったり、
 必要な振る舞いを実行時に設定したりするものだ。
-{% highlight php %}
 <?php
-
 class SomeClient
 {
     private $output;
@@ -241,7 +239,6 @@ class SomeClient
 指定した型の具象クラスのload()メソッドが呼ばれることになる。
 {% highlight php %}
 <?php
-
 $client = new SomeClient();
 
 // 配列が使いたければ

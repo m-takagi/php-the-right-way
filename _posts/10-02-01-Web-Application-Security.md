@@ -1,7 +1,7 @@
 ---
 title: ウェブアプリケーションのセキュリティ
 isChild: true
-anchor: web_application_security
+anchor:  web_application_security
 ---
 
 ## ウェブアプリケーションのセキュリティ {#web_application_security_title}
@@ -13,6 +13,7 @@ anchor: web_application_security
 セキュリティが気になる開発者は必読だ。
 
 * [OWASP Security Guideを読む][2]
+
 
 [1]: https://www.owasp.org/
 [2]: https://www.owasp.org/index.php/Guide_Table_of_Contents
