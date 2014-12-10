@@ -4,7 +4,7 @@ title: コンパイル形式のテンプレート
 anchor: compiled_templates
 ---
 
-## コンパイル形式のテンプレート {#compiled_templates}
+## コンパイル形式のテンプレート {#compiled_templates_title}
 
 PHPはオブジェクト指向言語として成熟してきてはいるものの、テンプレート言語としては
 [いまいち][article_templating_engines] だ。

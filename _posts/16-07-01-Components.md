@@ -1,7 +1,7 @@
 ---
 title: コンポーネント
 isChild: true
-anchor: components
+anchor:  components
 ---
 
 ## コンポーネント {#components_title}
