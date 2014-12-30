@@ -52,6 +52,10 @@ Rubyで書かれた強力なシステムインテグレーションフレーム�
 単にアプリをデプロイするだけじゃなくサーバー環境全体を構築したり
 仮想環境を構築したりもできる。
 
+[Deployer] はPHPで書かれたデプロイツールで、シンプルかつ機能的だ。
+デプロイしたいと思っているすべてのサーバーに対して、コピーやVCS(gitなど)あるいはrsyncを使ってデプロイできる。
+すべてのサーバー上でタスクを実行するか、一般的なタスク用に用意されたレシピを使えばいい。SymfonyやLaravel、Zend Framework、そしてYiiなどのレシピが用意されている。
+
 #### PHP開発者向けのChefの資料
 
 * [LAMPアプリケーションのデプロイにChefやVagrantそしてEC2を使うというお題で書かれた全3回のシリーズ][chef_vagrant_and_ec2]
@@ -99,3 +103,4 @@ GitHubと統合されており、PHPを含むさまざまな言語に対応し�
 [Jenkins]: http://jenkins-ci.org/
 [PHPCI]: http://www.phptesting.org/
 [Teamcity]: http://www.jetbrains.com/teamcity/
+[Deployer]: http://deployer.in/
