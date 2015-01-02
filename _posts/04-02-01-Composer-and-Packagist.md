@@ -127,19 +127,19 @@ Composer は `composer.lock` というファイルを作る。
 [Security Advisories Checker] は、Webサービスとコマンドラインツールとして提供されている。
 `composer.lock` ファイルを調べて、もし依存関係に更新が必要なら教えてくれるものだ。
 
-### Handling global dependencies with Composer
+### Composerでのグローバルな依存関係の扱い
 
-Composer can also handle global dependencies and their binaries. Usage is straight-forward, all you need
-to do is prefix your command with `global`. If per example you wanted to install PHPUnit and have it 
-available globally, you'd run the following command:
+Composer は、グローバルな依存関係やそのバイナリを扱うこともできる。
+使いかたはとても簡単で、単にコマンドの前に `global` をつけるだけでいい。
+たとえば、PHPUnit をグローバルに使えるようインストールしたければ、こんなコマンドを実行する。
 
 {% highlight console %}
 composer global require phpunit/phpunit
 {% endhighlight %}
 
-This will create a `~/.composer` folder where your global dependencies reside. To have the installed
-packages' binaries available everywhere, you'd then add the `~/.composer/vendor/bin` folder to your 
-`$PATH` variable.
+このコマンドは、 `~/.composer` ディレクトリを作って、グローバルな依存関係をそこに置く。
+インストールされたパッケージのバイナリを全体で使えるようにするには、 `~/.composer/vendor/bin`
+ディレクトリを環境変数 `$PATH` に追加すればいい。
 
 * [Composerとは]
 
