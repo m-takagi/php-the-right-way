@@ -15,11 +15,12 @@ _PHPを使うための正式なお作法など存在しない_ ってこと。
 
 ## 翻訳
 
-_PHP: The Right Way_ は、他の言語にも翻訳されつつある。
+_PHP: The Right Way_ は、他の言語にも翻訳されている。
 
 * [English](http://www.phptherightway.com)
 * [Bulgarian](http://bg.phptherightway.com/)
 * [Chinese (Simplified)](http://wulijun.github.com/php-the-right-way)
+* [Chinese (Traditional)](http://laravel-taiwan.github.io/php-the-right-way)
 * [French](http://eilgin.github.io/php-the-right-way/)
 * [German](http://rwetzlmayr.github.io/php-the-right-way/)
 * [Indonesian](http://id.phptherightway.com/)

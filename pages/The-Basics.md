@@ -1,6 +1,7 @@
 ---
 layout: page
 title:  The Basics
+sitemap: true
 ---
 
 # 基本
@@ -35,6 +36,7 @@ if (strpos('testing', 'test') !== false) {    // 厳格な比較が行われる�
 
 * [比較演算子](http://php.net/language.operators.comparison)
 * [比較の表](http://php.net/types.comparisons)
+* [比較のチートシート](http://phpcheatsheets.com/index.php?page=compare)
 
 ## 条件式
 

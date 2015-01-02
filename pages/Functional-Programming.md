@@ -1,6 +1,7 @@
 ---
 layout: page
 title:  Functional Programming in PHP
+sitemap: true
 ---
 
 # PHP における関数型プログラミング

@@ -11,7 +11,7 @@ Composerは、PHP用の **すばらしい** 依存管理ツールだ。プロジ
 Composer が自動的にそれをダウンロードしてくれるだけでなく、オートロードの設定までしてくれるんだ。
 
 Composer に対応したライブラリは既にいろいろ出回っていて、自分のプロジェクトですぐに使える。
-そんなパッケージをまとめたのが [Packagist][1]。これは、Composer 対応の PHP ライブラリをまとめた公式リポジトリである。
+そんなパッケージをまとめたのが [Packagist]。これは、Composer 対応の PHP ライブラリをまとめた公式リポジトリである。
 
 ### Composer のインストール
 
@@ -29,6 +29,7 @@ curl -s https://getcomposer.org/installer | php
 まずはオンラインでコードを確認して安全であることを確かめておこう。
 
 #### Windows でのインストール
+
 Windowsの場合、一番簡単なのは [ComposerSetup][6] インストーラーを使う方法だ。
 これは、すべてのユーザーで使えるようにインストールしたうえで `$PATH` も設定してくれるので、
 あとはコマンドラインから `composer` を呼ぶだけで使えるようになる。
@@ -74,7 +75,7 @@ Composer は、プロジェクトの依存関係を `composer.json` というフ
 
 `composer require` を実行すると、プロジェクトの依存関係を追加する。
 もしまだ `composer.json` がなければ、新しいファイルを作る。
-この例は、プロジェクトの依存関係に [Twig][2] を追加するものだ。
+この例は、プロジェクトの依存関係に [Twig] を追加するものだ。
 
 {% highlight console %}
 composer require twig/twig:~1.8
@@ -117,21 +118,34 @@ Composer は `composer.lock` というファイルを作る。
 
 ### 更新通知
 
-新バージョンのリリースの通知を受け取りたければ [VersionEye][3] にサインアップするといい。
+新バージョンのリリースの通知を受け取りたければ [VersionEye] にサインアップするといい。
 このサービスは、自分の GitHub アカウントや BitBucket アカウントにある
 `composer.json` の内容を監視して、パッケージの新しいリリースがあればメールで教えてくれるものだ。
 
 ### 依存ライブラリのセキュリティ問題のチェック
 
-[Security Advisories Checker][4] は、Webサービスとコマンドラインツールとして提供されている。
+[Security Advisories Checker] は、Webサービスとコマンドラインツールとして提供されている。
 `composer.lock` ファイルを調べて、もし依存関係に更新が必要なら教えてくれるものだ。
 
-* [Composerとは][5]
+### Handling global dependencies with Composer
 
+Composer can also handle global dependencies and their binaries. Usage is straight-forward, all you need
+to do is prefix your command with `global`. If per example you wanted to install PHPUnit and have it 
+available globally, you'd run the following command:
 
-[1]: http://packagist.org/
-[2]: http://twig.sensiolabs.org
-[3]: https://www.versioneye.com/
-[4]: https://security.sensiolabs.org/
-[5]: http://getcomposer.org/doc/00-intro.md
-[6]: https://getcomposer.org/Composer-Setup.exe
+{% highlight console %}
+composer global require phpunit/phpunit
+{% endhighlight %}
+
+This will create a `~/.composer` folder where your global dependencies reside. To have the installed
+packages' binaries available everywhere, you'd then add the `~/.composer/vendor/bin` folder to your 
+`$PATH` variable.
+
+* [Composerとは]
+
+[Packagist]: http://packagist.org/
+[Twig]: http://twig.sensiolabs.org
+[VersionEye]: https://www.versioneye.com/
+[Security Advisories Checker]: https://security.sensiolabs.org/
+[Composerとは]: http://getcomposer.org/doc/00-intro.md
+[ComposerSetup]: https://getcomposer.org/Composer-Setup.exe

@@ -21,7 +21,7 @@ PHPはオブジェクト指向言語として成熟してきてはいるもの�
 
 [Twig] ライブラリを使った。
 
-{% highlight text %}
+{% highlight html+jinja %}
 {% raw %}
 {% include 'header.html' with {'title': 'User Profile'} %}
 
@@ -36,7 +36,7 @@ PHPはオブジェクト指向言語として成熟してきてはいるもの�
 
 [Twig] ライブラリを使った。
 
-{% highlight text %}
+{% highlight html+jinja %}
 {% raw %}
 // template.html
 
@@ -55,7 +55,7 @@ PHPはオブジェクト指向言語として成熟してきてはいるもの�
 {% endraw %}
 {% endhighlight %}
 
-{% highlight text %}
+{% highlight html+jinja %}
 {% raw %}
 // user_profile.html
 
