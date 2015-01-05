@@ -92,8 +92,8 @@ $string = mb_substr($string, 0, 15);
  
 // データベースに接続し、この文字列を格納する。
 // このドキュメントにある PDO のサンプルを見れば、より詳しい情報がわかる。
-// ここでの肝は、 `set names utf8mb4` コマンドだ。
-$link = new PDO(   
+// ここでの肝は、データソース名 (DSN) における `charset=utf8mb4` だ。
+$link = new PDO(
     'mysql:host=your-hostname;dbname=your-db;charset=utf8mb4',
     'your-username',
     'your-password',

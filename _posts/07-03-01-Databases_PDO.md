@@ -56,13 +56,18 @@ $pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- ダメ�
 <?php
 $pdo = new PDO('sqlite:/path/db/users.db');
 $stmt = $pdo->prepare('SELECT name FROM users WHERE id = :id');
-$stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT); // <-- PDOが自動的にエスケープ処理をする
+$id = filter_input(FILTER_GET, 'id', FILTER_SANITIZE_NUMBER_INT); // <-- まずデータのフィルタリングを行う ([データのフィルタリング](#data_filtering) を参照)。特に INSERT や UPDATE などで重要
+$stmt->bindParam(':id', $id, PDO::PARAM_INT); // <-- PDOが自動的にSQLのエスケープ処理をする
 $stmt->execute();
 {% endhighlight %}
 
 これが正しい方法だ。この例では、PDO ステートメントでバインド変数を使っている。
 外部からの入力である ID がエスケープされてからデータベースに渡るので、
 SQL インジェクション攻撃を受けることがなくなる。
+
+INSERT や UPDATE などの書き込み操作の場合は、まず [データをフィルタリング](#data_filtering) することが大切だ。
+その後で、その他 (HTML タグや JavaScript など) のエスケープを行う。
+PDO はあくまでも SQL 用のエスケープを行うものであり、アプリケーション全体の面倒をみてくれるわけではない。
 
 * [PDOについて調べる]
 
