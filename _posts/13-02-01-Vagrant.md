@@ -21,14 +21,14 @@ Vagrantは、フォルダを作って、ホストと仮想マシンの間でコ�
 
 Vagrantを使い始めるときの手助けになるのが、これらのサービスだ。
 
-- [Rove]: PHPなどのオプション込みで、一般的なVagrantビルドを作ってくれるサービス。プロビジョニングにはChefを使う。
-- [Puphpet]: PHPの開発用の仮想マシンを作ってくれる、シンプルなGUI。
+- [Rove][Rove]: PHPなどのオプション込みで、一般的なVagrantビルドを作ってくれるサービス。プロビジョニングにはChefを使う。
+- [Puphpet][Puphpet]: PHPの開発用の仮想マシンを作ってくれる、シンプルなGUI。
   **PHPに特化している。**
   ローカルVM以外に、クラウドサービスにデプロイすることもできる。
   プロビジョニングにはPuppetを使う。
-- [Protobox]: vagrant をラップしたウェブ GUI で、ウェブ開発向けの仮想マシンを用意してくれる。
+- [Protobox][Protobox]: vagrant をラップしたウェブ GUI で、ウェブ開発向けの仮想マシンを用意してくれる。
   シンプルな YAML ドキュメントを使って、仮想マシン上にインストールするすべてものを制御できる。
-- [Phansible]: 使いやすいインターフェイスで、PHP プロジェクト用の Ansible Playbook を生成してくれる。
+- [Phansible][Phansible]: 使いやすいインターフェイスで、PHP プロジェクト用の Ansible Playbook を生成してくれる。
 
 
 [Vagrant]: http://vagrantup.com/
