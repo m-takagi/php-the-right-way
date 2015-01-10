@@ -11,7 +11,7 @@ Windows で PHP を使うには、いくつかの方法がある。[バイナリ
 
 学習用にローカルで開発する場合は PHP 5.4 以降のビルトインウェブサーバーを使えばよいので、細かい設定を気にする必要はない。
 もしウェブサーバーとかMySQLとかも含めた「全部入り」を使いたければ、[Web Platform Installer][wpi]や
-[Zend Server CE][zsce]、[XAMPP][xampp]、[EasyPHP][easyphp]、そして[WAMP][wamp]などがお勧めだ。これらを使えば Windows 用の開発環境を手早く構築できる。
+[XAMPP][xampp]、[EasyPHP][easyphp]、そして[WAMP][wamp]などがお勧めだ。これらを使えば Windows 用の開発環境を手早く構築できる。
 とはいうものの、これらのツールは実際の運用環境と微妙に異なる。なので、たとえば「Windows で開発して Linux にデプロイ」
 とかいう場合は環境の違いに気をつける必要がある。
 
@@ -23,7 +23,6 @@ IIS 7 には FastCGI が組み込まれており、すぐに使える。
 
 [php-downloads]: http://windows.php.net
 [wpi]: http://www.microsoft.com/web/downloads/platform.aspx
-[zsce]: http://www.zend.com/en/products/server-ce/
 [xampp]: http://www.apachefriends.org/en/xampp.html
 [easyphp]: http://www.easyphp.org/
 [wamp]: http://www.wampserver.com/en/
