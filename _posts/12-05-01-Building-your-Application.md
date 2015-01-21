@@ -53,8 +53,8 @@ Rubyで書かれた強力なシステムインテグレーションフレーム�
 仮想環境を構築したりもできる。
 
 [Deployer] はPHPで書かれたデプロイツールで、シンプルかつ機能的だ。
-デプロイしたいと思っているすべてのサーバーに対して、コピーやVCS(gitなど)あるいはrsyncを使ってデプロイできる。
-すべてのサーバー上でタスクを実行するか、一般的なタスク用に用意されたレシピを使えばいい。SymfonyやLaravel、Zend Framework、そしてYiiなどのレシピが用意されている。
+タスクを並列に実行し、アトミックなデプロイを行い、サーバー間の整合性を維持する。
+SymfonyやLaravel、Zend Framework、そしてYiiなどで使える、一般的なタスクのレシピが用意されている。
 
 #### PHP開発者向けのChefの資料
 
@@ -103,4 +103,4 @@ GitHubと統合されており、PHPを含むさまざまな言語に対応し�
 [Jenkins]: http://jenkins-ci.org/
 [PHPCI]: http://www.phptesting.org/
 [Teamcity]: http://www.jetbrains.com/teamcity/
-[Deployer]: http://deployer.in/
+[Deployer]: http://deployer.org/
