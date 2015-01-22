@@ -56,7 +56,7 @@ $pdo->query("SELECT name FROM users WHERE id = " . $_GET['id']); // <-- ダメ�
 <?php
 $pdo = new PDO('sqlite:/path/db/users.db');
 $stmt = $pdo->prepare('SELECT name FROM users WHERE id = :id');
-$id = filter_input(FILTER_GET, 'id', FILTER_SANITIZE_NUMBER_INT); // <-- まずデータのフィルタリングを行う ([データのフィルタリング](#data_filtering) を参照)。特に INSERT や UPDATE などで重要
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT); // <-- まずデータのフィルタリングを行う ([データのフィルタリング](#data_filtering) を参照)。特に INSERT や UPDATE などで重要
 $stmt->bindParam(':id', $id, PDO::PARAM_INT); // <-- PDOが自動的にSQLのエスケープ処理をする
 $stmt->execute();
 {% endhighlight %}
