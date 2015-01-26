@@ -22,23 +22,21 @@ PHP やその拡張モジュールも簡単にインストールできる。
 現時点では、`php53`、`php54`、`php55`、`php56` が `brew install` コマンドでインストールできる。
 これらを切り替えるには、環境変数 `PATH` を設定すればいい。
 
-### Install PHP via Macports
+### Macports によるインストール
 
-The [MacPorts] Project is an open-source community initiative to design an
-easy-to-use system for compiling, installing, and upgrading either
-command-line, X11 or Aqua based open-source software on the OS X operating
-system.
+[MacPorts] プロジェクトはオープンソースのコミュニティによる取り組みで、
+OS X上のオープンソースソフトウェアのコンパイルやインストールそしてアップグレードを簡単にできるようにする仕組みだ。
+コマンドラインのソフトからX11やAquaベースのソフトにまで対応している。
 
-MacPorts supports pre-compiled binaries, so you don't need to recompile every
-dependencies from the source tarball files, it saves your life if you don't
-have any package installed on your system.
+MacPorts はコンパイル済みのバイナリにも対応しているので、関連するライブラリなどを毎回ソースからコンパイルしなおす必要はない。
+なので、まだ何もパッケージをインストールしていない状態でも、時間の心配をする必要はない。
 
-At this point, you can install `php53`, `php54`, `php55` or `php56` using the `port install` command, for example:
+現時点でインストールできるのは `php53`、`php54`、`php55`、`php56` のいずれかで、`port install` コマンドを使ってこのようにインストールする。
 
     sudo port install php54
     sudo port install php55
 
-And you can run `select` command to switch your active php:
+そして、`select` コマンドを使って、アクティブな PHP を切り替える。
 
     sudo port select --set php php55
 
