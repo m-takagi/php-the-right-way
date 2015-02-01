@@ -56,7 +56,7 @@ Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]がそのひ
 [psr2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
 [psr4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
 [pear-cs]: http://pear.php.net/manual/ja/standards.php
-[zend-cs]: http://framework.zend.com/wiki/display/ZFDEV2/Coding+Standards
+[zend-cs]: http://framework.zend.com/manual/1.12/en/coding-standard.html
 [symfony-cs]: http://symfony.com/doc/current/contributing/code/standards.html
 [phpcs]: http://pear.php.net/package/PHP_CodeSniffer/
 [st-cs]: https://github.com/benmatselby/sublime-phpcs
