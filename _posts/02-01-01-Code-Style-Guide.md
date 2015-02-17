@@ -29,7 +29,6 @@ Drupal や Zend、Symfony、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 * [PSR-2 とは][psr2]
 * [PSR-4 とは][psr4]
 * [PEARのコーディング規約][pear-cs]
-* [Zendのコーディング規約][zend-cs]
 * [Symfonyのコーディング規約][symfony-cs]
 
 [PHP_CodeSniffer][phpcs]を使えば、
@@ -38,10 +37,8 @@ Drupal や Zend、Symfony、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 書いているその場でリアルタイムのフィードバックが得られる。
 
 コードのレイアウトを自動的に修正するツールとしては、二つの選択肢がある。
-Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]がそのひとつで、
+[PHP Coding Standards Fixer][phpcsfixer]がそのひとつで、
 これはきちんとテストされているコードだ。
-規模が大きくて動作は少し遅めだけれど、安定している。
-そして、MagentoやSymfonyといった大規模プロジェクトでも採用されている。
 もうひとつの選択肢が[php.tools][phptools]だ。これは、
 [sublime-phpfmt][sublime-phpfmt]エディタ用のプラグインのおかげで有名になった。
 後発なだけあって、パフォーマンスは大きく改善されている。エディタ上でのリアルタイムの修正も、無理なくできる。
@@ -56,7 +53,6 @@ Fabien Potencierが作った[PHP Coding Standards Fixer][phpcsfixer]がそのひ
 [psr2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
 [psr4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
 [pear-cs]: http://pear.php.net/manual/ja/standards.php
-[zend-cs]: http://framework.zend.com/manual/1.12/en/coding-standard.html
 [symfony-cs]: http://symfony.com/doc/current/contributing/code/standards.html
 [phpcs]: http://pear.php.net/package/PHP_CodeSniffer/
 [st-cs]: https://github.com/benmatselby/sublime-phpcs
