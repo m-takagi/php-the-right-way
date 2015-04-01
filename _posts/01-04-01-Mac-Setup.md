@@ -21,6 +21,7 @@ PHP やその拡張モジュールも簡単にインストールできる。
 
 現時点では、`php53`、`php54`、`php55`、`php56` が `brew install` コマンドでインストールできる。
 これらを切り替えるには、環境変数 `PATH` を設定すればいい。
+[brew-php-switcher][brew-php-switcher] を使えば、そのへんを自動的にやってくれる。
 
 ### Macports によるインストール
 
@@ -69,3 +70,4 @@ MacPorts はコンパイル済みのバイナリにも対応しているので�
 ["Command Line Tools for XCode"]: https://developer.apple.com/downloads
 [mamp-downloads]: http://www.mamp.info/en/downloads/
 [xampp]: http://www.apachefriends.org/jp/xampp.html
+[brew-php-switcher]: https://github.com/philcook/brew-php-switcher
