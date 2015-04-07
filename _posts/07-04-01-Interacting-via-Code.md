@@ -56,7 +56,9 @@ $db = new PDO('mysql:host=localhost;dbname=testdb;charset=utf8', 'username', 'pa
 include 'models/FooModel.php';
 
 // インスタンスを作る
-$fooList = new FooModel($db);
+$fooModel = new FooModel($db);
+// Fooのリストを作る
+$fooList = $fooModel->getAllFoos();
 
 // ビューを表示する
 include 'views/foo-list.php';
