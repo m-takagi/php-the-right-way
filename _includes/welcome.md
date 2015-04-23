@@ -19,7 +19,7 @@ _PHP: The Right Way_ は、他の言語にも翻訳されている。
 
 * [English](http://www.phptherightway.com)
 * [Bulgarian](http://bg.phptherightway.com/)
-* [Chinese (Simplified)](http://wulijun.github.com/php-the-right-way)
+* [Chinese (Simplified)](http://laravel-china.github.io/php-the-right-way/)
 * [Chinese (Traditional)](http://laravel-taiwan.github.io/php-the-right-way)
 * [French](http://eilgin.github.io/php-the-right-way/)
 * [German](http://rwetzlmayr.github.io/php-the-right-way/)
