@@ -8,7 +8,7 @@ anchor: compiled_templates
 
 PHPはオブジェクト指向言語として成熟してきてはいるものの、テンプレート言語としては
 [いまいち][article_templating_engines] だ。
-コンパイル形式のテンプレート、たとえば [Twig] や [Smarty]*
+コンパイル形式のテンプレート、たとえば [Twig] や [Brainy] や [Smarty]*
 が、この穴を埋めてくれる。テンプレートに特化した、新しい構文を用意してくれるんだ。
 自動エスケープから継承や制御構文まで、コンパイル形式のテンプレートは、いかに読み書きしやすく、安心して使えるかを重視して作られている。
 さらに、コンパイル形式のテンプレートは、別の言語でさえも使うことができる。[Mustache] がそのよい例だ。
@@ -72,5 +72,6 @@ PHPはオブジェクト指向言語として成熟してきてはいるもの�
 
 [article_templating_engines]: http://fabien.potencier.org/article/34/templating-engines-in-php
 [Twig]: http://twig.sensiolabs.org/
+[Brainy]: https://github.com/box/brainy
 [Smarty]: http://www.smarty.net/
 [Mustache]: http://mustache.github.io/

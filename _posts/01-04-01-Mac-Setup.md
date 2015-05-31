@@ -47,6 +47,10 @@ MacPorts はコンパイル済みのバイナリにも対応しているので�
 使っているアプリケーションやプロジェクトによって、PHP のバージョンが異なる場合に特に便利で、
 仮想マシンを用意する必要がなくなる。
 
+### Liipのバイナリインストーラーによる PHP のインストール
+[php-osx.liip.ch] は、たった一行で PHP をインストールできる方法だ。バージョン 5.3 から 5.6 に対応している。
+Apple がインストールした php のバイナリは上書きせず、まったく別の場所 (/usr/local/php5) にすべてをインストールする。
+
 ### ソースからのコンパイル
 
 もうひとつの選択肢がある。 [自分でコンパイル][mac-compile]
@@ -65,6 +69,7 @@ MacPorts はコンパイル済みのバイナリにも対応しているので�
 [Homebrew PHP]: https://github.com/Homebrew/homebrew-php#installation
 [MacPorts]: https://www.macports.org/install.php
 [phpbrew]: https://github.com/phpbrew/phpbrew
+[php-osx.liip.ch]: http://php-osx.liip.ch/
 [mac-compile]: http://php.net/install.macosx.compile
 [xcode-gcc-substitution]: https://github.com/kennethreitz/osx-gcc-installer
 ["Command Line Tools for XCode"]: https://developer.apple.com/downloads
