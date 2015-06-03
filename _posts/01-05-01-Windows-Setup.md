@@ -6,8 +6,8 @@ anchor:  windows_setup
 
 ## Windows の人は {#windows_setup_title}
 
-Windows で PHP を使うには、いくつかの方法がある。[バイナリをダウンロード][php-downloads]することもできるし、
-つい最近までは'.msi'形式のインストーラも使えた。でも PHP 5.3.0 からは、インストーラ形式をサポートしなくなった。
+[windows.php.net/download][php-downloads] からバイナリをダウンロードしよう。それを展開したら、
+PHPフォルダのルート (php.exe がある場所) に [PATH][windows-path] を通しておくといい。そうすれば、どこからでも PHP を実行できるようになる。
 
 学習用にローカルで開発する場合は PHP 5.4 以降のビルトインウェブサーバーを使えばよいので、細かい設定を気にする必要はない。
 もしウェブサーバーとかMySQLとかも含めた「全部入り」を使いたければ、[Web Platform Installer][wpi]や
@@ -21,7 +21,8 @@ IIS 7 には FastCGI が組み込まれており、すぐに使える。
 単に PHP をハンドラとして設定するだけでよい。
 その値の詳しい情報は、[dedicated area on iis.net][php-iis]に PHP 専用のエリアがある。
 
-[php-downloads]: http://windows.php.net
+[php-downloads]: http://windows.php.net/download/
+[windows-path]: http://www.windows-commandline.com/set-path-command-line/
 [wpi]: http://www.microsoft.com/web/downloads/platform.aspx
 [xampp]: http://www.apachefriends.org/en/xampp.html
 [easyphp]: http://www.easyphp.org/
