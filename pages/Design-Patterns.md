@@ -82,20 +82,22 @@ print_r($veyron->getMakeAndModel()); // 出力は "ブガッティ ヴェイロ�
 class Singleton
 {
     /**
+     * @var Singleton The reference to *Singleton* instance of this class
+     */
+    private static $instance;
+    
+    /**
      * Returns the *Singleton* instance of this class.
-     *
-     * @staticvar Singleton $instance The *Singleton* instances of this class.
      *
      * @return Singleton The *Singleton* instance.
      */
     public static function getInstance()
     {
-        static $instance = null;
-        if (null === $instance) {
-            $instance = new static();
+        if (null === static::$instance) {
+            static::$instance = new static();
         }
-
-        return $instance;
+        
+        return static::$instance;
     }
 
     /**
