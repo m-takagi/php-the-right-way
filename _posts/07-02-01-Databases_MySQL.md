@@ -6,10 +6,10 @@ anchor:  mysql_extension
 
 ## MySQL 用の拡張モジュール {#mysql_extension_title}
 
-PHP 用の [mysql] 拡張モジュールの開発はすでに終了しており、 [PHP 5.5.0で正式に「廃止予定」となった][mysql_deprecated]。
-つまり、近い将来に削除されるということだ。
+PHP 用の [mysql] 拡張モジュールの開発はすでに終了しており、 [PHP 5.5.0で「廃止予定」となった][mysql_deprecated]。
+そして、[PHP 7.0.0で公式に削除される][mysql_removed]。
 もし未だに `mysql_connect()` とか `mysql_query()` のような `mysql_*` 系の関数を使っているなら、
-いずれ書き直さざるを得なくなる。mysql を使っているプログラムがあれば、
+それはPHP 7.0.0では動かなくなる。mysql を使っているプログラムがあれば、
 今のうちに [mysqli] か [PDO] を使うように書き直しておこう。
 そうすれば、後になって焦らずに済む。
 
@@ -22,6 +22,7 @@ PHP 用の [mysql] 拡張モジュールの開発はすでに終了しており�
 
 [mysql]: http://php.net/mysql
 [mysql_deprecated]: http://php.net/migration55.deprecated
+[mysql_removed]: http://php.net/manual/ja/migration70.removed-exts-sapis.php
 [mysqli]: http://php.net/mysqli
 [pdo]: http://php.net/pdo
 [mysql_api]: http://php.net/mysqlinfo.api.choosing
