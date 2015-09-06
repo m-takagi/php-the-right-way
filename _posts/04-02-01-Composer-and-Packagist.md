@@ -16,12 +16,15 @@ Composer に対応したライブラリは既にいろいろ出回っていて�
 ### Composer のインストール
 
 Composer はローカル (作業ディレクトリ) にインストールしてもよいし、グローバルに (/usr/local/bin などに)
-インストールしてもよい。ただし、ローカルにインストールする方法は今は非推奨となっている。
-ローカルにインストールするには、プロジェクトのルートディレクトリに移動して次のコマンドを実行する。
+インストールしてもよい。グローバルにインストールするほうがおすすめだ。
+グローバルにインストールするには、このようにすればいい。
 
 {% highlight console %}
-curl -s https://getcomposer.org/installer | php
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
 {% endhighlight %}
+
+<strong>注意:</strong> パーミッションのエラーでこのコマンドが失敗する場合は、`mv` コマンドの前に `sudo` をつけて実行してみよう。
 
 このコマンドは、 `composer.phar` (PHP バイナリアーカイブ)
 をダウンロードする。これを `php` コマンドで実行すれば、そのプロジェクトの依存関係を管理できる。
