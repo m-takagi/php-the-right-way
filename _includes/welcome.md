@@ -32,7 +32,7 @@ _PHP: The Right Way_ は、他の言語にも翻訳されている。
 * [Portuguese](http://br.phptherightway.com/)
 * [Romanian](https://bgui.github.io/php-the-right-way/)
 * [Russian](http://getjump.github.io/ru-php-the-right-way)
-* [Serbian](http://smatejic.github.io/php-the-right-way/)
+* [Serbian](http://phpsrbija.github.io/php-the-right-way/)
 * [Slovenian](http://sl.phptherightway.com)
 * [Spanish](http://phpdevenezuela.github.io/php-the-right-way/)
 * [Thai](https://apzentral.github.io/php-the-right-way/)
