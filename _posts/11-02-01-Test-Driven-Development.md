@@ -43,10 +43,9 @@ test.php で `var_dump()` とかいうやり方もあるけど、
 デファクトスタンダードのフレームワークだ。しかしそれ以外にも選択肢がある。
 
 * [atoum](https://github.com/atoum/atoum)
-* [Enhance PHP](https://github.com/Enhance-PHP/Enhance-PHP)
-* [PUnit](http://punit.smf.me.uk/)
+* [Kahlan](https://github.com/crysalead/kahlan)
+* [Peridot](http://peridot-php.github.io/)
 * [SimpleTest](http://simpletest.org)
-
 
 ### インテグレーションテスト
 
