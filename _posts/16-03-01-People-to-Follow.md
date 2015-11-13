@@ -6,9 +6,7 @@ anchor:  people_to_follow
 
 ## フォローすべき人たち {#people_to_follow_title}
 
-It's difficult to find interesting and knowledgable PHP
-community members when you are first starting out. You can
-find a comprehensive list of PHP community members and their
-Twitter handles at:
+PHPコミュニティの中で注目すべき人を見つけるのは、コミュニティに加わったばかりの人たちにとっては難しいものだ。
+PHPコミュニティの主要メンバーとTwitterアカウントの一覧が、ここにまとまっている。
 
 <http://followphpdevs.com/>
