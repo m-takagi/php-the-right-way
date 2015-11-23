@@ -389,8 +389,8 @@ return ($a == 3 && $b == 4) && $c == 5;
 return ($a != 3 && $b != 4) || $c == 5;
 {% endhighlight %}
 
-Since PHP 5.3, it is possible to leave out the middle part of the ternary operator.
-Expression "expr1 ?: expr3" returns expr1 if expr1 evaluates to TRUE, and expr3 otherwise.
+PHP 5.3 以降では、三項演算子の第二項を省略できるようになった。
+"式1 ?: 式3" みたいに書くと、式1がTRUEの場合は式1を返して、そうじゃない場合は式3を返す。
 
 * [三項演算子](http://php.net/language.operators.comparison)
 
