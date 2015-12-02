@@ -6,19 +6,26 @@ anchor:  mysql_extension
 
 ## MySQL 用の拡張モジュール {#mysql_extension_title}
 
-PHP 用の [mysql] 拡張モジュールの開発はすでに終了しており、 [PHP 5.5.0で「廃止予定」となった][mysql_deprecated]。
-そして、[PHP 7.0.0で公式に削除される][mysql_removed]。
-もし未だに `mysql_connect()` とか `mysql_query()` のような `mysql_*` 系の関数を使っているなら、
-それはPHP 7.0.0では動かなくなる。mysql を使っているプログラムがあれば、
-今のうちに [mysqli] か [PDO] を使うように書き直しておこう。
-そうすれば、後になって焦らずに済む。
+PHP 用の [mysql] 拡張モジュールは既に思いっきり古くなっていて、これらの拡張モジュールがその後継になっている。
 
-**今から新しく書き始めるっていうのなら、[mysql] 拡張モジュールを使うっていう選択肢はナシだ。
-[MySQLi 拡張モジュール][mysqli] か [PDO] を使うこと。**
+- [mysqli]
+- [pdo]
+
+[mysql] 拡張モジュールの開発は大昔に終了していて、 [PHP 5.5.0で「廃止予定」となった][mysql_deprecated]。
+そして、 **[PHP 7.0.0で公式に削除された][mysql_removed]** 。
+
+To save digging into your `php.ini` settings to see which module you are using, one option is to search for `mysql_*` 
+in your editor of choice. If any functions such as `mysql_connect()` and `mysql_query()` show up, then `mysql` is 
+in use.
+
+Even if you are not using PHP 7.0 yet, failing to consider this upgrade as soon as possible will lead to greater 
+hardship when the PHP 7.0 upgrade does come about. The best option is to replace mysql usage with [mysqli] or [PDO] in 
+your applications within your own development schedules so you won't be rushed later on.
+
+**If you are upgrading from [mysql] to [mysqli], beware lazy upgrade guides that suggest you can simply find and replace `mysql_*` with `mysqli_*`. Not only is that a gross oversimplification, it misses out on the advantages that mysqli provides, such as parameter binding, which is also offered in [PDO][pdo].**
 
 * [PHP: MySQL 用の API の選択肢][mysql_api]
 * [MySQL開発者用のPDOチュートリアル][pdo4mysql_devs]
-
 
 [mysql]: http://php.net/mysql
 [mysql_deprecated]: http://php.net/migration55.deprecated

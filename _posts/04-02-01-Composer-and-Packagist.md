@@ -9,6 +9,7 @@ anchor:  composer_and_packagist
 Composerは、PHP用の **すばらしい** 依存管理ツールだ。プロジェクト内の依存関係を
 `composer.json` ファイルに書いてシンプルなコマンドを打ち込めば、
 Composer が自動的にそれをダウンロードしてくれるだけでなく、オートロードの設定までしてくれるんだ。
+Composer は、node.js の NPM や Ruby の Bundler みたいなものだ。
 
 Composer に対応したライブラリは既にいろいろ出回っていて、自分のプロジェクトですぐに使える。
 そんなパッケージをまとめたのが [Packagist]。これは、Composer 対応の PHP ライブラリをまとめた公式リポジトリである。

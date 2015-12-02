@@ -7,8 +7,8 @@ anchor:  mac_setup
 ## Mac の人は  {#mac_setup_title}
 
 OS X には PHP が最初からインストールされているけど、最新の安定版からは微妙に遅れている。
-Mountain Lion についてくるのは PHP 5.3.10 だし Mavericks でも 5.4.17。Yosemite にしても 5.5.9 だ。
-PHP 5.6 に比べると、十分だとはいえない。
+Mavericks についてくるのは PHP 5.4.17 だし Yosemite でも 5.5.9。El Capitan にしても 5.5.29 だ。
+PHP 7.0 に比べると、十分だとはいえない。
 
 PHP を OS X にインストールするには、いくつかの方法がある。
 
@@ -32,14 +32,14 @@ OS X上のオープンソースソフトウェアのコンパイルやインス�
 MacPorts はコンパイル済みのバイナリにも対応しているので、関連するライブラリなどを毎回ソースからコンパイルしなおす必要はない。
 なので、まだ何もパッケージをインストールしていない状態でも、時間の心配をする必要はない。
 
-現時点でインストールできるのは `php53`、`php54`、`php55`、`php56` のいずれかで、`port install` コマンドを使ってこのようにインストールする。
+現時点でインストールできるのは `php54`、`php55`、`php56`、`php70` のいずれかで、`port install` コマンドを使ってこのようにインストールする。
 
-    sudo port install php54
-    sudo port install php55
+    sudo port install php56
+    sudo port install php70
 
 そして、`select` コマンドを使って、アクティブな PHP を切り替える。
 
-    sudo port select --set php php55
+    sudo port select --set php php70
 
 ### phpbrew によるインストール
 
@@ -48,6 +48,7 @@ MacPorts はコンパイル済みのバイナリにも対応しているので�
 仮想マシンを用意する必要がなくなる。
 
 ### Liipのバイナリインストーラーによる PHP のインストール
+
 [php-osx.liip.ch] は、たった一行で PHP をインストールできる方法だ。バージョン 5.3 から 5.6 に対応している。
 Apple がインストールした php のバイナリは上書きせず、まったく別の場所 (/usr/local/php5) にすべてをインストールする。
 
