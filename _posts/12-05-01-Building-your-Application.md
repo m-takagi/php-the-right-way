@@ -59,8 +59,8 @@ SymfonyやLaravel、Zend Framework、そしてYiiなどで使える、一般的�
 #### PHP開発者向けのChefの資料
 
 * [LAMPアプリケーションのデプロイにChefやVagrantそしてEC2を使うというお題で書かれた全3回のシリーズ][chef_vagrant_and_ec2]
-* [Chefのクックブック。PHP 5.3のインストールと設定やPEARについて扱っている][Chef_cookbook]
-* [Chefのビデオチュートリアルシリーズ。開発元のOpscodeによるもの][Chef_tutorial]
+* [Chefのクックブック。PHPのインストールと設定やPEARについて扱っている][Chef_cookbook]
+* [Chefのビデオチュートリアルシリーズ][Chef_tutorial]
 
 #### あわせて読みたい:
 
@@ -94,10 +94,10 @@ GitHubと統合されており、PHPを含むさまざまな言語に対応し�
 [Apache Ant]: http://ant.apache.org/
 [Capistrano]: https://github.com/capistrano/capistrano/wiki
 [phpdeploy_capistrano]: http://www.davegardner.me.uk/blog/2012/02/13/php-deployment-with-capistrano/
-[Chef]: http://www.opscode.com/chef/
+[Chef]: https://www.chef.io/
 [chef_vagrant_and_ec2]: http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/
-[Chef_cookbook]: https://github.com/opscode-cookbooks/php
-[Chef_tutorial]: https://www.youtube.com/playlist?list=PLrmstJpucjzWKt1eWLv88ZFY4R1jW8amR
+[Chef_cookbook]: https://github.com/chef-cookbooks/php
+[Chef_tutorial]: https://www.youtube.com/playlist?list=PL11cZfNdwNyPnZA9D1MbVqldGuOWqbumZ
 [apache_ant_tutorial]: http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/
 [Travis CI]: https://travis-ci.org/
 [Jenkins]: http://jenkins-ci.org/

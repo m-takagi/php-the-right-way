@@ -33,7 +33,7 @@ Vagrantを使い始めるときの手助けになるのが、これらのサー�
 
 [Vagrant]: http://vagrantup.com/
 [Puppet]: http://www.puppetlabs.com/
-[Chef]: http://www.opscode.com/
+[Chef]: https://www.chef.io/
 [Rove]: http://rove.io/
 [Puphpet]: https://puphpet.com/
 [Protobox]: http://getprotobox.com/
