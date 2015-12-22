@@ -63,11 +63,15 @@ PDO が入力をサニタイズする。
 
 [サニタイズフィルター][2]
 
-### Unserialization
+### アンシリアライズ
 
-It is dangerous to `unserialize()` data from users or other untrusted sources.  Doing so can allow malicious users to instantiate objects (with user-defined properties) whose destructors will be executed, **even if the objects themselves aren't used**.  You should therefore avoid unserializing untrusted data.
+ユーザーからの入力など、信頼できないところから渡されたデータを `unserialize()` するのは危険だ。
+悪意のあるユーザーが送り込んだオブジェクト（ユーザー定義のプロパティつきのもの）のインスタンスを生成できてしまい、
+**たとえそのオブジェクトを一切使わなくても** そのデストラクタは実行されてしまう。
+なので、信頼できないデータのアンシリアライズは避けるべきだ。
 
-If you absolutely must unserialize data from untrusted sources, use PHP 7's [`allowed_classes`][unserialize] option to restrict which object types are allowed to be unserialized.
+どうしてもその必要がある場合は、PHP 7で追加されたオプション [`allowed_classes`][unserialize]
+を使うこと。このオプションは、許可した型のオブジェクトだけをアンシリアライズできるように制限するものだ。
 
 ### バリデーション
 
@@ -85,4 +89,4 @@ If you absolutely must unserialize data from untrusted sources, use PHP 7's [`al
 [5]: http://php.net/function.filter-input
 [6]: http://php.net/security.filesystem.nullbytes
 [html-purifier]: http://htmlpurifier.org/
-[unserialize]: https://secure.php.net/manual/en/function.unserialize.php
+[unserialize]: https://secure.php.net/manual/ja/function.unserialize.php
