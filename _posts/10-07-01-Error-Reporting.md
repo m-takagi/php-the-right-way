@@ -13,7 +13,7 @@ anchor:  error_reporting
 
 ### 開発環境
 
-　<strong>開発</strong>環境で、起こりうるエラーをすべて表示するときには、`php.ini`で次のように設定する。
+**開発** 環境で、起こりうるエラーをすべて表示するときには、`php.ini`で次のように設定する。
 
 {% highlight ini %}
 display_errors = On
@@ -38,7 +38,7 @@ log_errors = On
 
 ### 本番環境
 
-　<strong>本番</strong>環境でエラーの情報を見せないようにするには、`php.ini`で次のように設定する。
+**本番** 環境でエラーの情報を見せないようにするには、`php.ini`で次のように設定する。
 
 {% highlight ini %}
 display_errors = Off

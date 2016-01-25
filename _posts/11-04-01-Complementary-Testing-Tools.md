@@ -17,7 +17,7 @@ anchor:  complementary_testing_tools
 
 
 [Selenium]: http://seleniumhq.org/
-[PHPUnit と組み合わせて使える]: http://phpunit.de/manual/current/ja/selenium.html
+[PHPUnit と組み合わせて使える]: https://github.com/giorgiosironi/phpunit-selenium/
 [Mockery]: https://github.com/padraic/mockery
 [PHPUnit]: http://phpunit.de/
 [PHPSpec]: http://www.phpspec.net/

@@ -25,11 +25,11 @@ curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 {% endhighlight %}
 
-<strong>注意:</strong> パーミッションのエラーでこのコマンドが失敗する場合は、`mv` コマンドの前に `sudo` をつけて実行してみよう。
+**注意:** パーミッションのエラーでこのコマンドが失敗する場合は、`mv` コマンドの前に `sudo` をつけて実行してみよう。
 
 このコマンドは、 `composer.phar` (PHP バイナリアーカイブ)
 をダウンロードする。これを `php` コマンドで実行すれば、そのプロジェクトの依存関係を管理できる。
-<strong>注意:</strong> ダウンロードしたコードを直接パイプで実行する前に、
+**注意:** ダウンロードしたコードを直接パイプで実行する前に、
 まずはオンラインでコードを確認して安全であることを確かめておこう。
 
 #### Windows でのインストール
