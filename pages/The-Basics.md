@@ -27,7 +27,7 @@ if (strpos('testing', 'test')) {    // 'test' は 0 番目の位置にあり、�
     // コード...
 }
 
-// vs
+// vs.
 
 if (strpos('testing', 'test') !== false) {    // 厳格な比較が行われるので、これは成立する(0 !== false)
     // コード...
@@ -58,7 +58,7 @@ function test($a)
     }
 }
 
-// vs
+// vs.
 
 function test($a)
 {
@@ -67,6 +67,14 @@ function test($a)
     }
     return false;    // 別にelseがなくたっていいよね
 }
+
+// or even shorter:
+
+function test($a)
+{
+    return (bool) $a;
+}
+
 {% endhighlight %}
 
 * [If 文](http://php.net/control-structures.if)
