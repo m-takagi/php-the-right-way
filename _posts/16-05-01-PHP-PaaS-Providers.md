@@ -19,6 +19,7 @@ anchor:  php_paas_providers
 * [Google App Engine](https://developers.google.com/appengine/docs/php/gettingstarted/)
 * [Jelastic](http://jelastic.com/)
 * [Platform.sh](https://platform.sh/)
+* [Cloudways](https://www.cloudways.com/en/)
 
 これらのPaaSでどのバージョンのPHPが使われているのかを知りたければ、[PHP Versions](http://phpversions.info/paas-hosting/)
 をチェックしよう。
