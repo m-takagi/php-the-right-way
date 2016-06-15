@@ -219,6 +219,7 @@ class ArrayOutput implements OutputInterface
 
 次のコードは、呼び出し側のクライアントクラスが実際に特定のアルゴリズムを使ったり、
 必要な振る舞いを実行時に設定したりするものだ。
+{% highlight php %}
 <?php
 class SomeClient
 {
