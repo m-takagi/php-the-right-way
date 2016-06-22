@@ -39,5 +39,5 @@ anchor:  namespaces
 
 
 [namespaces]: http://php.net/language.namespaces
-[psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
-[psr4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
+[psr0]: http://www.php-fig.org/psr/psr-0/
+[psr4]: http://www.php-fig.org/psr/psr-4/
