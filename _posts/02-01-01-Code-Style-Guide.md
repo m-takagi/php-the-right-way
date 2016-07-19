@@ -33,15 +33,13 @@ Drupal や Zend、Symfony、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 
 [PHP_CodeSniffer][phpcs]を使えば、
 自分のコードがこれらの標準のどれかひとつに準拠しているかどうかを確認できる。
-あと、[Sublime Text 2][st-cs]みたいなテキストエディタのプラグインを使えば、
+あと、[Sublime Text][st-cs]みたいなテキストエディタのプラグインを使えば、
 書いているその場でリアルタイムのフィードバックが得られる。
 
 コードのレイアウトを自動的に修正するツールとしては、二つの選択肢がある。
-[PHP Coding Standards Fixer][phpcsfixer]がそのひとつで、
-これはきちんとテストされているコードだ。
-もうひとつの選択肢が[php.tools][phptools]だ。これは、
-[sublime-phpfmt][sublime-phpfmt]エディタ用のプラグインのおかげで有名になった。
-後発なだけあって、パフォーマンスは大きく改善されている。エディタ上でのリアルタイムの修正も、無理なくできる。
+
+- [PHP Coding Standards Fixer][phpcsfixer]がそのひとつで、これはきちんとテストされているコードだ。
+- もうひとつの選択肢は [PHP Code Beautifier and Fixer][phpcbf] で、これはPHP_CodeSnifferに含まれている。これを使って、コードのレイアウトを適切に調整できる。
 
 phpcs をシェルから手動で実行することもできる。
 
@@ -50,7 +48,15 @@ phpcs をシェルから手動で実行することもできる。
 これは、エラーの内容とその修正方法を表示してくれる。
 このコマンドをgit hookに仕込んでおけば便利だろう。
 そうすれば、標準規約に反する変更を含むブランチは、それを修正するまでリポジトリに投入できなくなる。
-until those violations have been fixed.
+
+PHP_CodeSnifferを使っている場合は、指摘されたコードレイアウトの問題を自動的に修正することもできる。そのためには[PHP Code Beautifier and Fixer][phpcbf]を使えばいい。
+
+    phpcbf -w --standard=PSR2 file.php
+
+もうひとつの選択肢は[PHP Coding Standards Fixer][phpcsfixer]で、
+これは、実際に修正するまえにコードにどんな問題があったのかを表示してくれる。
+
+    php-cs-fixer fix -v --level=psr2 file.php
 
 変数名や関数名、そしてディレクトリ名なんかは、英語にしておくことをおすすめする。
 コードのコメントに関しては、別に英語にこだわらなくてもかまわない。
@@ -64,7 +70,6 @@ until those violations have been fixed.
 [pear-cs]: http://pear.php.net/manual/ja/standards.php
 [symfony-cs]: http://symfony.com/doc/current/contributing/code/standards.html
 [phpcs]: http://pear.php.net/package/PHP_CodeSniffer/
+[phpcbf]: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically
 [st-cs]: https://github.com/benmatselby/sublime-phpcs
 [phpcsfixer]: http://cs.sensiolabs.org/
-[phptools]: https://github.com/phpfmt/php.tools
-[sublime-phpfmt]: https://github.com/phpfmt/sublime-phpfmt

@@ -20,15 +20,12 @@ var_dump($a == '5');     // 値の比較(型は無視)。trueを返す
 var_dump($a === 5);      // 型と値の比較(integer vs. integer)。trueを返す
 var_dump($a === '5');    // 型と値の比較(integer vs. string)。falseを返す
 
-/**
- * 厳格な比較
- */
+// 等しいかどうかの比較
 if (strpos('testing', 'test')) {    // 'test' は 0 番目の位置にあり、これはboolean型の'false'と見なされる
     // コード...
 }
 
-// vs.
-
+// 厳密な比較
 if (strpos('testing', 'test') !== false) {    // 厳格な比較が行われるので、これは成立する(0 !== false)
     // コード...
 }
@@ -42,7 +39,7 @@ if (strpos('testing', 'test') !== false) {    // 厳格な比較が行われる�
 
 ### If 文
 
-'if/else'文を関数やクラスの中で使うときにありがちな誤解がある。
+'if/else'文を関数やクラスメソッドの中で使うときにありがちな誤解がある。
 そうじゃなかったときにどんな結果になるのかを示すために'else'が必須だと考えることだ。
 でも、もしその結果を戻り値に使うのなら'else'は必須じゃない。
 だって'return'の時点で関数は終了するんだから、'else'は無意味だ。
