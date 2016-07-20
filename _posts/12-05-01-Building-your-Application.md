@@ -35,7 +35,8 @@ anchor:  building_and_deploying_your_application
 Phingは[Apache Ant] をベースに作られたもので、
 Webアプリのインストールやアップデートに必要となるタスク群を提供する。
 カスタムタスクで機能を追加することもでき、カスタムタスクはPHPで書ける。
-It's a solid and robust tool and has been around for a long time, however the tool could be perceived as a bit old fashioned because of the way it deals with configuration (XML files).
+古くからあるツールだけあって堅実で安定してるけど、ちょっと古臭さも感じる
+(設定をXMLファイルで管理するところとかね)。
 
 [Capistrano] は
 *中級から上級のプログラマー* 向けのシステムだ。構造化された、繰り返し可能な形式で、
@@ -46,36 +47,57 @@ Capistranoを使いこなすには、RubyとRakeに関するそれなりの知�
 Dave Gardnerのblog記事[PHP Deployment with Capistrano][phpdeploy_capistrano]
 は、Capistranoに興味のあるPHP開発者への入門記事としておすすめだ。
 
-[Rocketeer] gets its inspiration and philosophy from the Laravel framework. Its goal is to be fast, elegant and ease to use with smart defaults. It features multiple servers, multiple stages, atomic deploys and deployment can be performed in parallel. Everything in the tool can be hot swapped or extended, and everything is written in PHP.
+[Rocketeer] は、Laravelフレームワークの思想にヒントを得たものだ。
+高速かつエレガントであり、よく考えられたデフォルト設定で簡単に使えることを目標としている。
+複数サーバーや複数ステージ、アトミックなデプロイに対応していて、複数のデプロイを並列に実行できる。
+すべてのパーツは動かしたままでの交換や拡張に対応しているし、ぜんぶPHPで書かれている。
 
 [Deployer] はPHPで書かれたデプロイツールで、シンプルかつ機能的だ。
 タスクを並列に実行し、アトミックなデプロイを行い、サーバー間の整合性を維持する。
 SymfonyやLaravel、Zend Framework、そしてYiiなどで使える、一般的なタスクのレシピが用意されている。
-Younes Rafie's article  [Easy Deployment of PHP Applications with Deployer][phpdeploy_deployer] is a great tutorial for deploying your application with the tool.
+Younes Rafieの記事[Easy Deployment of PHP Applications with Deployer][phpdeploy_deployer]
+は、Deployerを使ってアプリケーションをデプロイするためのよいチュートリアルになっている。
 
-[Magallanes] another tool written in PHP with simple configuration done in YAML files. It has support for multiple servers and environments, atomic deployment, and have some built in tasks that you can leverage for common tools and frameworks.
+[Magallanes] もPHPで書かれたツールで、YAMLでのシンプルな設定ができる。
+複数サーバーや複数環境、アトミックなデプロイに対応していて、
+一般的なツールやフレームワークで使える組み込みのタスクが用意されている。
 
 #### あわせて読みたい:
 
 * [Apache Antによるプロジェクトの自動化][apache_ant_tutorial]
-* [Expert PHP Deployments][expert_php_deployments] - free book on deployment with Capistrano, Phing and Vagrant.
-* [Deploying PHP Applications][deploying_php_applications] - paid book on best practices and tools for PHP deployment.
+* [Expert PHP Deployments][expert_php_deployments] - CapistranoやPhing、Vagrantによるデプロイを扱ったフリーの書籍
+* [Deploying PHP Applications][deploying_php_applications] - PHPのデプロイに関するベストプラクティスやツールを扱った書籍
 
 ### サーバープロビジョニング
 
-Managing and configuring servers can be a daunting task when faced with many servers. There are tools for dealing with this so you can automate your infrastructure to make sure you have the right servers and that they're configured properly. They often integrate with the larger cloud hosting providers (Amazon Web Services, Heroku, DigitalOcean, etc) for managing instances, which makes scaling an application a lot easier.
+サーバーの構成管理は、大量のサーバーを扱うようになると特に大変なタスクだ。
+いろんなツールが用意されているので、こういったインフラの構築を自動化できる。
+ツールを使えば、適切なサーバーが適切な構成になっていることを確実にできる。
+これらのツールは大規模なクラウドホスティングプロバイダー
+(Amazon Web Services, Heroku, DigitalOceanなど)
+にもインスタンスの管理用に統合されていることが多くて、
+より簡単にアプリケーションをスケールできるようになっている。
 
-[Ansible] is a tool that manages your infrastructure through YAML files. It's simple to get started with and can manage complex and large scale applications. There is an API for managing cloud instances and it can manage them through a dynamic inventory using certain tools.
+[Ansible] は、YAMLファイルでインフラを管理するツールだ。
+気軽に使い始められるし、複雑で大規模なアプリケーションにも使える。
+クラウドのインスタンスを管理するためのAPIも用意されていて、
+対応したツールを使えば動的インベントリを通じてインスタンスを管理できる。
 
-[Puppet] is a tool that has its own language and file types for managing servers and configurations. It can be used in a master/client setup or it can be used in a "master-less" mode. In the master/client mode the clients will poll the central master(s) for new configuration on set intervals and update itself if necessary. In the master-less mode you can push changes to your nodes. 
+[Puppet] は、独自の言語やファイルタイプを使ってサーバーや構成を管理する。
+マスター／クライアント形式で使うこともできるし、「マスターレス」モードで使うこともできる。
+マスター／クライアントモードの場合は、所定のインターバルでクライアントが中央サーバーをポーリングして、
+新しい構成が見つかったら自分自身を更新する。
+マスターレスモードでは、変更内容を各ノードにプッシュする。
 
-[Chef] is a powerful Ruby based system integration framework that you can build your whole server environment or virtual boxes with. It integrates well with Amazon Web Services through their service called OpsWorks.
+[Chef] はRubyで作られた強力なシステムインテグレーションフレームワークで、
+サーバー環境や仮想マシンをまるごと構築できる。
+Amazon Web Servicesとも統合されていて、OpsWorksというサービスを通じて利用する。
 
 #### あわせて読みたい:
 
-* [An Ansible Tutorial][an_ansible_tutorial]
-* [Ansible for DevOps][ansible_for_devops] - paid book on everything Ansible
-* [Ansible for AWS][ansible_for_aws] - paid book on integrating Ansible and Amazon Web Services
+* [Ansibleチュートリアル][an_ansible_tutorial]
+* [Ansible for DevOps][ansible_for_devops] - Ansibleのすべてを扱った書籍
+* [Ansible for AWS][ansible_for_aws] - AnsibleとAmazon Web Servicesとの統合について扱った書籍
 * [LAMPアプリケーションのデプロイにChefやVagrantそしてEC2を使うというお題で書かれた全3回のシリーズ][chef_vagrant_and_ec2]
 * [Chefのクックブック。PHPのインストールと設定やPEARについて扱っている][Chef_cookbook]
 * [Chefのビデオチュートリアルシリーズ][Chef_tutorial]
