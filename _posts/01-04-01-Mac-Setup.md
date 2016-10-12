@@ -7,7 +7,8 @@ anchor:  mac_setup
 ## Mac の人は  {#mac_setup_title}
 
 OS X には PHP が最初からインストールされているけど、最新の安定版からは微妙に遅れている。
-Mavericks についてくるのは PHP 5.4.17 だし Yosemite でも 5.5.9。El Capitan にしても 5.5.29 だ。
+Mavericks についてくるのは PHP 5.4.17 だし Yosemite でも 5.5.9。El Capitan にしても 5.5.29 だし
+Sierra でも 5.6.24 だ。
 PHP 7.0 に比べると、十分だとはいえない。
 
 PHP を OS X にインストールするには、いくつかの方法がある。

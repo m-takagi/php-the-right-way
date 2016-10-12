@@ -65,6 +65,12 @@ foreach ($periodIterator as $date) {
 }
 {% endhighlight %}
 
+PHP APIの拡張として有名なのが [Carbon](http://carbon.nesbot.com) だ。
+これは DateTime クラスのすべてを継承しているので、コードの書き換えを最小限に抑えられる。
+さらに追加機能として、地域化のサポートや、
+DateTimeオブジェクトの加減算とフォーマットの方法の追加がある。
+また、自分で選んだ日付と時刻をシミュレートする機能もあって、これはコードをテストするときに使える。
+
 * [DateTime][datetime]
 * [日付の書式][dateformat] (日付の書式指定文字列に使えるオプション)
 

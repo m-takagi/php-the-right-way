@@ -20,12 +20,12 @@ PDOではデータベースへの接続の抽象化しかしないが、フレ�
 * [Aura SQL][6]
 * [Doctrine2 DBAL][2]
 * [Propel][7]
-* [ZF2 Db][4]
+* [Zend-db][4]
 
 
 [1]: http://php.net/book.pdo
 [2]: http://www.doctrine-project.org/projects/dbal.html
-[4]: http://packages.zendframework.com/docs/latest/manual/en/index.html#zend-db
+[4]: https://packages.zendframework.com/docs/latest/manual/en/index.html#zendframework/zend-db
 [6]: https://github.com/auraphp/Aura.Sql
 [7]: http://propelorm.org/
 [psr0]: http://www.php-fig.org/psr/psr-0/

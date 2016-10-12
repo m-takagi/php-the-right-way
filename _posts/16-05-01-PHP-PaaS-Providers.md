@@ -20,6 +20,8 @@ anchor:  php_paas_providers
 * [Jelastic](http://jelastic.com/)
 * [Platform.sh](https://platform.sh/)
 * [Cloudways](https://www.cloudways.com/en/)
+* [IBM Bluemix Cloud Foundry](https://console.ng.bluemix.net/)
+* [Pivotal Web Service Cloud Foundry](https://run.pivotal.io/)
 
 これらのPaaSでどのバージョンのPHPが使われているのかを知りたければ、[PHP Versions](http://phpversions.info/paas-hosting/)
 をチェックしよう。

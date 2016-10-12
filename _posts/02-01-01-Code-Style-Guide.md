@@ -15,7 +15,7 @@ PHP のコミュニティはとてもでっかくて、いろんな人たちが�
 が、おすすめのスタイルを提案している。
 コーディングスタイルに関する提案は、[PSR-0][psr0]と[PSR-1][psr1]、[PSR-2][psr2]、そして[PSR-4][psr4]だ。
 これって要するに、
-Drupal や Zend、Symfony、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
+Drupal や Zend、Symfony、Laravel、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 などのプロジェクトが採用しつつある規約をまとめただけのものなんだ。
 自分のプロジェクトでこれを使ってもいいし、今までの自分のスタイルを使い続けてもいい。
 

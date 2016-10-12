@@ -6,26 +6,27 @@ anchor:  opcode_cache
 
 ## オペコードキャッシュ {#opcode_cache_title}
 
-PHP ファイルを実行するときにその裏側で行われているのは、
-まずオペコードにコンパイルしてからそのオペコードを実行するという処理だ。
-PHP ファイルに変更がなければ、オペコードも同じものになる。
+PHPファイルを実行するときには、まずそれを[オペコード](http://php.net/manual/ja/internals2.opcodes.php) (CPU用の機械語の指示)
+にコンパイルしなければいけない。
+ソースコードに変更がなければ、オペコードも同じものになる。
 ということは、PHP ファイルに変更がなければコンパイル処理は CPU リソースの無駄遣いになるということだ。
 
-そこでオペコードキャッシュの出番だ。
-これはオペコードをメモリに格納してそれ以降の呼び出しで再利用するという仕組みで、
-冗長なコンパイルを回避する。オペコードキャッシュを設定するのはほんの数分で済み、
-それだけでアプリケーションの速度が劇的に向上する。使わない理由はないね。
+オペコードキャッシュは、コンパイル済みのオペコードをメモリに格納し、それ以降の呼び出しで再利用することで、
+冗長なコンパイルを回避している。よくあるのは、ファイルのシグネチャや更新時刻をチェックして変更の有無を判断する方式だ。
 
-PHP 5.5 からは、 [OPcache][opcache-book]
-というオペコードキャッシュが標準で組み込まれるようになった。
-5.5 より前のバージョンでも使うことができる。
+オペコードキャッシュを使えば、アプリケーションの実行速度が相当向上する可能性がある。
+PHP 5.5 からは、 [Zend OPcache][opcache-book] というオペコードキャッシュが標準で組み込まれるようになった。
+使っている PHP パッケージやディストリビューションにもよるけど、普通はデフォルトで有効になっていることが多い。
+[opcache.enable](http://php.net/manual/ja/opcache.configuration.php#ini.opcache.enable)
+や、 `phpinfo()` の出力で確認しよう。
+5.5 より前のバージョンなら、PECL の拡張モジュールが使える。
 
 オペコードキャッシュについて詳しく知りたければ、以下を参照すること。
 
-* [OPcache][opcache-book] (PHP 5.5 以降に組み込まれている)
+* [Zend OPcache][opcache-book] (PHP 5.5 以降に組み込まれている)
+* Zend OPcache (元 Zend Optimizer+) は [オープンソースになった][Zend Optimizer+]
 * [APC] (PHP 5.4 以前のバージョン)
 * [XCache]
-* [Zend Optimizer+] (Zend Server パッケージに組み込まれている)
 * [WinCache] (Microsoft Windows Server 用の拡張)
 * [Wikipediaにおける、PHPアクセラレータの一覧][PHP_accelerators]
 
@@ -33,6 +34,6 @@ PHP 5.5 からは、 [OPcache][opcache-book]
 [opcache-book]: http://php.net/book.opcache
 [APC]: http://php.net/book.apc
 [XCache]: http://xcache.lighttpd.net/
-[Zend Optimizer+]: http://www.zend.com/en/products/zend_server
+[Zend Optimizer+]: https://github.com/zendtech/ZendOptimizerPlus
 [WinCache]: http://www.iis.net/download/wincacheforphp
 [PHP_accelerators]: http://en.wikipedia.org/wiki/List_of_PHP_accelerators
