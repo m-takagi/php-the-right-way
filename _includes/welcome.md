@@ -38,6 +38,7 @@ _PHP: The Right Way_ は、他の言語にも翻訳されている。
 * [Thai](https://apzentral.github.io/php-the-right-way/)
 * [Turkish](http://hkulekci.github.io/php-the-right-way/)
 * [Ukrainian](http://iflista.github.com/php-the-right-way/)
+* [العربية](https://adaroobi.github.io/php-the-right-way/)
 
 ## 協力するには
 

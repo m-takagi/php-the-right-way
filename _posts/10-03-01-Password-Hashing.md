@@ -10,6 +10,7 @@ anchor:  password_hashing
 ユーザー名とパスワード (のハッシュ) をデータベースに保存して、
 ユーザーのログイン時にそれを使って認証するというやつだ。
 
+<<<<<<< HEAD
 データベースにパスワードを保存するときは、適切に [_ハッシュ_][3] することが大切だ。
 パスワードのハッシュは不可逆な操作で、ユーザーのパスワードに対して一方通行で行う。
 できあがる結果は固定長の文字列で、元には戻せない。
@@ -17,8 +18,12 @@ anchor:  password_hashing
 元の文字列が何だったかはわからないってことだ。
 パスワードをハッシュせずにデータベースに保存していると、
 万一第三者に不正アクセスされた場合に、すべてのユーザーアカウントが乗っ取られてしまう。
-別のサービスでも同じパスワードを使い回しているって人も、中にはいるかもしれない。
-なので、セキュリティについては真剣に考える必要がある。
+
+Passwords should also be individually [_salted_][5] by adding a random string to each password before hashing. This prevents dictionary attacks and the use of "rainbow tables" (a reverse list of crytographic hashes for common passwords.)
+
+Hashing and salting are vital as often users use the same password for multiple services and password quality can be poor. 
+
+Fortunately, nowadays PHP makes this easy. 
 
 **`password_hash`によるパスワードのハッシュ**
 
@@ -44,10 +49,12 @@ if (password_verify('bad-password', $passwordHash)) {
 }
 {% endhighlight %}  
 
+`password_hash()` takes care of password salting for you. The salt is stored, along with the algorithm and "cost", as part of the hash.  `password_verify()` extracts this to determine how to check the password, so you don't need a separate database field to store your salts. 
 
 * [`password_hash` について調べる] [1]
 * [PHP >= 5.3.7 && < 5.5 で使える `password_compat`] [2]
 * [暗号学的なハッシュについて調べる] [3]
+* [ソルトについて調べる] [5]
 * [PHP `password_hash()` RFC] [4]
 
 
@@ -55,3 +62,4 @@ if (password_verify('bad-password', $passwordHash)) {
 [2]: https://github.com/ircmaxell/password_compat
 [3]: http://ja.wikipedia.org/wiki/暗号学的ハッシュ関数
 [4]: https://wiki.php.net/rfc/password_hash
+[5]: https://en.wikipedia.org/wiki/Salt_(cryptography)

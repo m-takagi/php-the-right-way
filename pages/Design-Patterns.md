@@ -77,70 +77,7 @@ print_r($veyron->getMakeAndModel()); // 出力は "ブガッティ ヴェイロ�
 特定のクラスのたったひとつのインスタンスにだけアクセスさせるようにしたいということがよくある。
 そんなときに使えるのがシングルトンパターンだ。
 
-{% highlight php %}
-<?php
-class Singleton
-{
-    /**
-     * @var Singleton The reference to *Singleton* instance of this class
-     */
-    private static $instance;
-    
-    /**
-     * Returns the *Singleton* instance of this class.
-     *
-     * @return Singleton The *Singleton* instance.
-     */
-    public static function getInstance()
-    {
-        if (null === static::$instance) {
-            static::$instance = new static();
-        }
-        
-        return static::$instance;
-    }
-
-    /**
-     * Protected constructor to prevent creating a new instance of the
-     * *Singleton* via the `new` operator from outside of this class.
-     */
-    protected function __construct()
-    {
-    }
-
-    /**
-     * Private clone method to prevent cloning of the instance of the
-     * *Singleton* instance.
-     *
-     * @return void
-     */
-    private function __clone()
-    {
-    }
-
-    /**
-     * Private unserialize method to prevent unserializing of the *Singleton*
-     * instance.
-     *
-     * @return void
-     */
-    private function __wakeup()
-    {
-    }
-}
-
-class SingletonChild extends Singleton
-{
-}
-
-$obj = Singleton::getInstance();
-var_dump($obj === Singleton::getInstance());             // bool(true)
-
-$anotherObj = SingletonChild::getInstance();
-var_dump($anotherObj === Singleton::getInstance());      // bool(false)
-
-var_dump($anotherObj === SingletonChild::getInstance()); // bool(true)
-{% endhighlight %}
+**TODO: NEED NEW SINGLETON CODE EXAMPLE**
 
 このコードは、[*静的* な変数](http://php.net/language.variables.scope#language.variables.scope.static)
 と`getInstance()`メソッドを使ってシングルトンパターンを実装している。

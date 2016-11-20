@@ -107,12 +107,15 @@ require 'vendor/autoload.php';
 
 ### 依存関係の更新
 
+<<<<<<< HEAD
 Composer は `composer.lock` というファイルを作る。
-これは、最初に `php composer.phar install`
+これは、最初に `composer install`
 を実行したときにダウンロードした、各パッケージの正確なバージョンを記録しておくものだ。
 他の開発者とプロジェクトを共有するときに `composer.lock` も一緒に配布しておくと、
-他の人が `php composer.phar install` を実行したときにもまったく同じバージョンがインストールされるようになる。
-依存関係を更新するには、 `php composer.phar update` を実行しよう。
+他の人が `composer install` を実行したときにもまったく同じバージョンがインストールされるようになる。
+依存関係を更新するには、 `composer update` を実行しよう。
+デプロイのときには `composer update` を使ってはいけない。必ず `composer install` を使うこと。
+そうしないと、開発環境と運用環境で違うバージョンのパッケージを使ってしまうことになる。
 
 これは、バージョンの要件を柔軟に定義できるので便利だ。
 たとえば、バージョンに `~1.8` と書いた場合は「`1.8.0` 以降のバージョン。ただし `2.0.x-dev` は含まない」と指定したことになる。

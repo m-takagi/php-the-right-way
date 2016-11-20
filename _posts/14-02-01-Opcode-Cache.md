@@ -25,7 +25,7 @@ PHP 5.5 からは、 [Zend OPcache][opcache-book] というオペコードキャ
 
 * [Zend OPcache][opcache-book] (PHP 5.5 以降に組み込まれている)
 * Zend OPcache (元 Zend Optimizer+) は [オープンソースになった][Zend Optimizer+]
-* [APC] (PHP 5.4 以前のバージョン)
+* [APC] - PHP 5.4 以前のバージョン用
 * [XCache]
 * [WinCache] (Microsoft Windows Server 用の拡張)
 * [Wikipediaにおける、PHPアクセラレータの一覧][PHP_accelerators]
