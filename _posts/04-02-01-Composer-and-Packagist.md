@@ -107,7 +107,6 @@ require 'vendor/autoload.php';
 
 ### 依存関係の更新
 
-<<<<<<< HEAD
 Composer は `composer.lock` というファイルを作る。
 これは、最初に `composer install`
 を実行したときにダウンロードした、各パッケージの正確なバージョンを記録しておくものだ。
