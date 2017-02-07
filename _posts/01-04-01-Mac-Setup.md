@@ -9,7 +9,7 @@ anchor:  mac_setup
 OS X には PHP が最初からインストールされているけど、最新の安定版からは微妙に遅れている。
 Mavericks についてくるのは PHP 5.4.17 だし Yosemite でも 5.5.9。El Capitan にしても 5.5.29 だし
 Sierra でも 5.6.24 だ。
-PHP 7.0 に比べると、十分だとはいえない。
+PHP 7.1 に比べると、十分だとはいえない。
 
 PHP を OS X にインストールするには、いくつかの方法がある。
 
@@ -20,7 +20,7 @@ PHP やその拡張モジュールも簡単にインストールできる。
 [Homebrew PHP] が、Homebrew 用の PHP 関連の "Formula" をまとめたリポジトリだ。
 これを使えば PHP をインストールできる。
 
-現時点では、`php53`、`php54`、`php55`、`php56`、`php70` が `brew install` コマンドでインストールできる。
+現時点では、`php53`、`php54`、`php55`、`php56`、`php70`、`php71` が `brew install` コマンドでインストールできる。
 これらを切り替えるには、環境変数 `PATH` を設定すればいい。
 [brew-php-switcher][brew-php-switcher] を使えば、そのへんを自動的にやってくれる。
 
@@ -33,14 +33,14 @@ OS X上のオープンソースソフトウェアのコンパイルやインス�
 MacPorts はコンパイル済みのバイナリにも対応しているので、関連するライブラリなどを毎回ソースからコンパイルしなおす必要はない。
 なので、まだ何もパッケージをインストールしていない状態でも、時間の心配をする必要はない。
 
-現時点でインストールできるのは `php54`、`php55`、`php56`、`php70` のいずれかで、`port install` コマンドを使ってこのようにインストールする。
+現時点でインストールできるのは `php54`、`php55`、`php56`、`php70`、`php71` のいずれかで、`port install` コマンドを使ってこのようにインストールする。
 
     sudo port install php56
-    sudo port install php70
+    sudo port install php71
 
 そして、`select` コマンドを使って、アクティブな PHP を切り替える。
 
-    sudo port select --set php php70
+    sudo port select --set php php71
 
 ### phpbrew によるインストール
 
@@ -50,7 +50,7 @@ MacPorts はコンパイル済みのバイナリにも対応しているので�
 
 ### Liipのバイナリインストーラーによる PHP のインストール
 
-[php-osx.liip.ch] は、たった一行で PHP をインストールできる方法だ。バージョン 5.3 から 7.0 に対応している。
+[php-osx.liip.ch] は、たった一行で PHP をインストールできる方法だ。バージョン 5.3 から 7.1 に対応している。
 Apple がインストールした php のバイナリは上書きせず、まったく別の場所 (/usr/local/php5) にすべてをインストールする。
 
 ### ソースからのコンパイル
