@@ -40,16 +40,21 @@ _PHP: The Right Way_ は、他の言語にも翻訳されている。
 * [简体中文](http://laravel-china.github.io/php-the-right-way/)
 * [繁體中文](http://laravel-taiwan.github.io/php-the-right-way)
 
+## Book
+
+最新版の _PHP: The Right Way_ （英語版）はPDFやEPUBやMOBIでも公開されている。 [Leanpubでゲットしよう。][1]
+
 ## 協力するには
 
-みんなでこのサイトをもっとよいものにしよう。PHPを勉強したい人たちのために良質な情報を集めるんだ! [GitHubでね。][1]
+みんなでこのサイトをもっとよいものにしよう。PHPを勉強したい人たちのために良質な情報を集めるんだ! [GitHubでね。][2]
 
 ## 拡散希望
 
 _PHP: The Right Way_ のバナー画像を用意したので、みんなのサイトで使ってほしい。
 PHPを勉強したい人たちに「いい情報がここにあるよ！」ってぜひ伝えよう。
 
-[バナー画像][2]
+[バナー画像][3]
 
-[1]: https://github.com/codeguy/php-the-right-way/tree/gh-pages
-[2]: /banners.html
+[1]: https://leanpub.com/phptherightway
+[2]: https://github.com/codeguy/php-the-right-way/tree/gh-pages
+[3]: /banners.html
