@@ -47,7 +47,7 @@ DateTime オブジェクトどうしでごく普通に比較することもで�
 {% highlight php %}
 <?php
 if ($start < $end) {
-    echo "Start is before end!\n";
+    echo "Start is before the end!\n";
 }
 {% endhighlight %}
 
