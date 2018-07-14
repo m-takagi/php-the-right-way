@@ -22,7 +22,7 @@ error_reporting = -1
 log_errors = On
 {% endhighlight %}
 
-> 値に`-1`を指定すると、仮に将来のバージョンのPHPで新しいレベルと定数が追加されたとしてもすべてのエラーを表示するようになります。E_ALL 定数も、PHP 5.4以降これと同じ挙動になります。 - [php.net](http://php.net/manual/function.error-reporting.php)
+> 値に`-1`を指定すると、仮に将来のバージョンのPHPで新しいレベルと定数が追加されたとしてもすべてのエラーを表示するようになります。E_ALL 定数も、PHP 5.4以降これと同じ挙動になります。 - [php.net](https://secure.php.net/function.error-reporting)
 
 `E_STRICT`エラーレベル定数は5.3.0で導入されたもので、当時は
 `E_ALL`には含まれていなかった。でも5.4.0からは`E_ALL`に含まれるようになった。
@@ -51,7 +51,7 @@ log_errors = On
 しかし、ユーザーにはエラーが見えなくなる。これらの設定項目についてもっと詳しく知りたければ、
 PHP のマニュアルを読もう。
 
-* [error_reporting](http://php.net/errorfunc.configuration#ini.error-reporting)
-* [display_errors](http://php.net/errorfunc.configuration#ini.display-errors)
-* [display_startup_errors](http://php.net/errorfunc.configuration#ini.display-startup-errors)
-* [log_errors](http://php.net/errorfunc.configuration#ini.log-errors)
+* [error_reporting](https://secure.php.net/errorfunc.configuration#ini.error-reporting)
+* [display_errors](https://secure.php.net/errorfunc.configuration#ini.display-errors)
+* [display_startup_errors](https://secure.php.net/errorfunc.configuration#ini.display-startup-errors)
+* [log_errors](https://secure.php.net/errorfunc.configuration#ini.log-errors)

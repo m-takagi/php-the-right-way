@@ -7,8 +7,8 @@ anchor:  user_groups
 ## PHP ユーザーグループ {#user_groups_title}
 
 大都市に住んでいるなら、きっと近場に PHP ユーザーグループがあるはずだ。
-近場の PHP ユーザーグループを見つけるには、[php.net のユーザーグループ一覧][php-uglist] を使えばいい。
-これは[PHP.ug][php-ug]をベースにしたものだ。それ以外にも、[Meetup.com][meetup] を使ってもいいし、
+近場の PHP ユーザーグループを見つけるには、[PHP.ug][php-ug] を使えばいい。
+それ以外にも、[Meetup.com][meetup] を使ってもいいし、
 お好みのサーチエンジン (たとえば [Google][google] とか) で
 ```php user group near me``` みたいに検索してみるとかね。
 小さな町なら、もしかしたらユーザーグループがないかもしれない。
@@ -26,8 +26,7 @@ PHPWomen は、サポートやメンターシップ、教育などのネット�
 
 [google]: https://www.google.com/search?q=php+user+group+near+me
 [meetup]: http://www.meetup.com/find/
-[php-ug]: http://php.ug/
+[php-ug]: https://php.ug/
 [NomadPHP]: https://nomadphp.com/
 [PHPWomen]: http://phpwomen.org/
 [php-wiki]: https://wiki.php.net/usergroups
-[php-uglist]: http://php.net/ug.php

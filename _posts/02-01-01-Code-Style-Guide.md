@@ -13,7 +13,7 @@ PHP のコミュニティはとてもでっかくて、いろんな人たちが�
 
 [Framework Interop Group][fig] っていうところ
 が、おすすめのスタイルを提案している。
-コーディングスタイルに関する提案は、[PSR-0][psr0]と[PSR-1][psr1]、[PSR-2][psr2]、そして[PSR-4][psr4]だ。
+コーディングスタイルとは関係ないものもあるけれど、[PSR-1][psr1]、[PSR-2][psr2]、そして[PSR-4][psr4]はコーディングスタイルを扱っている。
 これって要するに、
 Drupal や Zend、Symfony、Laravel、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 などのプロジェクトが採用しつつある規約をまとめただけのものなんだ。
@@ -24,7 +24,6 @@ Drupal や Zend、Symfony、Laravel、CakePHP、phpBB、AWS SDK、FuelPHP、Lith
 そうすれば、他の人にもコードを読んでもらいやすくなるし、手助けも得やすくなるだろう。
 また、コンポーネントを実装するアプリケーションがいろんなサードパーティのコードを組み合わせても、一貫性を保てる。
 
-* [PSR-0 とは][psr0]
 * [PSR-1 とは][psr1]
 * [PSR-2 とは][psr2]
 * [PSR-4 とは][psr4]
@@ -58,18 +57,20 @@ PHP_CodeSnifferを使っている場合は、指摘されたコードレイア�
 
     php-cs-fixer fix -v --level=psr2 file.php
 
-変数名や関数名、そしてディレクトリ名なんかは、英語にしておくことをおすすめする。
+変数や関数などのシンボル名、そしてディレクトリ名などのコード基盤なんかは、英語にしておくことをおすすめする。
 コードのコメントに関しては、別に英語にこだわらなくてもかまわない。
 そのコードを扱う(将来扱う可能性がある)すべての人が読みやすいものであれば、何語でもかまわない。
 
-[fig]: http://www.php-fig.org/
-[psr0]: http://www.php-fig.org/psr/psr-0/
-[psr1]: http://www.php-fig.org/psr/psr-1/
-[psr2]: http://www.php-fig.org/psr/psr-2/
-[psr4]: http://www.php-fig.org/psr/psr-4/
-[pear-cs]: http://pear.php.net/manual/ja/standards.php
-[symfony-cs]: http://symfony.com/doc/current/contributing/code/standards.html
-[phpcs]: http://pear.php.net/package/PHP_CodeSniffer/
+PHPでクリーンなコードを書くための資料としておすすめなのが [Clean Code PHP][cleancode] だ。
+
+[fig]: https://www.php-fig.org/
+[psr1]: https://www.php-fig.org/psr/psr-1/
+[psr2]: https://www.php-fig.org/psr/psr-2/
+[psr4]: https://www.php-fig.org/psr/psr-4/
+[pear-cs]: https://pear.php.net/manual/en/standards.php
+[symfony-cs]: https://symfony.com/doc/current/contributing/code/standards.html
+[phpcs]: https://pear.php.net/package/PHP_CodeSniffer/
 [phpcbf]: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically
 [st-cs]: https://github.com/benmatselby/sublime-phpcs
-[phpcsfixer]: http://cs.sensiolabs.org/
+[phpcsfixer]: https://cs.sensiolabs.org/
+[cleancode]: https://github.com/jupeter/clean-code-php

@@ -29,7 +29,7 @@ Ruby の [RSpec project][Rspec] の影響を受けている。
 
 
 [Behat]: http://behat.org/
-[Cucumber]: http://cukes.info/
-[PHPSpec]: http://www.phpspec.net/
-[RSpec]: http://rspec.info/
-[Codeception]: http://codeception.com/
+[Cucumber]: https://cucumber.io/
+[PHPSpec]: https://www.phpspec.net/
+[RSpec]: https://rspec.info/
+[Codeception]: https://codeception.com/

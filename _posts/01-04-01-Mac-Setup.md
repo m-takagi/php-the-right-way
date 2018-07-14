@@ -7,21 +7,21 @@ anchor:  mac_setup
 ## Mac の人は  {#mac_setup_title}
 
 OS X には PHP が最初からインストールされているけど、最新の安定版からは微妙に遅れている。
-Mavericks についてくるのは PHP 5.4.17 だし Yosemite でも 5.5.9。El Capitan にしても 5.5.29 だし
-Sierra でも 5.6.24 だ。
-PHP 7.1 に比べると、十分だとはいえない。
-
-PHP を OS X にインストールするには、いくつかの方法がある。
+最新の PHP を OS X にインストールするには、いくつかの方法がある。
 
 ### Homebrew によるインストール
 
 [Homebrew] は OS X 用の強力なパッケージ管理ツールで、
 PHP やその拡張モジュールも簡単にインストールできる。
-[Homebrew PHP] が、Homebrew 用の PHP 関連の "Formula" をまとめたリポジトリだ。
-これを使えば PHP をインストールできる。
+Homebrew のコアリポジトリで、PHP 5.6、7.0、7.1、7.2 用の "Formula" が公開されている。
 
-現時点では、`php53`、`php54`、`php55`、`php56`、`php70`、`php71` が `brew install` コマンドでインストールできる。
-これらを切り替えるには、環境変数 `PATH` を設定すればいい。
+最新版の PHP をインストールするには、こんなコマンドを実行すればいい。
+
+```
+brew install php@7.2
+```
+
+Homebrew の PHP のバージョンを切り替えるには、環境変数 `PATH` を設定すればいい。
 [brew-php-switcher][brew-php-switcher] を使えば、そのへんを自動的にやってくれる。
 
 ### Macports によるインストール
@@ -62,19 +62,14 @@ Apple がインストールした php のバイナリは上書きせず、まっ
 
 ### 全部入りのインストーラー
 
-ここまでの方法は主に PHP 本体だけを扱うもので、たとえば Apache や Nginx、そしてデータベースサーバーなどは用意していない。
-いわゆる「全部入り」のソリューションである [MAMP][mamp-downloads] や [XAMPP][xampp] を使えば、
-これらのソフトウェアもまとめてインストールしてくれる。
-でも、簡単にインストールできるぶん、柔軟性に欠けるという弱点もある。
-
-[Homebrew]: http://brew.sh/
+[Homebrew]: https://brew.sh/
 [Homebrew PHP]: https://github.com/Homebrew/homebrew-php#installation
 [MacPorts]: https://www.macports.org/install.php
 [phpbrew]: https://github.com/phpbrew/phpbrew
-[php-osx.liip.ch]: http://php-osx.liip.ch/
-[mac-compile]: http://php.net/install.macosx.compile
+[php-osx.liip.ch]: https://php-osx.liip.ch/
+[mac-compile]: https://secure.php.net/install.macosx.compile
 [xcode-gcc-substitution]: https://github.com/kennethreitz/osx-gcc-installer
 ["Command Line Tools for XCode"]: https://developer.apple.com/downloads
 [mamp-downloads]: http://www.mamp.info/en/downloads/
-[xampp]: http://www.apachefriends.org/jp/xampp.html
+[xampp]: https://www.apachefriends.org/jp/index.html
 [brew-php-switcher]: https://github.com/philcook/brew-php-switcher

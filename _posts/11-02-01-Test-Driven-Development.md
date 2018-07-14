@@ -6,7 +6,7 @@ anchor:  test_driven_development
 
 ## テスト駆動開発 {#test_driven_development_title}
 
-[Wikipedia](http://en.wikipedia.org/wiki/Test-driven_development) によると、
+[Wikipedia](https://wikipedia.org/wiki/Test-driven_development) によると、
 
 > Test-driven development (TDD) is a software development process that relies on the repetition of a very short
 > development cycle: first the developer writes a failing automated test case that defines a desired improvement or new
@@ -39,17 +39,17 @@ test.php で `var_dump()` とかいうやり方もあるけど、
 もし何かプロジェクトを運営していて pull request を受け付けているのなら、
 「パッチにはテストをつけること」という条件をつけておくといいだろう。
 
-[PHPUnit](http://phpunit.de)は、PHPアプリケーションでユニットテストを書くための
+[PHPUnit](https://phpunit.de)は、PHPアプリケーションでユニットテストを書くための
 デファクトスタンダードのフレームワークだ。しかしそれ以外にも選択肢がある。
 
 * [atoum](https://github.com/atoum/atoum)
 * [Kahlan](https://github.com/crysalead/kahlan)
-* [Peridot](http://peridot-php.github.io/)
+* [Peridot](https://peridot-php.github.io/)
 * [SimpleTest](http://simpletest.org)
 
 ### インテグレーションテスト
 
-[Wikipedia](http://en.wikipedia.org/wiki/Integration_testing) によると、
+[Wikipedia](https://wikipedia.org/wiki/Integration_testing) によると、
 
 > Integration testing (sometimes called Integration and Testing, abbreviated "I&T") is the phase in software testing in
 > which individual software modules are combined and tested as a group. It occurs after unit testing and before
@@ -68,7 +68,7 @@ test.php で `var_dump()` とかいうやり方もあるけど、
 
 #### 機能テスト用のツール
 
-* [Selenium](http://seleniumhq.com)
-* [Mink](http://mink.behat.org)
-* [Codeception](http://codeception.com) これはフルスタックのテスティングフレームワークで、受け入れテスト用のツール群も含んでいる
-* [Storyplayer](http://datasift.github.io/storyplayer) これはフルスタックのテスティングフレームワークで、テスト環境をオンデマンドで作ったり破棄したりする機能も含んでいる
+* [Selenium](https://docs.seleniumhq.org/)
+* [Mink](http://mink.behat.org/)
+* [Codeception](https://codeception.com/) これはフルスタックのテスティングフレームワークで、受け入れテスト用のツール群も含んでいる
+* [Storyplayer](https://datasift.github.io/storyplayer/) これはフルスタックのテスティングフレームワークで、テスト環境をオンデマンドで作ったり破棄したりする機能も含んでいる

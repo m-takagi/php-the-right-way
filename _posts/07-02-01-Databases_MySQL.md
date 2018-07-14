@@ -28,10 +28,10 @@ PHP 用の [mysql] 拡張モジュールは既に思いっきり古くなって�
 * [PHP: MySQL 用の API の選択肢][mysql_api]
 * [MySQL開発者用のPDOチュートリアル][pdo4mysql_devs]
 
-[mysql]: http://php.net/mysql
-[mysql_deprecated]: http://php.net/migration55.deprecated
-[mysql_removed]: http://php.net/manual/ja/migration70.removed-exts-sapis.php
-[mysqli]: http://php.net/mysqli
-[pdo]: http://php.net/pdo
-[mysql_api]: http://php.net/mysqlinfo.api.choosing
+[mysql]: https://secure.php.net/mysqli
+[mysql_deprecated]: https://secure.php.net/migration55.deprecated
+[mysql_removed]: https://secure.php.net/manual/migration70.removed-exts-sapis.php
+[mysqli]: https://secure.php.net/mysqli
+[pdo]: https://secure.php.net/pdo
+[mysql_api]: https://secure.php.net/mysqlinfo.api.choosing
 [pdo4mysql_devs]: http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers

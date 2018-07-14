@@ -23,10 +23,58 @@ PHPのフレームワークでも、制御の反転は実現されてきた。�
 依存性の注入を使えば、これをもっとすっきりと解決できる。依存関係が必要になったときに、必要なものだけを注入すればいい。
 ハードコーディングする必要はない。
 
-### 依存関係逆転の原則
+### S.O.L.I.D.
 
-依存関係逆転の原則は、オブジェクト指向設計の原則である S.O.L.I.D の "D" にあたるもので、
-*「抽象に依存しろ。具象に依存するな」* という原則だ。
+#### Single Responsibility Principle
+
+The Single Responsibility Principle is about actors and high-level architecture. It states that “A class should have
+only one reason to change.” This means that every class should _only_ have responsibility over a single part of the
+functionality provided by the software. The largest benefit of this approach is that it enables improved code
+_reusability_. By designing our class to do just one thing, we can use (or re-use) it in any other program without
+changing it.
+
+#### Open/Closed Principle
+
+The Open/Closed Principle is about class design and feature extensions. It states that “Software entities (classes,
+modules, functions, etc.) should be open for extension, but closed for modification.” This means that we should design
+our modules, classes and functions in a way that when a new functionality is needed, we should not modify our existing
+code but rather write new code that will be used by existing code. Practically speaking, this means that we should write
+classes that implement and adhere to _interfaces_, then type-hint against those interfaces instead of specific classes.
+
+The largest benefit of this approach is that we can very easily extend our code with support for something new without
+having to modify existing code, meaning that we can reduce QA time, and the risk for negative impact to the application
+is substantially reduced. We can deploy new code, faster, and with more confidence.
+
+#### Liskov Substitution Principle
+
+The Liskov Substitution Principle is about subtyping and inheritance. It states that “Child classes should never break
+the parent class’ type definitions.” Or, in Robert C. Martin’s words, “Subtypes must be substitutable for their base
+types.”
+
+For example, if we have a `FileInterface` interface which defines an `embed()` method, and we have `Audio` and `Video`
+classes which both implement the `embed()` method, then we can expect that the usage of the `embed()` method will always
+do the thing that we intend. If we later create a `PDF` class or a `Gist` class which implement the `FileInterface`
+interface, we will already know and understand what the `embed()` method will do. The largest benefit of this approach
+is that we have the ability to build flexible and easily-configurable programs, because when we change one object of a
+type (e.g., `FileInterface`) to another we don't need to change anything else in our program.
+
+#### Interface Segregation Principle
+
+The Interface Segregation Principle (ISP) is about _business-logic-to-clients_ communication. It states that “No client
+should be forced to depend on methods it does not use.” This means that instead of having a single monolithic interface
+that all conforming classes need to implement, we should instead provide a set of smaller, concept-specific interfaces
+that a conforming class implements one or more of.
+
+For example, a `Car` or `Bus` class would be interested in a `steeringWheel()` method, but a `Motorcycle` or `Tricycle`
+class would not. Conversely, a `Motorcycle` or `Tricycle` class would be interested in a `handlebars()` method, but a
+`Car` or `Bus` class would not. There is no need to have all of these types of vehicles implement support for both
+`steeringWheel()` as well as `handlebars()`, so we should break-apart the source interface.
+
+#### 依存関係逆転の原則
+
+The Dependency Inversion Principle is about removing hard-links between discrete classes so that new functionality can
+be leveraged by passing a different class.
+これは *「抽象に依存しろ。具象に依存するな」* という原則だ。
 簡単に言うと、依存関係はインターフェイスや抽象クラスに対して設定すべきものであり、それを実装したクラスに対して設定してはいけないってこと。
 先ほどの例をこの原則に沿って書き直すと、こんなふうになる。
 

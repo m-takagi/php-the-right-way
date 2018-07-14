@@ -68,7 +68,9 @@ Younes Rafieの記事[Easy Deployment of PHP Applications with Deployer][phpdepl
 * [Expert PHP Deployments][expert_php_deployments] - CapistranoやPhing、Vagrantによるデプロイを扱ったフリーの書籍
 * [Deploying PHP Applications][deploying_php_applications] - PHPのデプロイに関するベストプラクティスやツールを扱った書籍
 
-### サーバープロビジョニング
+[Capistrano] is a system for *intermediate-to-advanced programmers* to execute commands in a structured, repeatable way on one or more remote machines. It is pre-configured for deploying Ruby on Rails applications, however you can successfully deploy PHP systems with it. Successful use of Capistrano depends on a working knowledge of Ruby and Rake.
+
+[Ansistrano] is a couple of Ansible roles to easily manage the deployment process (deploy and rollback) for scripting applications such as PHP, Python and Ruby. It's an Ansible port for [Capistrano]. It's been used by quite a lot of PHP companies already.
 
 サーバーの構成管理は、大量のサーバーを扱うようになると特に大変なタスクだ。
 いろんなツールが用意されているので、こういったインフラの構築を自動化できる。
@@ -93,7 +95,8 @@ Younes Rafieの記事[Easy Deployment of PHP Applications with Deployer][phpdepl
 サーバー環境や仮想マシンをまるごと構築できる。
 Amazon Web Servicesとも統合されていて、OpsWorksというサービスを通じて利用する。
 
-#### あわせて読みたい:
+* [Automate your project with Apache Ant][apache_ant_tutorial]
+* [Deploying PHP Applications][deploying_php_applications] - paid book on best practices and tools for PHP deployment.
 
 * [Ansibleチュートリアル][an_ansible_tutorial]
 * [Ansible for DevOps][ansible_for_devops] - Ansibleのすべてを扱った書籍
@@ -101,6 +104,15 @@ Amazon Web Servicesとも統合されていて、OpsWorksというサービス�
 * [LAMPアプリケーションのデプロイにChefやVagrantそしてEC2を使うというお題で書かれた全3回のシリーズ][chef_vagrant_and_ec2]
 * [Chefのクックブック。PHPのインストールと設定やPEARについて扱っている][Chef_cookbook]
 * [Chefのビデオチュートリアルシリーズ][Chef_tutorial]
+
+#### Further reading:
+
+* [An Ansible Tutorial][an_ansible_tutorial]
+* [Ansible for DevOps][ansible_for_devops] - paid book on everything Ansible
+* [Ansible for AWS][ansible_for_aws] - paid book on integrating Ansible and Amazon Web Services
+* [Three part blog series about deploying a LAMP application with Chef, Vagrant, and EC2][chef_vagrant_and_ec2]
+* [Chef Cookbook which installs and configures PHP and the PEAR package management system][Chef_cookbook]
+* [Chef video tutorial series][Chef_tutorial]
 
 ### 継続的インテグレーション
 
@@ -124,27 +136,25 @@ GitHubと統合されており、PHPを含むさまざまな言語に対応し�
 * [PHPCIによる継続的インテグレーション][PHPCI]
 * [Teamcityによる継続的インテグレーション][Teamcity]
 
-
-[buildautomation]: http://ja.wikipedia.org/wiki/ビルド_(ソフトウェア)
-[Phing]: http://www.phing.info/
-[Apache Ant]: http://ant.apache.org/
-[Capistrano]: https://github.com/capistrano/capistrano/wiki
-[phpdeploy_capistrano]: http://www.davegardner.me.uk/blog/2012/02/13/php-deployment-with-capistrano/
-[phpdeploy_deployer]: http://www.sitepoint.com/deploying-php-applications-with-deployer/
+[buildautomation]: https://wikipedia.org/wiki/Build_automation
+[Phing]: https://www.phing.info/
+[Apache Ant]: https://ant.apache.org/
+[Capistrano]: http://capistranorb.com/
+[Ansistrano]: https://ansistrano.com
+[phpdeploy_deployer]: https://www.sitepoint.com/deploying-php-applications-with-deployer/
 [Chef]: https://www.chef.io/
 [chef_vagrant_and_ec2]: http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/
 [Chef_cookbook]: https://github.com/chef-cookbooks/php
 [Chef_tutorial]: https://www.youtube.com/playlist?list=PL11cZfNdwNyPnZA9D1MbVqldGuOWqbumZ
-[apache_ant_tutorial]: http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/
+[apache_ant_tutorial]: https://code.tutsplus.com/tutorials/automate-your-projects-with-apache-ant--net-18595
 [Travis CI]: https://travis-ci.org/
-[Jenkins]: http://jenkins-ci.org/
-[PHPCI]: http://www.phptesting.org/
-[Teamcity]: http://www.jetbrains.com/teamcity/
-[Deployer]: http://deployer.org/
+[Jenkins]: https://jenkins.io/
+[PHPCI]: https://www.phptesting.org/
+[Teamcity]: https://www.jetbrains.com/teamcity/
+[Deployer]: https://deployer.org/
 [Rocketeer]: http://rocketeer.autopergamene.eu/
-[Magallanes]: http://magephp.com/
-[expert_php_deployments]: http://viccherubini.com/assets/Expert-PHP-Deployments.pdf
-[deploying_php_applications]: http://www.deployingphpapplications.com
+[Magallanes]: https://www.magephp.com/
+[deploying_php_applications]: https://deployingphpapplications.com/
 [Ansible]: https://www.ansible.com/
 [Puppet]: https://puppet.com/
 [ansible_for_devops]: https://leanpub.com/ansible-for-devops

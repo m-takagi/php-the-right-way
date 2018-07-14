@@ -5,7 +5,7 @@ anchor: dependency_injection
 
 # 依存性の注入 {#dependency_injection_title}
 
-[Wikipedia](http://en.wikipedia.org/wiki/Dependency_injection)によると、
+[Wikipedia](https://wikipedia.org/wiki/Dependency_injection)によると、
 
 > 依存性の注入とはソフトウェアデザインパターンの1つである。依存関係をソースコードから排除して、実行時あるいはコンパイル時にその依存関係を変更できるようにする。
 

@@ -31,10 +31,10 @@ Vagrantを使い始めるときの手助けになるのが、これらのサー�
 - [Phansible][Phansible]: 使いやすいインターフェイスで、PHP プロジェクト用の Ansible Playbook を生成してくれる。
 
 
-[Vagrant]: http://vagrantup.com/
-[Puppet]: http://www.puppetlabs.com/
+[Vagrant]: https://www.vagrantup.com/
+[Puppet]: https://puppet.com/
 [Chef]: https://www.chef.io/
 [Rove]: http://rove.io/
 [Puphpet]: https://puphpet.com/
-[Protobox]: http://getprotobox.com/
+[Protobox]: https://www.getprotobox.com/
 [Phansible]: http://phansible.com/

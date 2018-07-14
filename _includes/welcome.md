@@ -48,13 +48,5 @@ _PHP: The Right Way_ は、他の言語にも翻訳されている。
 
 みんなでこのサイトをもっとよいものにしよう。PHPを勉強したい人たちのために良質な情報を集めるんだ! [GitHubでね。][2]
 
-## 拡散希望
-
-_PHP: The Right Way_ のバナー画像を用意したので、みんなのサイトで使ってほしい。
-PHPを勉強したい人たちに「いい情報がここにあるよ！」ってぜひ伝えよう。
-
-[バナー画像][3]
-
 [1]: https://leanpub.com/phptherightway
 [2]: https://github.com/codeguy/php-the-right-way/tree/gh-pages
-[3]: /banners.html

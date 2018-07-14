@@ -35,6 +35,6 @@ PSR-0もPSR-4も、今はどちらでも使える。
 * [PSR-4][psr4]
 
 
-[namespaces]: http://php.net/language.namespaces
-[psr0]: http://www.php-fig.org/psr/psr-0/
-[psr4]: http://www.php-fig.org/psr/psr-4/
+[namespaces]: https://secure.php.net/language.namespaces
+[psr0]: https://www.php-fig.org/psr/psr-0/
+[psr4]: https://www.php-fig.org/psr/psr-4/

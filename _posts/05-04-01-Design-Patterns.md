@@ -17,4 +17,6 @@ anchor:  design_patterns
 一方、フレームワークを使わずにコードを書く場合はどうだろう。
 自分が書こうとしているアプリケーションのタイプや規模に応じて、最適なパターンをみつける必要がある。
 
-* 詳しくは [デザインパターン](/pages/Design-Patterns.html) で
+PHPでのデザインパターンや実装例については、これを見ればいい。
+
+<https://designpatternsphp.readthedocs.io/>

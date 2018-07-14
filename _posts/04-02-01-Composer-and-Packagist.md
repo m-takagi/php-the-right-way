@@ -6,7 +6,7 @@ anchor:  composer_and_packagist
 
 ## Composer と Packagist {#composer_and_packagist_title}
 
-Composerは、PHP用の **すばらしい** 依存管理ツールだ。プロジェクト内の依存関係を
+Composerは、PHP用としておすすめの依存管理ツールだ。プロジェクト内の依存関係を
 `composer.json` ファイルに書いてシンプルなコマンドを打ち込めば、
 Composer が自動的にそれをダウンロードしてくれるだけでなく、オートロードの設定までしてくれるんだ。
 Composer は、node.js の NPM や Ruby の Bundler みたいなものだ。
@@ -18,9 +18,9 @@ Composer に対応したライブラリは既にいろいろ出回っていて�
 
 composer をダウンロードするいちばん安全な方法は、[公式サイトの指示に従うこと](https://getcomposer.org/download/)。
 この方法だと、インストーラが壊れていたり改ざんされていたりしないかを確かめられる。
-インストーラは Composer を *ローカルに* インストールする。つまり、いま作業中のディレクトリにインストールするということ。
+インストーラは、`composer.phar` のバイナリを _カレントディレクトリ_ にインストールする。
 
-お勧めは、*グローバルにインストールする* (要するに、/usr/local/bin にだけ置く) 方式だ。
+お勧めは、*グローバルにインストールする* (要するに、`/usr/local/bin` にだけ置く) 方式だ。
 そのためには、次のコマンドを実行すればいい。
 
 {% highlight console %}
@@ -38,51 +38,16 @@ Windowsの場合、一番簡単なのは [ComposerSetup][6] インストーラ�
 これは、すべてのユーザーで使えるようにインストールしたうえで `$PATH` も設定してくれるので、
 あとはコマンドラインから `composer` を呼ぶだけで使えるようになる。
 
-### Composer の手動インストール
-
-手動で Composer をインストールするのは初心者にはおすすめできない。
-でもなぜか、さっきのインストール方法よりも手作業でのインストールをしたがる人もいるらしい。
-さっきの対話的なインストールでは何をしていたのかというと、こんなことを確かめていたんだ。
-
-- 適切なバージョンの PHP が入っている
-- `.phar` ファイルを正しく実行できる
-- ディレクトリのパーミッションが適切に設定されている
-- 問題のある特定の拡張モジュールがロードされていない
-- `php.ini` の設定が適切にされている
-
-手作業でのインストールではこういったチェックは一切行わない。
-それでもいいの？
-
-それでもいいという人向けに、手動での Composer のインストール方法を示す。
-
-{% highlight console %}
-curl -s https://getcomposer.org/composer.phar -o $HOME/local/bin/composer
-chmod +x $HOME/local/bin/composer
-{% endhighlight %}
-
-`$HOME/local/bin` (あるいは、その他あなたが指定した場所) にパスを通しておく必要がある。
-これで、`composer` コマンドが使えるようになるだろう。
-
-何かのドキュメントに「`php composer.phar install` で Composer を実行します」と書いてあれば、
-その部分を次のように読み替えればいい。
-
-{% highlight console %}
-composer install
-{% endhighlight %}
-    
-このセクションでは、composer をグローバルにインストールしたものとして説明する。
-
 ### 依存関係の定義とインストール
 
 Composer は、プロジェクトの依存関係を `composer.json` というファイルで管理する。
 このファイルを手で書き換えてもいいし、Composer を使って編集してもいい。
-
 `composer require` を実行すると、プロジェクトの依存関係を追加する。
 もしまだ `composer.json` がなければ、新しいファイルを作る。
 この例は、プロジェクトの依存関係に [Twig] を追加するものだ。
 
 {% highlight console %}
-composer require twig/twig:~1.8
+composer require twig/twig:^2.0
 {% endhighlight %}
 
 あるいは、 `composer init` コマンドを実行して、
@@ -149,9 +114,9 @@ composer global require phpunit/phpunit
 
 * [Composerとは]
 
-[Packagist]: http://packagist.org/
-[Twig]: http://twig.sensiolabs.org
+[Packagist]: https://packagist.org/
+[Twig]: https://twig.symfony.com/
 [VersionEye]: https://www.versioneye.com/
 [Security Advisories Checker]: https://security.sensiolabs.org/
-[Composerとは]: http://getcomposer.org/doc/00-intro.md
+[Composerとは]: https://getcomposer.org/doc/00-intro.md
 [ComposerSetup]: https://getcomposer.org/Composer-Setup.exe

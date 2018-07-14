@@ -51,7 +51,7 @@ PHP 5.4.0 以降では、 `htmlentities()` や `htmlspecialchars()` のデフォ
 Composer の [patchwork/utf8] パッケージを使うことも検討しよう。
 これは、もし `mbstring` があればそれを使い、なければ非 UTF-8 関数にフォールバックするというものだ。
 
-[マルチバイト文字列拡張モジュール]: http://php.net/book.mbstring
+[マルチバイト文字列拡張モジュール]: https://secure.php.net/book.mbstring
 [patchwork/utf8]: https://packagist.org/packages/patchwork/utf8
 
 ### データベースレベルでのUTF-8
@@ -71,25 +71,30 @@ UTF-8 を完全にサポートするには、文字セット `utf8mb4` を使わ
 `mb_http_output()` 関数を使えば、PHP スクリプトからブラウザへの出力が UTF-8 文字列になることを保証できる。
 
 あとは、HTTPレスポンスの中で、そのページをUTF-8として扱うようブラウザに指示する必要がある。
-昔ながらのやりかたは、そのページの `<head>` タグの中で [charset の `<meta>` タグ](http://htmlpurifier.org/docs/enduser-utf8.html) を指定することだった。
-この方法でも間違いではないが、 `Content-Type` ヘッダーの中で文字セットを指定したほうが、
-[ずっと高速になる](https://developers.google.com/speed/docs/best-practices/rendering#SpecifyCharsetEarly)。
+いまどきなら、普通はHTTPレスポンスヘッダの中でこんなふうに設定するだろう。
+
+{% highlight php %}
+<?php
+header('Content-Type: text/html; charset=UTF-8')
+{% endhighlight %}
+
+昔は、ページの `<head>` タグの中で [charset の `<meta>` タグ](http://htmlpurifier.org/docs/enduser-utf8.html) を指定したりしていたものだ。
 
 {% highlight php %}
 <?php
 // PHP に対して、今後このスクリプトの中では UTF-8 文字列を使うことを伝える
 mb_internal_encoding('UTF-8');
- 
+
 // PHP に対して、ブラウザに UTF-8 で出力することを伝える
 mb_http_output('UTF-8');
- 
+
 // UTF-8 のテスト用文字列
 $string = 'Êl síla erin lû e-govaned vîn.';
- 
+
 // 何らかのマルチバイト関数で文字列を操作する。
 // ここでは、デモの意味も込めて、非ASCII文字のところで文字列をカットしてみた。
 $string = mb_substr($string, 0, 15);
- 
+
 // データベースに接続し、この文字列を格納する。
 // このドキュメントにある PDO のサンプルを見れば、より詳しい情報がわかる。
 // ここでの肝は、データソース名 (DSN) における `charset=utf8mb4` だ。
@@ -102,19 +107,19 @@ $link = new PDO(
         PDO::ATTR_PERSISTENT => false
     )
 );
- 
+
 // 変換した文字列を、UTF-8としてデータベースに格納する。
 // DBとテーブルの文字セットや照合順序が、ちゃんとutf8mb4になっているかな？
 $handle = $link->prepare('insert into ElvishSentences (Id, Body) values (?, ?)');
 $handle->bindValue(1, 1, PDO::PARAM_INT);
 $handle->bindValue(2, $string);
 $handle->execute();
- 
+
 // 今格納したばかりの文字列を取り出して、きちんと格納できているかどうかを確かめる
 $handle = $link->prepare('select * from ElvishSentences where Id = ?');
 $handle->bindValue(1, 1, PDO::PARAM_INT);
 $handle->execute();
- 
+
 // 結果をオブジェクトに代入して、後でHTMLの中で使う
 $result = $handle->fetchAll(\PDO::FETCH_OBJ);
 
@@ -137,23 +142,21 @@ header('Content-Type: text/html; charset=UTF-8');
 
 ### あわせて読みたい
 
-* [PHPマニュアル: 文字列演算子](http://php.net/language.operators.string)
-* [PHPマニュアル: String関数](http://php.net/ref.strings)
-    * [`strpos()`](http://php.net/function.strpos)
-    * [`strlen()`](http://php.net/function.strlen)
-    * [`substr()`](http://php.net/function.substr)
-* [PHPマニュアル: マルチバイト文字列関数](http://php.net/ref.mbstring)
-    * [`mb_strpos()`](http://php.net/function.mb-strpos)
-    * [`mb_strlen()`](http://php.net/function.mb-strlen)
-    * [`mb_substr()`](http://php.net/function.mb-substr)
-    * [`mb_internal_encoding()`](http://php.net/function.mb-internal-encoding)
-    * [`mb_http_output()`](http://php.net/function.mb-http-output)
-    * [`htmlentities()`](http://php.net/function.htmlentities)
-    * [`htmlspecialchars()`](http://php.net/function.htmlspecialchars)
-* [PHP UTF-8 Cheatsheet](http://blog.loftdigital.com/blog/php-utf-8-cheatsheet)
-* [Handling UTF-8 with PHP](http://www.phpwact.org/php/i18n/utf-8)
-* [Stack Overflow: What factors make PHP Unicode-incompatible?](http://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
-* [Stack Overflow: Best practices in PHP and MySQL with international strings](http://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
-* [How to support full Unicode in MySQL databases](http://mathiasbynens.be/notes/mysql-utf8mb4)
-* [Bringing Unicode to PHP with Portable UTF-8](http://www.sitepoint.com/bringing-unicode-to-php-with-portable-utf8/)
-* [Stack Overflow: DOMDocument loadHTML does not encode UTF-8 correctly](http://stackoverflow.com/questions/8218230/php-domdocument-loadhtml-not-encoding-utf-8-correctly)
+* [PHPマニュアル: 文字列演算子](https://secure.php.net/language.operators.string)
+* [PHPマニュアル: String関数](https://secure.php.net/ref.strings)
+    * [`strpos()`](https://secure.php.net/function.strpos)
+    * [`strlen()`](https://secure.php.net/function.strlen)
+    * [`substr()`](https://secure.php.net/function.substr)
+* [PHPマニュアル: マルチバイト文字列関数](https://secure.php.net/ref.mbstring)
+    * [`mb_strpos()`](https://secure.php.net/function.mb-strpos)
+    * [`mb_strlen()`](https://secure.php.net/function.mb-strlen)
+    * [`mb_substr()`](https://secure.php.net/function.mb-substr)
+    * [`mb_internal_encoding()`](https://secure.php.net/function.mb-internal-encoding)
+    * [`mb_http_output()`](https://secure.php.net/function.mb-http-output)
+    * [`htmlentities()`](https://secure.php.net/function.htmlentities)
+    * [`htmlspecialchars()`](https://secure.php.net/function.htmlspecialchars)
+* [Stack Overflow: What factors make PHP Unicode-incompatible?](https://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
+* [Stack Overflow: Best practices in PHP and MySQL with international strings](https://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
+* [How to support full Unicode in MySQL databases](https://mathiasbynens.be/notes/mysql-utf8mb4)
+* [Bringing Unicode to PHP with Portable UTF-8](https://www.sitepoint.com/bringing-unicode-to-php-with-portable-utf8/)
+* [Stack Overflow: DOMDocument loadHTML does not encode UTF-8 correctly](https://stackoverflow.com/questions/8218230/php-domdocument-loadhtml-not-encoding-utf-8-correctly)

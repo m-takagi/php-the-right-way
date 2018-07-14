@@ -294,6 +294,26 @@ EOD;                        // 終了文字列はそれ単体でひとつの行�
 
 * [ヒアドキュメント](http://php.net/language.types.string#language.types.string.syntax.heredoc)
 
+> 複数行にまたがる文字列は、こんなふうに複数行にまたがる文を書くことによっても実現できる。
+
+{% highlight php %}
+$str = "
+Example of string
+spanning multiple lines
+using statement syntax.
+$a are parsed.
+";
+
+/**
+ * 出力は、
+ *
+ * Example of string
+ * spanning multiple lines
+ * using statement syntax.
+ * Variables are parsed.
+ */
+{% endhighlight %}
+
 ### どっちが速い？
 
 シングルクォートで囲んだほうが、ダブルクォートで囲むよりもちょっとだけ速くなるという迷信が、蔓延している。

@@ -82,7 +82,7 @@ PDOを使っている場合は、オブジェクトへの参照をすべて削�
 * [PDOの接続について調べる]
 
 
-[pdo]: http://php.net/pdo
+[pdo]: https://secure.php.net/pdo
 [SQLインジェクション]: http://wiki.hashphp.org/Validation
-[PDOについて調べる]: http://php.net/book.pdo
-[PDOの接続について調べる]: http://php.net/pdo.connections
+[PDOについて調べる]: https://secure.php.net/book.pdo
+[PDOの接続について調べる]: https://secure.php.net/pdo.connections

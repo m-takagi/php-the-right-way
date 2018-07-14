@@ -23,10 +23,10 @@ PDOではデータベースへの接続の抽象化しかしないが、フレ�
 * [Zend-db][4]
 
 
-[1]: http://php.net/book.pdo
-[2]: http://www.doctrine-project.org/projects/dbal.html
+[1]: https://secure.php.net/book.pdo
+[2]: https://www.doctrine-project.org/projects/dbal.html
 [4]: https://packages.zendframework.com/docs/latest/manual/en/index.html#zendframework/zend-db
 [6]: https://github.com/auraphp/Aura.Sql
 [7]: http://propelorm.org/
-[psr0]: http://www.php-fig.org/psr/psr-0/
-[psr4]: http://www.php-fig.org/psr/psr-4/
+[psr0]: https://www.php-fig.org/psr/psr-0/
+[psr4]: https://www.php-fig.org/psr/psr-4/

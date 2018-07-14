@@ -59,8 +59,8 @@ APCu は、APC のオブジェクトキャッシュ機能を PHP 5.5 以降で�
 ### オブジェクトキャッシュシステムについての参考資料
 
 * [APCu](https://github.com/krakjoe/apcu)
-* [APC 関数](http://php.net/ref.apc)
-* [Memcached](http://memcached.org/)
-* [Redis](http://redis.io/)
-* [XCache APIs](http://xcache.lighttpd.net/wiki/XcacheApi)
-* [WinCache 関数](http://php.net/ref.wincache)
+* [APC 関数](https://secure.php.net/ref.apc)
+* [Memcached](https://memcached.org/)
+* [Redis](https://redis.io/)
+* [XCache API](https://xcache.lighttpd.net/wiki/XcacheApi)
+* [WinCache 関数](https://secure.php.net/ref.wincache)

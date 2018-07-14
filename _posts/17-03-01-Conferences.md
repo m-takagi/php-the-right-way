@@ -12,4 +12,4 @@ PHP界の有名人が登壇することも多いので、彼らから直接学�
 [PHP のカンファレンスを探す][php-conf]
 
 
-[php-conf]: http://php.net/conferences/index.php
+[php-conf]: https://secure.php.net/conferences/index.php
