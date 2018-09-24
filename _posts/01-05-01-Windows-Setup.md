@@ -24,7 +24,7 @@ IIS 7 には FastCGI が組み込まれており、すぐに使える。
 開発環境と運用環境が違っていると、いざ動かしたときにおかしなバグが発生しがちだ。
 Windowsで開発したアプリケーションをLinux（などの非Windows環境）で動かしているのなら、[仮想マシン](/#virtualization_title)を使うべきだ。
 
-Chris Tankersley has a very helpful blog post on what tools he uses to do [PHP development using Windows][windows-tools].
+Chris Tankersleyは彼が[WindowsでのPHP開発][windows-tools]において使えるツールについての役に立つ記事を残しておいてくれている。
 
 [easyphp]: http://www.easyphp.org/
 [phpmanager]: http://phpmanager.codeplex.com/
