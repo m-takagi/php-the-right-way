@@ -134,6 +134,7 @@ GitHubと統合されており、PHPを含むさまざまな言語に対応し�
 
 * [Jenkinsによる継続的インテグレーション][Jenkins]
 * [PHPCIによる継続的インテグレーション][PHPCI]
+* [PHP Censorによる継続的インテグレーション][PHP Censor]
 * [Teamcityによる継続的インテグレーション][Teamcity]
 
 [buildautomation]: https://wikipedia.org/wiki/Build_automation
@@ -150,6 +151,7 @@ GitHubと統合されており、PHPを含むさまざまな言語に対応し�
 [Travis CI]: https://travis-ci.org/
 [Jenkins]: https://jenkins.io/
 [PHPCI]: https://www.phptesting.org/
+[PHP Censor]: http://php-censor.info/
 [Teamcity]: https://www.jetbrains.com/teamcity/
 [Deployer]: https://deployer.org/
 [Rocketeer]: http://rocketeer.autopergamene.eu/

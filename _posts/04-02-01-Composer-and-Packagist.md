@@ -89,9 +89,8 @@ Composer は `composer.lock` というファイルを作る。
 
 ### 更新通知
 
-新バージョンのリリースの通知を受け取りたければ [VersionEye] にサインアップするといい。
-このサービスは、自分の GitHub アカウントや BitBucket アカウントにある
-`composer.json` の内容を監視して、パッケージの新しいリリースがあればメールで教えてくれるものだ。
+新バージョンのリリースの通知を受け取りたければ [libraries.io] にサインアップするといい。
+このサービスは、依存ライブラリを監視して、更新があれば通知してくれるものだ。
 
 ### 依存ライブラリのセキュリティ問題のチェック
 
@@ -116,7 +115,7 @@ composer global require phpunit/phpunit
 
 [Packagist]: https://packagist.org/
 [Twig]: https://twig.symfony.com/
-[VersionEye]: https://www.versioneye.com/
+[libraries.io]: https://libraries.io/
 [Security Advisories Checker]: https://security.sensiolabs.org/
 [Composerとは]: https://getcomposer.org/doc/00-intro.md
 [ComposerSetup]: https://getcomposer.org/Composer-Setup.exe

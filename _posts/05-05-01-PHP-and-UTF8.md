@@ -84,6 +84,10 @@ header('Content-Type: text/html; charset=UTF-8')
 <?php
 // PHP に対して、今後このスクリプトの中では UTF-8 文字列を使うことを伝える
 mb_internal_encoding('UTF-8');
+$utf_set = ini_set('default_charset', 'utf-8');
+if (!$utf_set) {
+    throw new Exception('could not set default_charset to utf-8, please ensure it\'s set on your system!');
+}
 
 // PHP に対して、ブラウザに UTF-8 で出力することを伝える
 mb_http_output('UTF-8');
@@ -110,20 +114,28 @@ $link = new PDO(
 
 // 変換した文字列を、UTF-8としてデータベースに格納する。
 // DBとテーブルの文字セットや照合順序が、ちゃんとutf8mb4になっているかな？
-$handle = $link->prepare('insert into ElvishSentences (Id, Body) values (?, ?)');
-$handle->bindValue(1, 1, PDO::PARAM_INT);
-$handle->bindValue(2, $string);
+$handle = $link->prepare('insert into ElvishSentences (Id, Body, Priority) values (default, :body, :priority)');
+$handle->bindParam(':body', $string, PDO::PARAM_STR);
+$priority = 45;
+$handle->bindParam(':priority', $priority, PDO::PARAM_INT); // intを求めていることをpdoに対して明示する
 $handle->execute();
 
 // 今格納したばかりの文字列を取り出して、きちんと格納できているかどうかを確かめる
-$handle = $link->prepare('select * from ElvishSentences where Id = ?');
-$handle->bindValue(1, 1, PDO::PARAM_INT);
+$handle = $link->prepare('select * from ElvishSentences where Id = :id');
+$id = 7;
+$handle->bindParam(':id', $id, PDO::PARAM_INT);
 $handle->execute();
 
 // 結果をオブジェクトに代入して、後でHTMLの中で使う
+// このオブジェクトがメモリを圧迫することはない。必要になったその時点ではじめてフェッチする
 $result = $handle->fetchAll(\PDO::FETCH_OBJ);
 
-header('Content-Type: text/html; charset=UTF-8');
+// ラッパーのサンプル。これはデータをhtml出力用にエスケープする
+function escape_to_html($dirty){
+    echo htmlspecialchars($dirty, ENT_QUOTES, 'UTF-8');
+}
+
+header('Content-Type: text/html; charset=UTF-8'); // すでに default_charset が utf-8 になっているのであればこれは不要
 ?><!doctype html>
 <html>
     <head>
@@ -133,7 +145,7 @@ header('Content-Type: text/html; charset=UTF-8');
     <body>
         <?php
         foreach($result as $row){
-            print($row->Body);  // 変換したUTF-8文字列が、ブラウザに正しく出力されるはず
+            escape_to_html($row->Body);  // 変換したUTF-8文字列が、ブラウザに正しく出力されるはず
         }
         ?>
     </body>

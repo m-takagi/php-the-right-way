@@ -25,6 +25,7 @@ PHP 用の [mysql] 拡張モジュールは既に思いっきり古くなって�
 
 ** [mysql] から [mysqli] への移行について、単に「`mysql_*` を `mysqli_*` に置換すればOK」などと書いているような記事には用心すること。話を単純化しすぎているだけではなく、mysqli ならではの利点（パラメータのバインドなど。これは [PDO][pdo] でも用意されている）の活用ができなくなってしまう。 **
 
+* [MySQLi Prepared Statements][mysqli_prepared_statements]
 * [PHP: MySQL 用の API の選択肢][mysql_api]
 * [MySQL開発者用のPDOチュートリアル][pdo4mysql_devs]
 
@@ -35,3 +36,4 @@ PHP 用の [mysql] 拡張モジュールは既に思いっきり古くなって�
 [pdo]: https://secure.php.net/pdo
 [mysql_api]: https://secure.php.net/mysqlinfo.api.choosing
 [pdo4mysql_devs]: http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers
+[mysqli_prepared_statements]: https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection
