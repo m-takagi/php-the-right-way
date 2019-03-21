@@ -62,6 +62,10 @@ Apple がインストールした php のバイナリは上書きせず、まっ
 
 ### 全部入りのインストーラー
 
+ここまでで説明した方法は PHP そのものに関するものばかりで、それ以外のたとえば [Apache][apache]、[Nginx][nginx]、SQL server などは扱っていない。
+[MAMP][mamp-downloads] や [XAMPP][xampp] みたいな「全部入り」のインストーラーを使えば、このあたりのソフトも一緒に入れられるし設定もしてくれる。かんたん。
+でも、インストーラーに縛られてしまって自由にいじれなくなるという弱点もある。
+
 [Homebrew]: https://brew.sh/
 [Homebrew PHP]: https://github.com/Homebrew/homebrew-php#installation
 [MacPorts]: https://www.macports.org/install.php
@@ -70,6 +74,8 @@ Apple がインストールした php のバイナリは上書きせず、まっ
 [mac-compile]: https://secure.php.net/install.macosx.compile
 [xcode-gcc-substitution]: https://github.com/kennethreitz/osx-gcc-installer
 ["Command Line Tools for XCode"]: https://developer.apple.com/downloads
-[mamp-downloads]: http://www.mamp.info/en/downloads/
+[apache]: https://httpd.apache.org/
+[nginx]: https://www.nginx.com/
+[mamp-downloads]: https://www.mamp.info/en/downloads/
 [xampp]: https://www.apachefriends.org/jp/index.html
 [brew-php-switcher]: https://github.com/philcook/brew-php-switcher
