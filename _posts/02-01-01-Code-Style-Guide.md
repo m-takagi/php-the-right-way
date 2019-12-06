@@ -13,7 +13,7 @@ PHP のコミュニティはとてもでっかくて、いろんな人たちが�
 
 [Framework Interop Group][fig] っていうところ
 が、おすすめのスタイルを提案している。
-コーディングスタイルとは関係ないものもあるけれど、[PSR-1][psr1]、[PSR-2][psr2]、そして[PSR-4][psr4]はコーディングスタイルを扱っている。
+コーディングスタイルとは関係ないものもあるけれど、[PSR-1][psr1]、[PSR-12][psr12]、そして[PSR-4][psr4]はコーディングスタイルを扱っている。
 これって要するに、
 Drupal や Zend、Symfony、Laravel、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 などのプロジェクトが採用しつつある規約をまとめただけのものなんだ。
@@ -25,7 +25,7 @@ Drupal や Zend、Symfony、Laravel、CakePHP、phpBB、AWS SDK、FuelPHP、Lith
 また、コンポーネントを実装するアプリケーションがいろんなサードパーティのコードを組み合わせても、一貫性を保てる。
 
 * [PSR-1 とは][psr1]
-* [PSR-2 とは][psr2]
+* [PSR-12 とは][psr12]
 * [PSR-4 とは][psr4]
 * [PEARのコーディング規約][pear-cs]
 * [Symfonyのコーディング規約][symfony-cs]
@@ -42,7 +42,7 @@ Drupal や Zend、Symfony、Laravel、CakePHP、phpBB、AWS SDK、FuelPHP、Lith
 
 phpcs をシェルから手動で実行することもできる。
 
-    phpcs -sw --standard=PSR2 file.php
+    phpcs -sw --standard=PSR1 file.php
 
 これは、エラーの内容とその修正方法を表示してくれる。
 このコマンドをgit hookに仕込んでおけば便利だろう。
@@ -50,12 +50,12 @@ phpcs をシェルから手動で実行することもできる。
 
 PHP_CodeSnifferを使っている場合は、指摘されたコードレイアウトの問題を自動的に修正することもできる。そのためには[PHP Code Beautifier and Fixer][phpcbf]を使えばいい。
 
-    phpcbf -w --standard=PSR2 file.php
+    phpcbf -w --standard=PSR1 file.php
 
 もうひとつの選択肢は[PHP Coding Standards Fixer][phpcsfixer]で、
 これは、実際に修正するまえにコードにどんな問題があったのかを表示してくれる。
 
-    php-cs-fixer fix -v --level=psr2 file.php
+    php-cs-fixer fix -v --rules=@PSR1 file.php
 
 変数や関数などのシンボル名、そしてディレクトリ名などのコード基盤なんかは、英語にしておくことをおすすめする。
 コードのコメントに関しては、別に英語にこだわらなくてもかまわない。
@@ -65,7 +65,7 @@ PHPでクリーンなコードを書くための資料としておすすめな�
 
 [fig]: https://www.php-fig.org/
 [psr1]: https://www.php-fig.org/psr/psr-1/
-[psr2]: https://www.php-fig.org/psr/psr-2/
+[psr12]: https://www.php-fig.org/psr/psr-12/
 [psr4]: https://www.php-fig.org/psr/psr-4/
 [pear-cs]: https://pear.php.net/manual/en/standards.php
 [symfony-cs]: https://symfony.com/doc/current/contributing/code/standards.html

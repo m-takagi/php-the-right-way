@@ -32,7 +32,7 @@ PHP をコマンドラインで実行してみよう。
 {% highlight php %}
 <?php
 if ($argc !== 2) {
-    echo "Usage: php hello.php [name].\n";
+    echo "Usage: php hello.php <name>.\n";
     exit(1);
 }
 $name = $argv[1];
@@ -51,7 +51,7 @@ PHP のスクリプトを実行すると、コマンドラインの引数に関�
 
 {% highlight console %}
 > php hello.php
-Usage: php hello.php [name]
+Usage: php hello.php <name>
 > php hello.php world
 Hello, world
 {% endhighlight %}

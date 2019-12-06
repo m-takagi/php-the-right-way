@@ -150,8 +150,8 @@ GitHubと統合されており、PHPを含むさまざまな言語に対応し�
 [apache_ant_tutorial]: https://code.tutsplus.com/tutorials/automate-your-projects-with-apache-ant--net-18595
 [Travis CI]: https://travis-ci.org/
 [Jenkins]: https://jenkins.io/
-[PHPCI]: https://www.phptesting.org/
-[PHP Censor]: http://php-censor.info/
+[PHPCI]: https://github.com/dancryer/phpci
+[PHP Censor]: https://github.com/php-censor/php-censor
 [Teamcity]: https://www.jetbrains.com/teamcity/
 [Deployer]: https://deployer.org/
 [Rocketeer]: http://rocketeer.autopergamene.eu/

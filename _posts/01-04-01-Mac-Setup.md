@@ -13,12 +13,12 @@ OS X には PHP が最初からインストールされているけど、最新�
 
 [Homebrew] は OS X 用の強力なパッケージ管理ツールで、
 PHP やその拡張モジュールも簡単にインストールできる。
-Homebrew のコアリポジトリで、PHP 5.6、7.0、7.1、7.2 用の "Formula" が公開されている。
+Homebrew のコアリポジトリで、PHP 5.6、7.0、7.1、7.2、7.3 用の "Formula" が公開されている。
 
 最新版の PHP をインストールするには、こんなコマンドを実行すればいい。
 
 ```
-brew install php@7.2
+brew install php@7.3
 ```
 
 Homebrew の PHP のバージョンを切り替えるには、環境変数 `PATH` を設定すればいい。
@@ -33,14 +33,14 @@ OS X上のオープンソースソフトウェアのコンパイルやインス�
 MacPorts はコンパイル済みのバイナリにも対応しているので、関連するライブラリなどを毎回ソースからコンパイルしなおす必要はない。
 なので、まだ何もパッケージをインストールしていない状態でも、時間の心配をする必要はない。
 
-現時点でインストールできるのは `php54`、`php55`、`php56`、`php70`、`php71` のいずれかで、`port install` コマンドを使ってこのようにインストールする。
+現時点でインストールできるのは `php54`、`php55`、`php56`、`php70`、`php71`、`php72`、`php73` のいずれかで、`port install` コマンドを使ってこのようにインストールする。
 
     sudo port install php56
-    sudo port install php71
+    sudo port install php73
 
 そして、`select` コマンドを使って、アクティブな PHP を切り替える。
 
-    sudo port select --set php php71
+    sudo port select --set php php73
 
 ### phpbrew によるインストール
 

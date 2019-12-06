@@ -18,7 +18,6 @@ _PHPを使うための正式なお作法など存在しない_ ってこと。
 _PHP: The Right Way_ は、他の言語にも翻訳されている。
 
 * [English](http://www.phptherightway.com)
-* [Deutsch](http://rwetzlmayr.github.io/php-the-right-way)
 * [Español](http://phpdevenezuela.github.io/php-the-right-way)
 * [Français](http://eilgin.github.io/php-the-right-way/)
 * [Indonesia](http://id.phptherightway.com)
