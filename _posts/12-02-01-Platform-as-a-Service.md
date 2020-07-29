@@ -10,5 +10,5 @@ PaaS を使えば、PHP アプリケーションをウェブ上で動かすた�
 ほとんど何も設定せずに、PHP のアプリケーションやフレームワークを実行できるということだ。
 
 最近は、PHP アプリケーションのデプロイ先として PaaS を使うことが多くなった。あらゆる規模のアプリケーションを扱える。
-[PHP 用の PaaS "Platform as a Service" プロバイダ](#php-paas-providers) を、[情報源](#resources)
+[PHP 用の PaaS "Platform as a Service" プロバイダ](#php_paas_providers) を、[情報源](#resources)
 にまとめた。
