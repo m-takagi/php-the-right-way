@@ -1,18 +1,20 @@
 ---
-title:   Common Directory Structure
+title: 一般的なディレクトリ構造
 isChild: true
-anchor:  common_directory_structure
+anchor: common_directory_structure
 ---
 
-## Common Directory structure {#common_directory_structure_title}
+## 一般的なディレクトリ構造 {#common_directory_structure_title}
 
-A common question among those starting out with writing programs for the web is, "where do I put my stuff?" Over the years, this answer has consistently been "where the `DocumentRoot` is." Although this answer is not complete, it's a great place to start.
+webプログラミングを始めようとしている人たちからよく来る質問のひとつは「僕はどこに自分のプログラミングしたファイルを置けばいいんだい？」というものだ。
+何年もの間、この答えは一貫して「 `ドキュメントルート` に置け」というものだった。この答えは完璧ではないが、ドキュメントルートはプロジェクトを始めるにはいい場所だ。
 
-For security reasons, configuration files should not be accessible by a site's visitors; therefore, public scripts are kept in a public directory and private configurations and data are kept outside of that directory.
+セキュリティ上の理由から、設定ファイルはサイト訪問者がアクセスできる場所に置いてはいけない。公開スクリプトは公開ディレクトリに置き、非公開の設定やデータは公開ディレクトリの外に置いておくのがいいだろう。
 
-For each team, CMS, or framework one works in, a standard directory structure is used by each of those entities. However, if one is starting a project alone, knowing which filesystem structure to use can be daunting.
+チームやCMS、フレームワークによってディレクトリ構造はそれぞれの使われ方をするし、基本はそれに従うのがいいだろう。しかし、そういったものなしにプロジェクトをひとりで始める場合は、どのようなファイルシステム構造を使うことを決めるかは困難だろう。
 
-[Paul M. Jones] has done some fantastic research into common practices of tens of thousands of github projects in the realm of PHP. He has compiled a standard file and directory structure, the [Standard PHP Package Skeleton], based on this research. In this directory structure, `DocumentRoot` should point to `public/`, unit tests should be in the `tests/` directory, and third party libraries, as installed by [composer], belong in the `vendor/` directory. For other files and directories, abiding by the [Standard PHP Package Skeleton] will make the most sense to contributors of a project.
+[Paul M. Jones]はPHP関連の何万ものgithubプロジェクトに共通する作法について素晴らしい調査を行っている。彼は調査に基づいて、ファイルとディレクトリ構造について[Standard PHP Package Skeleton]にまとめている。
+ディレクトリ構造は `ドキュメントルート` は `public/` ディレクトリとするべきであり、ユニットテストは `tests/` ディレクトリ、composerでインストールするようなサードパーティのライブラリは `vendor/` ディレクトリとするのがよいだろう。その他のファイルやディレクトリについても、[Standard PHP Package Skeleton]に従うことがプロジェクトのメンバーにとって最も理に叶うだろう。
 
 [Paul M. Jones]: https://twitter.com/pmjones
 [Standard PHP Package Skeleton]: https://github.com/php-pds/skeleton
