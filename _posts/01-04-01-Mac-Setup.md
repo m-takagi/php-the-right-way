@@ -34,7 +34,6 @@ MacPorts はコンパイル済みのバイナリにも対応しているので�
 なので、まだ何もパッケージをインストールしていない状態でも、時間の心配をする必要はない。
 
 現時点でインストールできるのは `php54`、`php55`、`php56`、`php70`、`php71`、`php72`、`php73`、`php74` のいずれかで、`port install` コマンドを使ってこのようにインストールする。
-At this point, you can install `php54`, `php55`, `php56`, `php70`, `php71`, `php72`, `php73` or `php74` using the `port install` command, for example:
 
     sudo port install php56
     sudo port install php74
