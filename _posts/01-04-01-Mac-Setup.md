@@ -11,14 +11,18 @@ OS X には PHP が最初からインストールされているけど、最新�
 
 ### Homebrew によるインストール
 
+<<<<<<< HEAD
 [Homebrew] は OS X 用の強力なパッケージ管理ツールで、
 PHP やその拡張モジュールも簡単にインストールできる。
 Homebrew のコアリポジトリで、PHP 5.6、7.0、7.1、7.2、7.3、7.4 用の "Formula" が公開されている。
 
 最新版の PHP をインストールするには、こんなコマンドを実行すればいい。
+=======
+[Homebrew] is a package manager for macOS that helps you easily install PHP and various extensions. The Homebrew core repository provides "formulae" for PHP 5.6, 7.0, 7.1, 7.2, 7.3 and 7.4. Install the latest version with this command:
+>>>>>>> upstream/gh-pages
 
 ```
-brew install php@7.3
+brew install php@7.4
 ```
 
 Homebrew の PHP のバージョンを切り替えるには、環境変数 `PATH` を設定すればいい。
@@ -33,7 +37,11 @@ OS X上のオープンソースソフトウェアのコンパイルやインス�
 MacPorts はコンパイル済みのバイナリにも対応しているので、関連するライブラリなどを毎回ソースからコンパイルしなおす必要はない。
 なので、まだ何もパッケージをインストールしていない状態でも、時間の心配をする必要はない。
 
+<<<<<<< HEAD
 現時点でインストールできるのは `php54`、`php55`、`php56`、`php70`、`php71`、`php72`、`php73`、`php74` のいずれかで、`port install` コマンドを使ってこのようにインストールする。
+=======
+At this point, you can install `php54`, `php55`, `php56`, `php70`, `php71`, `php72`, `php73` or `php74` using the `port install` command, for example:
+>>>>>>> upstream/gh-pages
 
     sudo port install php56
     sudo port install php74

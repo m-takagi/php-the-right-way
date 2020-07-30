@@ -16,6 +16,6 @@ webプログラミングを始めようとしている人たちからよく来�
 [Paul M. Jones]はPHP関連の何万ものgithubプロジェクトに共通する作法について素晴らしい調査を行っている。彼は調査に基づいて、ファイルとディレクトリ構造について[Standard PHP Package Skeleton]にまとめている。
 ディレクトリ構造は `ドキュメントルート` は `public/` ディレクトリとするべきであり、ユニットテストは `tests/` ディレクトリ、composerでインストールするようなサードパーティのライブラリは `vendor/` ディレクトリとするのがよいだろう。その他のファイルやディレクトリについても、[Standard PHP Package Skeleton]に従うことがプロジェクトのメンバーにとって最も理に叶うだろう。
 
-[Paul M. Jones]: https://twitter.com/pmjones
+[Paul M. Jones]: http://paul-m-jones.com/
 [Standard PHP Package Skeleton]: https://github.com/php-pds/skeleton
 [Composer]: /#composer_and_packagist

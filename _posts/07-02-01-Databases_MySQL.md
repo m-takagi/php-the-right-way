@@ -27,7 +27,6 @@ PHP 用の [mysql] 拡張モジュールは既に思いっきり古くなって�
 
 * [MySQLi Prepared Statements][mysqli_prepared_statements]
 * [PHP: MySQL 用の API の選択肢][mysql_api]
-* [MySQL開発者用のPDOチュートリアル][pdo4mysql_devs]
 
 [mysql]: https://secure.php.net/mysqli
 [mysql_deprecated]: https://secure.php.net/migration55.deprecated
@@ -35,5 +34,4 @@ PHP 用の [mysql] 拡張モジュールは既に思いっきり古くなって�
 [mysqli]: https://secure.php.net/mysqli
 [pdo]: https://secure.php.net/pdo
 [mysql_api]: https://secure.php.net/mysqlinfo.api.choosing
-[pdo4mysql_devs]: http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers
 [mysqli_prepared_statements]: https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection
